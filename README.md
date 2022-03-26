@@ -1,409 +1,1504 @@
-## 工具库-utils
+## utils
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ahyiru/utils/blob/develop/LICENSE)
-[![npm version](https://img.shields.io/npm/v/@huxy/utils.svg)](https://www.npmjs.com/package/@huxy/utils)
-[![Build Status](https://api.travis-ci.com/ahyiru/utils.svg?branch=master)](https://app.travis-ci.com/github/ahyiru/utils)
-[![](https://img.shields.io/badge/blog-ihuxy-blue.svg)](http://ihuxy.com/)
 
-<!--![compose](./compose.png)-->
+### a2o
 
-### curry
+```js
+const arr=[
+  {
+    key:1,
+    value:'t1',
+  },
+  {
+    key:2,
+    value:'t2',
+  },
+  {
+    key:3,
+    value:'t3',
+  },
+];
 
-```javascript
-const curry=(fn,arity=fn.length)=>{
-  const curried=(...args)=>args.length>=arity?fn(...args):(...restArgs)=>curried(...args,...restArgs);
-  return curried;
-};
+a2o(arr);
+
+// {1: 't1', 2: 't2', 3: 't3'}
 
 ```
 
-### compose
+### arr2Tree
 
-[compose](./compose.md)
+```js
+const arr=[
+  {
+    parentId:1,
+    id:2,
+    value:'1-1',
+  },
+  {
+    parentId:4,
+    id:5,
+    value:'2-1',
+  },
+  {
+    id:4,
+    value:'2',
+  },
+  {
+    id:1,
+    value:'1',
+  },
+  {
+    parentId:1,
+    id:3,
+    value:'1-2',
+  },
+  {
+    parentId:5,
+    id:6,
+    value:'2-1-1',
+  },
+];
 
-```javascript
-const compose=(...fns)=>(...args)=>{
-  const [...tmpFns]=fns;
-  const composed=(...restArgs)=>{
-    if(tmpFns.length===0){
-      return restArgs[0];
-    }
-    return composed(tmpFns.pop()(...restArgs));
-  };
-  return composed(...args);
+arr2Tree()(arr);
+
+output: 
+
+[
+  {
+    "id": 4,
+    "value": "2",
+    "parentId": -1,
+    "children": [
+      {
+        "parentId": 4,
+        "id": 5,
+        "value": "2-1",
+        "children": [
+          {
+            "parentId": 5,
+            "id": 6,
+            "value": "2-1-1",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "value": "1",
+    "parentId": -1,
+    "children": [
+      {
+        "parentId": 1,
+        "id": 2,
+        "value": "1-1",
+        "children": []
+      },
+      {
+        "parentId": 1,
+        "id": 3,
+        "value": "1-2",
+        "children": []
+      }
+    ]
+  }
+]
+
+```
+
+### arr2TreeByPath
+
+```js
+const arr=[
+  {
+    path:'/home/p1',
+    value:'p1',
+  },
+  {
+    path:'/404',
+    value:'404',
+  },
+  {
+    path:'/home/p1/sp2',
+    value:'sp12',
+  },
+  {
+    path:'/home',
+    value:'home',
+  },
+  {
+    path:'/home/p2/sp3',
+    value:'sp23',
+  },
+  {
+    path:'/home/p2/sp2/sp1',
+    value:'sp221',
+  },
+  {
+    path:'',
+    value:'root',
+  },
+  {
+    path:'/home/p1/sp1',
+    value:'sp11',
+  },
+  {
+    path:'/home/p2/sp2',
+    value:'sp22',
+  },
+  {
+    path:'/home/p2/sp2/sp1',
+    value:'sp221',
+  },
+  {
+    path:'/home/p2',
+    value:'p2',
+  },
+  {
+    path:'/home/p3',
+    value:'p3',
+  },
+];
+
+arr2TreeByPath(arr);
+
+output: 
+
+[
+  {
+    "path": "",
+    "value": "root",
+    "parentId": null,
+    "children": [
+      {
+        "path": "/404",
+        "value": "404",
+        "parentId": "",
+        "children": []
+      },
+      {
+        "path": "/home",
+        "value": "home",
+        "parentId": "",
+        "children": [
+          {
+            "path": "/home/p1",
+            "value": "p1",
+            "parentId": "/home",
+            "children": [
+              {
+                "path": "/home/p1/sp2",
+                "value": "sp12",
+                "parentId": "/home/p1",
+                "children": []
+              },
+              {
+                "path": "/home/p1/sp1",
+                "value": "sp11",
+                "parentId": "/home/p1",
+                "children": []
+              }
+            ]
+          },
+          {
+            "path": "/home/p2",
+            "value": "p2",
+            "parentId": "/home",
+            "children": [
+              {
+                "path": "/home/p2/sp3",
+                "value": "sp23",
+                "parentId": "/home/p2",
+                "children": []
+              },
+              {
+                "path": "/home/p2/sp2",
+                "value": "sp22",
+                "parentId": "/home/p2",
+                "children": [
+                  {
+                    "path": "/home/p2/sp2/sp1",
+                    "value": "sp221",
+                    "parentId": "/home/p2/sp2",
+                    "children": []
+                  },
+                  {
+                    "path": "/home/p2/sp2/sp1",
+                    "value": "sp221",
+                    "parentId": "/home/p2/sp2",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "path": "/home/p3",
+            "value": "p3",
+            "parentId": "/home",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
+
+```
+
+### rgba2hex
+
+```js
+rgba2hex(111,111,111,.8);
+
+// '#6f6f6fcc'
+
+```
+
+### hex2rgba
+
+```js
+hex2rgba('ddd');
+
+> // 'rgb(221,221,221)'
+
+```
+
+### base2Ten
+
+```js
+base2Ten(100,16) // 256
+base2Ten(100,8) // 64
+base2Ten(100) // 4
+
+```
+
+### ten2Base
+
+```js
+ten2Base(100,16) // 64
+ten2Base(100,8) // 144
+ten2Base(100) // 1100100
+
+```
+
+### baseConversion
+
+```js
+baseConversion(100,8,16) // 40
+
+```
+
+### fetcher
+
+```js
+import {fetcher} from 'ihuxy-utils/baseFetch';
+
+const handler = (response) => {
+  return response
+    .json()
+    .then((result) => {
+      result.code = result.code ?? response.status;
+      result.msg = result.message ?? result.msg ?? response.statusText;
+      const {msg, code} = result;
+      if (code === 401) {
+        message.error(msg);
+        logout(true);
+        throw {code, message: msg};
+      }
+      if (!success_code.includes(code)) {
+        throw {code, message: msg};
+      }
+      return result;
+    })
+    .catch((error) => {
+      message.error(error.message);
+      throw error.message;
+    });
 };
+
+const fetchApi = fetcher(handler);
+
+const fetch = ({method, url, ...opt}) => fetchApi(method)(`${TARGET}${url}`, {...opt, headers: getToken(), credentials: 'omit'});
+
+```
+
+### cacheData
+
+```js
+const {record, undo, redo, clean} = cacheData();
+
+```
+
+### cancelablePromise
+
+```js
+const {promiseFn,cancelFn}=cancelablePromise(components,{delay:suspenseConfig.delay,msg:{timeout:suspenseConfig.timeoutMsg}});
+
+promiseFn.then().catch()
+
+```
+
+### changePos
+
+```js
+const arr=[1,2,3,4,5,6,7,8,9];
+
+changePos(arr,2,7)
+
+// [1, 2, 8, 4, 5, 6, 7, 3, 9]
+
+```
+
+### classifyArr
+
+```js
+const arr=[
+  {
+    name:'test1',
+    value:'t1',
+  },
+  {
+    name:'test2',
+    value:'t2',
+  },
+  {
+    name:'test1',
+    value:'t3',
+  },
+  {
+    name:'test2',
+    value:'t4',
+  },
+];
+
+classifyArr(arr)
+
+output: 
+
+{
+  "test1": [
+    {
+      "name": "test1",
+      "value": "t1"
+    },
+    {
+      "name": "test1",
+      "value": "t3"
+    }
+  ],
+  "test2": [
+    {
+      "name": "test2",
+      "value": "t2"
+    },
+    {
+      "name": "test2",
+      "value": "t4"
+    }
+  ]
+}
 
 ```
 
 ### clone
 
-```javascript
-const clone=obj=>{
-  if(!isArray(obj)&&!isObject(obj)){
-    return obj;
-  }
-  const newobj=isArray(obj)?[]:{};
-  for(let i in obj){
-    const item=obj[i];
-    newobj[i]=(isReactEle(item)||typeof item!=='object')?item:item!==obj?clone(item):'cyclic';
-  }
-  return newobj;
-};
+```js
+clone(arr|object);
 
 ```
 
-### isEqual
+### compose
 
-```javascript
-const isEqual=(a,b)=>{
-  const typeA=getType(a);
-  const typeB=getType(b);
-  if(typeA!==typeB){
-    return false;
-  }
-  if(a==null||b==null){
-    return a===b;
-  }
-  if(['object','array'].indexOf(typeA)===-1){
-    return a.toString()===b.toString();
-  }
-  if(Object.keys(a).length!==Object.keys(b).length){
-    return false;
-  }
-  if(isCyclic(a)&&isCyclic(b)){
-    return isEqual(a,b);
-  }
-  for(let k in b){
-    if(hasProp(a,k)!==hasProp(b,k)){
-      return false;
-    }
-    if(!isEqual(a[k],b[k])){
-      return false;
-    }
-  }
-  return true;
-};
+```js
+const a=x=>x+10;
+
+const b=x=>x*10;
+
+compose(b,a)(2) // 120
 
 ```
 
-### getType
+### copyToClipboard
 
-```javascript
-const getType=value=>Object.prototype.toString.call(value).slice(8,-1).toLowerCase();
-
-```
-
-### filter
-
-```javascript
-const filter=(list,keyword,fields=[],exact=false)=>{
-  if(!isValidArr(list)){
-    return [];
-  }
-  if(!keyword){
-    return list;
-  }
-  if(typeof fields==='string'){
-    fields=[fields];
-  }
-  return list.filter(v=>{
-    fields=fields.length>0?fields:Object.keys(v);
-    const matched=fields.filter(field=>{
-      const fieldValue=v[field];
-      if(fieldValue==null){
-        return false;
-      }
-      if(exact){
-        return fieldValue===keyword;
-      }
-      const reg=new RegExp(keyword,'gi');
-      const match=fieldValue.toString().match(reg);
-      return match;
-    });
-    return matched.length;
-  });
-};
+```js
+> copyToClipboard(text)
 
 ```
 
-### pick
+### createTextElement/createElement/createNode
 
-```javascript
-const pick=(obj,arrKeys)=>{
-  if(obj==null||typeof obj!=='object'){
-    return {};
-  }
-  if(typeof arrKeys==='string'){
-    arrKeys=[arrKeys];
-  }
-  if(!isArray(arrKeys)){
-    return obj;
-  }
-  const newObj={};
-  arrKeys.map(key=>{
-    if(key in obj){
-      newObj[key]=obj[key];
-    }
-  });
-  return newObj;
-};
+```js
+createTextElement(text)
+
+createElement(type, props, ...children)
+
+createNode({type:'',props:{}})
 
 ```
 
-### sort
+### curry
 
-```javascript
-const sort=(arr,key=null,desc=false)=>{
-  return arr.sort((x,y)=>{
-    const a=key?x[key]:x;
-    const b=key?y[key]:y;
-    if(!isNaN(Number(a))&&!isNaN(Number(a))){
-      return desc?b-a:a-b;
-    }
-    if(typeof a==='string'&&typeof b==='string'){
-      return desc?b.localeCompare(a):a.localeCompare(b);
-    }
-    if(typeof a==='string'&&typeof b==='number'){
-      return desc?-1:1;
-    }
-    if(typeof a==='number'||typeof a==='string'){
-      return desc?1:-1;
-    }
-    return desc?-1:1;
-  });
-};
-
-```
-
-### unique
-
-```javascript
-const unique=(arr,key='id')=>{
-  if(!isValidArr(arr)){
-    return arr;
-  }
-  const newArr=[];
-  const keys=[];
-  arr.map(v=>{
-    const cKey=v[key]??v;
-    if(!keys.includes(cKey)){
-      keys.push(cKey);
-      newArr.push(v);
-    }
-  });
-  return newArr;
-};
-
-```
-
-### traverItem
-
-```javascript
-const traverItem=fn=>(arr,childKey='children')=>{
-  if(!isArray(arr)){
-    return arr;
-  }
-  const copyArr=clone(arr);
-  const traver=(data,parent=[])=>{
-    data.map((v,k)=>{
-      v=fn(v,parent,k)||v;
-      if(isArray(v[childKey])){
-        const {[childKey]:children,...rest}=v;
-        traver(children,[...parent,{...rest,'@@index':k}]);
-      }
-    });
-  };
-  traver(copyArr);
-  return copyArr;
-};
-
-```
-
-### flatten
-
-```javascript
-const flatten=(data,childKey='children')=>{
-  const newArr=[];
-  traverItem(item=>{
-    const {[childKey]:children,...rest}=item;
-    newArr.push(rest);
-  })(data,childKey);
-  return newArr;
-};
-
-```
-
-### getValue
-
-```javascript
-const keyArr=keys=>keys.replace(/\[['"]?(.*?)['"]?\]/g,'.$1').split('.');
-const getValue=(object,keys)=>{
-  keys=keyArr(keys);
-  const checkValue=(obj,key)=>{
-    if(!key[0]){
-      return obj;
-    }
-    if(typeof obj[key[0]]==='object'){
-      return checkValue(obj[key[0]],key.slice(1));
-    }
-    if(key.length>1){
-      return undefined;
-    }
-    return obj[key[0]];
-  };
-  return checkValue(object,keys);
-};
-
-
-```
-
-### sleep
-
-```javascript
-const sleep=(ms=350)=>new Promise(resolve=>setTimeout(resolve,ms));
-
-```
-
-### memoize
-
-```javascript
-const memoize=(fn,len=100)=>{
-  let cache=[];
-  return (...args)=>{
-    const key=JSON.stringify(args);
-    const cached=cache.find(v=>v.key===key);
-    if(!cached){
-      const result=fn(...args);
-      cache.push({key,result});
-      if(cache.length>len){
-        cache.shift();
-      }
-      return result;
-    }
-    return cached.result;
-  };
-};
-
-```
-
-### storage
-
-```javascript
-const storage={
-  get:(name)=>{
-    let data=null;
-    try{
-      data=JSON.parse(localStorage.getItem(name));
-    }catch(err){
-      data=localStorage.getItem(name);
-    }
-    return data;
+```js
+const arr=[
+  {
+    name:'test1',
+    value:'t1',
   },
-  set:(name,data)=>{
-    if(typeof data==='object'){
-      data=JSON.stringify(data);
-    }
-    localStorage.setItem(name,data);
+  {
+    name:'test2',
+    value:'t2',
   },
-  rm:(name)=>{
-    localStorage.removeItem(name);
+  {
+    name:'test1',
+    value:'t3',
   },
-  clear:()=>{
-    localStorage.clear();
+  {
+    name:'test2',
+    value:'t4',
   },
-};
+];
+
+const fn=(name,value)=>arr.filter(item=>item.name===name).filter(item=>item.value===value)
+
+const a=curry(fn)('test1')
+
+a('t3')
+
+output: 
+
+[
+  {
+    "name": "test1",
+    "value": "t3"
+  }
+]
 
 ```
 
-### session
+### cyclic
 
-```javascript
-const session={
-  get:(name)=>{
-    let data=null;
-    try{
-      data=JSON.parse(sessionStorage.getItem(name));
-    }catch(err){
-      data=sessionStorage.getItem(name);
-    }
-    return data;
-  },
-  set:(name,data)=>{
-    if(typeof data==='object'){
-      data=JSON.stringify(data);
-    }
-    sessionStorage.setItem(name,data);
-  },
-  rm:(name)=>{
-    sessionStorage.removeItem(name);
-  },
-  clear:()=>{
-    sessionStorage.clear();
-  },
-};
+```js
+cyclic(object) // true | false
+
+```
+
+### addDays/addMonths/addYears/addHours
+
+```js
+addDays(2,'2022-01-01') // Mon Jan 03 2022 08:00:00 GMT+0800 (中国标准时间)
+
+addMonths(3) // Sat Jun 25 2022 17:44:47 GMT+0800 (中国标准时间)
+
+```
+
+### getLeaveTime
+
+```js
+getLeaveTime('2022-10-1') // '189天6小时12分11秒'
+
+```
+
+### weekDate/monthDate
+
+```js
+weekDate()
+
+output: 
+
+[
+  "2022-03-21T09:48:44.098Z",
+  "2022-03-27T09:48:44.098Z"
+]
 
 ```
 
 ### debounce
 
-```javascript
-const debounce=(func,wait=60)=>{
-  let timer=null;
-  return function (...args){
-    clearTimeout(timer);
-    timer=setTimeout(()=>func.apply(this,args),wait);
-  };
+```js
+debounce(func,delay=60)
+
+```
+
+### dlfile
+
+```js
+dlfile(url,name)
+
+```
+
+### emitter
+
+```js
+const {on,emit,off}=emitter()
+
+```
+
+### equal
+
+```js
+equal(a, b) // true|false
+
+```
+
+### filter
+
+```js
+const arr=[
+  {
+    name:'test1',
+    value:'t1',
+  },
+  {
+    name:'test2',
+    value:'t2',
+  },
+  {
+    name:'test1',
+    value:'t3',
+  },
+  {
+    name:'test2',
+    value:'t4',
+  },
+];
+
+filter(arr,'est1','name')
+
+output: 
+
+[
+  {
+    "name": "test1",
+    "value": "t1"
+  },
+  {
+    "name": "test1",
+    "value": "t3"
+  }
+]
+
+```
+
+### filterList
+
+```js
+filterList(data,keyword,str2Dom/*高亮元素*/,fields='name',idKey='id',childKey='children',exact=false)
+
+```
+
+### findMax
+
+```js
+findMax('ghfdj53785bhb4289yb3b478') // 53785
+
+```
+
+### firstUpper
+
+```js
+firstUpper('hello world') // 'Hello world'
+
+```
+
+### fixRoute
+
+```js
+fixRoute('/a/b/e/') // /a/b/e
+
+```
+
+### flatten
+
+```js
+const arr=[
+  {
+    name:'test1',
+    value:'t1',
+    children: [
+      {
+        name:'test11',
+        value:'t11',
+      },
+      {
+        name:'test12',
+        value:'t12',
+      },
+    ],
+  },
+  {
+    name:'test2',
+    value:'t2',
+  },
+  {
+    name:'test1',
+    value:'t3',
+    children: [
+      {
+        name:'test31',
+        value:'t31',
+      },
+      {
+        name:'test32',
+        value:'t32',
+        children: [
+          {
+            name:'test321',
+            value:'t321',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name:'test2',
+    value:'t4',
+  },
+];
+
+flatten(arr)
+
+output: 
+
+[
+  {
+    "name": "test1",
+    "value": "t1"
+  },
+  {
+    "name": "test2",
+    "value": "t2"
+  },
+  {
+    "name": "test1",
+    "value": "t3"
+  },
+  {
+    "name": "test2",
+    "value": "t4"
+  },
+  {
+    "name": "test11",
+    "value": "t11"
+  },
+  {
+    "name": "test12",
+    "value": "t12"
+  },
+  {
+    "name": "test31",
+    "value": "t31"
+  },
+  {
+    "name": "test32",
+    "value": "t32"
+  },
+  {
+    "name": "test321",
+    "value": "t321"
+  }
+]
+
+```
+
+### formatNum
+
+```js
+formatNum(12345678) // '12,345,678'
+
+```
+
+### getTime/formatTime
+
+```js
+getTime() // [2022, 3, 25, 18, 4, 36, 5]
+
+formatTime() // '2022-03-25 18:04:36'
+
+```
+
+### fullScreen/watchScreen
+
+```js
+fullScreen(element)
+
+watchScreen(callback) // 全屏变化时执行回调
+
+```
+
+### getElementsSize
+
+```js
+const {width,height,top,left,...}=getElementsSize(ele);
+
+```
+
+### getOffset
+
+```js
+const {top,left}=getOffset(ele);
+
+```
+
+### getParams
+
+```js
+getParams('/a/b?name=hhh&age=18')
+
+output: 
+
+{
+  "path": "/a/b",
+  "params": {
+    "name": "hhh",
+    "age": "18"
+  }
+}
+
+```
+
+### getPosition
+
+```js
+const {width,height,top,left,...}=getPosition(ele);
+
+```
+
+### getSelected
+
+```js
+const arr=[
+  {
+    name:'test1',
+    value:'t1',
+    children: [
+      {
+        name:'test11',
+        value:'t11',
+      },
+      {
+        name:'test12',
+        value:'t12',
+      },
+    ],
+  },
+  {
+    name:'test2',
+    value:'t2',
+  },
+  {
+    name:'test1',
+    value:'t3',
+    children: [
+      {
+        name:'test31',
+        value:'t31',
+      },
+      {
+        name:'test32',
+        value:'t32',
+        children: [
+          {
+            name:'test321',
+            value:'t321',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name:'test2',
+    value:'t4',
+  },
+];
+
+getSelected(arr,'t32','value')
+
+output: 
+
+[
+  {
+    "name": "test1",
+    "value": "t3"
+  },
+  {
+    "name": "test32",
+    "value": "t32"
+  }
+]
+
+```
+
+### getTextSize
+
+```js
+const {width,height,top,left,...}=getTextSize(text)
+
+```
+
+### getTouchPosition/getRelative
+
+```js
+const {touchX,touchY}=getTouchPosition(event)
+
+const {x,y}= getRelative(event,ref)
+
+```
+
+### getType
+
+```js
+getType() // 'undefined'
+getType('') // 'string'
+getType(222) // 'number'
+getType([]) // 'array'
+
+```
+
+### getValue
+
+```js
+const obj={
+  a:{
+    b:{
+      c:4444
+    },
+    b1:{},
+  },
+}
+
+getValue(obj,'a.b.c') // 4444
+
+getValue(obj,'a.b.d') // undefined
+
+
+```
+
+### getViewportSize
+
+```js
+const {width,height}=getViewportSize(element)
+
+```
+
+### hasClass/addClass/removeClass/toggleClass
+
+```js
+hasClass(ele,'class1')
+addClass(ele,'class1')
+removeClass(ele,'class1')
+toggleClass(ele,'class1')
+
+```
+
+### addNodes/addAtNext/addAtPos/editNodes/deleteNodes/moveNodes
+
+```js
+addNodes(tree,id,nodes,idKey='id',childKey='children')
+addAtNext(tree,id,nodes,idKey='id',childKey='children')
+addAtPos(tree,id,nodes,pos,idKey='id',childKey='children')
+editNodes(tree,id,nodes,idKey='id',childKey='children')
+deleteNodes(tree,id,idKey='id',childKey='children')
+moveNodes(tree,fromId,toId,pos,idKey='id',childKey='children')
+
+```
+
+### hasProp
+
+```js
+const a={b:undefined}
+
+hasProp(a,'b') // true
+
+```
+
+### isArray/isValidArr/isAsync/isObject/isFunction/isError/isRegExp/isElement/isUrl
+
+```js
+
+isArray([]) // true
+isValidArr([1]) // true
+isAsync(new Promise()) // true
+isObject({}) // true
+isFunction(()=>{}) // true
+isError(new Error()) // true
+isRegExp(/\d+/) // true
+isElement(<span>1</span>) // true
+isUrl('http://abc.com') // true
+
+```
+
+
+### isBrowser/isIE/isTouch
+
+```js
+isBrowser()
+isIE()
+isTouch()
+
+```
+
+### isReactComp/isReactEle/isRef
+
+```js
+isReactComp(value)
+isReactEle(value)
+isRef(value)
+
+```
+
+### memoize
+
+```js
+const fn=n=>console.log(n)
+const m=memoize(fn)
+m(3)
+m(3)
+
+// 3 只打印一次
+
+```
+
+### merge/mergeObj/mergeArr
+
+```js
+const a={
+  name:'t1',
+  children: [
+    {
+      name: 't11',
+    },
+    {
+      name: 't12',
+    },
+  ],
 };
+
+const b={
+  name:'t2',
+  children: [
+    {
+      name: 't21',
+    },
+    {
+      name: 't22',
+    },
+  ],
+};
+
+const c={
+  age: 18,
+  children: [
+    {
+      age: 20,
+    },
+    {
+      age: 22,
+    },
+  ],
+};
+
+merge(a,b,c);
+
+output: 
+
+{
+  "name": "t2",
+  "children": [
+    {
+      "name": "t21",
+      "age": 20
+    },
+    {
+      "name": "t22",
+      "age": 22
+    }
+  ],
+  "age": 18
+}
+
+```
+
+### obj2arr/arr2obj
+
+```js
+const a={
+  name:'t1',
+  age: 18,
+  id:'123',
+};
+
+obj2arr(a)
+
+output: 
+
+[
+  {
+    "name": "name",
+    "value": "t1"
+  },
+  {
+    "name": "age",
+    "value": 18
+  },
+  {
+    "name": "id",
+    "value": "123"
+  }
+]
+
+const b=[
+  {
+    name:'t1',
+    value:'t11',
+  },
+  {
+    name:'t2',
+    value:'t22',
+  },
+  {
+    name:'t3',
+    value:'t33',
+  },
+];
+
+arr2obj(b)
+
+output: 
+
+{
+  "t1": "t11",
+  "t2": "t22",
+  "t3": "t33"
+}
+
+```
+
+### obj2str/arr2str/json2str
+
+```js
+const c={
+  age: 18,
+  children: [
+    {
+      age: 20,
+    },
+    {
+      age: 22,
+    },
+  ],
+};
+
+json2str(c)
+
+output: 
+
+'{age=18, children={0={age=20}, 1={age=22}}}'
+
+```
+
+### once
+
+```js
+const t=()=>console.log('test');
+
+const runOne=once(t);
+
+runOne() // test
+runOne() // 不执行
+
+```
+
+### params2data
+
+```js
+const a={
+  name:'t1',
+  age: 18,
+  id:'123',
+};
+
+params2data(a); // FormData {}
+
+```
+
+### params2str
+
+```js
+const a={
+  name:'t1',
+  age: 18,
+  id:'123',
+};
+
+params2str(a); // '?name=t1&age=18&id=123'
+
+```
+
+### pick
+
+```js
+const a={
+  name:'t1',
+  age: 18,
+  id:'123',
+};
+
+pick(a,['id','name']) // {id: '123', name: 't1'}
+
+```
+
+### promisify
+
+```js
+promisify(func)(...args)
+
+```
+
+### randNum/randStr/randColor/randTrue/randItem
+
+```js
+randNum(5) // 5
+randStr(8) // 'czqx7vhu'
+randColor() // '#39a645'
+randTrue() // false
+randItem([1,3,5,7,9]) // 3
+
+```
+
+### resize
+
+```js
+const {bind, unbind, destroy}=resize(element);
+
+bind(callback);
+unbind(callback);
+destroy();
+
+```
+
+### scrollToTop/scrollToAnchor/scrollTop
+
+```js
+scrollToTop(top=0); // 滚动到指定位置
+scrollToAnchor(ref); // 滚动到元素位置
+scrollTop(); // 滚动到顶部
+
+```
+
+### viewHeight/docHeight/isScrollBottom
+
+```js
+viewHeight(); // 视图高度
+docHeight(); // 文档高度
+isScrollBottom(); // 是否滚到底部
+
+```
+
+### selectedHandle
+
+```js
+selectedHandle((data,i,parentId)=>{
+  console.log(data,i,parentId);
+  return data[i]; // 选中id的item
+})(arr,id);
+
+```
+
+### session
+
+```js
+const {get, set, rm, clear}=session;
+
+get(name);
+set(name,data)'
+rm(name);
+clear();
+
+```
+
+### setStyle
+
+```js
+setStyle(ele,styles={},reset=false);
+
+```
+
+### sleep/sleepSync
+
+```js
+await sleep();
+await sleepSync();
+
+```
+
+### sort
+
+```js
+const a=[
+  {
+    name: 't1',
+    age: 33,
+  },
+  {
+    name: 't2',
+    age: 12,
+  },
+  {
+    name: 't3',
+    age: 22,
+  },
+];
+
+sort(a, 'age');
+
+output: 
+
+[
+  {
+    "name": "t2",
+    "age": 12
+  },
+  {
+    "name": "t3",
+    "age": 22
+  },
+  {
+    "name": "t1",
+    "age": 33
+  }
+]
+
+```
+
+### storage
+
+```js
+const {get, set, rm, clear}=storage;
+
+get(name);
+set(name,data)'
+rm(name);
+clear();
+
+```
+
+### createStore
+
+```js
+const {getState,setState,subscribe,clean}=createStore();
+
+```
+
+### str2code
+
+```js
+str2code('console.log(123)'); // 123
+
+```
+
+### str2Html
+
+```js
+str2Html('<a>link</a>'); // NodeList [a]
+
+```
+
+### getExplore
+
+```js
+getExplore(); // 'Chrome: 99.0.4844.51'
+
+```
+
+### osType
+
+```js
+osType(); // 'MacOSX'
+
+```
+
+### sysLang
+
+```js
+sysLang(); // 'zh'
+
+```
+
+### deviceType
+
+```js
+deviceType(); // 'Desktop'
 
 ```
 
 ### throttle
 
-```javascript
-const throttle=(func,delay=60)=>{
-  let timer=null,start=0;
-  return function (...args){
-    const current=+new Date();
-    clearTimeout(timer);
-    if(current-start>delay){
-      func.apply(this,args);
-      start=current;
-    }else{
-      timer=setTimeout(()=>func.apply(this,args),delay);
-    }
-  };
-};
+```js
+const throttleFn=throttle(fn,delay=60)
 
 ```
 
-### fetch
+### getMonthDays
 
-[fetch](./fetcher.md)
-
-
-### merge
-
-```javascript
-const mergeObj=(base,extend)=>{
-  if(!isObject(base)){
-    return extend;
-  }
-  if(!isObject(extend)){
-    return base;
-  }
-  const newObj=clone(base);
-  for(let k in extend){
-    if(isObject(newObj[k])&&isObject(extend[k])){
-      newObj[k]=mergeObj(newObj[k],extend[k]);
-    }else if(isArray(newObj[k])&&isArray(extend[k])){
-      newObj[k]=mergeArr(newObj[k],extend[k]);
-    }else{
-      newObj[k]=extend[k];
-    }
-  }
-  return newObj;
-};
+```js
+getMonthDays(); // 31
 
 ```
 
-[md文档](http://ihuxy.com:8010/)
+### timestamp
+
+```js
+timestamp(); // 48620100.70000002
+
+```
+
+### traverItem
+
+```js
+traverItem((item,parent,index,hasChild)=>{
+  console.log(item,parent,index,hasChild);
+})(arr,childKey);
+
+```
+
+### traverList
+
+```js
+traverItem((data)=>{
+  console.log(data);
+})(arr,childKey);
+
+```
+
+### unique
+
+```js
+const a=[
+  {
+    name: 't1',
+    age: 33,
+  },
+  {
+    name: 't2',
+    age: 12,
+  },
+  {
+    name: 't1',
+    age: 22,
+  },
+];
+
+unique(a, 'name');
+
+output: 
+
+[
+  {
+    "name": "t1",
+    "age": 33
+  },
+  {
+    "name": "t2",
+    "age": 12
+  }
+]
+
+```
+
+### updateId
+
+```js
+const a=[
+  {
+    name: 't1',
+    age: 33,
+  },
+  {
+    name: 't2',
+    age: 12,
+  },
+  {
+    name: 't3',
+    age: 22,
+  },
+];
+
+updateId(a, 'id');
+
+output: 
+
+[
+  {
+    "name": "t1",
+    "age": 33,
+    "id": "0"
+  },
+  {
+    "name": "t2",
+    "age": 12,
+    "id": "1"
+  },
+  {
+    "name": "t3",
+    "age": 22,
+    "id": "2"
+  }
+]
+
+```
+
+### uuidv4
+
+```js
+uuidv4(); // '4839e86e-252f-4571-9982-351cd98cc875'
+
+```
+
+### validObj
+
+```js
+const a={
+  name: 't1',
+  age: 18,
+  email: 'ah.yiru@gmail.com',
+  t1: '',
+  t2: null,
+  t3: undefined,
+};
+
+validObj(a);
+
+output: 
+
+{name: 't1', age: 18, email: 'ah.yiru@gmail.com', t1: ''}
+
+```
+
+### watermark
+
+```js
+watermark({
+  container=document.body,
+  width='220px',
+  height='200px',
+  textAlign='center',
+  textBaseline='middle',
+  font='20px microsoft yahei',
+  fillStyle='rgba(202,202,202,0.4)',
+  content='请勿外传',
+  rotate='-30',
+  zIndex=1000,
+})
+
+```
+
+### wrapPromise
+
+```js
+const {read}=wrapPromise(promiseFn);
+
+const result=read();
+
+```
