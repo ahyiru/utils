@@ -1,6 +1,6 @@
 {
   "name": "@huxy/utils",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "title": "utils",
   "feature": "0.0.1",
   "hooks": "0.0.1",
@@ -12,10 +12,9 @@
     "utils",
     "function"
   ],
-  "main": "lib/index.js",
-  "scripts": {
-    "start": "node server"
-  },
+  "sideEffects": false,
+  "main": "./lib/index.js",
+  "module": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ahyiru/utils"
