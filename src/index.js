@@ -7,6 +7,7 @@ export {default as cancelablePromise} from './cancelablePromise';
 export {default as changePos} from './changePos';
 export {default as classifyArr} from './classifyArr';
 export {default as clone} from './clone';
+export {default as compareVersion} from './compareVersion';
 export {default as compose} from './compose';
 export {default as copyToClipboard} from './copyToClipboard';
 export {createNode,updateNode,createTextElement,createElement} from './createNode';
