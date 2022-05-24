@@ -1,1 +1,71 @@
-!function(e,t){if("object"==typeof exports&&"object"==typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var n=t();for(var o in n)("object"==typeof exports?exports:e)[o]=n[o]}}(this,(function(){return function(){"use strict";var e={d:function(t,n){for(var o in n)e.o(n,o)&&!e.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:n[o]})},o:function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r:function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},t={};e.r(t),e.d(t,{dpr:function(){return n}});var n=window.devicePixelRatio||1;return t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:10,t=document.documentElement,o="orientationchange"in window?"orientationchange":"resize",r=function(){var o=t.clientWidth;t.style.fontSize="".concat(o/(e*n),"px")};return window.addEventListener(o,r,!1),function(){return window.removeEventListener(o,r,!1)}},t}()}));
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function() {
+return /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dpr": function() { return /* binding */ dpr; }
+/* harmony export */ });
+const dpr = window.devicePixelRatio || 1;
+
+const setRem = function () {
+  let scale = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
+  const root = document.documentElement;
+  const resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+  const handler = () => {
+    const clientWidth = root.clientWidth;
+    root.style.fontSize = `${clientWidth / (scale * dpr)}px`;
+  };
+
+  window.addEventListener(resizeEvt, handler, false);
+  return () => window.removeEventListener(resizeEvt, handler, false);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (setRem);
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

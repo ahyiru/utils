@@ -1,1 +1,61 @@
-!function(e,t){if("object"==typeof exports&&"object"==typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var o=t();for(var n in o)("object"==typeof exports?exports:e)[n]=o[n]}}(this,(function(){return function(){"use strict";var e={d:function(t,o){for(var n in o)e.o(o,n)&&!e.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:o[n]})},o:function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r:function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},t={};function o(e){return o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},o(e)}e.r(t),e.d(t,{default:function(){return n}});var n={get:function(e){var t=null;try{t=JSON.parse(sessionStorage.getItem(e))}catch(o){t=sessionStorage.getItem(e)}return t},set:function(e,t){"object"===o(t)&&(t=JSON.stringify(t)),sessionStorage.setItem(e,t)},rm:function(e){sessionStorage.removeItem(e)},clear:function(){sessionStorage.clear()}};return t}()}));
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function() {
+return /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+__webpack_require__.r(__webpack_exports__);
+const session = {
+  get: name => {
+    let data = null;
+
+    try {
+      data = JSON.parse(sessionStorage.getItem(name));
+    } catch (err) {
+      data = sessionStorage.getItem(name);
+    }
+
+    return data;
+  },
+  set: (name, data) => {
+    if (typeof data === 'object') {
+      data = JSON.stringify(data);
+    }
+
+    sessionStorage.setItem(name, data);
+  },
+  rm: name => {
+    sessionStorage.removeItem(name);
+  },
+  clear: () => {
+    sessionStorage.clear();
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (session);
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

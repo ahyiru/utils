@@ -1,1 +1,104 @@
-!function(t,e){if("object"==typeof exports&&"object"==typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var o=e();for(var n in o)("object"==typeof exports?exports:t)[n]=o[n]}}(this,(function(){return function(){"use strict";var t={6120:function(t,e){e.default=function(t,e){return Object.prototype.hasOwnProperty.call(null!=t?t:{},e)}},6655:function(t,e,o){function n(t){return n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},n(t)}o.d(e,{Z:function(){return n}})}},e={};function o(n){var r=e[n];if(void 0!==r)return r.exports;var f=e[n]={exports:{}};return t[n](f,f.exports,o),f.exports}o.d=function(t,e){for(var n in e)o.o(e,n)&&!o.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:e[n]})},o.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},o.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})};var n={};return function(){o.r(n);var t=o(6655),e=o(6120);n.default=function(o){var n=[],r=function o(r){if(r&&"object"===(0,t.Z)(r)){if(-1!==n.indexOf(r))return!0;n.push(r);var f=!1;for(var u in r)(0,e.default)(r,u)&&o(r[u])&&(r[u]="cyclic",f=!0);return f}return!1}(o);return r&&o}}(),n}()}));
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function() {
+return /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 6120:
+/***/ (function(__unused_webpack_module, __webpack_exports__) {
+
+const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
+
+/* harmony default export */ __webpack_exports__["default"] = (hasProp);
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+!function() {
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6120);
+
+
+const isCyclic = obj => {
+  const seenObjects = [];
+
+  const detect = obj => {
+    if (obj && typeof obj === 'object') {
+      if (seenObjects.indexOf(obj) !== -1) {
+        return true;
+      }
+
+      seenObjects.push(obj);
+      let hasCyc = false;
+
+      for (let key in obj) {
+        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(obj, key) && detect(obj[key])) {
+          obj[key] = 'cyclic';
+          hasCyc = true;
+        }
+      }
+
+      return hasCyc;
+    }
+
+    return false;
+  };
+
+  const result = detect(obj);
+  return result && obj;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (isCyclic);
+}();
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});
