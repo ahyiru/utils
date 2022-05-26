@@ -107,6 +107,58 @@ const traverItem = fn => function (arr) {
 
 /* harmony default export */ var utils_traverItem = (traverItem);
 
+/***/ }),
+
+/***/ 3613:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ _objectWithoutProperties; }
+/* harmony export */ });
+/* harmony import */ var _objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6017);
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = (0,_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+/***/ }),
+
+/***/ 6017:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ _objectWithoutPropertiesLoose; }
+/* harmony export */ });
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
 /***/ })
 
 /******/ 	});
@@ -168,52 +220,9 @@ const traverItem = fn => function (arr) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ utils_flatten; }
-});
-
-;// CONCATENATED MODULE: ../../../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-;// CONCATENATED MODULE: ../../../node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-// EXTERNAL MODULE: ../../huxy/utils/traverItem.js + 1 modules
-var traverItem = __webpack_require__(5379);
-;// CONCATENATED MODULE: ../../huxy/utils/flatten.js
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3613);
+/* harmony import */ var _traverItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5379);
 
 
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
@@ -225,18 +234,18 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
 const flatten = function (data) {
   let childKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'children';
   const newArr = [];
-  (0,traverItem["default"])(item => {
+  (0,_traverItem__WEBPACK_IMPORTED_MODULE_0__["default"])(item => {
     const {
       [childKey]: children
     } = item,
-          rest = _objectWithoutProperties(item, [childKey].map(_toPropertyKey));
+          rest = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(item, [childKey].map(_toPropertyKey));
 
     newArr.push(rest);
   })(data, childKey);
   return newArr;
 };
 
-/* harmony default export */ var utils_flatten = (flatten);
+/* harmony default export */ __webpack_exports__["default"] = (flatten);
 }();
 /******/ 	return __webpack_exports__;
 /******/ })()
