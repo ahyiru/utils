@@ -188,6 +188,23 @@ const isVueEle = value => value == null ? void 0 : value.__v_isVNode;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -203,10 +220,42 @@ const isVueEle = value => value == null ? void 0 : value.__v_isVNode;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7231);
-/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2877);
-/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(154);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": function() { return /* binding */ utils_createStore; }
+});
+
+;// CONCATENATED MODULE: ../../../node_modules/@babel/runtime/helpers/esm/defineProperty.js
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+// EXTERNAL MODULE: ../../huxy/utils/isObject.js
+var isObject = __webpack_require__(7231);
+// EXTERNAL MODULE: ../../huxy/utils/clone.js
+var clone = __webpack_require__(2877);
+// EXTERNAL MODULE: ../../huxy/utils/emitter.js
+var emitter = __webpack_require__(154);
+;// CONCATENATED MODULE: ../../huxy/utils/createStore.js
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
 
 
 
@@ -216,26 +265,30 @@ const createStore = () => {
     on,
     emit,
     off
-  } = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  } = (0,emitter["default"])();
   const store = {};
 
-  const getState = key => (0,_clone__WEBPACK_IMPORTED_MODULE_1__["default"])(store[key]);
+  const getState = key => (0,clone["default"])(store[key]);
 
-  const setState = state => {
+  const setState = function (state) {
+    let init = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
     if (typeof state === 'function') {
-      state = state((0,_clone__WEBPACK_IMPORTED_MODULE_1__["default"])(store));
+      state = state((0,clone["default"])(store));
     }
 
-    if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_2__["default"])(state)) {
+    if (!(0,isObject["default"])(state)) {
       throw TypeError('必须传入object对象！');
     }
 
-    const newState = (0,_clone__WEBPACK_IMPORTED_MODULE_1__["default"])(state);
+    const newState = (0,clone["default"])(state);
     Object.keys(newState).map(key => {
-      emit(key, newState[key]);
-      store[key] = newState[key];
-    });
-    return off;
+      const oldItem = store[key];
+      const newItem = newState[key];
+      const item = (0,isObject["default"])(newItem) && (0,isObject["default"])(oldItem) ? _objectSpread(_objectSpread({}, oldItem), newItem) : newItem;
+      !init && emit(key, item);
+      store[key] = item;
+    }); // return off;
   };
 
   const subscribe = (key, cb) => {
@@ -266,7 +319,7 @@ const createStore = () => {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (createStore);
+/* harmony default export */ var utils_createStore = (createStore);
 }();
 /******/ 	return __webpack_exports__;
 /******/ })()

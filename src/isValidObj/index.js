@@ -12,12 +12,24 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2332:
+/***/ 144:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+/* harmony default export */ __webpack_exports__["default"] = (getType);
+
+/***/ }),
+
+/***/ 7231:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(144);
+
+
+const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
+
+/* harmony default export */ __webpack_exports__["default"] = (isObject);
 
 /***/ })
 
@@ -64,22 +76,12 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2332);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7231);
 
 
-const str2Html = str => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
-    return;
-  }
+const isValidObj = value => (0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(value) && Object.keys(value).length;
 
-  const templ = document.createElement('div');
-  templ.innerHTML = str;
-  const ele = templ.children[0]; // templ.childNodes
-
-  return ele;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (str2Html);
+/* harmony default export */ __webpack_exports__["default"] = (isValidObj);
 }();
 /******/ 	return __webpack_exports__;
 /******/ })()

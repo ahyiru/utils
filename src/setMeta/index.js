@@ -118,7 +118,7 @@ const str2Html = str => {
 
   const templ = document.createElement('div');
   templ.innerHTML = str;
-  const ele = templ.childNodes; // templ.children[0]
+  const ele = templ.children[0]; // templ.childNodes
 
   return ele;
 };

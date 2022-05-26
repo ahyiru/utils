@@ -83,6 +83,7 @@ export {default as isRegExp} from './isRegExp';
 export {default as isTouch} from './isTouch';
 export {default as isUrl} from './isUrl';
 export {default as isValidArr} from './isValidArr';
+export {default as isValidObj} from './isValidObj';
 export {default as isVueEle} from './isVueEle';
 export {default as json2str} from './json2str';
 export {default as loop} from './loop';

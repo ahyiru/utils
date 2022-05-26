@@ -101,7 +101,7 @@ const isCyclic = obj => {
 
 
 
-const isEqual = (a, b) => {
+const equal = (a, b) => {
   const typeA = (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(a);
   const typeB = (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(b);
 
@@ -126,7 +126,7 @@ const isEqual = (a, b) => {
   }
 
   if ((0,_cyclic__WEBPACK_IMPORTED_MODULE_1__["default"])(a) && (0,_cyclic__WEBPACK_IMPORTED_MODULE_1__["default"])(b)) {
-    return isEqual(a, b);
+    return equal(a, b);
   }
 
   for (let k in b) {
@@ -134,7 +134,7 @@ const isEqual = (a, b) => {
       return false;
     }
 
-    if (!isEqual(a[k], b[k])) {
+    if (!equal(a[k], b[k])) {
       return false;
     }
   }
@@ -142,7 +142,7 @@ const isEqual = (a, b) => {
   return true;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (isEqual);
+/* harmony default export */ __webpack_exports__["default"] = (equal);
 
 /***/ }),
 
