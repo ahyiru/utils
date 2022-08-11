@@ -12,10 +12,10 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3827:
+/***/ 8870:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9020);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2696);
 
 
 const getMonthDays = function () {
@@ -28,7 +28,7 @@ const getMonthDays = function () {
 
 /***/ }),
 
-/***/ 9020:
+/***/ 2696:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getTime = function () {
@@ -92,28 +92,13 @@ const getTime = function () {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "minus": function() { return /* binding */ minus; },
-/* harmony export */   "timeBase": function() { return /* binding */ timeBase; }
-/* harmony export */ });
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9020);
-/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3827);
+/* unused harmony exports timeBase, minus */
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2696);
+/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8870);
 
 
 const timeBase = date => [12, (0,_getMonthDays__WEBPACK_IMPORTED_MODULE_0__["default"])(date), 24, 60, 60];
@@ -153,6 +138,7 @@ const timeInterval = function (start) {
 
 /* harmony default export */ __webpack_exports__["default"] = (timeInterval);
 }();
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

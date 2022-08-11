@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 919:
+/***/ 6138:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const addDays = function (n) {
@@ -26,10 +26,10 @@ const addDays = function (n) {
 
 /***/ }),
 
-/***/ 3827:
+/***/ 8870:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9020);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2696);
 
 
 const getMonthDays = function () {
@@ -42,7 +42,7 @@ const getMonthDays = function () {
 
 /***/ }),
 
-/***/ 9020:
+/***/ 2696:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getTime = function () {
@@ -89,24 +89,11 @@ const getTime = function () {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3827);
-/* harmony import */ var _addDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(919);
+/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8870);
+/* harmony import */ var _addDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6138);
 
 
 
@@ -119,6 +106,7 @@ const monthDate = function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (monthDate);
 }();
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

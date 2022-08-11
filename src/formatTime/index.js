@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 9020:
+/***/ 2696:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getTime = function () {
@@ -76,27 +76,12 @@ const getTime = function () {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "addZero": function() { return /* binding */ addZero; },
-/* harmony export */   "formatDelimiter": function() { return /* binding */ formatDelimiter; }
-/* harmony export */ });
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9020);
+/* unused harmony exports addZero, formatDelimiter */
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2696);
 
 const addZero = n => n < 10 ? '0' + n : n;
 const formatDelimiter = function (str, target) {
@@ -119,6 +104,7 @@ const formatTime = function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (formatTime);
 }();
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

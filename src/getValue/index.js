@@ -31,23 +31,9 @@ return /******/ (function() { // webpackBootstrap
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "keyArr": function() { return /* binding */ keyArr; }
-/* harmony export */ });
+/* unused harmony export keyArr */
 const getValue = function () {
   let object = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   let keys = arguments.length > 1 ? arguments[1] : undefined;
@@ -79,6 +65,7 @@ const keyArr = function () {
   return (_keys$replace = keys.replace(/\[['"]?(.*?)['"]?\]/g, '.$1')) == null ? void 0 : _keys$replace.split('.');
 };
 /* harmony default export */ __webpack_exports__["default"] = (getValue);
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

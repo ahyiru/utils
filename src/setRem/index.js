@@ -31,23 +31,9 @@ return /******/ (function() { // webpackBootstrap
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "dpr": function() { return /* binding */ dpr; }
-/* harmony export */ });
+/* unused harmony export dpr */
 const dpr = window.devicePixelRatio || 1;
 
 const setRem = function () {
@@ -65,6 +51,7 @@ const setRem = function () {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (setRem);
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

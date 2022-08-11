@@ -31,23 +31,9 @@ return /******/ (function() { // webpackBootstrap
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "sleepSync": function() { return /* binding */ sleepSync; }
-/* harmony export */ });
+/* unused harmony export sleepSync */
 const sleep = function () {
   let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 350;
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -60,6 +46,7 @@ const sleepSync = function () {
   while (Date.now() - start <= ms) {}
 };
 /* harmony default export */ __webpack_exports__["default"] = (sleep);
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

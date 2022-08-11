@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 144:
+/***/ 5576:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -21,10 +21,10 @@ const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLo
 
 /***/ }),
 
-/***/ 1030:
+/***/ 311:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(144);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5576);
 
 
 const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
@@ -33,10 +33,10 @@ const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(va
 
 /***/ }),
 
-/***/ 478:
+/***/ 3105:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1030);
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(311);
 
 
 const selectedHandle = fn => function (arr, id) {
@@ -102,23 +102,10 @@ const selectedHandle = fn => function (arr, id) {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _selectedHandle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(478);
+/* harmony import */ var _selectedHandle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3105);
 
 
 const addNodes = function (tree, id, nodes) {
@@ -133,6 +120,7 @@ const addNodes = function (tree, id, nodes) {
 
 /* harmony default export */ __webpack_exports__["default"] = (addNodes);
 }();
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

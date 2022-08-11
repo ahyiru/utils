@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 144:
+/***/ 5576:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -21,10 +21,19 @@ const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLo
 
 /***/ }),
 
-/***/ 1030:
+/***/ 4311:
+/***/ (function(__unused_webpack_module, __webpack_exports__) {
+
+const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
+
+/* harmony default export */ __webpack_exports__["default"] = (hasProp);
+
+/***/ }),
+
+/***/ 311:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(144);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5576);
 
 
 const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
@@ -33,10 +42,10 @@ const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(va
 
 /***/ }),
 
-/***/ 7231:
+/***/ 8721:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(144);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5576);
 
 
 const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
@@ -45,13 +54,12 @@ const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(v
 
 /***/ }),
 
-/***/ 5070:
+/***/ 892:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7231);
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1030);
-/* harmony import */ var _mergeObj__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(197);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8721);
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(311);
+/* harmony import */ var _mergeObj__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7270);
 
 
 
@@ -94,12 +102,14 @@ const mergeArr = function (base, extend) {
 
 /***/ }),
 
-/***/ 197:
+/***/ 7270:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7231);
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1030);
-/* harmony import */ var _mergeArr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5070);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8721);
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(311);
+/* harmony import */ var _mergeArr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(892);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4311);
+
 
 
 
@@ -114,12 +124,18 @@ const mergeObj = (base, extend) => {
   }
 
   for (let k in extend) {
-    if ((0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(base[k]) && (0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(extend[k])) {
-      base[k] = mergeObj(base[k], extend[k]);
-    } else if ((0,_isArray__WEBPACK_IMPORTED_MODULE_1__["default"])(base[k]) && (0,_isArray__WEBPACK_IMPORTED_MODULE_1__["default"])(extend[k])) {
-      base[k] = (0,_mergeArr__WEBPACK_IMPORTED_MODULE_2__["default"])(base[k], extend[k]);
+    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_1__["default"])(extend, k)) {
+      if ((0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(base[k]) && (0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(extend[k])) {
+        base[k] = mergeObj(base[k], extend[k]);
+      } else if ((0,_isArray__WEBPACK_IMPORTED_MODULE_2__["default"])(base[k]) && (0,_isArray__WEBPACK_IMPORTED_MODULE_2__["default"])(extend[k])) {
+        base[k] = (0,_mergeArr__WEBPACK_IMPORTED_MODULE_3__["default"])(base[k], extend[k]);
+      } else {
+        base[k] = extend[k];
+      }
     } else {
-      base[k] = extend[k];
+      Object.setPrototypeOf(base, {
+        [k]: extend[k]
+      });
     }
   }
 
@@ -157,23 +173,12 @@ const mergeObj = (base, extend) => {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(5070);
+/******/ 	var __webpack_exports__ = __webpack_require__(892);
+/******/ 	__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	
 /******/ 	return __webpack_exports__;
 /******/ })()

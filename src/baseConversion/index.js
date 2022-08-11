@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3725:
+/***/ 4823:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const base2Ten = function () {
@@ -25,7 +25,7 @@ const base2Ten = function () {
 
 /***/ }),
 
-/***/ 8787:
+/***/ 2206:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const ten2Base = function () {
@@ -65,24 +65,11 @@ const ten2Base = function () {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ten2Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8787);
-/* harmony import */ var _base2Ten__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3725);
+/* harmony import */ var _ten2Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2206);
+/* harmony import */ var _base2Ten__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4823);
 
 
 
@@ -95,6 +82,7 @@ const baseConversion = function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (baseConversion);
 }();
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

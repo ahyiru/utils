@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 5705:
+/***/ 9158:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const createTextElement = text => ({
@@ -70,30 +70,17 @@ const createTextElement = text => ({
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ utils_createElement; }
 });
 
-;// CONCATENATED MODULE: ../../../node_modules/@babel/runtime/helpers/esm/defineProperty.js
+;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.18.9/node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -109,7 +96,7 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // EXTERNAL MODULE: ../../huxy/utils/createTextElement.js
-var createTextElement = __webpack_require__(5705);
+var createTextElement = __webpack_require__(9158);
 ;// CONCATENATED MODULE: ../../huxy/utils/createElement.js
 
 
@@ -134,6 +121,7 @@ const createElement = function (type, props) {
 
 /* harmony default export */ var utils_createElement = (createElement);
 }();
+__webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;
