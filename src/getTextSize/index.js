@@ -134,7 +134,7 @@ const getTextSize = function (text) {
 
   ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : ele;
   const span = document.createElement('span');
-  span.setAttribute('style', `pointer-events:none;z-index:-1;opacity:0;`);
+  span.setAttribute('style', `pointer-events: none; z-index: -1; opacity: 0;`);
   styles && (0,_setStyle__WEBPACK_IMPORTED_MODULE_2__["default"])(span, styles);
   span.innerText = text;
   ele.appendChild(span);

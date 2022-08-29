@@ -104,6 +104,25 @@ const setStyle = function (ele) {
 
 /***/ }),
 
+/***/ 3191:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* unused harmony export sleepSync */
+const sleep = function () {
+  let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 350;
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
+
+const sleepSync = function () {
+  let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;
+  const start = Date.now();
+
+  while (Date.now() - start <= ms) {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (sleep);
+
+/***/ }),
+
 /***/ 1677:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -153,15 +172,34 @@ const str2Html = str => {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7663);
 /* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1677);
-/* harmony import */ var _getPosition__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(765);
+/* harmony import */ var _getPosition__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(765);
 /* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1565);
 /* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2342);
 /* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6778);
+/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3191);
 
 
 
@@ -169,7 +207,10 @@ var __webpack_exports__ = {};
 
 
 
-const getElementsSize = ele => {
+
+const getElementsSize = async function (ele) {
+  let delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 15;
+
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
@@ -181,19 +222,21 @@ const getElementsSize = ele => {
   ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_2__["default"])(ele) ? ele.current : ele;
 
   if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_3__["default"])(ele)) {
-    return;
+    return {};
   }
 
   const shadow = ele.cloneNode(true);
   (0,_setStyle__WEBPACK_IMPORTED_MODULE_4__["default"])(shadow, {
-    pointerEvents: 'none',
-    zIndex: -1,
+    'pointer-events': 'none',
+    'z-index': -1,
     opacity: 0,
-    display: 'block'
-  }); // shadow.setAttribute('style','pointer-events:none;z-index:-1;opacity:0;display:block;');
+    display: 'block',
+    animation: 'none'
+  }); // shadow.setAttribute('style', 'pointer-events: none; z-index: -1; opacity: 0; display: block;');
 
   ele.parentNode.appendChild(shadow);
-  const info = (0,_getPosition__WEBPACK_IMPORTED_MODULE_5__["default"])(shadow);
+  await (0,_sleep__WEBPACK_IMPORTED_MODULE_5__["default"])(delay);
+  const info = (0,_getPosition__WEBPACK_IMPORTED_MODULE_6__["default"])(shadow);
   ele.parentNode.removeChild(shadow);
   return info;
 };

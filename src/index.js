@@ -35,6 +35,7 @@ export {default as debounce} from './debounce';
 export {default as deleteNodes} from './deleteNodes';
 export {default as deviceType} from './deviceType';
 export {default as dlfile} from './dlfile';
+export {default as dropInfo} from './dropInfo';
 export {default as editNodes} from './editNodes';
 export {default as emitter} from './emitter';
 export {default as equal} from './equal';
