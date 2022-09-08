@@ -11,9 +11,20 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const isUrl = url => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
+const imgtocanvas = img => {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const {
+    width,
+    height
+  } = img;
+  canvas.width = width;
+  canvas.height = height;
+  ctx.drawImage(img, 0, 0, width, height);
+  return canvas;
+};
 
-/* harmony default export */ __webpack_exports__["default"] = (isUrl);
+/* harmony default export */ __webpack_exports__["default"] = (imgtocanvas);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

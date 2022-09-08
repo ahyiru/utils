@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 4311:
+/***/ 6166:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
@@ -21,7 +21,7 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null 
 
 /***/ }),
 
-/***/ 7663:
+/***/ 2868:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
@@ -30,10 +30,10 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 
 /***/ }),
 
-/***/ 2342:
+/***/ 3192:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4311);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6166);
 
 
 const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, 'current');
@@ -97,9 +97,9 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(7663);
+var isBrowser = __webpack_require__(2868);
 // EXTERNAL MODULE: ../../huxy/utils/isRef.js
-var isRef = __webpack_require__(2342);
+var isRef = __webpack_require__(3192);
 ;// CONCATENATED MODULE: ../../huxy/utils/_/prefixBrowser.js
 const prefix = ['', 'webkit', 'moz', 'ms'];
 const fullscreenElement = ele => prefix.map(v => v ? `${v}FullscreenElement` : 'fullscreenElement').find(v => ele[v]);

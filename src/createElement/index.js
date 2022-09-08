@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 9158:
+/***/ 6175:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const createTextElement = text => ({
@@ -96,7 +96,7 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // EXTERNAL MODULE: ../../huxy/utils/createTextElement.js
-var createTextElement = __webpack_require__(9158);
+var createTextElement = __webpack_require__(6175);
 ;// CONCATENATED MODULE: ../../huxy/utils/createElement.js
 
 

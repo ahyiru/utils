@@ -11,9 +11,14 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const isUrl = url => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
+const fixSize = function (img) {
+  let ratio = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  const imgRatio = img.width / img.height / ratio;
+  const percent = imgRatio > 1 ? '100%' : `${(imgRatio * 100).toFixed(4)}%`;
+  return img.width = percent;
+};
 
-/* harmony default export */ __webpack_exports__["default"] = (isUrl);
+/* harmony default export */ __webpack_exports__["default"] = (fixSize);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

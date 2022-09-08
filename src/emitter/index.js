@@ -15,9 +15,9 @@ const emitter = () => {
   const hub = {};
 
   const on = (name, cb) => {
-    var _hub$name;
-
-    hub[name] = (_hub$name = hub[name]) != null ? _hub$name : [];
+    if (!hub[name]) {
+      hub[name] = [];
+    }
 
     if (hub[name].indexOf(cb) === -1) {
       hub[name].push(cb);

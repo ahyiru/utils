@@ -12,14 +12,14 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 459:
+/***/ 2769:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(311);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8721);
-/* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1644);
-/* harmony import */ var _isVueEle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6721);
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4311);
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5593);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3487);
+/* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7391);
+/* harmony import */ var _isVueEle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(675);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6166);
 
 
 
@@ -52,7 +52,7 @@ const clone = obj => {
 
 /***/ }),
 
-/***/ 4171:
+/***/ 7461:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const createContainer = store => (name, initState) => {
@@ -85,13 +85,13 @@ const createContainer = store => (name, initState) => {
 
 /***/ }),
 
-/***/ 178:
+/***/ 1129:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8721);
-/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(459);
-/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3826);
-/* harmony import */ var _mergeOwnProp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7695);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3487);
+/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2769);
+/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1092);
+/* harmony import */ var _mergeOwnProp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1988);
 
 
 
@@ -161,16 +161,16 @@ const createStore = () => {
 
 /***/ }),
 
-/***/ 3826:
+/***/ 1092:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const emitter = () => {
   const hub = {};
 
   const on = (name, cb) => {
-    var _hub$name;
-
-    hub[name] = (_hub$name = hub[name]) != null ? _hub$name : [];
+    if (!hub[name]) {
+      hub[name] = [];
+    }
 
     if (hub[name].indexOf(cb) === -1) {
       hub[name].push(cb);
@@ -210,7 +210,7 @@ const emitter = () => {
 
 /***/ }),
 
-/***/ 5576:
+/***/ 6391:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -219,7 +219,7 @@ const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLo
 
 /***/ }),
 
-/***/ 4311:
+/***/ 6166:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
@@ -228,10 +228,10 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null 
 
 /***/ }),
 
-/***/ 311:
+/***/ 5593:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5576);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6391);
 
 
 const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
@@ -240,10 +240,10 @@ const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(va
 
 /***/ }),
 
-/***/ 8721:
+/***/ 3487:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5576);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6391);
 
 
 const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
@@ -252,7 +252,7 @@ const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(v
 
 /***/ }),
 
-/***/ 1644:
+/***/ 7391:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isReactEle = value => (value == null ? void 0 : value['$$typeof']) && typeof value['$$typeof'] === 'symbol' && value['$$typeof']['description'] === 'react.element';
@@ -261,7 +261,7 @@ const isReactEle = value => (value == null ? void 0 : value['$$typeof']) && type
 
 /***/ }),
 
-/***/ 6721:
+/***/ 675:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isVueEle = value => value == null ? void 0 : value.__v_isVNode;
@@ -270,7 +270,7 @@ const isVueEle = value => value == null ? void 0 : value.__v_isVNode;
 
 /***/ }),
 
-/***/ 7695:
+/***/ 1988:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -295,9 +295,9 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // EXTERNAL MODULE: ../../huxy/utils/isObject.js
-var isObject = __webpack_require__(8721);
+var isObject = __webpack_require__(3487);
 // EXTERNAL MODULE: ../../huxy/utils/hasProp.js
-var hasProp = __webpack_require__(4311);
+var hasProp = __webpack_require__(6166);
 ;// CONCATENATED MODULE: ../../huxy/utils/mergeOwnProp.js
 
 
@@ -393,8 +393,8 @@ const mergeOwnProp = (base, extend) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _createStore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(178);
-/* harmony import */ var _createContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4171);
+/* harmony import */ var _createStore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1129);
+/* harmony import */ var _createContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7461);
 
 
 const container = (0,_createStore__WEBPACK_IMPORTED_MODULE_0__["default"])();
