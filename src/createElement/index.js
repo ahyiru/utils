@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6175:
+/***/ 4056:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const createTextElement = text => ({
@@ -80,7 +80,7 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ utils_createElement; }
 });
 
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.18.9/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.19.0/node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -96,7 +96,7 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // EXTERNAL MODULE: ../../huxy/utils/createTextElement.js
-var createTextElement = __webpack_require__(6175);
+var createTextElement = __webpack_require__(4056);
 ;// CONCATENATED MODULE: ../../huxy/utils/createElement.js
 
 

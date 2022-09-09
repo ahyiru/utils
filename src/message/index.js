@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6391:
+/***/ 3682:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -21,10 +21,10 @@ const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLo
 
 /***/ }),
 
-/***/ 1582:
+/***/ 2239:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6391);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3682);
 
 
 const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf('element') > -1;
@@ -33,10 +33,10 @@ const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(
 
 /***/ }),
 
-/***/ 9881:
+/***/ 8637:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1582);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2239);
 
 
 const removeClass = function (ele) {
@@ -555,7 +555,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/removeClass.js
-var removeClass = __webpack_require__(9881);
+var removeClass = __webpack_require__(8637);
 // EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
 var injectStylesIntoStyleTag = __webpack_require__(2723);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
@@ -655,6 +655,7 @@ const startMes = function (content) {
 const message_message = {
   success: (content, delay, onClose) => startMes(content, delay, onClose, 'success'),
   warn: (content, delay, onClose) => startMes(content, delay, onClose, 'warn'),
+  warning: (content, delay, onClose) => startMes(content, delay, onClose, 'warn'),
   error: (content, delay, onClose) => startMes(content, delay, onClose, 'error'),
   info: (content, delay, onClose) => startMes(content, delay, onClose, 'info')
 };

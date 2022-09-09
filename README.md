@@ -297,7 +297,7 @@ baseConversion(100,8,16) // 40
 ### fetcher
 
 ```js
-import {fetcher} from 'ihuxy-utils/baseFetch';
+import fetcher from '@huxy/utils/fetcher';
 
 const handler = (response) => {
   return response
@@ -413,6 +413,21 @@ clone(arr|object);
 
 ```
 
+### compareVersion
+
+```js
+compareVersion(a, b, , key = '.')
+compareVersion('1.5.111', '1.7.0'); // 2
+
+返回值：
+
+- 0：a >= b
+- 1：a < b，主版本号需更新
+- 2：a < b，子版本号需更新
+- 3：a < b，阶段版本号需更新
+
+```
+
 ### compose
 
 ```js
@@ -518,10 +533,31 @@ output:
 
 ```
 
+### dash2camel
+
+```js
+dash2camel('add-file-name'); // addFileName
+dash2camel('add_file_name', '_'); // addFileName
+
+```
+
 ### debounce
 
 ```js
 debounce(func,delay=60)
+
+```
+
+### dropInfo
+
+元素触发事件弹出层
+
+```js
+dropInfo(triggerEle, showEle, type = 'horizontal');
+
+- triggerEle：触发元素
+- showEle：弹出层内容
+- type：弹层位置样式，horizontal | vertical
 
 ```
 
@@ -610,6 +646,15 @@ firstUpper('hello world') // 'Hello world'
 
 ```js
 fixRoute('/a/b/e/') // /a/b/e
+
+```
+
+### fixSize
+
+```js
+fixSize(img, ratio = 1);
+
+根据父元素宽高比设置元素宽度比例。
 
 ```
 
@@ -917,12 +962,13 @@ hasProp(a,'b') // true
 
 ```
 
-### isArray/isValidArr/isAsync/isObject/isFunction/isError/isRegExp/isElement/isUrl
+### isArray/isValidArr/isValidObj/isAsync/isObject/isFunction/isError/isRegExp/isElement/isUrl
 
 ```js
 
 isArray([]) // true
 isValidArr([1]) // true
+isValidObj({}) // false
 isAsync(new Promise()) // true
 isObject({}) // true
 isFunction(()=>{}) // true
@@ -949,6 +995,15 @@ isTouch()
 isReactComp(value)
 isReactEle(value)
 isRef(value)
+
+```
+
+### loadImage/loadBase64/imgtocanvas
+
+```js
+const img = await loadImage(url);
+const base64 = await loadBase64(img);
+const canvas = imgtocanvas(img);
 
 ```
 
@@ -1021,6 +1076,22 @@ output:
   ],
   "age": 18
 }
+
+```
+
+### message
+
+```js
+message.success(content, delay, onClose);
+
+- content：文本信息
+- delay：持续时间
+- onClose：关闭回调
+
+message.success('success');
+message.warn('warn');
+message.error('error');
+message.info('info');
 
 ```
 

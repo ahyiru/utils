@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6391:
+/***/ 3682:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -21,10 +21,10 @@ const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLo
 
 /***/ }),
 
-/***/ 5593:
+/***/ 7505:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6391);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3682);
 
 
 const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
@@ -87,7 +87,7 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ utils_arr2Tree; }
 });
 
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.18.9/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.19.0/node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -103,7 +103,7 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // EXTERNAL MODULE: ../../huxy/utils/isArray.js
-var isArray = __webpack_require__(5593);
+var isArray = __webpack_require__(7505);
 ;// CONCATENATED MODULE: ../../huxy/utils/arr2Tree.js
 
 
