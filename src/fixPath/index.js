@@ -11,9 +11,12 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const fixRoute = path => path ? path.charAt(path.length - 1) === '/' ? path.slice(0, -1) : path : '';
+const fixPath = function () {
+  let path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  return path.replace(/\/\//, '/');
+};
 
-/* harmony default export */ __webpack_exports__["default"] = (fixRoute);
+/* harmony default export */ __webpack_exports__["default"] = (fixPath);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

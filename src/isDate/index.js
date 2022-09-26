@@ -11,9 +11,15 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const fixRoute = path => path ? path.charAt(path.length - 1) === '/' ? path.slice(0, -1) : path : '';
+const isDate = function () {
+  for (var _len = arguments.length, val = new Array(_len), _key = 0; _key < _len; _key++) {
+    val[_key] = arguments[_key];
+  }
 
-/* harmony default export */ __webpack_exports__["default"] = (fixRoute);
+  return !Number.isNaN(new Date(...val).valueOf());
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (isDate);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
