@@ -13,7 +13,7 @@ return /******/ (function() { // webpackBootstrap
 var __webpack_exports__ = {};
 const fixPath = function () {
   let path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  return path.replace(/\/\//, '/');
+  return path.replaceAll('//', '/');
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (fixPath);
