@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3727:
+/***/ 3207:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isEvent = key => key.startsWith('on');
@@ -86,7 +86,7 @@ const updateNode = (dom, prevProps, nextProps) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3727);
+/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3207);
 
 
 const createNode = fiber => {
