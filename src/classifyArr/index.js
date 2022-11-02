@@ -24,7 +24,6 @@ const classifyArr = function () {
   });
   return obj;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (classifyArr);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

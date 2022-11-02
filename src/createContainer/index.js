@@ -19,13 +19,11 @@ const createContainer = store => (name, initState) => {
     unsubscribe,
     clean
   } = store;
-
   if (initState !== undefined) {
     setState({
       [name]: initState
     }, true);
   }
-
   return {
     getState: () => getState(name),
     setState: (data, init) => setState({
@@ -36,7 +34,6 @@ const createContainer = store => (name, initState) => {
     clean: () => clean(name)
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (createContainer);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

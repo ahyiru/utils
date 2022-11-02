@@ -17,7 +17,6 @@ const addMonths = function (n) {
   newDate.setMonth(newDate.getMonth() + n);
   return newDate;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (addMonths);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

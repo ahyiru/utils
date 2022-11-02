@@ -12,7 +12,6 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 const deviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
-
 /* harmony default export */ __webpack_exports__["default"] = (deviceType);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -18,7 +18,6 @@ const a2o = function (arr) {
   (arr || []).map(v => obj[v[key]] = v[value]);
   return obj;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (a2o);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -12,35 +12,31 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7842:
+/***/ 9170:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
 /***/ }),
 
-/***/ 147:
+/***/ 3193:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const timestamp = () => {
   if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
     return performance.now();
   }
-
   return new Date().getTime();
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (timestamp);
 
 /***/ }),
 
-/***/ 7146:
+/***/ 7006:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(147);
-
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3193);
 
 const uuidv4 = () => {
   let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__["default"])();
@@ -50,7 +46,6 @@ const uuidv4 = () => {
     return (c === 'x' ? r : r & 0x3 | 0x8).toString(16);
   });
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (uuidv4);
 
 /***/ })
@@ -85,18 +80,15 @@ const uuidv4 = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
-/* harmony import */ var _uuidv4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7146);
-
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
+/* harmony import */ var _uuidv4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7006);
 
 
 const dlfile = (url, name) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-
   name = name || (0,_uuidv4__WEBPACK_IMPORTED_MODULE_1__["default"])();
-
   if (typeof url === 'string') {
     fetch(url).then(res => res.blob()).then(blob => {
       const dataUrl = window.URL.createObjectURL(blob);
@@ -122,7 +114,6 @@ const dlfile = (url, name) => {
     window.URL.revokeObjectURL(dataUrl);
   }
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (dlfile);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

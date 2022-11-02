@@ -12,33 +12,28 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7842:
+/***/ 9170:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
 /***/ }),
 
-/***/ 881:
+/***/ 5428:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
-
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
 
 const str2Html = str => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-
   const templ = document.createElement('div');
   templ.innerHTML = str;
   const ele = templ.children[0]; // templ.childNodes
-
   return ele;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (str2Html);
 
 /***/ })
@@ -92,7 +87,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /* unused harmony exports defaultHeadMeta, mergeMetaData */
-/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(881);
+/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5428);
 
 const defaultHeadMeta = [{
   'http-equiv': 'X-UA-Compatible',
@@ -114,8 +109,8 @@ const defaultHeadMeta = [{
   content: 'react,hooks,huxy,function'
 }, {
   name: 'viewport',
-  content: 'viewport-fit=cover' // content:'width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no,shrink-to-fit=no',
-
+  content: 'viewport-fit=cover'
+  // content:'width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no,shrink-to-fit=no',
 }, {
   name: 'robots',
   content: 'index,follow'
@@ -145,11 +140,9 @@ const mergeMetaData = metaData => {
   if (!Array.isArray(metaData)) {
     return defaultHeadMeta;
   }
-
   const newMeta = [...defaultHeadMeta];
   metaData.map(item => {
     const index = newMeta.findIndex(v => v.name === item.name || v['http-equiv'] === item['http-equiv']);
-
     if (index > -1) {
       newMeta[index] = item;
     } else {
@@ -158,7 +151,6 @@ const mergeMetaData = metaData => {
   });
   return newMeta;
 };
-
 const getMeta = metaData => {
   const metaList = mergeMetaData(metaData);
   const metaStr = metaList.map(item => {
@@ -167,7 +159,6 @@ const getMeta = metaData => {
   });
   return (0,_str2Html__WEBPACK_IMPORTED_MODULE_0__["default"])(metaStr.join(''));
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getMeta);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

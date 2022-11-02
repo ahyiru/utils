@@ -12,7 +12,6 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 const isReactComp = value => (value == null ? void 0 : value['$$typeof']) && typeof value['$$typeof'] === 'symbol' && value['$$typeof']['description'] === 'react.forward_ref';
-
 /* harmony default export */ __webpack_exports__["default"] = (isReactComp);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

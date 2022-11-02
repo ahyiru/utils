@@ -15,10 +15,8 @@ const timestamp = () => {
   if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
     return performance.now();
   }
-
   return new Date().getTime();
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (timestamp);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

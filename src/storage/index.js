@@ -14,18 +14,15 @@ var __webpack_exports__ = {};
 const storage = {
   get: name => {
     let data = localStorage.getItem(name);
-
     try {
       data = JSON.parse(data);
     } catch (err) {}
-
     return data;
   },
   set: (name, data) => {
     if (typeof data === 'object') {
       data = JSON.stringify(data);
     }
-
     localStorage.setItem(name, data);
   },
   rm: name => {

@@ -12,23 +12,20 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 158:
+/***/ 3000:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
 /***/ }),
 
-/***/ 242:
+/***/ 515:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
-
 /* harmony default export */ __webpack_exports__["default"] = (isArray);
 
 /***/ })
@@ -87,7 +84,7 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ utils_arr2Tree; }
 });
 
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.19.4/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.1/node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -102,63 +99,47 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // EXTERNAL MODULE: ../../huxy/utils/isArray.js
-var isArray = __webpack_require__(242);
+var isArray = __webpack_require__(515);
 ;// CONCATENATED MODULE: ../../huxy/utils/arr2Tree.js
 
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-
 
 const arr2Tree = fn => function (arr) {
   let idKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'id';
   let childKey = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'children';
   let treeRoot = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : -1;
-
   if (!(0,isArray["default"])(arr)) {
     return arr;
   }
-
   const tmpData = {};
   const keys = arr.map(v => v[idKey]);
   [...arr].map(v => {
     const item = _objectSpread({}, v);
-
     const {
       [idKey]: id
     } = item;
-
     if (id != null) {
       // const parentId = fn(id) || treeRoot;
       let {
         parentId
       } = item;
-
       if (parentId == null) {
         var _fn;
-
         parentId = (_fn = fn == null ? void 0 : fn(item)) != null ? _fn : treeRoot;
         item.parentId = parentId;
       }
-
       if (!tmpData[id]) {
         tmpData[id] = [];
       }
-
       item[childKey] = tmpData[id];
-
       if (!tmpData[parentId]) {
         tmpData[parentId] = [];
       }
-
       if (!tmpData[treeRoot]) {
         tmpData[treeRoot] = [];
       }
-
       const hasParent = keys.includes(parentId);
-
       if (hasParent) {
         tmpData[parentId].push(item);
       } else {
@@ -168,7 +149,6 @@ const arr2Tree = fn => function (arr) {
   });
   return tmpData[treeRoot];
 };
-
 /* harmony default export */ var utils_arr2Tree = (arr2Tree);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

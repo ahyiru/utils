@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 15:
+/***/ 9815:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const randNum = function () {
@@ -20,14 +20,11 @@ const randNum = function () {
   let b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   let int = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
   a < b && (a = [b, b = a][0]);
-
   if (int) {
     return ~~(Math.random() * (a - b + 1)) + b;
   }
-
   return Math.random() * (a - b) + b;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (randNum);
 
 /***/ })
@@ -62,14 +59,12 @@ const randNum = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _randNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
-
+/* harmony import */ var _randNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9815);
 
 const randItem = function () {
   let list = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   return list[(0,_randNum__WEBPACK_IMPORTED_MODULE_0__["default"])(list.length - 1)];
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (randItem);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

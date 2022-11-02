@@ -23,7 +23,6 @@ const imgtocanvas = img => {
   ctx.drawImage(img, 0, 0, width, height);
   return canvas;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (imgtocanvas);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

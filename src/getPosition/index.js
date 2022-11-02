@@ -12,12 +12,29 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7842:
+/***/ 9933:
+/***/ (function(__unused_webpack_module, __webpack_exports__) {
+
+const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
+/* harmony default export */ __webpack_exports__["default"] = (hasProp);
+
+/***/ }),
+
+/***/ 9170:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+
+/***/ }),
+
+/***/ 4378:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9933);
+
+const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, 'current');
+/* harmony default export */ __webpack_exports__["default"] = (isRef);
 
 /***/ })
 
@@ -51,16 +68,18 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4378);
 
 
-const getPosition = function () {
-  var _ele$getBoundingClien;
-
-  let ele = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && document.body;
-  return ele == null ? void 0 : (_ele$getBoundingClien = ele.getBoundingClientRect) == null ? void 0 : _ele$getBoundingClien.call(ele);
+const getPosition = ele => {
+  var _ele, _ele$getBoundingClien, _ele2;
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
+    return;
+  }
+  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : (_ele = ele) != null ? _ele : document.body;
+  return (_ele$getBoundingClien = (_ele2 = ele).getBoundingClientRect) == null ? void 0 : _ele$getBoundingClien.call(_ele2);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getPosition);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

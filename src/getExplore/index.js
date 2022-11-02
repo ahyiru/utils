@@ -12,11 +12,10 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7842:
+/***/ 9170:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
 /***/ })
@@ -51,7 +50,7 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
 
 const exploreList = [{
   name: 'IE11',
@@ -87,18 +86,15 @@ const exploreList = [{
   name: 'IOS Chrome',
   reg: /crios\/([\d.]+)/
 }];
-
 const getExplore = () => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-
   const ua = window.navigator.userAgent.toLowerCase();
   const expItem = exploreList.find(item => ua.match(item.reg));
   const explore = expItem ? `${expItem.name}: ${ua.match(expItem.reg)[1]}` : 'Unkonwn';
   return explore;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getExplore);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

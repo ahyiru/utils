@@ -17,7 +17,6 @@ const str2code = function (str) {
   const exec = Function(str);
   return exec();
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (str2code);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -12,13 +12,9 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 const isEvent = key => key.startsWith('on');
-
 const isProperty = key => key !== 'children' && !isEvent(key);
-
 const isNew = (prev, next) => key => prev[key] !== next[key];
-
 const isGone = (prev, next) => key => !(key in next);
-
 const filterProps = props => {
   const propsList = Object.keys(props);
   return {
@@ -26,7 +22,6 @@ const filterProps = props => {
     propertyProps: propsList.filter(isProperty)
   };
 };
-
 const updateNode = (dom, prevProps, nextProps) => {
   const {
     eventProps: prevEvent,
@@ -47,7 +42,6 @@ const updateNode = (dom, prevProps, nextProps) => {
     dom.addEventListener(eventType, nextProps[key]);
   });
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (updateNode);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

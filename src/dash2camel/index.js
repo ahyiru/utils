@@ -15,7 +15,6 @@ const dash2camel = function (s) {
   let d = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '-';
   return s.split(d).map((v, k) => k > 0 ? v.replace(/^\S/, s => s.toUpperCase()) : v.replace(/^\S/, s => s.toLowerCase())).join('');
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (dash2camel);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

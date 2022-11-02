@@ -16,14 +16,11 @@ const randNum = function () {
   let b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   let int = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
   a < b && (a = [b, b = a][0]);
-
   if (int) {
     return ~~(Math.random() * (a - b + 1)) + b;
   }
-
   return Math.random() * (a - b) + b;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (randNum);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

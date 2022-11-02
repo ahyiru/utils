@@ -17,7 +17,6 @@ const addHours = function (n) {
   newDate.setHours(newDate.getHours() + n);
   return newDate;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (addHours);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

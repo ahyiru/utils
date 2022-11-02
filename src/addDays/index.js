@@ -17,7 +17,6 @@ const addDays = function (n) {
   newDate.setDate(newDate.getDate() + n);
   return newDate;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (addDays);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -24,7 +24,6 @@ const arr2obj = function () {
   });
   return obj;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (arr2obj);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

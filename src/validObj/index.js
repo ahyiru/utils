@@ -21,7 +21,6 @@ const validObj = function () {
   });
   return newObj;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (validObj);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

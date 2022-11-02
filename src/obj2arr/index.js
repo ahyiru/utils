@@ -19,7 +19,6 @@ const obj2arr = function () {
     value: obj[key]
   }));
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (obj2arr);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

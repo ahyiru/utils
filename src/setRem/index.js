@@ -35,21 +35,17 @@ return /******/ (function() { // webpackBootstrap
 var __webpack_exports__ = {};
 /* unused harmony export dpr */
 const dpr = window.devicePixelRatio || 1;
-
 const setRem = function () {
   let scale = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
   const root = document.documentElement;
   const resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
-
   const handler = () => {
     const clientWidth = root.clientWidth;
     root.style.fontSize = `${clientWidth / (scale * dpr)}px`;
   };
-
   window.addEventListener(resizeEvt, handler, false);
   return () => window.removeEventListener(resizeEvt, handler, false);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (setRem);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

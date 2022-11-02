@@ -12,51 +12,44 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 158:
+/***/ 3000:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
 /***/ }),
 
-/***/ 5897:
+/***/ 635:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(423);
-/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8376);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7352);
+/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6601);
 
 
 
 const isAsync = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'promise' || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__["default"])(value.then);
-
 /* harmony default export */ __webpack_exports__["default"] = (isAsync);
 
 /***/ }),
 
-/***/ 8376:
+/***/ 6601:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isFunction = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'function';
-
 /* harmony default export */ __webpack_exports__["default"] = (isFunction);
 
 /***/ }),
 
-/***/ 423:
+/***/ 7352:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
-
 /* harmony default export */ __webpack_exports__["default"] = (isObject);
 
 /***/ })
@@ -91,14 +84,12 @@ const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(v
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
-
+/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(635);
 
 const wrapPromise = promiseFn => {
   if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__["default"])(promiseFn)) {
     return {};
   }
-
   let status = 'pending';
   let result;
   const suspender = promiseFn.then(res => {
@@ -108,7 +99,6 @@ const wrapPromise = promiseFn => {
     status = 'error';
     result = err;
   });
-
   const read = () => {
     if (status === 'pending') {
       throw suspender;
@@ -118,12 +108,10 @@ const wrapPromise = promiseFn => {
       return result;
     }
   };
-
   return {
     read
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (wrapPromise);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

@@ -18,7 +18,6 @@ const unescapeHTML = str => str.replace(/&amp;|&lt;|&gt;|&#39;|&quot;/g, tag => 
   '&#39;': '\'',
   '&quot;': '"'
 })[tag] || tag);
-
 /* harmony default export */ __webpack_exports__["default"] = (unescapeHTML);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

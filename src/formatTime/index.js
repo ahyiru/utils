@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7300:
+/***/ 2053:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getTime = function () {
@@ -27,7 +27,6 @@ const getTime = function () {
   const s = date.getSeconds();
   return [y, m, d, h, M, s, w];
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
 
 /***/ })
@@ -81,14 +80,13 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /* unused harmony exports addZero, formatDelimiter */
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7300);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2053);
 
 const addZero = n => n < 10 ? '0' + n : n;
 const formatDelimiter = function (str, target) {
   let s = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '-';
   return str.replace(new RegExp(s, 'g'), target);
 };
-
 const formatTime = function () {
   let date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
   let delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['-', '-', ' ', ':', ':'];
@@ -96,12 +94,10 @@ const formatTime = function () {
   let s = '';
   [...delimiter, ''].map((d, i) => {
     var _time$i;
-
     return s += ((_time$i = time[i]) != null ? _time$i : '') + d;
   });
   return s;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (formatTime);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

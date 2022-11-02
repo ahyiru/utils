@@ -17,7 +17,6 @@ const addYears = function (n) {
   newDate.setFullYear(newDate.getFullYear() + n);
   return newDate;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (addYears);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

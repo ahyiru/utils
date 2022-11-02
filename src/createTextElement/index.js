@@ -17,7 +17,6 @@ const createTextElement = text => ({
     nodeValue: text
   }
 });
-
 /* harmony default export */ __webpack_exports__["default"] = (createTextElement);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

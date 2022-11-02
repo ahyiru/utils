@@ -12,23 +12,21 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 5828:
+/***/ 1036:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7300);
-
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2053);
 
 const getMonthDays = function () {
   let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
   const date = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(day);
   return new Date(date[0], date[1], 0).getDate();
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getMonthDays);
 
 /***/ }),
 
-/***/ 7300:
+/***/ 2053:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getTime = function () {
@@ -43,7 +41,6 @@ const getTime = function () {
   const s = date.getSeconds();
   return [y, m, d, h, M, s, w];
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
 
 /***/ })
@@ -97,8 +94,8 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /* unused harmony exports timeBase, minus */
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7300);
-/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5828);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2053);
+/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1036);
 
 
 const timeBase = date => [12, (0,_getMonthDays__WEBPACK_IMPORTED_MODULE_0__["default"])(date), 24, 60, 60];
@@ -111,7 +108,6 @@ const minus = function () {
   end.map((v, i) => {
     const endValue = carry ? v - 1 : v;
     const diff = endValue - start[i];
-
     if (diff < 0) {
       gap[i] = diff + (base[i] || 10);
       carry = true;
@@ -122,20 +118,16 @@ const minus = function () {
   });
   return gap.reverse();
 };
-
 const timeInterval = function (start) {
   let end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
-
   if (new Date(start) - new Date(end) > 0) {
     start = [end, end = start][0];
   }
-
   const base = timeBase(end).reverse();
   const sDate = (0,_getTime__WEBPACK_IMPORTED_MODULE_1__["default"])(start).slice(0, -1).reverse();
   const eDate = (0,_getTime__WEBPACK_IMPORTED_MODULE_1__["default"])(end).slice(0, -1).reverse();
   return minus(sDate, eDate, base);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (timeInterval);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

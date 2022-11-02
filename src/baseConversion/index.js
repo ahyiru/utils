@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 8496:
+/***/ 7017:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const base2Ten = function () {
@@ -20,12 +20,11 @@ const base2Ten = function () {
   let base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
   return parseInt(String(num), base);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (base2Ten);
 
 /***/ }),
 
-/***/ 7200:
+/***/ 2025:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const ten2Base = function () {
@@ -33,7 +32,6 @@ const ten2Base = function () {
   let base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
   return Number(num).toString(base);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (ten2Base);
 
 /***/ })
@@ -68,9 +66,8 @@ const ten2Base = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _ten2Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7200);
-/* harmony import */ var _base2Ten__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8496);
-
+/* harmony import */ var _ten2Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2025);
+/* harmony import */ var _base2Ten__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7017);
 
 
 const baseConversion = function () {
@@ -79,7 +76,6 @@ const baseConversion = function () {
   let to = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 16;
   return (0,_ten2Base__WEBPACK_IMPORTED_MODULE_0__["default"])((0,_base2Ten__WEBPACK_IMPORTED_MODULE_1__["default"])(num, base), to);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (baseConversion);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

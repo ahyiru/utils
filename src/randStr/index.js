@@ -16,7 +16,6 @@ const randStr = function () {
   let base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 36;
   return Math.random().toString(36).slice(2, n + 2);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (randStr);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

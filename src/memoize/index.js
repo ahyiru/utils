@@ -19,28 +19,22 @@ const memoize = function () {
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-
     const key = JSON.stringify(args);
     const cached = cache.find(v => v.key === key);
-
     if (!cached) {
       const result = fn(...args);
       cache.push({
         key,
         result
       });
-
       if (cache.length > len) {
         cache.shift();
       }
-
       return result;
     }
-
     return cached.result;
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (memoize);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

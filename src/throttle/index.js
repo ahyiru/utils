@@ -27,6 +27,7 @@ var __webpack_exports__ = {};
     }
   };
 }; */
+
 const throttle = function () {
   let fn = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : () => {};
   let delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 60;
@@ -36,13 +37,11 @@ const throttle = function () {
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
         args[_key] = arguments[_key];
       }
-
       fn.apply(this, args);
       timer = setTimeout(() => timer = null, delay);
     }
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (throttle);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

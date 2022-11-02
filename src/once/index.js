@@ -21,7 +21,6 @@ const once = function () {
     }
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (once);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

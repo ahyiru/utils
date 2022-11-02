@@ -12,32 +12,28 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 4486:
+/***/ 9933:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
-
 /* harmony default export */ __webpack_exports__["default"] = (hasProp);
 
 /***/ }),
 
-/***/ 7842:
+/***/ 9170:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
 /***/ }),
 
-/***/ 3091:
+/***/ 4378:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4486);
-
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9933);
 
 const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, 'current');
-
 /* harmony default export */ __webpack_exports__["default"] = (isRef);
 
 /***/ })
@@ -72,14 +68,14 @@ const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, '
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3091);
-
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4378);
 
 
 const watermark = function () {
+  var _container;
   let {
-    container = (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && document.body,
+    container,
     width = '220px',
     height = '200px',
     textAlign = 'center',
@@ -90,23 +86,14 @@ const watermark = function () {
     rotate = '-30',
     zIndex = 1000
   } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-
-  container = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(container) ? container.current : container;
-
-  if (!container) {
-    return;
-  }
-
+  container = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(container) ? container.current : (_container = container) != null ? _container : document.body;
   const oldCanvas = container.firstChild;
-
   if ((oldCanvas == null ? void 0 : oldCanvas.className) === 'watermark-canvas') {
     container.removeChild(oldCanvas);
   }
-
   const canvas = document.createElement('canvas');
   canvas.setAttribute('width', width);
   canvas.setAttribute('height', height);
@@ -132,7 +119,6 @@ const watermark = function () {
   container.style.position = 'relative';
   container.insertBefore(watermarkDiv, container.firstChild);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (watermark);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

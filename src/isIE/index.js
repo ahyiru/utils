@@ -12,7 +12,6 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 const isIE = () => navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/Edge/);
-
 /* harmony default export */ __webpack_exports__["default"] = (isIE);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

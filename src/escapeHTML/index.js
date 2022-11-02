@@ -18,7 +18,6 @@ const escapeHTML = str => str.replace(/[&<>'"]/g, tag => ({
   '\'': '&#39;',
   '"': '&quot;'
 })[tag] || tag);
-
 /* harmony default export */ __webpack_exports__["default"] = (escapeHTML);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

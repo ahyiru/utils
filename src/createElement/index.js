@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7061:
+/***/ 1239:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const createTextElement = text => ({
@@ -21,7 +21,6 @@ const createTextElement = text => ({
     nodeValue: text
   }
 });
-
 /* harmony default export */ __webpack_exports__["default"] = (createTextElement);
 
 /***/ })
@@ -80,7 +79,7 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ utils_createElement; }
 });
 
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.19.4/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.1/node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -95,21 +94,16 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // EXTERNAL MODULE: ../../huxy/utils/createTextElement.js
-var createTextElement = __webpack_require__(7061);
+var createTextElement = __webpack_require__(1239);
 ;// CONCATENATED MODULE: ../../huxy/utils/createElement.js
 
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-
 
 const createElement = function (type, props) {
   for (var _len = arguments.length, children = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
     children[_key - 2] = arguments[_key];
   }
-
   return {
     type,
     props: _objectSpread(_objectSpread({}, props), {}, {
@@ -117,7 +111,6 @@ const createElement = function (type, props) {
     })
   };
 };
-
 /* harmony default export */ var utils_createElement = (createElement);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

@@ -26,7 +26,6 @@ const omit = function () {
     newQuery
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (omit);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

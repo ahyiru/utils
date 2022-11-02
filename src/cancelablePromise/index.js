@@ -12,51 +12,44 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 158:
+/***/ 3000:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
 /***/ }),
 
-/***/ 5897:
+/***/ 635:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(423);
-/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8376);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7352);
+/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6601);
 
 
 
 const isAsync = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'promise' || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__["default"])(value.then);
-
 /* harmony default export */ __webpack_exports__["default"] = (isAsync);
 
 /***/ }),
 
-/***/ 8376:
+/***/ 6601:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isFunction = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'function';
-
 /* harmony default export */ __webpack_exports__["default"] = (isFunction);
 
 /***/ }),
 
-/***/ 423:
+/***/ 7352:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
-
 /* harmony default export */ __webpack_exports__["default"] = (isObject);
 
 /***/ })
@@ -91,17 +84,14 @@ const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(v
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
-
+/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(635);
 
 const cancelablePromise = function (promise) {
   let delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 120000;
   let msg = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '请求超时！';
-
   if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__["default"])(promise)) {
     return {};
   }
-
   let cancelFn = null;
   let timer = null;
   const promiseFn = new Promise((resolve, reject) => {
@@ -115,12 +105,10 @@ const cancelablePromise = function (promise) {
         errMsg: msg
       });
     };
-
     if (delay) {
       delay = typeof delay !== 'number' ? 120000 : delay;
       timer = setTimeout(() => cancelFn(msg), delay);
     }
-
     promise.then(result => {
       clearTimeout(timer);
       resolve({
@@ -137,7 +125,6 @@ const cancelablePromise = function (promise) {
     cancelFn
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (cancelablePromise);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

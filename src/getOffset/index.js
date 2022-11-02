@@ -12,32 +12,28 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 158:
+/***/ 3000:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
 /***/ }),
 
-/***/ 7842:
+/***/ 9170:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
 /***/ }),
 
-/***/ 6569:
+/***/ 5909:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf('element') > -1;
-
 /* harmony default export */ __webpack_exports__["default"] = (isElement);
 
 /***/ })
@@ -72,34 +68,30 @@ const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6569);
-
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5909);
 
 
 const getOffset = function () {
+  var _ref, _window$pageXOffset, _ref2, _window$pageYOffset;
   let element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return {
       left: 0,
       top: 0
     };
   }
-
   if ((0,_isElement__WEBPACK_IMPORTED_MODULE_1__["default"])(element)) {
     return {
       left: element.scrollLeft,
       top: element.scrollTop
     };
   }
-
   return {
-    left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
-    top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+    left: (_ref = (_window$pageXOffset = window.pageXOffset) != null ? _window$pageXOffset : document.documentElement.scrollLeft) != null ? _ref : document.body.scrollLeft,
+    top: (_ref2 = (_window$pageYOffset = window.pageYOffset) != null ? _window$pageYOffset : document.documentElement.scrollTop) != null ? _ref2 : document.body.scrollTop
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getOffset);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

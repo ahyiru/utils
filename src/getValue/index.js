@@ -38,29 +38,22 @@ const getValue = function () {
   let object = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   let keys = arguments.length > 1 ? arguments[1] : undefined;
   keys = keyArr(keys);
-
   const checkValue = (obj, key) => {
     if (!(key != null && key[0])) {
       return obj;
     }
-
     if (typeof obj[key[0]] === 'object') {
       return checkValue(obj[key[0]], key.slice(1));
     }
-
     if (key.length > 1) {
       return undefined;
     }
-
     return obj[key[0]];
   };
-
   return checkValue(object, keys);
 };
-
 const keyArr = function () {
   var _keys$replace;
-
   let keys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
   return (_keys$replace = keys.replace(/\[['"]?(.*?)['"]?\]/g, '.$1')) == null ? void 0 : _keys$replace.split('.');
 };

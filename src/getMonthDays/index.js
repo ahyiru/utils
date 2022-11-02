@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7300:
+/***/ 2053:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getTime = function () {
@@ -27,7 +27,6 @@ const getTime = function () {
   const s = date.getSeconds();
   return [y, m, d, h, M, s, w];
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
 
 /***/ })
@@ -62,15 +61,13 @@ const getTime = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7300);
-
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2053);
 
 const getMonthDays = function () {
   let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
   const date = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(day);
   return new Date(date[0], date[1], 0).getDate();
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getMonthDays);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

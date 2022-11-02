@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7300:
+/***/ 2053:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getTime = function () {
@@ -27,7 +27,6 @@ const getTime = function () {
   const s = date.getSeconds();
   return [y, m, d, h, M, s, w];
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
 
 /***/ })
@@ -62,8 +61,7 @@ const getTime = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7300);
-
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2053);
 
 const formatPassTime = function (start) {
   let end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
@@ -75,26 +73,20 @@ const formatPassTime = function (start) {
   const dfHour = end.h - start.h;
   const dfMinute = end.M - start.M;
   const prevMonthCount = new Date(end.y, end.m, 0).getDate();
-
   const getStr = (bTime, sTime, hex, bStr, sStr) => {
     const str = '前';
-
     if (sTime < 0) {
       bTime -= 1;
       sTime += hex;
     }
-
     if (bTime === 0) {
       return sTime + sStr + str;
     }
-
     if (sTime === 0) {
       return bTime + bStr + str;
     }
-
     return bTime + bStr + sTime + sStr + str;
   };
-
   if (dfYear > 0) {
     return getStr(dfYear, dfMonth, 12, '年', '个月');
   } else {
@@ -117,7 +109,6 @@ const formatPassTime = function (start) {
     }
   }
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (formatPassTime);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

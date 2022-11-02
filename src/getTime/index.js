@@ -23,7 +23,6 @@ const getTime = function () {
   const s = date.getSeconds();
   return [y, m, d, h, M, s, w];
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

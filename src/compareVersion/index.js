@@ -13,24 +13,19 @@ return /******/ (function() { // webpackBootstrap
 var __webpack_exports__ = {};
 const compareVersion = function (loaclVersion, serviceVersion) {
   let key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '.';
-
   const str2arr = (str, key) => str.split(key);
-
   const lvArr = str2arr(loaclVersion, key);
   const svArr = str2arr(serviceVersion, key);
   const arrLen = lvArr.length;
   let needUpdateLevel = 0;
-
   for (let i = 0; i < arrLen; i++) {
     if (lvArr[i] < svArr[i]) {
       needUpdateLevel = arrLen - i;
       break;
     }
   }
-
   return needUpdateLevel;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (compareVersion);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -38,11 +38,9 @@ const sleep = function () {
   let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 350;
   return new Promise(resolve => setTimeout(resolve, ms));
 };
-
 const sleepSync = function () {
   let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;
   const start = Date.now();
-
   while (Date.now() - start <= ms) {}
 };
 /* harmony default export */ __webpack_exports__["default"] = (sleep);

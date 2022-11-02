@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 436:
+/***/ 5641:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -21,7 +21,7 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ utils_baseFetch; }
 });
 
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.19.4/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.1/node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -35,7 +35,7 @@ function _defineProperty(obj, key, value) {
   }
   return obj;
 }
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.19.4/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.1/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -48,7 +48,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   }
   return target;
 }
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.19.4/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
+;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.1/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
 
 function _objectWithoutProperties(source, excluded) {
   if (source == null) return {};
@@ -66,20 +66,17 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 // EXTERNAL MODULE: ../../huxy/utils/params2str.js
-var params2str = __webpack_require__(573);
+var params2str = __webpack_require__(2714);
 // EXTERNAL MODULE: ../../huxy/utils/params2data.js
-var params2data = __webpack_require__(4195);
+var params2data = __webpack_require__(3843);
 // EXTERNAL MODULE: ../../huxy/utils/cancelablePromise.js
-var cancelablePromise = __webpack_require__(7798);
+var cancelablePromise = __webpack_require__(3218);
 ;// CONCATENATED MODULE: ../../huxy/utils/baseFetch.js
 
 
 const _excluded = ["headers", "dataType", "data", "formData", "form", "params"];
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
 
 
 
@@ -100,21 +97,17 @@ const transform = [{
   },
   body: data => (0,params2str["default"])(data).slice(1)
 }];
-
 const transData = (types, dataType) => {
   const validDataType = ['data', 'form', 'formData', 'params'].includes(dataType);
   const dataKeys = Object.keys(types).filter(item => types[item]);
-
   if (dataKeys.length === 1) {
     const dataKey = dataKeys[0];
     const type = validDataType ? dataType : dataKey;
-
     if (type === 'params') {
       return {
         query: types[dataKey]
       };
     }
-
     return {
       result: types[dataKey],
       type
@@ -122,13 +115,11 @@ const transData = (types, dataType) => {
   } else if (dataKeys.length > 1) {
     const dataKey = dataKeys.filter(v => v !== 'params').slice(-1)[0];
     const type = validDataType ? dataType : dataKey;
-
     if (type === 'params') {
       return {
         query: types['params'] || types[dataKey]
       };
     }
-
     return {
       query: types['params'],
       result: types[dataKey],
@@ -136,44 +127,39 @@ const transData = (types, dataType) => {
     };
   }
 };
-
 const baseFetch = (handler, timeout) => method => function (url) {
   let opt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
   const {
-    headers,
-    dataType,
-    data,
-    formData,
-    form,
-    params
-  } = opt,
-        restOpt = _objectWithoutProperties(opt, _excluded);
-
+      headers,
+      dataType,
+      data,
+      formData,
+      form,
+      params
+    } = opt,
+    restOpt = _objectWithoutProperties(opt, _excluded);
   const types = {
     data,
     formData,
     form,
     params
   };
-  let defaultHeaders; // let defaultHeaders={'Content-Type':'application/x-www-form-urlencoded'};
+  let defaultHeaders;
+  // let defaultHeaders={'Content-Type':'application/x-www-form-urlencoded'};
 
   const {
     query,
     result,
     type
   } = transData(types, dataType) || {};
-
   if (!restOpt.body && result) {
     const item = transform.find(v => v.type === type);
     defaultHeaders = item.headers;
     restOpt.body = item.body(result);
   }
-
   if (query) {
     url = `${url}${(0,params2str["default"])(query)}`;
   }
-
   const {
     promiseFn
   } = (0,cancelablePromise["default"])(fetch(url, _objectSpread({
@@ -188,38 +174,32 @@ const baseFetch = (handler, timeout) => method => function (url) {
       result,
       errMsg
     } = _ref;
-
     if (errMsg) {
       return handler({
         status: 408,
         statusText: errMsg
       });
     }
-
     return handler(result);
   }).catch(error => {
     throw Error(error);
   });
 };
-
 /* harmony default export */ var utils_baseFetch = (baseFetch);
 
 /***/ }),
 
-/***/ 7798:
+/***/ 3218:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
-
+/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(635);
 
 const cancelablePromise = function (promise) {
   let delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 120000;
   let msg = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '请求超时！';
-
   if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__["default"])(promise)) {
     return {};
   }
-
   let cancelFn = null;
   let timer = null;
   const promiseFn = new Promise((resolve, reject) => {
@@ -233,12 +213,10 @@ const cancelablePromise = function (promise) {
         errMsg: msg
       });
     };
-
     if (delay) {
       delay = typeof delay !== 'number' ? 120000 : delay;
       timer = setTimeout(() => cancelFn(msg), delay);
     }
-
     promise.then(result => {
       clearTimeout(timer);
       resolve({
@@ -255,69 +233,61 @@ const cancelablePromise = function (promise) {
     cancelFn
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (cancelablePromise);
 
 /***/ }),
 
-/***/ 158:
+/***/ 3000:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
 /***/ }),
 
-/***/ 5897:
+/***/ 635:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(423);
-/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8376);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7352);
+/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6601);
 
 
 
 const isAsync = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'promise' || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__["default"])(value.then);
-
 /* harmony default export */ __webpack_exports__["default"] = (isAsync);
 
 /***/ }),
 
-/***/ 8376:
+/***/ 6601:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isFunction = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'function';
-
 /* harmony default export */ __webpack_exports__["default"] = (isFunction);
 
 /***/ }),
 
-/***/ 423:
+/***/ 7352:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
-
 /* harmony default export */ __webpack_exports__["default"] = (isObject);
 
 /***/ }),
 
-/***/ 4195:
+/***/ 3843:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(423);
-
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7352);
 
 const params2data = params => {
   if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(params)) {
-    return {}; // throw TypeError('参数必须为object！');
+    return {};
+    // throw TypeError('参数必须为object！');
   }
 
   const form = new FormData();
@@ -328,20 +298,19 @@ const params2data = params => {
   });
   return form;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (params2data);
 
 /***/ }),
 
-/***/ 573:
+/***/ 2714:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(423);
-
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7352);
 
 const params2str = params => {
   if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(params)) {
-    return ''; // throw TypeError('参数必须为object！');
+    return '';
+    // throw TypeError('参数必须为object！');
   }
 
   const arr = [];
@@ -351,7 +320,6 @@ const params2str = params => {
   });
   return arr.join('');
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (params2str);
 
 /***/ })
@@ -404,11 +372,12 @@ const params2str = params => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _baseFetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(436);
+/* harmony import */ var _baseFetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5641);
 
 const TIMEOUT = 120 * 1000;
+const resHandler = response => response.json().then(result => result);
 
-const resHandler = response => response.json().then(result => result); // const reqHandler=response=>response.json().then(result=>result);
+// const reqHandler=response=>response.json().then(result=>result);
 
 /* export const fetchApi=(handler=initHandler)=>{
   const handlerFetch=baseFetch(handler);
@@ -421,7 +390,6 @@ const resHandler = response => response.json().then(result => result); // const 
   };
 }; */
 
-
 const fetcher = function () {
   let handler = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : resHandler;
   let timeout = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : TIMEOUT;
@@ -430,7 +398,6 @@ const fetcher = function () {
     return (0,_baseFetch__WEBPACK_IMPORTED_MODULE_0__["default"])(handler)((method || 'get').toUpperCase());
   };
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (fetcher);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

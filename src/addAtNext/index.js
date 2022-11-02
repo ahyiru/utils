@@ -12,65 +12,53 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 158:
+/***/ 3000:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
 /***/ }),
 
-/***/ 242:
+/***/ 515:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
-
 /* harmony default export */ __webpack_exports__["default"] = (isArray);
 
 /***/ }),
 
-/***/ 4570:
+/***/ 4653:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(242);
-
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(515);
 
 const selectedHandle = fn => function (arr, id) {
   let idKey = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'id';
   let childKey = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'children';
-
   if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(arr)) {
     return null;
   }
-
   const selected = function (data) {
     let parentId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-
     for (let i = 0, l = data.length; i < l; i++) {
       const item = data[i];
-
       if (item[idKey] === id) {
         return fn(data, i, parentId) || data[i];
       }
-
       if ((0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(item[childKey])) {
         const selChildren = selected(item[childKey], item[idKey]);
-
         if (selChildren) {
           return selChildren;
         }
       }
     }
   };
-
   selected(arr);
   return arr;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (selectedHandle);
 
 /***/ })
@@ -105,15 +93,13 @@ const selectedHandle = fn => function (arr, id) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _selectedHandle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4570);
-
+/* harmony import */ var _selectedHandle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4653);
 
 const addAtNext = function (tree, id, nodes) {
   let idKey = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'id';
   let childKey = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'children';
   return (0,_selectedHandle__WEBPACK_IMPORTED_MODULE_0__["default"])((data, index) => data.splice(index, 0, nodes))(tree, id, idKey, childKey);
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (addAtNext);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

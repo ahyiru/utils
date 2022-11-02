@@ -1,268 +1,281 @@
 ## utils
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ahyiru/router/blob/develop/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ahyiru/utils/blob/develop/LICENSE)
 [![npm version](https://img.shields.io/npm/v/@huxy/utils.svg)](https://www.npmjs.com/package/@huxy/utils)
 [![Build Status](https://api.travis-ci.com/ahyiru/utils.svg?branch=master)](https://app.travis-ci.com/github/ahyiru/utils)
 [![](https://img.shields.io/badge/blog-ihuxy-blue.svg)](http://ihuxy.com/)
 
 ### a2o
 
-```js
-const arr=[
+```javascript
+const arr = [
   {
-    key:1,
-    value:'t1',
+    key: 1,
+    value: 't1',
   },
   {
-    key:2,
-    value:'t2',
+    key: 2,
+    value: 't2',
   },
   {
-    key:3,
-    value:'t3',
+    key: 3,
+    value: 't3',
   },
 ];
 
 a2o(arr);
 
 // {1: 't1', 2: 't2', 3: 't3'}
-
 ```
 
 ### arr2Tree
 
-```js
-const arr=[
+```javascript
+const arr = [
   {
-    parentId:1,
-    id:2,
-    value:'1-1',
+    parentId: 1,
+    id: 2,
+    value: '1-1',
   },
   {
-    parentId:4,
-    id:5,
-    value:'2-1',
+    parentId: 4,
+    id: 5,
+    value: '2-1',
   },
   {
-    id:4,
-    value:'2',
+    id: 4,
+    value: '2',
   },
   {
-    id:1,
-    value:'1',
+    id: 1,
+    value: '1',
   },
   {
-    parentId:1,
-    id:3,
-    value:'1-2',
+    parentId: 1,
+    id: 3,
+    value: '1-2',
   },
   {
-    parentId:5,
-    id:6,
-    value:'2-1-1',
+    parentId: 5,
+    id: 6,
+    value: '2-1-1',
   },
 ];
 
 arr2Tree()(arr);
 
-output: 
-
-[
+output: [
   {
-    "id": 4,
-    "value": "2",
-    "parentId": -1,
-    "children": [
+    id: 4,
+    value: '2',
+    parentId: -1,
+    children: [
       {
-        "parentId": 4,
-        "id": 5,
-        "value": "2-1",
-        "children": [
+        parentId: 4,
+        id: 5,
+        value: '2-1',
+        children: [
           {
-            "parentId": 5,
-            "id": 6,
-            "value": "2-1-1",
-            "children": []
-          }
-        ]
-      }
-    ]
+            parentId: 5,
+            id: 6,
+            value: '2-1-1',
+            children: [],
+          },
+        ],
+      },
+    ],
   },
   {
-    "id": 1,
-    "value": "1",
-    "parentId": -1,
-    "children": [
+    id: 1,
+    value: '1',
+    parentId: -1,
+    children: [
       {
-        "parentId": 1,
-        "id": 2,
-        "value": "1-1",
-        "children": []
+        parentId: 1,
+        id: 2,
+        value: '1-1',
+        children: [],
       },
       {
-        "parentId": 1,
-        "id": 3,
-        "value": "1-2",
-        "children": []
-      }
-    ]
-  }
-]
-
+        parentId: 1,
+        id: 3,
+        value: '1-2',
+        children: [],
+      },
+    ],
+  },
+];
 ```
 
 ### arr2TreeByPath
 
-```js
-const arr=[
+```javascript
+const arr = [
   {
-    path:'/home/p1',
-    value:'p1',
+    path: '/home/p1',
+    value: 'p1',
   },
   {
-    path:'/404',
-    value:'404',
+    path: '/404',
+    value: '404',
   },
   {
-    path:'/home/p1/sp2',
-    value:'sp12',
+    path: '/home/p1/sp2',
+    value: 'sp12',
   },
   {
-    path:'/home',
-    value:'home',
+    path: '/home',
+    value: 'home',
   },
   {
-    path:'/home/p2/sp3',
-    value:'sp23',
+    path: '/home/p2/sp3',
+    value: 'sp23',
   },
   {
-    path:'/home/p2/sp2/sp1',
-    value:'sp221',
+    path: '/home/p2/sp2/sp1',
+    value: 'sp221',
   },
   {
-    path:'',
-    value:'root',
+    path: '',
+    value: 'root',
   },
   {
-    path:'/home/p1/sp1',
-    value:'sp11',
+    path: '/home/p1/sp1',
+    value: 'sp11',
   },
   {
-    path:'/home/p2/sp2',
-    value:'sp22',
+    path: '/home/p2/sp2',
+    value: 'sp22',
   },
   {
-    path:'/home/p2/sp2/sp1',
-    value:'sp221',
+    path: '/home/p2/sp2/sp1',
+    value: 'sp221',
   },
   {
-    path:'/home/p2',
-    value:'p2',
+    path: '/home/p2',
+    value: 'p2',
   },
   {
-    path:'/home/p3',
-    value:'p3',
+    path: '/home/p3',
+    value: 'p3',
   },
 ];
 
 arr2TreeByPath(arr);
 
-output: 
-
-[
+output: [
   {
-    "path": "",
-    "value": "root",
-    "parentId": null,
-    "children": [
+    path: '',
+    value: 'root',
+    parentId: null,
+    children: [
       {
-        "path": "/404",
-        "value": "404",
-        "parentId": "",
-        "children": []
+        path: '/404',
+        value: '404',
+        parentId: '',
+        children: [],
       },
       {
-        "path": "/home",
-        "value": "home",
-        "parentId": "",
-        "children": [
+        path: '/home',
+        value: 'home',
+        parentId: '',
+        children: [
           {
-            "path": "/home/p1",
-            "value": "p1",
-            "parentId": "/home",
-            "children": [
+            path: '/home/p1',
+            value: 'p1',
+            parentId: '/home',
+            children: [
               {
-                "path": "/home/p1/sp2",
-                "value": "sp12",
-                "parentId": "/home/p1",
-                "children": []
+                path: '/home/p1/sp2',
+                value: 'sp12',
+                parentId: '/home/p1',
+                children: [],
               },
               {
-                "path": "/home/p1/sp1",
-                "value": "sp11",
-                "parentId": "/home/p1",
-                "children": []
-              }
-            ]
+                path: '/home/p1/sp1',
+                value: 'sp11',
+                parentId: '/home/p1',
+                children: [],
+              },
+            ],
           },
           {
-            "path": "/home/p2",
-            "value": "p2",
-            "parentId": "/home",
-            "children": [
+            path: '/home/p2',
+            value: 'p2',
+            parentId: '/home',
+            children: [
               {
-                "path": "/home/p2/sp3",
-                "value": "sp23",
-                "parentId": "/home/p2",
-                "children": []
+                path: '/home/p2/sp3',
+                value: 'sp23',
+                parentId: '/home/p2',
+                children: [],
               },
               {
-                "path": "/home/p2/sp2",
-                "value": "sp22",
-                "parentId": "/home/p2",
-                "children": [
+                path: '/home/p2/sp2',
+                value: 'sp22',
+                parentId: '/home/p2',
+                children: [
                   {
-                    "path": "/home/p2/sp2/sp1",
-                    "value": "sp221",
-                    "parentId": "/home/p2/sp2",
-                    "children": []
+                    path: '/home/p2/sp2/sp1',
+                    value: 'sp221',
+                    parentId: '/home/p2/sp2',
+                    children: [],
                   },
                   {
-                    "path": "/home/p2/sp2/sp1",
-                    "value": "sp221",
-                    "parentId": "/home/p2/sp2",
-                    "children": []
-                  }
-                ]
-              }
-            ]
+                    path: '/home/p2/sp2/sp1',
+                    value: 'sp221',
+                    parentId: '/home/p2/sp2',
+                    children: [],
+                  },
+                ],
+              },
+            ],
           },
           {
-            "path": "/home/p3",
-            "value": "p3",
-            "parentId": "/home",
-            "children": []
-          }
-        ]
-      }
-    ]
-  }
-]
+            path: '/home/p3',
+            value: 'p3',
+            parentId: '/home',
+            children: [],
+          },
+        ],
+      },
+    ],
+  },
+];
+```
+
+### backTop
+
+返回页面顶部按钮。
+
+```javascript
+backTop(scrollHeight);
 
 ```
+
+- scrollHeight：出现 ‘返回顶部’ 按钮时的滚动距离，默认 0 。
 
 ### rgba2hex
 
-```js
-rgba2hex(111,111,111,.8);
+```javascript
+rgba2hex(111, 111, 111, 0.8);
 
 // '#6f6f6fcc'
+```
+
+### rmUnit
+
+```javascript
+rmUnit('100px');  // Number: 100
+rmUnit('60s', 's');  // Number: 60
 
 ```
 
+- unit：默认 `px`
+
 ### hex2rgba
 
-```js
+```javascript
 hex2rgba('ddd');
 
 > // 'rgb(221,221,221)'
@@ -271,38 +284,35 @@ hex2rgba('ddd');
 
 ### base2Ten
 
-```js
-base2Ten(100,16) // 256
-base2Ten(100,8) // 64
-base2Ten(100) // 4
-
+```javascript
+base2Ten(100, 16); // 256
+base2Ten(100, 8); // 64
+base2Ten(100); // 4
 ```
 
 ### ten2Base
 
-```js
-ten2Base(100,16) // 64
-ten2Base(100,8) // 144
-ten2Base(100) // 1100100
-
+```javascript
+ten2Base(100, 16); // 64
+ten2Base(100, 8); // 144
+ten2Base(100); // 1100100
 ```
 
 ### baseConversion
 
-```js
-baseConversion(100,8,16) // 40
-
+```javascript
+baseConversion(100, 8, 16); // 40
 ```
 
 ### fetcher
 
-```js
-import fetcher from '@huxy/utils/fetcher';
+```javascript
+import {fetcher} from '@huxy/utils';
 
-const handler = (response) => {
+const handler = response => {
   return response
     .json()
-    .then((result) => {
+    .then(result => {
       result.code = result.code ?? response.status;
       result.msg = result.message ?? result.msg ?? response.statusText;
       const {msg, code} = result;
@@ -316,7 +326,7 @@ const handler = (response) => {
       }
       return result;
     })
-    .catch((error) => {
+    .catch(error => {
       message.error(error.message);
       throw error.message;
     });
@@ -325,39 +335,35 @@ const handler = (response) => {
 const fetchApi = fetcher(handler);
 
 const fetch = ({method, url, ...opt}) => fetchApi(method)(`${TARGET}${url}`, {...opt, headers: getToken(), credentials: 'omit'});
-
 ```
 
 ### cacheData
 
-```js
+```javascript
 const {record, undo, redo, clean} = cacheData();
-
 ```
 
 ### cancelablePromise
 
-```js
-const {promiseFn,cancelFn}=cancelablePromise(components,{delay:suspenseConfig.delay,msg:{timeout:suspenseConfig.timeoutMsg}});
+```javascript
+const {promiseFn, cancelFn} = cancelablePromise(components, {delay: suspenseConfig.delay, msg: {timeout: suspenseConfig.timeoutMsg}});
 
-promiseFn.then().catch()
-
+promiseFn.then().catch();
 ```
 
 ### changePos
 
-```js
-const arr=[1,2,3,4,5,6,7,8,9];
+```javascript
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-changePos(arr,2,7)
+changePos(arr, 2, 7);
 
 // [1, 2, 8, 4, 5, 6, 7, 3, 9]
-
 ```
 
 ### classifyArr
 
-```js
+```javascript
 const arr=[
   {
     name:'test1',
@@ -379,7 +385,7 @@ const arr=[
 
 classifyArr(arr)
 
-output: 
+output:
 
 {
   "test1": [
@@ -408,14 +414,13 @@ output:
 
 ### clone
 
-```js
-clone(arr|object);
-
+```javascript
+clone(arr | object);
 ```
 
 ### compareVersion
 
-```js
+```javascript
 compareVersion(a, b, , key = '.')
 compareVersion('1.5.111', '1.7.0'); // 2
 
@@ -430,129 +435,113 @@ compareVersion('1.5.111', '1.7.0'); // 2
 
 ### compose
 
-```js
-const a=x=>x+10;
+```javascript
+const a = x => x + 10;
 
-const b=x=>x*10;
+const b = x => x * 10;
 
-compose(b,a)(2) // 120
-
+compose(b, a)(2); // 120
 ```
 
 ### copyToClipboard
 
-```js
+```javascript
 > copyToClipboard(text)
 
 ```
 
 ### createTextElement/createElement/createNode
 
-```js
-createTextElement(text)
+```javascript
+createTextElement(text);
 
-createElement(type, props, ...children)
+createElement(type, props, ...children);
 
-createNode({type:'',props:{}})
-
+createNode({type: '', props: {}});
 ```
 
 ### curry
 
-```js
-const arr=[
+```javascript
+const arr = [
   {
-    name:'test1',
-    value:'t1',
+    name: 'test1',
+    value: 't1',
   },
   {
-    name:'test2',
-    value:'t2',
+    name: 'test2',
+    value: 't2',
   },
   {
-    name:'test1',
-    value:'t3',
+    name: 'test1',
+    value: 't3',
   },
   {
-    name:'test2',
-    value:'t4',
+    name: 'test2',
+    value: 't4',
   },
 ];
 
-const fn=(name,value)=>arr.filter(item=>item.name===name).filter(item=>item.value===value)
+const fn = (name, value) => arr.filter(item => item.name === name).filter(item => item.value === value);
 
-const a=curry(fn)('test1')
+const a = curry(fn)('test1');
 
-a('t3')
+a('t3');
 
-output: 
-
-[
+output: [
   {
-    "name": "test1",
-    "value": "t3"
-  }
-]
-
+    name: 'test1',
+    value: 't3',
+  },
+];
 ```
 
 ### cyclic
 
-```js
-cyclic(object) // true | false
-
+```javascript
+cyclic(object); // true | false
 ```
 
 ### addDays/addMonths/addYears/addHours
 
-```js
-addDays(2,'2022-01-01') // Mon Jan 03 2022 08:00:00 GMT+0800 (中国标准时间)
+```javascript
+addDays(2, '2022-01-01'); // Mon Jan 03 2022 08:00:00 GMT+0800 (中国标准时间)
 
-addMonths(3) // Sat Jun 25 2022 17:44:47 GMT+0800 (中国标准时间)
-
+addMonths(3); // Sat Jun 25 2022 17:44:47 GMT+0800 (中国标准时间)
 ```
 
 ### getLeaveTime
 
-```js
-getLeaveTime('2022-10-1') // '189天6小时12分11秒'
-
+```javascript
+getLeaveTime('2022-10-1'); // '189天6小时12分11秒'
 ```
 
 ### weekDate/monthDate
 
-```js
-weekDate()
+```javascript
+weekDate();
 
-output: 
-
-[
-  "2022-03-21T09:48:44.098Z",
-  "2022-03-27T09:48:44.098Z"
-]
-
+output: ['2022-03-21T09:48:44.098Z', '2022-03-27T09:48:44.098Z'];
 ```
 
 ### dash2camel
 
-```js
+```javascript
 dash2camel('add-file-name'); // addFileName
 dash2camel('add_file_name', '_'); // addFileName
-
 ```
 
 ### debounce
 
-```js
-debounce(func,delay=60)
-
+```javascript
+debounce(func, (delay = 60));
 ```
 
 ### dropInfo
 
 元素触发事件弹出层
 
-```js
+```javascript
 dropInfo(triggerEle, showEle, type = 'horizontal');
 
 - triggerEle：触发元素
@@ -563,95 +552,91 @@ dropInfo(triggerEle, showEle, type = 'horizontal');
 
 ### dlfile
 
-```js
-dlfile(url,name)
-
+```javascript
+dlfile(url, name);
 ```
 
 ### emitter
 
-```js
-const {on,emit,off}=emitter()
-
+```javascript
+const {on, emit, off} = emitter();
 ```
 
 ### equal
 
-```js
-equal(a, b) // true|false
-
+```javascript
+equal(a, b); // true|false
 ```
 
 ### filter
 
-```js
-const arr=[
+```javascript
+const arr = [
   {
-    name:'test1',
-    value:'t1',
+    name: 'test1',
+    value: 't1',
   },
   {
-    name:'test2',
-    value:'t2',
+    name: 'test2',
+    value: 't2',
   },
   {
-    name:'test1',
-    value:'t3',
+    name: 'test1',
+    value: 't3',
   },
   {
-    name:'test2',
-    value:'t4',
+    name: 'test2',
+    value: 't4',
   },
 ];
 
-filter(arr,'est1','name')
+filter(arr, 'est1', 'name');
 
-output: 
-
-[
+output: [
   {
-    "name": "test1",
-    "value": "t1"
+    name: 'test1',
+    value: 't1',
   },
   {
-    "name": "test1",
-    "value": "t3"
-  }
-]
-
+    name: 'test1',
+    value: 't3',
+  },
+];
 ```
 
 ### filterList
 
-```js
-filterList(data,keyword,str2Dom/*高亮元素*/,fields='name',idKey='id',childKey='children',exact=false)
-
+```javascript
+filterList(data, keyword, str2Dom /*高亮元素*/, (fields = 'name'), (idKey = 'id'), (childKey = 'children'), (exact = false));
 ```
 
 ### findMax
 
-```js
-findMax('ghfdj53785bhb4289yb3b478') // 53785
-
+```javascript
+findMax('ghfdj53785bhb4289yb3b478'); // 53785
 ```
 
 ### firstUpper
 
-```js
-firstUpper('hello world') // 'Hello world'
+```javascript
+firstUpper('hello world'); // 'Hello world'
+```
 
+### fixPath
+
+```javascript
+fixPath('//a/b//c'); // '/a/b/c'
 ```
 
 ### fixRoute
 
-```js
-fixRoute('/a/b/e/') // /a/b/e
-
+```javascript
+fixRoute('/a/b/e/'); // /a/b/e
 ```
 
 ### fixSize
 
-```js
+```javascript
 fixSize(img, ratio = 1);
 
 根据父元素宽高比设置元素宽度比例。
@@ -660,142 +645,134 @@ fixSize(img, ratio = 1);
 
 ### flatten
 
-```js
-const arr=[
+```javascript
+const arr = [
   {
-    name:'test1',
-    value:'t1',
+    name: 'test1',
+    value: 't1',
     children: [
       {
-        name:'test11',
-        value:'t11',
+        name: 'test11',
+        value: 't11',
       },
       {
-        name:'test12',
-        value:'t12',
+        name: 'test12',
+        value: 't12',
       },
     ],
   },
   {
-    name:'test2',
-    value:'t2',
+    name: 'test2',
+    value: 't2',
   },
   {
-    name:'test1',
-    value:'t3',
+    name: 'test1',
+    value: 't3',
     children: [
       {
-        name:'test31',
-        value:'t31',
+        name: 'test31',
+        value: 't31',
       },
       {
-        name:'test32',
-        value:'t32',
+        name: 'test32',
+        value: 't32',
         children: [
           {
-            name:'test321',
-            value:'t321',
+            name: 'test321',
+            value: 't321',
           },
         ],
       },
     ],
   },
   {
-    name:'test2',
-    value:'t4',
+    name: 'test2',
+    value: 't4',
   },
 ];
 
-flatten(arr)
+flatten(arr);
 
-output: 
-
-[
+output: [
   {
-    "name": "test1",
-    "value": "t1"
+    name: 'test1',
+    value: 't1',
   },
   {
-    "name": "test2",
-    "value": "t2"
+    name: 'test2',
+    value: 't2',
   },
   {
-    "name": "test1",
-    "value": "t3"
+    name: 'test1',
+    value: 't3',
   },
   {
-    "name": "test2",
-    "value": "t4"
+    name: 'test2',
+    value: 't4',
   },
   {
-    "name": "test11",
-    "value": "t11"
+    name: 'test11',
+    value: 't11',
   },
   {
-    "name": "test12",
-    "value": "t12"
+    name: 'test12',
+    value: 't12',
   },
   {
-    "name": "test31",
-    "value": "t31"
+    name: 'test31',
+    value: 't31',
   },
   {
-    "name": "test32",
-    "value": "t32"
+    name: 'test32',
+    value: 't32',
   },
   {
-    "name": "test321",
-    "value": "t321"
-  }
-]
-
+    name: 'test321',
+    value: 't321',
+  },
+];
 ```
 
 ### formatNum
 
-```js
-formatNum(12345678) // '12,345,678'
-
+```javascript
+formatNum(12345678); // '12,345,678'
 ```
 
 ### getTime/formatTime
 
-```js
-getTime() // [2022, 3, 25, 18, 4, 36, 5]
+```javascript
+getTime(); // [2022, 3, 25, 18, 4, 36, 5]
 
-formatTime() // '2022-03-25 18:04:36'
-
+formatTime(); // '2022-03-25 18:04:36'
 ```
 
 ### fullScreen/watchScreen
 
-```js
-fullScreen(element)
+```javascript
+fullScreen(element);
 
-watchScreen(callback) // 全屏变化时执行回调
-
+watchScreen(callback); // 全屏变化时执行回调
 ```
 
 ### getElementsSize
 
-```js
-const {width,height,top,left,...}=getElementsSize(ele);
-
+```javascript
+const {width, height, top, left, ...rest} = getElementsSize(ele);
 ```
 
 ### getOffset
 
-```js
-const {top,left}=getOffset(ele);
-
+```javascript
+const {top, left} = getOffset(ele);
 ```
 
 ### getParams
 
-```js
+```javascript
 getParams('/a/b?name=hhh&age=18')
 
-output: 
+output:
 
 {
   "path": "/a/b",
@@ -809,219 +786,200 @@ output:
 
 ### getPosition
 
-```js
-const {width,height,top,left,...}=getPosition(ele);
-
+```javascript
+const {width, height, top, left, ...rest} = getPosition(ele);
 ```
 
 ### getSelected
 
-```js
-const arr=[
+```javascript
+const arr = [
   {
-    name:'test1',
-    value:'t1',
+    name: 'test1',
+    value: 't1',
     children: [
       {
-        name:'test11',
-        value:'t11',
+        name: 'test11',
+        value: 't11',
       },
       {
-        name:'test12',
-        value:'t12',
+        name: 'test12',
+        value: 't12',
       },
     ],
   },
   {
-    name:'test2',
-    value:'t2',
+    name: 'test2',
+    value: 't2',
   },
   {
-    name:'test1',
-    value:'t3',
+    name: 'test1',
+    value: 't3',
     children: [
       {
-        name:'test31',
-        value:'t31',
+        name: 'test31',
+        value: 't31',
       },
       {
-        name:'test32',
-        value:'t32',
+        name: 'test32',
+        value: 't32',
         children: [
           {
-            name:'test321',
-            value:'t321',
+            name: 'test321',
+            value: 't321',
           },
         ],
       },
     ],
   },
   {
-    name:'test2',
-    value:'t4',
+    name: 'test2',
+    value: 't4',
   },
 ];
 
-getSelected(arr,'t32','value')
+getSelected(arr, 't32', 'value');
 
-output: 
-
-[
+output: [
   {
-    "name": "test1",
-    "value": "t3"
+    name: 'test1',
+    value: 't3',
   },
   {
-    "name": "test32",
-    "value": "t32"
-  }
-]
-
+    name: 'test32',
+    value: 't32',
+  },
+];
 ```
 
 ### getTextSize
 
-```js
-const {width,height,top,left,...}=getTextSize(text)
-
+```javascript
+const {width, height, top, left, ...rest} = getTextSize(text);
 ```
 
 ### getTouchPosition/getRelative
 
-```js
-const {touchX,touchY}=getTouchPosition(event)
+```javascript
+const {touchX, touchY} = getTouchPosition(event);
 
-const {x,y}= getRelative(event,ref)
-
+const {x, y} = getRelative(event, ref);
 ```
 
 ### getType
 
-```js
-getType() // 'undefined'
-getType('') // 'string'
-getType(222) // 'number'
-getType([]) // 'array'
-
+```javascript
+getType(); // 'undefined'
+getType(''); // 'string'
+getType(222); // 'number'
+getType([]); // 'array'
 ```
 
 ### getValue
 
-```js
-const obj={
-  a:{
-    b:{
-      c:4444
+```javascript
+const obj = {
+  a: {
+    b: {
+      c: 4444,
     },
-    b1:{},
+    b1: {},
   },
-}
+};
 
-getValue(obj,'a.b.c') // 4444
+getValue(obj, 'a.b.c'); // 4444
 
-getValue(obj,'a.b.d') // undefined
-
-
+getValue(obj, 'a.b.d'); // undefined
 ```
 
 ### getViewportSize
 
-```js
-const {width,height}=getViewportSize(element)
-
+```javascript
+const {width, height} = getViewportSize(element);
 ```
 
 ### hasClass/addClass/removeClass/toggleClass
 
-```js
-hasClass(ele,'class1')
-addClass(ele,'class1')
-removeClass(ele,'class1')
-toggleClass(ele,'class1')
-
+```javascript
+hasClass(ele, 'class1');
+addClass(ele, 'class1');
+removeClass(ele, 'class1');
+toggleClass(ele, 'class1');
 ```
 
 ### addNodes/addAtNext/addAtPos/editNodes/deleteNodes/moveNodes
 
-```js
-addNodes(tree,id,nodes,idKey='id',childKey='children')
-addAtNext(tree,id,nodes,idKey='id',childKey='children')
-addAtPos(tree,id,nodes,pos,idKey='id',childKey='children')
-editNodes(tree,id,nodes,idKey='id',childKey='children')
-deleteNodes(tree,id,idKey='id',childKey='children')
-moveNodes(tree,fromId,toId,pos,idKey='id',childKey='children')
-
+```javascript
+addNodes(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
+addAtNext(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
+addAtPos(tree, id, nodes, pos, (idKey = 'id'), (childKey = 'children'));
+editNodes(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
+deleteNodes(tree, id, (idKey = 'id'), (childKey = 'children'));
+moveNodes(tree, fromId, toId, pos, (idKey = 'id'), (childKey = 'children'));
 ```
 
 ### hasProp
 
-```js
-const a={b:undefined}
+```javascript
+const a = {b: undefined};
 
-hasProp(a,'b') // true
-
+hasProp(a, 'b'); // true
 ```
 
-### isArray/isValidArr/isValidObj/isAsync/isObject/isFunction/isError/isRegExp/isElement/isUrl
+### isArray/isValidArr/isValidObj/isAsync/isObject/isFunction/isError/isRegExp/isElement/isUrl/isDate
 
-```js
-
-isArray([]) // true
-isValidArr([1]) // true
-isValidObj({}) // false
-isAsync(new Promise()) // true
-isObject({}) // true
-isFunction(()=>{}) // true
-isError(new Error()) // true
-isRegExp(/\d+/) // true
-isElement(<span>1</span>) // true
-isUrl('http://abc.com') // true
-
+```javascript
+isArray([]); // true
+isValidArr([1]); // true
+isValidObj({}); // false
+isAsync(new Promise()); // true
+isObject({}); // true
+isFunction(() => {}); // true
+isError(new Error()); // true
+isRegExp(/\d+/); // true
+isElement(<span>1</span>); // true
+isUrl('http://abc.com'); // true
+isDate('2022', '10', '11'); // true
 ```
-
 
 ### isBrowser/isIE/isTouch
 
-```js
-isBrowser()
-isIE()
-isTouch()
-
+```javascript
+isBrowser();
+isIE();
+isTouch();
 ```
 
 ### isReactComp/isReactEle/isRef
 
-```js
-isReactComp(value)
-isReactEle(value)
-isRef(value)
-
+```javascript
+isReactComp(value);
+isReactEle(value);
+isRef(value);
 ```
 
 ### loadImage/loadBase64/imgtocanvas
 
-```js
+```javascript
 const img = await loadImage(url);
 const base64 = await loadBase64(img);
 const canvas = imgtocanvas(img);
-
 ```
 
 ### memoize
 
-```js
-const fn=n=>console.log(n)
-const m=memoize(fn)
-m(3)
-m(3)
+```javascript
+const fn = n => console.log(n);
+const m = memoize(fn);
+m(3);
+m(3);
 
 // 3 只打印一次
-
 ```
 
 ### merge/mergeObj/mergeArr
 
-```js
+```javascript
 const a={
   name:'t1',
   children: [
@@ -1060,7 +1018,7 @@ const c={
 
 merge(a,b,c);
 
-output: 
+output:
 
 {
   "name": "t2",
@@ -1081,7 +1039,7 @@ output:
 
 ### message
 
-```js
+```javascript
 message.success(content, delay, onClose);
 
 - content：文本信息
@@ -1097,7 +1055,7 @@ message.info('info');
 
 ### obj2arr/arr2obj
 
-```js
+```javascript
 const a={
   name:'t1',
   age: 18,
@@ -1106,7 +1064,7 @@ const a={
 
 obj2arr(a)
 
-output: 
+output:
 
 [
   {
@@ -1140,7 +1098,7 @@ const b=[
 
 arr2obj(b)
 
-output: 
+output:
 
 {
   "t1": "t11",
@@ -1152,8 +1110,8 @@ output:
 
 ### obj2str/arr2str/json2str
 
-```js
-const c={
+```javascript
+const c = {
   age: 18,
   children: [
     {
@@ -1165,153 +1123,147 @@ const c={
   ],
 };
 
-json2str(c)
+json2str(c);
 
-output: 
-
-'{age=18, children={0={age=20}, 1={age=22}}}'
-
+output: '{age=18, children={0={age=20}, 1={age=22}}}';
 ```
 
 ### once
 
-```js
-const t=()=>console.log('test');
+```javascript
+const t = () => console.log('test');
 
-const runOne=once(t);
+const runOne = once(t);
 
-runOne() // test
-runOne() // 不执行
+runOne(); // test
+runOne(); // 不执行
+```
 
+### padStart
+
+```javascript
+padStart('123', 6); // 000123 
+
+padStart('abc', 5, '#'); // ##abc
 ```
 
 ### params2data
 
-```js
-const a={
-  name:'t1',
+```javascript
+const a = {
+  name: 't1',
   age: 18,
-  id:'123',
+  id: '123',
 };
 
 params2data(a); // FormData {}
-
 ```
 
 ### params2str
 
-```js
-const a={
-  name:'t1',
+```javascript
+const a = {
+  name: 't1',
   age: 18,
-  id:'123',
+  id: '123',
 };
 
 params2str(a); // '?name=t1&age=18&id=123'
-
 ```
 
 ### pick
 
-```js
-const a={
-  name:'t1',
+```javascript
+const a = {
+  name: 't1',
   age: 18,
-  id:'123',
+  id: '123',
 };
 
-pick(a,['id','name']) // {id: '123', name: 't1'}
-
+pick(a, ['id', 'name']); // {id: '123', name: 't1'}
 ```
 
 ### promisify
 
-```js
-promisify(func)(...args)
-
+```javascript
+promisify(func)(...args);
 ```
 
-### randNum/randStr/randColor/randTrue/randItem
+### randNum/randStr/randColor/randTrue/randItem/randPercent
 
-```js
-randNum(5) // 5
-randStr(8) // 'czqx7vhu'
-randColor() // '#39a645'
-randTrue() // false
-randItem([1,3,5,7,9]) // 3
-
+```javascript
+randNum(5); // 5
+randStr(8); // 'czqx7vhu'
+randColor(); // '#39a645'
+randTrue(); // false
+randItem([1, 3, 5, 7, 9]); // 3
+randPercent(4); // [54, 13, 30, 3]
+randPercent(5, 80); // [5, 40, 12, 11, 12]
 ```
 
 ### resize
 
-```js
-const {bind, unbind, destroy}=resize(element);
+```javascript
+const {bind, unbind, destroy} = resize(element);
 
 bind(callback);
 unbind(callback);
 destroy();
-
 ```
 
 ### scrollToTop/scrollToAnchor/scrollTop
 
-```js
-scrollToTop(top=0); // 滚动到指定位置
+```javascript
+scrollToTop((top = 0)); // 滚动到指定位置
 scrollToAnchor(ref); // 滚动到元素位置
 scrollTop(); // 滚动到顶部
-
 ```
 
 ### viewHeight/docHeight/isScrollBottom
 
-```js
+```javascript
 viewHeight(); // 视图高度
 docHeight(); // 文档高度
 isScrollBottom(); // 是否滚到底部
-
 ```
 
 ### selectedHandle
 
-```js
-selectedHandle((data,i,parentId)=>{
-  console.log(data,i,parentId);
+```javascript
+selectedHandle((data, i, parentId) => {
+  console.log(data, i, parentId);
   return data[i]; // 选中id的item
-})(arr,id);
-
+})(arr, id);
 ```
 
 ### session
 
-```js
-const {get, set, rm, clear}=session;
+```javascript
+const {get, set, rm, clear} = session;
 
 get(name);
-set(name,data)'
+set(name, data);
 rm(name);
 clear();
-
 ```
 
 ### setStyle
 
-```js
-setStyle(ele,styles={},reset=false);
-
+```javascript
+setStyle(ele, (styles = {}), (reset = false));
 ```
 
 ### sleep/sleepSync
 
-```js
+```javascript
 await sleep();
 await sleepSync();
-
 ```
 
 ### sort
 
-```js
-const a=[
+```javascript
+const a = [
   {
     name: 't1',
     age: 33,
@@ -1328,129 +1280,113 @@ const a=[
 
 sort(a, 'age');
 
-output: 
-
-[
+output: [
   {
-    "name": "t2",
-    "age": 12
+    name: 't2',
+    age: 12,
   },
   {
-    "name": "t3",
-    "age": 22
+    name: 't3',
+    age: 22,
   },
   {
-    "name": "t1",
-    "age": 33
-  }
-]
-
+    name: 't1',
+    age: 33,
+  },
+];
 ```
 
 ### storage
 
-```js
-const {get, set, rm, clear}=storage;
+```javascript
+const {get, set, rm, clear} = storage;
 
 get(name);
-set(name,data)'
+set(name, data);
 rm(name);
 clear();
-
 ```
 
 ### createStore
 
-```js
-const {getState,setState,subscribe,clean}=createStore();
-
+```javascript
+const {getState, setState, subscribe, clean} = createStore();
 ```
 
 ### str2code
 
-```js
+```javascript
 str2code('console.log(123)'); // 123
-
 ```
 
 ### str2Html
 
-```js
+```javascript
 str2Html('<a>link</a>'); // NodeList [a]
-
 ```
 
 ### getExplore
 
-```js
+```javascript
 getExplore(); // 'Chrome: 99.0.4844.51'
-
 ```
 
 ### osType
 
-```js
+```javascript
 osType(); // 'MacOSX'
-
 ```
 
 ### sysLang
 
-```js
+```javascript
 sysLang(); // 'zh'
-
 ```
 
 ### deviceType
 
-```js
+```javascript
 deviceType(); // 'Desktop'
-
 ```
 
 ### throttle
 
-```js
-const throttleFn=throttle(fn,delay=60)
-
+```javascript
+const throttleFn = throttle(fn, (delay = 60));
 ```
 
 ### getMonthDays
 
-```js
+```javascript
 getMonthDays(); // 31
-
 ```
 
 ### timestamp
 
-```js
+```javascript
 timestamp(); // 48620100.70000002
-
 ```
 
 ### traverItem
 
-```js
-traverItem((item,parent,index,hasChild)=>{
-  console.log(item,parent,index,hasChild);
-})(arr,childKey);
-
+```javascript
+traverItem((item, parent, index, hasChild) => {
+  console.log(item, parent, index, hasChild);
+})(arr, childKey);
 ```
 
 ### traverList
 
-```js
-traverItem((data)=>{
+```javascript
+traverItem(data => {
   console.log(data);
-})(arr,childKey);
-
+})(arr, childKey);
 ```
 
 ### unique
 
-```js
-const a=[
+```javascript
+const a = [
   {
     name: 't1',
     age: 33,
@@ -1467,25 +1403,22 @@ const a=[
 
 unique(a, 'name');
 
-output: 
-
-[
+output: [
   {
-    "name": "t1",
-    "age": 33
+    name: 't1',
+    age: 33,
   },
   {
-    "name": "t2",
-    "age": 12
-  }
-]
-
+    name: 't2',
+    age: 12,
+  },
+];
 ```
 
 ### updateId
 
-```js
-const a=[
+```javascript
+const a = [
   {
     name: 't1',
     age: 33,
@@ -1502,39 +1435,35 @@ const a=[
 
 updateId(a, 'id');
 
-output: 
-
-[
+output: [
   {
-    "name": "t1",
-    "age": 33,
-    "id": "0"
+    name: 't1',
+    age: 33,
+    id: '0',
   },
   {
-    "name": "t2",
-    "age": 12,
-    "id": "1"
+    name: 't2',
+    age: 12,
+    id: '1',
   },
   {
-    "name": "t3",
-    "age": 22,
-    "id": "2"
-  }
-]
-
+    name: 't3',
+    age: 22,
+    id: '2',
+  },
+];
 ```
 
 ### uuidv4
 
-```js
+```javascript
 uuidv4(); // '4839e86e-252f-4571-9982-351cd98cc875'
-
 ```
 
 ### validObj
 
-```js
-const a={
+```javascript
+const a = {
   name: 't1',
   age: 18,
   email: 'ah.yiru@gmail.com',
@@ -1545,7 +1474,7 @@ const a={
 
 validObj(a);
 
-output: 
+output:
 
 {name: 't1', age: 18, email: 'ah.yiru@gmail.com', t1: ''}
 
@@ -1553,27 +1482,26 @@ output:
 
 ### watermark
 
-```js
+```javascript
 watermark({
-  container=document.body,
-  width='220px',
-  height='200px',
-  textAlign='center',
-  textBaseline='middle',
-  font='20px microsoft yahei',
-  fillStyle='rgba(202,202,202,0.4)',
-  content='请勿外传',
-  rotate='-30',
-  zIndex=1000,
-})
+  container = document.body,
+  width = '220px',
+  height = '200px',
+  textAlign = 'center',
+  textBaseline = 'middle',
+  font = '20px microsoft yahei',
+  fillStyle = 'rgba(202,202,202,0.4)',
+  content = '请勿外传',
+  rotate = '-30',
+  zIndex = 1000,
+});
 
 ```
 
 ### wrapPromise
 
-```js
-const {read}=wrapPromise(promiseFn);
+```javascript
+const {read} = wrapPromise(promiseFn);
 
-const result=read();
-
+const result = read();
 ```

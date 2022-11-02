@@ -12,7 +12,6 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 const formatNum = num => typeof num === 'number' ? num.toLocaleString('en-US') : '';
-
 /* harmony default export */ __webpack_exports__["default"] = (formatNum);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

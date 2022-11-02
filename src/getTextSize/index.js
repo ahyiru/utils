@@ -12,77 +12,66 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 158:
+/***/ 3000:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
 /***/ }),
 
-/***/ 4486:
+/***/ 9933:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
-
 /* harmony default export */ __webpack_exports__["default"] = (hasProp);
 
 /***/ }),
 
-/***/ 7842:
+/***/ 9170:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
 /***/ }),
 
-/***/ 6569:
+/***/ 5909:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf('element') > -1;
-
 /* harmony default export */ __webpack_exports__["default"] = (isElement);
 
 /***/ }),
 
-/***/ 3091:
+/***/ 4378:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4486);
-
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9933);
 
 const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, 'current');
-
 /* harmony default export */ __webpack_exports__["default"] = (isRef);
 
 /***/ }),
 
-/***/ 9037:
+/***/ 9370:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6569);
-
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5909);
 
 const setStyle = function (ele) {
   let styles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   let reset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
   if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__["default"])(ele)) {
     return;
   }
-
   Object.keys(styles).map(key => {
     // ele.style[key]=reset?'':styles[key];
     ele.style.setProperty(key, reset ? '' : styles[key]);
   });
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (setStyle);
 
 /***/ })
@@ -117,22 +106,20 @@ const setStyle = function (ele) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
-/* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9037);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3091);
-
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
+/* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9370);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4378);
 
 
 
 const getTextSize = function (text) {
+  var _ele;
   let styles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  let ele = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && document.body;
-
+  let ele = arguments.length > 2 ? arguments[2] : undefined;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-
-  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : ele;
+  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : (_ele = ele) != null ? _ele : document.body;
   const span = document.createElement('span');
   span.setAttribute('style', `pointer-events: none; z-index: -1; opacity: 0;`);
   styles && (0,_setStyle__WEBPACK_IMPORTED_MODULE_2__["default"])(span, styles);
@@ -142,7 +129,6 @@ const getTextSize = function (text) {
   ele.removeChild(span);
   return rect;
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (getTextSize);
 }();
 __webpack_exports__ = __webpack_exports__["default"];

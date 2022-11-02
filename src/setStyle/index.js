@@ -12,23 +12,20 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 158:
+/***/ 3000:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
 /***/ }),
 
-/***/ 6569:
+/***/ 5909:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
-
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
 
 const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf('element') > -1;
-
 /* harmony default export */ __webpack_exports__["default"] = (isElement);
 
 /***/ })
@@ -63,23 +60,19 @@ const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6569);
-
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5909);
 
 const setStyle = function (ele) {
   let styles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   let reset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
   if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__["default"])(ele)) {
     return;
   }
-
   Object.keys(styles).map(key => {
     // ele.style[key]=reset?'':styles[key];
     ele.style.setProperty(key, reset ? '' : styles[key]);
   });
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (setStyle);
 }();
 __webpack_exports__ = __webpack_exports__["default"];
