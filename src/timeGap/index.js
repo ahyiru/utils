@@ -12,10 +12,10 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1036:
+/***/ 999:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2053);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5495);
 
 const getMonthDays = function () {
   let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
@@ -26,7 +26,7 @@ const getMonthDays = function () {
 
 /***/ }),
 
-/***/ 2053:
+/***/ 5495:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getTime = function () {
@@ -45,12 +45,12 @@ const getTime = function () {
 
 /***/ }),
 
-/***/ 997:
+/***/ 7922:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony exports timeBase, minus */
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2053);
-/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1036);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5495);
+/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(999);
 
 
 const timeBase = date => [12, (0,_getMonthDays__WEBPACK_IMPORTED_MODULE_0__["default"])(date), 24, 60, 60];
@@ -135,7 +135,7 @@ const timeInterval = function (start) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _timeInterval__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var _timeInterval__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7922);
 
 const timeUnit = ['年', '月', '日', '时', '分', '秒'];
 const timeGap = function (start) {

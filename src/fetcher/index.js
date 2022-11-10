@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 5641:
+/***/ 7369:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -66,11 +66,11 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 // EXTERNAL MODULE: ../../huxy/utils/params2str.js
-var params2str = __webpack_require__(2714);
+var params2str = __webpack_require__(6057);
 // EXTERNAL MODULE: ../../huxy/utils/params2data.js
-var params2data = __webpack_require__(3843);
+var params2data = __webpack_require__(2616);
 // EXTERNAL MODULE: ../../huxy/utils/cancelablePromise.js
-var cancelablePromise = __webpack_require__(3218);
+var cancelablePromise = __webpack_require__(7682);
 ;// CONCATENATED MODULE: ../../huxy/utils/baseFetch.js
 
 
@@ -189,10 +189,10 @@ const baseFetch = (handler, timeout) => method => function (url) {
 
 /***/ }),
 
-/***/ 3218:
+/***/ 7682:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(635);
+/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7662);
 
 const cancelablePromise = function (promise) {
   let delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 120000;
@@ -237,7 +237,7 @@ const cancelablePromise = function (promise) {
 
 /***/ }),
 
-/***/ 3000:
+/***/ 8028:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -245,12 +245,12 @@ const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLo
 
 /***/ }),
 
-/***/ 635:
+/***/ 7662:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7352);
-/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6601);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8028);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1203);
+/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8252);
 
 
 
@@ -259,30 +259,30 @@ const isAsync = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(va
 
 /***/ }),
 
-/***/ 6601:
+/***/ 8252:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8028);
 
 const isFunction = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'function';
 /* harmony default export */ __webpack_exports__["default"] = (isFunction);
 
 /***/ }),
 
-/***/ 7352:
+/***/ 1203:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8028);
 
 const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
 /* harmony default export */ __webpack_exports__["default"] = (isObject);
 
 /***/ }),
 
-/***/ 3843:
+/***/ 2616:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7352);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1203);
 
 const params2data = params => {
   if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(params)) {
@@ -302,10 +302,10 @@ const params2data = params => {
 
 /***/ }),
 
-/***/ 2714:
+/***/ 6057:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7352);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1203);
 
 const params2str = params => {
   if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(params)) {
@@ -372,7 +372,7 @@ const params2str = params => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _baseFetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5641);
+/* harmony import */ var _baseFetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7369);
 
 const TIMEOUT = 120 * 1000;
 const resHandler = response => response.json().then(result => result);

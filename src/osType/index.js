@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 9170:
+/***/ 9899:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
@@ -50,34 +50,37 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9899);
 
 const osList = [{
-  name: 'MacOSX',
+  name: 'MacOS',
   reg: /macintosh/
-}, {
-  name: 'WindowsPhone',
-  reg: /windows phone/
 }, {
   name: 'Windows',
   reg: /windows/
-}, {
-  name: 'Android',
-  reg: /android/
 }, {
   name: 'Linux',
   reg: /linux/
 }, {
   name: 'IOS',
   reg: /iphone|ipad|ipod/
+}, {
+  name: 'Android',
+  reg: /android/
+}, {
+  name: 'WindowsPhone',
+  reg: /windows phone/
+}, {
+  name: 'iPad',
+  reg: /ipad/
 }];
 const osType = () => {
-  var _osList$find$name, _osList$find;
+  var _ref, _window$navigator$pla, _osList$find;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
   const ua = window.navigator.userAgent.toLowerCase();
-  return (_osList$find$name = (_osList$find = osList.find(item => item.reg.test(ua))) == null ? void 0 : _osList$find.name) != null ? _osList$find$name : 'Unkonwn';
+  return (_ref = (_window$navigator$pla = window.navigator.platform) != null ? _window$navigator$pla : (_osList$find = osList.find(item => item.reg.test(ua))) == null ? void 0 : _osList$find.name) != null ? _ref : 'Unkonwn';
 };
 /* harmony default export */ __webpack_exports__["default"] = (osType);
 }();

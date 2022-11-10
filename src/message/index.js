@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3000:
+/***/ 8028:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -20,20 +20,20 @@ const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLo
 
 /***/ }),
 
-/***/ 5909:
+/***/ 7300:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3000);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8028);
 
 const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf('element') > -1;
 /* harmony default export */ __webpack_exports__["default"] = (isElement);
 
 /***/ }),
 
-/***/ 5580:
+/***/ 5680:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5909);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7300);
 
 const removeClass = function (ele) {
   let name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
@@ -49,17 +49,17 @@ const removeClass = function (ele) {
 
 /***/ }),
 
-/***/ 4580:
+/***/ 5657:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8951);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8630);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4204);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7632);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "@keyframes huxy-animate-modal-in {\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0);\n  }\n  100% {\n    opacity: 1;\n    transform: translate3d(0, 0, 0);\n  }\n}\n@keyframes huxy-animate-modal-out {\n  0% {\n    opacity: 1;\n    transform: translate3d(0, 0, 0);\n  }\n  100% {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0);\n  }\n}\n\n.huxy-message {\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  overflow: auto;\n  z-index: 999999;\n  pointer-events: none;\n}\n\n.message-content {\n  position: relative;\n  display: flex;\n  align-items: center;\n  background: #ffffff;\n  border-radius: 4px;\n  min-width: 100px;\n  max-width: 280px;\n  margin-left: auto;\n  margin-right: auto;\n  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);\n  margin-top: 24px;\n  padding: 8px 12px;\n  opacity: 0;\n  transform: translate3d(0, -100%, 0);\n  animation: huxy-animate-modal-out 0.25s forwards;\n}\n\n.message-content.open {\n  animation: huxy-animate-modal-in 0.25s forwards;\n}\n\n.message-content i {\n  /* font-size: 1.8rem; */\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  /* line-height: 1; */\n  vertical-align: middle;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  margin-right: 8px;\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n  text-align: center;\n  color: #fff;\n  flex-shrink: 0;\n}\n.message-content.success i {\n  background: var(--green1);\n}\n.message-content.success i:before {\n  content: \"\\2713\";\n}\n.message-content.error i {\n  background: var(--red1);\n}\n.message-content.error i:before {\n  content: \"\\00D7\";\n}\n.message-content.warn i {\n  background: var(--orange1);\n}\n.message-content.warn i:before {\n  content: \"\\267A\";\n}\n.message-content.info i {\n  background: var(--blue1);\n}\n.message-content.info i:before {\n  content: \"\\2690\";\n}\n", ""]);
 // Exports
@@ -69,7 +69,7 @@ ___CSS_LOADER_EXPORT___.locals = {};
 
 /***/ }),
 
-/***/ 8630:
+/***/ 7632:
 /***/ (function(module) {
 
 
@@ -177,7 +177,7 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ 8951:
+/***/ 4204:
 /***/ (function(module) {
 
 
@@ -188,7 +188,7 @@ module.exports = function (i) {
 
 /***/ }),
 
-/***/ 2723:
+/***/ 211:
 /***/ (function(module) {
 
 
@@ -298,7 +298,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 8230:
+/***/ 9586:
 /***/ (function(module) {
 
 
@@ -343,7 +343,7 @@ module.exports = insertBySelector;
 
 /***/ }),
 
-/***/ 3846:
+/***/ 1408:
 /***/ (function(module) {
 
 
@@ -360,7 +360,7 @@ module.exports = insertStyleElement;
 
 /***/ }),
 
-/***/ 3176:
+/***/ 5999:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 
@@ -378,7 +378,7 @@ module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
 
-/***/ 8402:
+/***/ 2932:
 /***/ (function(module) {
 
 
@@ -454,7 +454,7 @@ module.exports = domAPI;
 
 /***/ }),
 
-/***/ 2679:
+/***/ 8662:
 /***/ (function(module) {
 
 
@@ -548,27 +548,27 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/removeClass.js
-var removeClass = __webpack_require__(5580);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(2723);
+var removeClass = __webpack_require__(5680);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(211);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/styleDomAPI.js
-var styleDomAPI = __webpack_require__(8402);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(2932);
 var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/insertBySelector.js
-var insertBySelector = __webpack_require__(8230);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(9586);
 var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
-var setAttributesWithoutAttributes = __webpack_require__(3176);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(5999);
 var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/insertStyleElement.js
-var insertStyleElement = __webpack_require__(3846);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(1408);
 var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/styleTagTransform.js
-var styleTagTransform = __webpack_require__(2679);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(8662);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/css-loader@6.7.1_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../huxy/utils/src/message.css
-var message = __webpack_require__(4580);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/css-loader@6.7.1_webpack@5.75.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../huxy/utils/src/message.css
+var message = __webpack_require__(5657);
 ;// CONCATENATED MODULE: ../../huxy/utils/src/message.css
 
       

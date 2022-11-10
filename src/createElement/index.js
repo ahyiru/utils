@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1239:
+/***/ 9393:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const createTextElement = text => ({
@@ -94,7 +94,7 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // EXTERNAL MODULE: ../../huxy/utils/createTextElement.js
-var createTextElement = __webpack_require__(1239);
+var createTextElement = __webpack_require__(9393);
 ;// CONCATENATED MODULE: ../../huxy/utils/createElement.js
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }

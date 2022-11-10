@@ -10,9 +10,8 @@
 })(this, function() {
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
-
-/***/ 8904:
+/******/ 	var __webpack_modules__ = ([
+/* 0 */
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const padStart = function () {
@@ -29,8 +28,7 @@ const padStart = function () {
 /* harmony default export */ __webpack_exports__["default"] = (padStart);
 
 /***/ })
-
-/******/ 	});
+/******/ 	]);
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -60,7 +58,7 @@ const padStart = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _padStart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8904);
+/* harmony import */ var _padStart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 
 const randColor = () => '#' + (0,_padStart__WEBPACK_IMPORTED_MODULE_0__["default"])((~~(Math.random() * (1 << 24))).toString(16), 6);
 /* harmony default export */ __webpack_exports__["default"] = (randColor);

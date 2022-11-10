@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 9170:
+/***/ 9899:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
@@ -75,7 +75,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(9170);
+var isBrowser = __webpack_require__(9899);
 ;// CONCATENATED MODULE: ../../huxy/utils/_/prefixBrowser.js
 const prefix = ['', 'webkit', 'moz', 'ms'];
 const fullscreenElement = ele => prefix.map(v => v ? `${v}FullscreenElement` : 'fullscreenElement').find(v => ele[v]);

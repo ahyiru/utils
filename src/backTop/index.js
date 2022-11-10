@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 9933:
+/***/ 3013:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
@@ -20,7 +20,7 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null 
 
 /***/ }),
 
-/***/ 9170:
+/***/ 9899:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
@@ -28,21 +28,21 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 
 /***/ }),
 
-/***/ 4378:
+/***/ 8729:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9933);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3013);
 
 const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, 'current');
 /* harmony default export */ __webpack_exports__["default"] = (isRef);
 
 /***/ }),
 
-/***/ 1949:
+/***/ 527:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4378);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9899);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8729);
 
 
 const scrollTo = function () {
@@ -62,10 +62,10 @@ const scrollTo = function () {
 
 /***/ }),
 
-/***/ 9229:
+/***/ 9313:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9170);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9899);
 
 const scrollTop = () => {
   var _ref, _window$pageYOffset;
@@ -75,17 +75,17 @@ const scrollTop = () => {
 
 /***/ }),
 
-/***/ 5742:
+/***/ 7836:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8951);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8630);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4204);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7632);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_7_1_webpack_5_74_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_7_1_webpack_5_75_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".huxy-totop-bar {\n  --size: 36px;\n  --color: #fff;\n  --bgColor: #666;\n  --hoverBgColor: #40a9ff;\n  width: var(--size);\n  height: var(--size);\n  border-radius: 4px;\n  position: fixed;\n  right: 20px;\n  bottom: 20px;\n  background-color: var(--bgColor);\n  color: var(--color);\n  z-index: 99999;\n  cursor: pointer;\n  overflow: hidden;\n}\n.huxy-totop-bar i,\n.huxy-totop-bar span {\n  display: block;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: var(--size);\n  height: var(--size);\n  text-align: center;\n}\n.huxy-totop-bar i {\n  font-size: 22px;\n  line-height: var(--size);\n  transform: translateY(0);\n  transition: transform 0.2s;\n\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  vertical-align: middle;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.huxy-totop-bar i:before {\n  content: \"\\2191\";\n}\n.huxy-totop-bar span {\n  font-size: 13px;\n  font-weight: 500;\n  line-height: 1.1;\n  padding: 4px 0;\n  background-color: var(--hoverBgColor);\n  transform: translateY(100%);\n  transition: transform 0.2s;\n}\n.huxy-totop-bar:hover i {\n  transform: translateY(-100%);\n}\n.huxy-totop-bar:hover span {\n  transform: translateY(0);\n}\n", ""]);
 // Exports
@@ -95,7 +95,7 @@ ___CSS_LOADER_EXPORT___.locals = {};
 
 /***/ }),
 
-/***/ 8630:
+/***/ 7632:
 /***/ (function(module) {
 
 
@@ -203,7 +203,7 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ 8951:
+/***/ 4204:
 /***/ (function(module) {
 
 
@@ -214,7 +214,7 @@ module.exports = function (i) {
 
 /***/ }),
 
-/***/ 2723:
+/***/ 211:
 /***/ (function(module) {
 
 
@@ -324,7 +324,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 8230:
+/***/ 9586:
 /***/ (function(module) {
 
 
@@ -369,7 +369,7 @@ module.exports = insertBySelector;
 
 /***/ }),
 
-/***/ 3846:
+/***/ 1408:
 /***/ (function(module) {
 
 
@@ -386,7 +386,7 @@ module.exports = insertStyleElement;
 
 /***/ }),
 
-/***/ 3176:
+/***/ 5999:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 
@@ -404,7 +404,7 @@ module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
 
-/***/ 8402:
+/***/ 2932:
 /***/ (function(module) {
 
 
@@ -480,7 +480,7 @@ module.exports = domAPI;
 
 /***/ }),
 
-/***/ 2679:
+/***/ 8662:
 /***/ (function(module) {
 
 
@@ -574,31 +574,31 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(9170);
+var isBrowser = __webpack_require__(9899);
 // EXTERNAL MODULE: ../../huxy/utils/scrollTop.js
-var scrollTop = __webpack_require__(9229);
+var scrollTop = __webpack_require__(9313);
 // EXTERNAL MODULE: ../../huxy/utils/scrollTo.js
-var scrollTo = __webpack_require__(1949);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(2723);
+var scrollTo = __webpack_require__(527);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(211);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/styleDomAPI.js
-var styleDomAPI = __webpack_require__(8402);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(2932);
 var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/insertBySelector.js
-var insertBySelector = __webpack_require__(8230);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(9586);
 var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
-var setAttributesWithoutAttributes = __webpack_require__(3176);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(5999);
 var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/insertStyleElement.js
-var insertStyleElement = __webpack_require__(3846);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(1408);
 var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/styleTagTransform.js
-var styleTagTransform = __webpack_require__(2679);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/style-loader@3.3.1_webpack@5.75.0/node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(8662);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ../../../node_modules/.pnpm/css-loader@6.7.1_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../huxy/utils/src/backTop.css
-var backTop = __webpack_require__(5742);
+// EXTERNAL MODULE: ../../../node_modules/.pnpm/css-loader@6.7.1_webpack@5.75.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../huxy/utils/src/backTop.css
+var backTop = __webpack_require__(7836);
 ;// CONCATENATED MODULE: ../../huxy/utils/src/backTop.css
 
       

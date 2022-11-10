@@ -643,6 +643,22 @@ fixSize(img, ratio = 1);
 
 ```
 
+### fixFileSizeUnit
+
+```javascript
+fixFileSizeUnit(10000); // 9.766 KB
+fixFileSizeUnit(2000000); // 1.907 M
+
+```
+
+### fixTimeUnit
+
+```javascript
+fixTimeUnit(1000); // 16m40s
+fixTimeUnit(20000); // 5h33m20s
+
+```
+
 ### flatten
 
 ```javascript
