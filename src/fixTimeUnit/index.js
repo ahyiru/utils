@@ -14,6 +14,7 @@ var __webpack_exports__ = {};
 const fixTimeUnit = function () {
   let s = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
   let unit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['s', 'm', 'h', 'd'];
+  s = ~~s;
   if (s < 60) {
     return `${s}${unit[0]}`;
   }
@@ -27,7 +28,7 @@ const fixTimeUnit = function () {
   if (h < 24) {
     return `${h}${unit[2]}${hm}${unit[1]}${ls % 60}${unit[0]}`;
   }
-  return `${~~(h / 24)}${unit[3]}`;
+  return `${(h / 24).toFixed(2)}${unit[3]}`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (fixTimeUnit);
 __webpack_exports__ = __webpack_exports__["default"];
