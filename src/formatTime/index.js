@@ -15,16 +15,17 @@ return /******/ (function() { // webpackBootstrap
 /***/ 5495:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
+const addZero = n => n < 10 ? '0' + n : n;
 const getTime = function () {
   let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
   const date = new Date(day);
   const y = date.getFullYear();
   const w = date.getDay();
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  const h = date.getHours();
-  const M = date.getMinutes();
-  const s = date.getSeconds();
+  const m = addZero(date.getMonth() + 1);
+  const d = addZero(date.getDate());
+  const h = addZero(date.getHours());
+  const M = addZero(date.getMinutes());
+  const s = addZero(date.getSeconds());
   return [y, m, d, h, M, s, w];
 };
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
@@ -79,22 +80,23 @@ const getTime = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* unused harmony exports addZero, formatDelimiter */
+/* unused harmony export formatDelimiter */
 /* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5495);
 
-const addZero = n => n < 10 ? '0' + n : n;
+const defWeek = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
 const formatDelimiter = function (str, target) {
   let s = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '-';
   return str.replace(new RegExp(s, 'g'), target);
 };
 const formatTime = function () {
   let date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
-  let delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['-', '-', ' ', ':', ':'];
-  const time = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(date).map(v => addZero(v));
+  let delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['-', '-', ' ', ':', ':', ' ', ''];
+  let week = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defWeek;
+  const times = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(date);
   let s = '';
-  [...delimiter, ''].map((d, i) => {
-    var _time$i;
-    return s += ((_time$i = time[i]) != null ? _time$i : '') + d;
+  delimiter.map((d, i) => {
+    var _times$i;
+    return s += (i === delimiter.length - 1 ? week[times[i]] : (_times$i = times[i]) != null ? _times$i : '') + d;
   });
   return s;
 };

@@ -15,16 +15,17 @@ return /******/ (function() { // webpackBootstrap
 /***/ 5495:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
+const addZero = n => n < 10 ? '0' + n : n;
 const getTime = function () {
   let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
   const date = new Date(day);
   const y = date.getFullYear();
   const w = date.getDay();
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  const h = date.getHours();
-  const M = date.getMinutes();
-  const s = date.getSeconds();
+  const m = addZero(date.getMonth() + 1);
+  const d = addZero(date.getDate());
+  const h = addZero(date.getHours());
+  const M = addZero(date.getMinutes());
+  const s = addZero(date.getSeconds());
   return [y, m, d, h, M, s, w];
 };
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
