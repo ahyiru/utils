@@ -90,13 +90,13 @@ const formatDelimiter = function (str, target) {
 };
 const formatTime = function () {
   let date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
-  let delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['-', '-', ' ', ':', ':', ' ', ''];
+  let delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['-', '-', ' ', ':', ':', ''];
   let week = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defWeek;
   const times = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(date);
   let s = '';
   delimiter.map((d, i) => {
     var _times$i;
-    return s += (i === delimiter.length - 1 ? week[times[i]] : (_times$i = times[i]) != null ? _times$i : '') + d;
+    return s += (i === 6 ? week[times[i]] : (_times$i = times[i]) != null ? _times$i : '') + d;
   });
   return s;
 };
