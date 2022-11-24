@@ -63,7 +63,8 @@ const osList = [{
   reg: /linux/
 }, {
   name: 'IOS',
-  reg: /iphone|ipad|ipod/
+  reg: /iphone/
+  // reg: /iphone|ipad|ipod/,
 }, {
   name: 'Android',
   reg: /android/
@@ -75,12 +76,12 @@ const osList = [{
   reg: /ipad/
 }];
 const osType = () => {
-  var _ref, _window$navigator$pla, _osList$find;
+  var _osList$find$name, _osList$find;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
   const ua = window.navigator.userAgent.toLowerCase();
-  return (_ref = (_window$navigator$pla = window.navigator.platform) != null ? _window$navigator$pla : (_osList$find = osList.find(item => item.reg.test(ua))) == null ? void 0 : _osList$find.name) != null ? _ref : 'Unkonwn';
+  return (_osList$find$name = (_osList$find = osList.find(item => item.reg.test(ua))) == null ? void 0 : _osList$find.name) != null ? _osList$find$name : 'Unkonwn';
 };
 /* harmony default export */ __webpack_exports__["default"] = (osType);
 }();
