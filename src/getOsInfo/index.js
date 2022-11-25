@@ -53,37 +53,66 @@ var __webpack_exports__ = {};
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9899);
 
 const osList = [{
-  name: 'MacOS',
-  reg: /macintosh/
+  name: 'ios',
+  reg: /\(([^;]+);(.+)os (.+) like mac os x/,
+  format: matched => {
+    var _matched$;
+    return {
+      type: 'ios',
+      model: matched[1],
+      version: (_matched$ = matched[3]) == null ? void 0 : _matched$.replaceAll('_', '.')
+    };
+  }
 }, {
-  name: 'Windows',
-  reg: /windows/
-}, {
-  name: 'Linux',
-  reg: /linux/
-}, {
-  name: 'IOS',
-  reg: /iphone/
-  // reg: /iphone|ipad|ipod/,
-}, {
-  name: 'Android',
-  reg: /android/
+  name: 'macOS',
+  reg: /mac os x ([\w_.]+)/,
+  format: matched => ({
+    type: 'macOS',
+    version: matched[1] ? matched[1].replaceAll('_', '.') : undefined
+  })
 }, {
   name: 'WindowsPhone',
-  reg: /windows phone/
+  reg: /windows phone( os)? ([\d.]+)/,
+  format: matched => ({
+    type: 'WindowsPhone',
+    version: matched[2]
+  })
 }, {
-  name: 'iPad',
-  reg: /ipad/
+  name: 'Windows',
+  reg: /windows nt ([\d.]+)/,
+  format: matched => ({
+    type: 'Windows',
+    version: matched[1]
+  })
+}, {
+  name: 'Android',
+  reg: /android( [\d.]+)?/,
+  format: matched => ({
+    type: 'Android',
+    version: matched[1] ? matched[1].replaceAll(' ', '') : undefined
+  })
+}, {
+  name: 'Ubuntu',
+  reg: /ubuntu/,
+  format: matched => ({
+    type: 'Ubuntu'
+  })
+}, {
+  name: 'Linux',
+  reg: /linux/,
+  format: matched => ({
+    type: 'Linux'
+  })
 }];
-const osType = () => {
-  var _osList$find$name, _osList$find;
+const getOsInfo = () => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
   const ua = window.navigator.userAgent.toLowerCase();
-  return (_osList$find$name = (_osList$find = osList.find(item => item.reg.test(ua))) == null ? void 0 : _osList$find.name) != null ? _osList$find$name : 'Unkonwn';
+  const osItem = osList.find(item => ua.match(item.reg));
+  return osItem ? osItem.format(ua.match(osItem.reg)) : {};
 };
-/* harmony default export */ __webpack_exports__["default"] = (osType);
+/* harmony default export */ __webpack_exports__["default"] = (getOsInfo);
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -87,13 +87,16 @@ const exploreList = [{
   reg: /crios\/([\d.]+)/
 }];
 const getExplore = () => {
+  var _exploreList$find;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
   const ua = window.navigator.userAgent.toLowerCase();
-  const expItem = exploreList.find(item => ua.match(item.reg));
-  const explore = expItem ? `${expItem.name}: ${ua.match(expItem.reg)[1]}` : 'Unkonwn';
-  return explore;
+  const expItem = (_exploreList$find = exploreList.find(item => ua.match(item.reg))) != null ? _exploreList$find : {};
+  return {
+    type: expItem.name,
+    version: ua.match(expItem.reg)[1]
+  };
 };
 /* harmony default export */ __webpack_exports__["default"] = (getExplore);
 }();

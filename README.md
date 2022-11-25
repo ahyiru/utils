@@ -1344,13 +1344,13 @@ str2Html('<a>link</a>'); // NodeList [a]
 ### getExplore
 
 ```javascript
-getExplore(); // 'Chrome: 99.0.4844.51'
+getExplore(); // {type: 'Chrome', version: '99.0.4844.51'}
 ```
 
-### osType
+### getOsInfo
 
 ```javascript
-osType(); // 'MacOSX'
+getOsInfo(); // {type: 'macOS', version: '10.15.7'}
 ```
 
 ### sysLang
