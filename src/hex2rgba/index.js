@@ -26,7 +26,7 @@ const hex2rgba = function () {
   if (hex.length === 6) {
     return `rgb(${r},${g},${b})`;
   }
-  const a = parseInt(hex.slice(6, 8), 16) / 255 || 0;
+  const a = parseInt(hex.slice(6, 8), 16) / 255 || 1;
   return `rgba(${r},${g},${b},${a})`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (hex2rgba);
