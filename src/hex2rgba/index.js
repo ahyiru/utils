@@ -13,6 +13,9 @@ return /******/ (function() { // webpackBootstrap
 var __webpack_exports__ = {};
 const hex2rgba = function () {
   let hex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  if (hex[0] !== '#') {
+    return hex;
+  }
   hex = hex.replace('#', '');
   const len = hex.length;
   if (len === 3) {
