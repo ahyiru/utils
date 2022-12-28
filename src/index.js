@@ -6,6 +6,8 @@ export {default as addDays} from './addDays';
 export {default as addHours} from './addHours';
 export {default as addMonths} from './addMonths';
 export {default as addNodes} from './addNodes';
+export {default as addScript} from './addScript';
+export {default as addStyle} from './addStyle';
 export {default as addYears} from './addYears';
 export {default as arr2obj} from './arr2obj';
 export {default as arr2str} from './arr2str';

@@ -28,6 +28,20 @@ a2o(arr);
 // {1: 't1', 2: 't2', 3: 't3'}
 ```
 
+### addScript/addStyle
+
+动态添加 `script` 和 `style` 。
+
+```javascript
+const loadScript = async url => {
+  await addScript(url);
+};
+const loadStyleByUrl = async url => {
+  await addStyle(url);
+};
+addStyle(cssStr, 'css-hash');
+```
+
 ### arr2Tree
 
 ```javascript

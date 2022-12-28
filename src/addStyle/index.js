@@ -18,44 +18,6 @@ return /******/ (function() { // webpackBootstrap
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
-/***/ }),
-
-/***/ 9041:
-/***/ (function(__unused_webpack_module, __webpack_exports__) {
-
-const isEvent = key => key.startsWith('on');
-const isProperty = key => key !== 'children' && !isEvent(key);
-const isNew = (prev, next) => key => prev[key] !== next[key];
-const isGone = (prev, next) => key => !(key in next);
-const filterProps = props => {
-  const propsList = Object.keys(props);
-  return {
-    eventProps: propsList.filter(isEvent),
-    propertyProps: propsList.filter(isProperty)
-  };
-};
-const updateNode = (dom, prevProps, nextProps) => {
-  const {
-    eventProps: prevEvent,
-    propertyProps: prevProperty
-  } = filterProps(prevProps);
-  const {
-    eventProps: nextEvent,
-    propertyProps: nextProperty
-  } = filterProps(nextProps);
-  prevEvent.filter(isGone(prevProps, nextProps)).map(key => {
-    const eventType = key.toLowerCase().slice(2);
-    dom.removeEventListener(eventType, prevProps[key]);
-  });
-  prevProperty.filter(isGone(prevProps, nextProps)).map(key => dom[key] = '');
-  nextProperty.filter(isNew(prevProps, nextProps)).map(key => dom[key] = nextProps[key]);
-  nextEvent.filter(isNew(prevProps, nextProps)).map(key => {
-    const eventType = key.toLowerCase().slice(2);
-    dom.addEventListener(eventType, nextProps[key]);
-  });
-};
-/* harmony default export */ __webpack_exports__["default"] = (updateNode);
-
 /***/ })
 
 /******/ 	});
@@ -89,18 +51,41 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
-/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9041);
 
-
-const createNode = fiber => {
+const addStyle = (text, hash) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-  const dom = fiber.type === 'TEXT_ELEMENT' ? document.createTextNode('') : document.createElement(fiber.type);
-  (0,_updateNode__WEBPACK_IMPORTED_MODULE_1__["default"])(dom, {}, fiber.props);
-  return dom;
+  if (hash) {
+    return new Promise((resolve, reject) => {
+      const loaded = [...document.getElementsByTagName('style')].map(item => item.getAttribute('huxy-css-hash')).filter(Boolean).find(h => h === hash);
+      if (!loaded) {
+        const style = document.createElement('style');
+        style.onerror = event => reject(new Error(`Failed to load '${hash}' style`));
+        style.onload = resolve;
+        style.innerHTML = text;
+        style.setAttribute('huxy-css-hash', hash);
+        (document.head || document.getElementsByTagName('head')[0]).appendChild(style);
+      } else {
+        resolve();
+      }
+    });
+  }
+  return new Promise((resolve, reject) => {
+    const loaded = [...document.getElementsByTagName('link')].find(item => item.href === text);
+    if (!loaded) {
+      const link = document.createElement('link');
+      link.onerror = event => reject(new Error(`Failed to load '${text}'`));
+      link.onload = resolve;
+      link.href = text;
+      link.rel = 'stylesheet';
+      (document.head || document.getElementsByTagName('head')[0]).appendChild(link);
+    } else {
+      resolve();
+    }
+  });
 };
-/* harmony default export */ __webpack_exports__["default"] = (createNode);
+/* harmony default export */ __webpack_exports__["default"] = (addStyle);
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
