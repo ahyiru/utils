@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1249:
+/***/ 2523:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const addDays = function (n) {
@@ -55,7 +55,7 @@ const addDays = function (n) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _addDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1249);
+/* harmony import */ var _addDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2523);
 
 const weekDate = function () {
   let d = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
