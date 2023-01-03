@@ -16,7 +16,7 @@ return /******/ (function() { // webpackBootstrap
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony exports defaultHeadMeta, mergeMetaData */
-/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2126);
+/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8652);
 
 const defaultHeadMeta = [{
   'http-equiv': 'X-UA-Compatible',
@@ -100,7 +100,7 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 
 /***/ }),
 
-/***/ 2126:
+/***/ 8652:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);

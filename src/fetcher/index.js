@@ -213,7 +213,7 @@ const baseFetch = (handler, timeout) => method => function (url) {
     }
     return handler(result);
   }).catch(error => {
-    throw Error(error);
+    throw error;
   });
 };
 /* harmony default export */ var utils_baseFetch = (baseFetch);
