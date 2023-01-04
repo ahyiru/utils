@@ -11,11 +11,9 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const firstUpper = function () {
-  let str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  return str.replace(/^\S/, s => s.toUpperCase());
-};
+const firstUpper = (str = "") => str.replace(/^\S/, (s) => s.toUpperCase());
 /* harmony default export */ __webpack_exports__["default"] = (firstUpper);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

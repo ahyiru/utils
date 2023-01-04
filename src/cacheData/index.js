@@ -12,20 +12,20 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 5222:
+/***/ 5990:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9286);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8859);
-/* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9600);
-/* harmony import */ var _isVueEle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(657);
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6302);
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2512);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5737);
+/* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2865);
+/* harmony import */ var _isVueEle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1687);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4961);
 
 
 
 
 
-const clone = obj => {
+const clone = (obj) => {
   if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(obj) && !(0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(obj)) {
     return obj;
   }
@@ -33,37 +33,35 @@ const clone = obj => {
   for (const i in obj) {
     if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__["default"])(obj, i)) {
       const item = obj[i];
-      // newObj[i]=typeof item==='object'?item!==obj?clone(item):'cyclic':item;
-      newObj[i] = (0,_isReactEle__WEBPACK_IMPORTED_MODULE_3__["default"])(item) || (0,_isVueEle__WEBPACK_IMPORTED_MODULE_4__["default"])(item) || typeof item !== 'object' ? item : item !== obj ? clone(item) : 'cyclic';
+      newObj[i] = (0,_isReactEle__WEBPACK_IMPORTED_MODULE_3__["default"])(item) || (0,_isVueEle__WEBPACK_IMPORTED_MODULE_4__["default"])(item) || typeof item !== "object" ? item : item !== obj ? clone(item) : "cyclic";
     } else {
-      Object.setPrototypeOf(newObj, {
-        [i]: obj[i]
-      });
+      Object.setPrototypeOf(newObj, { [i]: obj[i] });
     }
   }
   return newObj;
 };
 /* harmony default export */ __webpack_exports__["default"] = (clone);
 
+
 /***/ }),
 
-/***/ 4628:
+/***/ 1458:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6302);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4961);
 
-const isCyclic = obj => {
+const isCyclic = (obj) => {
   const seenObjects = [];
-  const detect = obj => {
-    if (obj && typeof obj === 'object') {
-      if (seenObjects.indexOf(obj) !== -1) {
+  const detect = (obj2) => {
+    if (obj2 && typeof obj2 === "object") {
+      if (seenObjects.indexOf(obj2) !== -1) {
         return true;
       }
-      seenObjects.push(obj);
+      seenObjects.push(obj2);
       let hasCyc = false;
-      for (let key in obj) {
-        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(obj, key) && detect(obj[key])) {
-          obj[key] = 'cyclic';
+      for (let key in obj2) {
+        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(obj2, key) && detect(obj2[key])) {
+          obj2[key] = "cyclic";
           hasCyc = true;
         }
       }
@@ -76,14 +74,15 @@ const isCyclic = obj => {
 };
 /* harmony default export */ __webpack_exports__["default"] = (isCyclic);
 
+
 /***/ }),
 
-/***/ 5970:
+/***/ 85:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
-/* harmony import */ var _cyclic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4628);
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6302);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
+/* harmony import */ var _cyclic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1458);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4961);
 
 
 
@@ -96,10 +95,7 @@ const equal = (a, b) => {
   if (a == null || b == null) {
     return a === b;
   }
-  /*if(isEle(a)){
-    return a.isEqualNode(b);
-  }*/
-  if (['object', 'array'].indexOf(typeA) === -1) {
+  if (["object", "array"].indexOf(typeA) === -1) {
     return a.toString() === b.toString();
   }
   if (Object.keys(a).length !== Object.keys(b).length) {
@@ -120,57 +116,64 @@ const equal = (a, b) => {
 };
 /* harmony default export */ __webpack_exports__["default"] = (equal);
 
+
 /***/ }),
 
-/***/ 5777:
+/***/ 3236:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 /* harmony default export */ __webpack_exports__["default"] = (getType);
+
 
 /***/ }),
 
-/***/ 6302:
+/***/ 4961:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
 /* harmony default export */ __webpack_exports__["default"] = (hasProp);
 
+
 /***/ }),
 
-/***/ 9286:
+/***/ 2512:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
 
-const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
+const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "array";
 /* harmony default export */ __webpack_exports__["default"] = (isArray);
 
+
 /***/ }),
 
-/***/ 8859:
+/***/ 5737:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
 
-const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
+const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "object";
 /* harmony default export */ __webpack_exports__["default"] = (isObject);
 
+
 /***/ }),
 
-/***/ 9600:
+/***/ 2865:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isReactEle = value => (value == null ? void 0 : value['$$typeof']) && typeof value['$$typeof'] === 'symbol' && value['$$typeof']['description'] === 'react.element';
+const isReactEle = (value) => (value == null ? void 0 : value["$$typeof"]) && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"] === "react.element";
 /* harmony default export */ __webpack_exports__["default"] = (isReactEle);
 
+
 /***/ }),
 
-/***/ 657:
+/***/ 1687:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isVueEle = value => value == null ? void 0 : value.__v_isVNode;
+const isVueEle = (value) => value == null ? void 0 : value.__v_isVNode;
 /* harmony default export */ __webpack_exports__["default"] = (isVueEle);
+
 
 /***/ })
 
@@ -204,22 +207,19 @@ const isVueEle = value => value == null ? void 0 : value.__v_isVNode;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _equal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5970);
-/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5222);
+/* harmony import */ var _equal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85);
+/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5990);
 
 
-const cache = function () {
-  let len = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;
+const cache = (len = 100) => {
   const snapshot = [];
   let currentIndex = -1;
-  const record = data => {
-    var _snapshot, _snapshot$currentInde;
+  const record = (data) => {
+    var _a, _b;
     const length = snapshot.length;
     const tempData = (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])(data);
-    if (!(0,_equal__WEBPACK_IMPORTED_MODULE_1__["default"])(tempData, (_snapshot = snapshot[length - 1]) == null ? void 0 : _snapshot.data)) {
-      snapshot.push({
-        data: tempData
-      });
+    if (!(0,_equal__WEBPACK_IMPORTED_MODULE_1__["default"])(tempData, (_a = snapshot[length - 1]) == null ? void 0 : _a.data)) {
+      snapshot.push({ data: tempData });
       if (snapshot.length > len) {
         snapshot.shift();
       }
@@ -233,28 +233,27 @@ const cache = function () {
     return {
       index: currentIndex,
       length,
-      data: (_snapshot$currentInde = snapshot[currentIndex]) == null ? void 0 : _snapshot$currentInde.data
+      data: (_b = snapshot[currentIndex]) == null ? void 0 : _b.data
     };
   };
-  const cursor = function () {
-    var _snapshot$currentInde2;
-    let num = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  const cursor = (num = 0) => {
+    var _a;
     const length = snapshot.length;
     currentIndex += num;
     currentIndex = currentIndex < 0 ? 0 : currentIndex > length - 1 ? length - 1 : currentIndex;
     return {
       index: currentIndex,
       length,
-      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])((_snapshot$currentInde2 = snapshot[currentIndex]) == null ? void 0 : _snapshot$currentInde2.data)
+      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])((_a = snapshot[currentIndex]) == null ? void 0 : _a.data)
     };
   };
-  const jump = index => {
-    var _snapshot$currentInde3;
+  const jump = (index) => {
+    var _a;
     currentIndex = index;
     return {
       index: currentIndex,
       length: snapshot.length,
-      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])((_snapshot$currentInde3 = snapshot[currentIndex]) == null ? void 0 : _snapshot$currentInde3.data)
+      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])((_a = snapshot[currentIndex]) == null ? void 0 : _a.data)
     };
   };
   const undo = () => cursor(-1);
@@ -275,6 +274,7 @@ const cache = function () {
   };
 };
 /* harmony default export */ __webpack_exports__["default"] = (cache);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

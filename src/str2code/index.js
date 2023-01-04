@@ -11,13 +11,13 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const str2code = function (str) {
-  let hasReturn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+const str2code = (str, hasReturn = false) => {
   str = hasReturn ? str : `return ${str};`;
   const exec = Function(str);
   return exec();
 };
 /* harmony default export */ __webpack_exports__["default"] = (str2code);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

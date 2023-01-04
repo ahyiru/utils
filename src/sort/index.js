@@ -11,28 +11,27 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const sort = function (arr) {
-  let key = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-  let desc = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-  return [...(arr || [])].sort((x, y) => {
+const sort = (arr, key = null, desc = false) => {
+  return [...arr || []].sort((x, y) => {
     const a = key ? x[key] : x;
     const b = key ? y[key] : y;
     if (!isNaN(Number(a)) && !isNaN(Number(a))) {
       return desc ? b - a : a - b;
     }
-    if (typeof a === 'string' && typeof b === 'string') {
+    if (typeof a === "string" && typeof b === "string") {
       return desc ? b.localeCompare(a) : a.localeCompare(b);
     }
-    if (typeof a === 'string' && typeof b === 'number') {
+    if (typeof a === "string" && typeof b === "number") {
       return desc ? -1 : 1;
     }
-    if (typeof a === 'number' || typeof a === 'string') {
+    if (typeof a === "number" || typeof a === "string") {
       return desc ? 1 : -1;
     }
     return desc ? -1 : 1;
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = (sort);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

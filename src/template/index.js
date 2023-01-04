@@ -11,30 +11,16 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-/* const template=(strings, ...keys)=>{
-  return (...values)=>{
-    const dict = values[values.length - 1] || {};
-    const result = [strings[0]];
-    keys.map((key, i)=>{
-      const value = Number.isInteger(key) ? values[key] : dict[key];
-      result.push(value, strings[i + 1]);
-    });
-    return result.join('');
-  };
-}; */
-
-const template = function (strings) {
-  for (var _len = arguments.length, keys = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    keys[_key - 1] = arguments[_key];
-  }
+const template = (strings, ...keys) => {
   const tmpl = [];
   strings.map((str, i) => {
-    var _keys$i;
-    tmpl.push(str, (_keys$i = keys[i]) != null ? _keys$i : '');
+    var _a;
+    tmpl.push(str, (_a = keys[i]) != null ? _a : "");
   });
-  return tmpl.join('');
+  return tmpl.join("");
 };
 /* harmony default export */ __webpack_exports__["default"] = (template);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

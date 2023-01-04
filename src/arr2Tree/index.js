@@ -12,21 +12,23 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 5777:
+/***/ 3236:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 /* harmony default export */ __webpack_exports__["default"] = (getType);
+
 
 /***/ }),
 
-/***/ 9286:
+/***/ 2512:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
 
-const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
+const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "array";
 /* harmony default export */ __webpack_exports__["default"] = (isArray);
+
 
 /***/ })
 
@@ -57,107 +59,25 @@ const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(va
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
-/******/ 	
-/************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2512);
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ utils_arr2Tree; }
-});
-
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.7/node_modules/@babel/runtime/helpers/esm/typeof.js
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
-    return typeof obj;
-  } : function (obj) {
-    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-  }, _typeof(obj);
-}
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.7/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
-
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return (hint === "string" ? String : Number)(input);
-}
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.7/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
-
-
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
-}
-;// CONCATENATED MODULE: ../../../node_modules/.pnpm/@babel+runtime@7.20.7/node_modules/@babel/runtime/helpers/esm/defineProperty.js
-
-function _defineProperty(obj, key, value) {
-  key = _toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-// EXTERNAL MODULE: ../../huxy/utils/isArray.js
-var isArray = __webpack_require__(9286);
-;// CONCATENATED MODULE: ../../huxy/utils/arr2Tree.js
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-const arr2Tree = fn => function (arr) {
-  let idKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'id';
-  let childKey = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'children';
-  let treeRoot = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : -1;
-  if (!(0,isArray["default"])(arr)) {
+const arr2Tree = (fn) => (arr, idKey = "id", childKey = "children", treeRoot = -1) => {
+  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(arr)) {
     return arr;
   }
   const tmpData = {};
-  const keys = arr.map(v => v[idKey]);
-  [...arr].map(v => {
-    const item = _objectSpread({}, v);
-    const {
-      [idKey]: id
-    } = item;
+  const keys = arr.map((v) => v[idKey]);
+  [...arr].map((v) => {
+    var _a;
+    const item = { ...v };
+    const { [idKey]: id } = item;
     if (id != null) {
-      // const parentId = fn(id) || treeRoot;
-      let {
-        parentId
-      } = item;
+      let { parentId } = item;
       if (parentId == null) {
-        var _fn;
-        parentId = (_fn = fn == null ? void 0 : fn(item)) != null ? _fn : treeRoot;
+        parentId = (_a = fn == null ? void 0 : fn(item)) != null ? _a : treeRoot;
         item.parentId = parentId;
       }
       if (!tmpData[id]) {
@@ -180,7 +100,8 @@ const arr2Tree = fn => function (arr) {
   });
   return tmpData[treeRoot];
 };
-/* harmony default export */ var utils_arr2Tree = (arr2Tree);
+/* harmony default export */ __webpack_exports__["default"] = (arr2Tree);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

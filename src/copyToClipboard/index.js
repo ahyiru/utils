@@ -12,11 +12,12 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+
 
 /***/ })
 
@@ -50,27 +51,28 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
 
-const copyToClipboard = text => {
+const copyToClipboard = (text) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-  const copyText = document.createElement('textarea');
+  const copyText = document.createElement("textarea");
   copyText.value = text;
-  copyText.style.position = 'fixed';
-  copyText.style.left = '-9999px';
+  copyText.style.position = "fixed";
+  copyText.style.left = "-9999px";
   document.body.appendChild(copyText);
   copyText.select();
   copyText.setSelectionRange(0, -1);
   try {
-    document.execCommand('copy');
+    document.execCommand("copy");
   } catch (err) {
     console.error(err);
   }
   document.body.removeChild(copyText);
 };
 /* harmony default export */ __webpack_exports__["default"] = (copyToClipboard);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -12,21 +12,23 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 5777:
+/***/ 3236:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 /* harmony default export */ __webpack_exports__["default"] = (getType);
+
 
 /***/ }),
 
-/***/ 9286:
+/***/ 2512:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
 
-const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'array';
+const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "array";
 /* harmony default export */ __webpack_exports__["default"] = (isArray);
+
 
 /***/ })
 
@@ -60,7 +62,7 @@ const isArray = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(va
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9286);
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2512);
 
 const changePos = (arr, fromKey, toKey) => {
   if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(arr)) {
@@ -73,6 +75,7 @@ const changePos = (arr, fromKey, toKey) => {
   return arr;
 };
 /* harmony default export */ __webpack_exports__["default"] = (changePos);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -11,13 +11,9 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const isDate = function () {
-  for (var _len = arguments.length, val = new Array(_len), _key = 0; _key < _len; _key++) {
-    val[_key] = arguments[_key];
-  }
-  return !Number.isNaN(new Date(...val).valueOf());
-};
+const isDate = (...val) => !Number.isNaN(new Date(...val).valueOf());
 /* harmony default export */ __webpack_exports__["default"] = (isDate);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

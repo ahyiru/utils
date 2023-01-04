@@ -11,8 +11,9 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const isUrl = url => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
+const isUrl = (url) => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
 /* harmony default export */ __webpack_exports__["default"] = (isUrl);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

@@ -23,13 +23,12 @@ const emitter = () => {
   };
   const emit = (name, data) => {
     if (hub[name]) {
-      hub[name].map(cb => cb(data));
+      hub[name].map((cb) => cb(data));
     }
   };
-  const off = function (name) {
-    let cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  const off = (name, cb = null) => {
     if (hub[name]) {
-      if (typeof cb !== 'function') {
+      if (typeof cb !== "function") {
         return hub[name] = [];
       }
       const index = hub[name].indexOf(cb);
@@ -38,13 +37,10 @@ const emitter = () => {
       }
     }
   };
-  return {
-    on,
-    emit,
-    off
-  };
+  return { on, emit, off };
 };
 /* harmony default export */ __webpack_exports__["default"] = (emitter);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

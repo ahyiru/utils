@@ -12,11 +12,12 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+
 
 /***/ })
 
@@ -50,16 +51,15 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
 
-const setRem = function () {
-  let scale = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
+const setRem = (scale = 10) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
   const dpr = window.devicePixelRatio || 1;
   const root = document.documentElement;
-  const resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+  const resizeEvt = "orientationchange" in window ? "orientationchange" : "resize";
   const handler = () => {
     const clientWidth = root.clientWidth;
     root.style.fontSize = `${clientWidth / (scale * dpr)}px`;
@@ -68,6 +68,7 @@ const setRem = function () {
   return () => window.removeEventListener(resizeEvt, handler, false);
 };
 /* harmony default export */ __webpack_exports__["default"] = (setRem);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

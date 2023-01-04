@@ -12,20 +12,18 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 9333:
+/***/ 8012:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony export sleepSync */
-const sleep = function () {
-  let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 350;
-  return new Promise(resolve => setTimeout(resolve, ms));
-};
-const sleepSync = function () {
-  let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;
+const sleep = (ms = 350) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleepSync = (ms = 100) => {
   const start = Date.now();
-  while (Date.now() - start <= ms) {}
+  while (Date.now() - start <= ms) {
+  }
 };
 /* harmony default export */ __webpack_exports__["default"] = (sleep);
+
 
 /***/ })
 
@@ -77,23 +75,15 @@ const sleepSync = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9333);
+/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8012);
 
-
-/* const loop=async (fn,handle,delay=2000)=>{
-  if(!handle?.(fn?.())){
-    await sleep(delay);
-    loop(fn,handle,delay);
-  }
-}; */
-
-const loop = async function (fn, handle) {
-  let delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2000;
-  while (!(handle != null && handle(fn == null ? void 0 : fn()))) {
+const loop = async (fn, handle, delay = 2e3) => {
+  while (!(handle == null ? void 0 : handle(fn == null ? void 0 : fn()))) {
     await (0,_sleep__WEBPACK_IMPORTED_MODULE_0__["default"])(delay);
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (loop);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

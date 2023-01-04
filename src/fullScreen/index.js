@@ -12,29 +12,32 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6302:
+/***/ 4961:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
 /* harmony default export */ __webpack_exports__["default"] = (hasProp);
 
+
 /***/ }),
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+
 
 /***/ }),
 
-/***/ 185:
+/***/ 8319:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6302);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4961);
 
-const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, 'current');
+const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, "current");
 /* harmony default export */ __webpack_exports__["default"] = (isRef);
+
 
 /***/ })
 
@@ -93,37 +96,37 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(1309);
+var isBrowser = __webpack_require__(6809);
 // EXTERNAL MODULE: ../../huxy/utils/isRef.js
-var isRef = __webpack_require__(185);
+var isRef = __webpack_require__(8319);
 ;// CONCATENATED MODULE: ../../huxy/utils/_/prefixBrowser.js
-const prefix = ['', 'webkit', 'moz', 'ms'];
-const fullscreenElement = ele => prefix.map(v => v ? `${v}FullscreenElement` : 'fullscreenElement').find(v => ele[v]);
-const requestFullscreen = ele => prefix.map(v => v ? `${v}RequestFullscreen` : 'requestFullscreen').find(v => ele[v]);
-const exitFullscreen = ele => prefix.map(v => v ? `${v}ExitFullscreen` : 'exitFullscreen').find(v => ele[v]);
-const fullscreenchange = prefix.map(v => `${v}fullscreenchange`);
+const prefix = ["", "webkit", "moz", "ms"];
+const fullscreenElement = (ele) => prefix.map((v) => v ? `${v}FullscreenElement` : "fullscreenElement").find((v) => ele[v]);
+const requestFullscreen = (ele) => prefix.map((v) => v ? `${v}RequestFullscreen` : "requestFullscreen").find((v) => ele[v]);
+const exitFullscreen = (ele) => prefix.map((v) => v ? `${v}ExitFullscreen` : "exitFullscreen").find((v) => ele[v]);
+const fullscreenchange = prefix.map((v) => `${v}fullscreenchange`);
+
 ;// CONCATENATED MODULE: ../../huxy/utils/fullScreen.js
 
 
 
-const fullScreen = ele => {
-  var _ele;
+const fullScreen = (ele) => {
+  var _a, _b;
   if (!(0,isBrowser["default"])()) {
     return;
   }
-  ele = (0,isRef["default"])(ele) ? ele.current : (_ele = ele) != null ? _ele : document.body;
+  ele = (0,isRef["default"])(ele) ? ele.current : ele != null ? ele : document.body;
   const fse = fullscreenElement(document);
   const rfs = requestFullscreen(ele);
   const efs = exitFullscreen(document);
   if (!document[fse]) {
-    var _ele$rfs, _ele2;
-    (_ele$rfs = (_ele2 = ele)[rfs]) == null ? void 0 : _ele$rfs.call(_ele2);
+    (_a = ele[rfs]) == null ? void 0 : _a.call(ele);
   } else {
-    var _document$efs, _document;
-    (_document$efs = (_document = document)[efs]) == null ? void 0 : _document$efs.call(_document);
+    (_b = document[efs]) == null ? void 0 : _b.call(document);
   }
 };
 /* harmony default export */ var utils_fullScreen = (fullScreen);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

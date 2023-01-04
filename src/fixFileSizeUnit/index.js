@@ -11,8 +11,7 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const fixFileSizeUnit = function (size) {
-  let base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1024;
+const fixFileSizeUnit = (size, base = 1024) => {
   const kb = size / base;
   if (kb < base) {
     return `${kb.toFixed(3) - 0} KB`;
@@ -25,6 +24,7 @@ const fixFileSizeUnit = function (size) {
   return `${gb.toFixed(3) - 0} G`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (fixFileSizeUnit);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

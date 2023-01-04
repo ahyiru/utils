@@ -12,10 +12,10 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2331:
+/***/ 8433:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
 
 const addStyle = (text, hash) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
@@ -23,28 +23,28 @@ const addStyle = (text, hash) => {
   }
   if (hash) {
     return new Promise((resolve, reject) => {
-      const loaded = [...document.getElementsByTagName('style')].map(item => item.getAttribute('huxy-css-hash')).filter(Boolean).find(h => h === hash);
+      const loaded = [...document.getElementsByTagName("style")].map((item) => item.getAttribute("huxy-css-hash")).filter(Boolean).find((h) => h === hash);
       if (!loaded) {
-        const style = document.createElement('style');
-        style.onerror = event => reject(new Error(`Failed to load '${hash}' style`));
+        const style = document.createElement("style");
+        style.onerror = (event) => reject(new Error(`Failed to load '${hash}' style`));
         style.onload = resolve;
         style.innerHTML = text;
-        style.setAttribute('huxy-css-hash', hash);
-        (document.head || document.getElementsByTagName('head')[0]).appendChild(style);
+        style.setAttribute("huxy-css-hash", hash);
+        (document.head || document.getElementsByTagName("head")[0]).appendChild(style);
       } else {
         resolve();
       }
     });
   }
   return new Promise((resolve, reject) => {
-    const loaded = [...document.getElementsByTagName('link')].find(item => item.href === text);
+    const loaded = [...document.getElementsByTagName("link")].find((item) => item.href === text);
     if (!loaded) {
-      const link = document.createElement('link');
-      link.onerror = event => reject(new Error(`Failed to load '${text}'`));
+      const link = document.createElement("link");
+      link.onerror = (event) => reject(new Error(`Failed to load '${text}'`));
       link.onload = resolve;
       link.href = text;
-      link.rel = 'stylesheet';
-      (document.head || document.getElementsByTagName('head')[0]).appendChild(link);
+      link.rel = "stylesheet";
+      (document.head || document.getElementsByTagName("head")[0]).appendChild(link);
     } else {
       resolve();
     }
@@ -52,50 +52,54 @@ const addStyle = (text, hash) => {
 };
 /* harmony default export */ __webpack_exports__["default"] = (addStyle);
 
+
 /***/ }),
 
-/***/ 5777:
+/***/ 3236:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
+
 /***/ }),
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
+
 /***/ }),
 
-/***/ 655:
+/***/ 6128:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
 
-const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf('element') > -1;
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf("element") > -1;
 /* harmony default export */ __webpack_exports__["default"] = (isElement);
 
+
 /***/ }),
 
-/***/ 4428:
+/***/ 9216:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(655);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6128);
 
-const removeClass = function (ele) {
-  let name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+const removeClass = (ele, name = "") => {
   if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__["default"])(ele)) {
     return;
   }
-  const nameArr = name.split(' ').filter(Boolean);
-  const targetName = ele.className.split(' ');
-  const names = targetName.filter(v => !nameArr.includes(v));
-  ele.className = names.join(' ');
+  const nameArr = name.split(" ").filter(Boolean);
+  const targetName = ele.className.split(" ");
+  const names = targetName.filter((v) => !nameArr.includes(v));
+  ele.className = names.join(" ");
 };
 /* harmony default export */ __webpack_exports__["default"] = (removeClass);
+
 
 /***/ })
 
@@ -154,11 +158,11 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(1309);
+var isBrowser = __webpack_require__(6809);
 // EXTERNAL MODULE: ../../huxy/utils/removeClass.js
-var removeClass = __webpack_require__(4428);
+var removeClass = __webpack_require__(9216);
 // EXTERNAL MODULE: ../../huxy/utils/addStyle.js
-var addStyle = __webpack_require__(2331);
+var addStyle = __webpack_require__(8433);
 ;// CONCATENATED MODULE: ../../huxy/utils/styles/message.js
 const css = `@keyframes huxy-message-animate-in {
   0% {
@@ -257,38 +261,36 @@ const css = `@keyframes huxy-message-animate-in {
   content: "\\2690";
 }`;
 /* harmony default export */ var message = (css);
+
 ;// CONCATENATED MODULE: ../../huxy/utils/message.js
 
 
 
 
-const getContainer = () => document.getElementsByClassName('huxy-message')[0];
+const getContainer = () => document.getElementsByClassName("huxy-message")[0];
 const createContainer = () => {
-  const div = document.createElement('div');
-  const child = document.createElement('div');
-  child.setAttribute('class', 'huxy-message');
+  const div = document.createElement("div");
+  const child = document.createElement("div");
+  child.setAttribute("class", "huxy-message");
   div.appendChild(child);
   document.body.appendChild(div);
   return child;
 };
 const createItem = (content, status) => {
-  const mes = document.createElement('div');
-  mes.setAttribute('class', `message-content open ${status}`);
-  const text = document.createElement('span');
+  const mes = document.createElement("div");
+  mes.setAttribute("class", `message-content open ${status}`);
+  const text = document.createElement("span");
   text.innerText = content;
-  const icon = document.createElement('i');
+  const icon = document.createElement("i");
   mes.appendChild(icon);
   mes.appendChild(text);
   return mes;
 };
-const startMes = function (content) {
-  let delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3250;
-  let onClose = arguments.length > 2 ? arguments[2] : undefined;
-  let status = arguments.length > 3 ? arguments[3] : undefined;
+const startMes = (content, delay = 3250, onClose, status) => {
   if (!(0,isBrowser["default"])()) {
     return;
   }
-  (0,addStyle["default"])(message, 'huxy-message-css');
+  (0,addStyle["default"])(message, "huxy-message-css");
   let container = getContainer();
   if (!container) {
     container = createContainer();
@@ -300,17 +302,18 @@ const startMes = function (content) {
     onClose == null ? void 0 : onClose();
   }, delay);
   setTimeout(() => {
-    (0,removeClass["default"])(mesItem, 'open');
+    (0,removeClass["default"])(mesItem, "open");
   }, delay - 250);
 };
 const message_message = {
-  success: (content, delay, onClose) => startMes(content, delay, onClose, 'success'),
-  warn: (content, delay, onClose) => startMes(content, delay, onClose, 'warn'),
-  warning: (content, delay, onClose) => startMes(content, delay, onClose, 'warn'),
-  error: (content, delay, onClose) => startMes(content, delay, onClose, 'error'),
-  info: (content, delay, onClose) => startMes(content, delay, onClose, 'info')
+  success: (content, delay, onClose) => startMes(content, delay, onClose, "success"),
+  warn: (content, delay, onClose) => startMes(content, delay, onClose, "warn"),
+  warning: (content, delay, onClose) => startMes(content, delay, onClose, "warn"),
+  error: (content, delay, onClose) => startMes(content, delay, onClose, "error"),
+  info: (content, delay, onClose) => startMes(content, delay, onClose, "info")
 };
 /* harmony default export */ var utils_message = (message_message);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

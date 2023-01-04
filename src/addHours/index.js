@@ -11,13 +11,13 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const addHours = function (n) {
-  let d = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
+const addHours = (n, d = new Date()) => {
   const newDate = new Date(d);
   newDate.setHours(newDate.getHours() + n);
   return newDate;
 };
 /* harmony default export */ __webpack_exports__["default"] = (addHours);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

@@ -11,10 +11,9 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const validObj = function () {
-  let obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+const validObj = (obj = {}) => {
   const newObj = {};
-  Object.keys(obj).map(v => {
+  Object.keys(obj).map((v) => {
     if (obj[v] != null) {
       newObj[v] = obj[v];
     }
@@ -22,6 +21,7 @@ const validObj = function () {
   return newObj;
 };
 /* harmony default export */ __webpack_exports__["default"] = (validObj);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

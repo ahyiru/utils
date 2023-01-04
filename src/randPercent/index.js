@@ -12,13 +12,10 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2367:
+/***/ 6593:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const randNum = function () {
-  let a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-  let b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-  let int = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+const randNum = (a = 0, b = 0, int = true) => {
   a < b && (a = [b, b = a][0]);
   if (int) {
     return ~~(Math.random() * (a - b + 1)) + b;
@@ -26,6 +23,7 @@ const randNum = function () {
   return Math.random() * (a - b) + b;
 };
 /* harmony default export */ __webpack_exports__["default"] = (randNum);
+
 
 /***/ })
 
@@ -59,10 +57,9 @@ const randNum = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _randNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2367);
+/* harmony import */ var _randNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6593);
 
-const randPercent = function (n) {
-  let total = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+const randPercent = (n, total = 100) => {
   const pers = [];
   [...new Array(n)].map((v, i) => {
     if (i === n - 1) {
@@ -75,6 +72,7 @@ const randPercent = function (n) {
   return pers;
 };
 /* harmony default export */ __webpack_exports__["default"] = (randPercent);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

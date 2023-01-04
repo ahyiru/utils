@@ -12,16 +12,16 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2523:
+/***/ 1582:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const addDays = function (n) {
-  let d = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
+const addDays = (n, d = new Date()) => {
   const newDate = new Date(d);
   newDate.setDate(newDate.getDate() + n);
   return newDate;
 };
 /* harmony default export */ __webpack_exports__["default"] = (addDays);
+
 
 /***/ })
 
@@ -55,15 +55,15 @@ const addDays = function (n) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _addDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2523);
+/* harmony import */ var _addDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1582);
 
-const weekDate = function () {
-  let d = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
+const weekDate = (d = new Date()) => {
   const newDate = new Date(d);
   const day = newDate.getDay();
   return [(0,_addDays__WEBPACK_IMPORTED_MODULE_0__["default"])(1 - day), (0,_addDays__WEBPACK_IMPORTED_MODULE_0__["default"])(7 - day)];
 };
 /* harmony default export */ __webpack_exports__["default"] = (weekDate);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

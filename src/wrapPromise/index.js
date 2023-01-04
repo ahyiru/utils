@@ -12,45 +12,49 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 5777:
+/***/ 3236:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 /* harmony default export */ __webpack_exports__["default"] = (getType);
 
+
 /***/ }),
 
-/***/ 7178:
+/***/ 8584:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8859);
-/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2348);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5737);
+/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5070);
 
 
 
-const isAsync = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'promise' || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__["default"])(value.then);
+const isAsync = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "promise" || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__["default"])(value.then);
 /* harmony default export */ __webpack_exports__["default"] = (isAsync);
 
+
 /***/ }),
 
-/***/ 2348:
+/***/ 5070:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
 
-const isFunction = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'function';
+const isFunction = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "function";
 /* harmony default export */ __webpack_exports__["default"] = (isFunction);
 
+
 /***/ }),
 
-/***/ 8859:
+/***/ 5737:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
 
-const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object';
+const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "object";
 /* harmony default export */ __webpack_exports__["default"] = (isObject);
+
 
 /***/ })
 
@@ -84,35 +88,34 @@ const isObject = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(v
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7178);
+/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8584);
 
-const wrapPromise = promiseFn => {
+const wrapPromise = (promiseFn) => {
   if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__["default"])(promiseFn)) {
     return {};
   }
-  let status = 'pending';
+  let status = "pending";
   let result;
-  const suspender = promiseFn.then(res => {
-    status = 'success';
+  const suspender = promiseFn.then((res) => {
+    status = "success";
     result = res;
-  }).catch(err => {
-    status = 'error';
+  }).catch((err) => {
+    status = "error";
     result = err;
   });
   const read = () => {
-    if (status === 'pending') {
+    if (status === "pending") {
       throw suspender;
-    } else if (status === 'error') {
+    } else if (status === "error") {
       throw result;
-    } else if (status === 'success') {
+    } else if (status === "success") {
       return result;
     }
   };
-  return {
-    read
-  };
+  return { read };
 };
 /* harmony default export */ __webpack_exports__["default"] = (wrapPromise);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -11,11 +11,10 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const MIN_VAL = 60 * 1000;
+const MIN_VAL = 60 * 1e3;
 const HOUR_VAL = 60 * MIN_VAL;
 const DAY_VAL = 24 * HOUR_VAL;
-const getLeaveTime = function (start) {
-  let end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
+const getLeaveTime = (start, end = new Date()) => {
   let time = new Date(start) - end;
   const d = ~~(time / DAY_VAL);
   time -= DAY_VAL * d;
@@ -23,10 +22,11 @@ const getLeaveTime = function (start) {
   time -= HOUR_VAL * h;
   const M = ~~(time / MIN_VAL);
   time -= MIN_VAL * M;
-  const s = ~~(time / 1000);
-  return `${d}天${h}小时${M}分${s}秒`;
+  const s = ~~(time / 1e3);
+  return `${d}\u5929${h}\u5C0F\u65F6${M}\u5206${s}\u79D2`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (getLeaveTime);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

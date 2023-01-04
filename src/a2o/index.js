@@ -11,14 +11,13 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const a2o = function (arr) {
-  let key = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'key';
-  let value = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'value';
+const a2o = (arr, key = "key", value = "value") => {
   const obj = {};
-  (arr || []).map(v => obj[v[key]] = v[value]);
+  (arr || []).map((v) => obj[v[key]] = v[value]);
   return obj;
 };
 /* harmony default export */ __webpack_exports__["default"] = (a2o);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

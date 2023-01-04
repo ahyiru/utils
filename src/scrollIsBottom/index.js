@@ -12,24 +12,24 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 5777:
+/***/ 3236:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const getType = value => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 /* harmony default export */ __webpack_exports__["default"] = (getType);
+
 
 /***/ }),
 
-/***/ 5278:
+/***/ 1952:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(655);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6128);
 
 
-const getViewportSize = function () {
-  var _window$innerWidth, _window$innerHeight;
-  let element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+const getViewportSize = (element = null) => {
+  var _a, _b;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return {
       width: 0,
@@ -43,42 +43,46 @@ const getViewportSize = function () {
     };
   }
   return {
-    width: (_window$innerWidth = window.innerWidth) != null ? _window$innerWidth : document.documentElement.clientWidth,
-    height: (_window$innerHeight = window.innerHeight) != null ? _window$innerHeight : document.documentElement.clientHeight
+    width: (_a = window.innerWidth) != null ? _a : document.documentElement.clientWidth,
+    height: (_b = window.innerHeight) != null ? _b : document.documentElement.clientHeight
   };
 };
 /* harmony default export */ __webpack_exports__["default"] = (getViewportSize);
 
+
 /***/ }),
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
 
+
 /***/ }),
 
-/***/ 655:
+/***/ 6128:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5777);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
 
-const isElement = value => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf('element') > -1;
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf("element") > -1;
 /* harmony default export */ __webpack_exports__["default"] = (isElement);
 
+
 /***/ }),
 
-/***/ 3610:
+/***/ 479:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
 
 const scrollTop = () => {
-  var _ref, _window$pageYOffset;
-  return (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && ((_ref = (_window$pageYOffset = window.pageYOffset) != null ? _window$pageYOffset : document.documentElement.scrollTop) != null ? _ref : document.body.scrollTop);
+  var _a, _b;
+  return (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && ((_b = (_a = window.pageYOffset) != null ? _a : document.documentElement.scrollTop) != null ? _b : document.body.scrollTop);
 };
 /* harmony default export */ __webpack_exports__["default"] = (scrollTop);
+
 
 /***/ })
 
@@ -112,14 +116,15 @@ const scrollTop = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
-/* harmony import */ var _scrollTop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3610);
-/* harmony import */ var _getViewportSize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5278);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
+/* harmony import */ var _scrollTop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(479);
+/* harmony import */ var _getViewportSize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1952);
 
 
 
 const scrollIsBottom = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && document.documentElement.scrollHeight - (0,_scrollTop__WEBPACK_IMPORTED_MODULE_1__["default"])() === (0,_getViewportSize__WEBPACK_IMPORTED_MODULE_2__["default"])().height;
 /* harmony default export */ __webpack_exports__["default"] = (scrollIsBottom);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

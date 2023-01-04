@@ -11,14 +11,9 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const unescapeHTML = str => str.replace(/&amp;|&lt;|&gt;|&#39;|&quot;/g, tag => ({
-  '&amp;': '&',
-  '&lt;': '<',
-  '&gt;': '>',
-  '&#39;': '\'',
-  '&quot;': '"'
-})[tag] || tag);
+const unescapeHTML = (str) => str.replace(/&amp;|&lt;|&gt;|&#39;|&quot;/g, (tag) => ({ "&amp;": "&", "&lt;": "<", "&gt;": ">", "&#39;": "'", "&quot;": '"' })[tag] || tag);
 /* harmony default export */ __webpack_exports__["default"] = (unescapeHTML);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

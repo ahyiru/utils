@@ -11,12 +11,9 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const base2Ten = function () {
-  let num = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-  let base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-  return parseInt(String(num), base);
-};
+const base2Ten = (num = 0, base = 2) => parseInt(String(num), base);
 /* harmony default export */ __webpack_exports__["default"] = (base2Ten);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

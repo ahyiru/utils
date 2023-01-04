@@ -12,29 +12,32 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6302:
+/***/ 4961:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
 /* harmony default export */ __webpack_exports__["default"] = (hasProp);
 
+
 /***/ }),
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+
 
 /***/ }),
 
-/***/ 185:
+/***/ 8319:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6302);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4961);
 
-const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, 'current');
+const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, "current");
 /* harmony default export */ __webpack_exports__["default"] = (isRef);
+
 
 /***/ })
 
@@ -68,22 +71,20 @@ const isRef = ref => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, '
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(185);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8319);
 
 
-const scrollToAnchor = ele => {
-  var _ele, _ele$scrollIntoView, _ele2;
+const scrollToAnchor = (ele) => {
+  var _a;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : (_ele = ele) != null ? _ele : window;
-  (_ele$scrollIntoView = (_ele2 = ele).scrollIntoView) == null ? void 0 : _ele$scrollIntoView.call(_ele2, {
-    behavior: 'smooth',
-    block: 'center'
-  });
+  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : ele != null ? ele : window;
+  (_a = ele.scrollIntoView) == null ? void 0 : _a.call(ele, { behavior: "smooth", block: "center" });
 };
 /* harmony default export */ __webpack_exports__["default"] = (scrollToAnchor);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

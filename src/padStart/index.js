@@ -11,10 +11,7 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const padStart = function () {
-  let str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  let n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-  let pad = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '0';
+const padStart = (str = "", n = 0, pad = "0") => {
   const len = str.length;
   if (len >= n) {
     return str;
@@ -23,6 +20,7 @@ const padStart = function () {
   return `${fill}${str}`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (padStart);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

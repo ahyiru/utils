@@ -11,17 +11,18 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const once = function () {
-  let fn = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : () => {};
+const once = (fn = () => {
+}) => {
   let called = false;
-  return function () {
+  return (...args) => {
     if (!called) {
       called = true;
-      return fn(...arguments);
+      return fn(...args);
     }
   };
 };
 /* harmony default export */ __webpack_exports__["default"] = (once);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

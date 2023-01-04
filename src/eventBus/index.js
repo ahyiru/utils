@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 362:
+/***/ 8604:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const emitter = () => {
@@ -27,13 +27,12 @@ const emitter = () => {
   };
   const emit = (name, data) => {
     if (hub[name]) {
-      hub[name].map(cb => cb(data));
+      hub[name].map((cb) => cb(data));
     }
   };
-  const off = function (name) {
-    let cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  const off = (name, cb = null) => {
     if (hub[name]) {
-      if (typeof cb !== 'function') {
+      if (typeof cb !== "function") {
         return hub[name] = [];
       }
       const index = hub[name].indexOf(cb);
@@ -42,13 +41,10 @@ const emitter = () => {
       }
     }
   };
-  return {
-    on,
-    emit,
-    off
-  };
+  return { on, emit, off };
 };
 /* harmony default export */ __webpack_exports__["default"] = (emitter);
+
 
 /***/ })
 
@@ -82,22 +78,19 @@ const emitter = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(362);
+/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8604);
 
 const events = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__["default"])();
-const eventBus = name => {
-  const {
-    on,
-    emit,
-    off
-  } = events;
+const eventBus = (name) => {
+  const { on, emit, off } = events;
   return {
-    on: cb => on(name, cb),
-    emit: data => emit(name, data),
-    off: cb => off(name, cb)
+    on: (cb) => on(name, cb),
+    emit: (data) => emit(name, data),
+    off: (cb) => off(name, cb)
   };
 };
 /* harmony default export */ __webpack_exports__["default"] = (eventBus);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -12,20 +12,21 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 const storage = {
-  get: name => {
+  get: (name) => {
     let data = localStorage.getItem(name);
     try {
       data = JSON.parse(data);
-    } catch (err) {}
+    } catch (err) {
+    }
     return data;
   },
   set: (name, data) => {
-    if (typeof data === 'object') {
+    if (typeof data === "object") {
       data = JSON.stringify(data);
     }
     localStorage.setItem(name, data);
   },
-  rm: name => {
+  rm: (name) => {
     localStorage.removeItem(name);
   },
   clear: () => {
@@ -33,6 +34,7 @@ const storage = {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (storage);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

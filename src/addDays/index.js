@@ -11,13 +11,13 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const addDays = function (n) {
-  let d = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
+const addDays = (n, d = new Date()) => {
   const newDate = new Date(d);
   newDate.setDate(newDate.getDate() + n);
   return newDate;
 };
 /* harmony default export */ __webpack_exports__["default"] = (addDays);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

@@ -12,41 +12,44 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+
 
 /***/ }),
 
-/***/ 9141:
+/***/ 1476:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const timestamp = () => {
-  if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
+  if (typeof performance !== "undefined" && typeof performance.now === "function") {
     return performance.now();
   }
   return new Date().getTime();
 };
 /* harmony default export */ __webpack_exports__["default"] = (timestamp);
 
+
 /***/ }),
 
-/***/ 7911:
+/***/ 4513:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9141);
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1476);
 
 const uuidv4 = () => {
   let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (timeKey + Math.random() * 16) % 16 | 0;
     timeKey = Math.floor(timeKey / 16);
-    return (c === 'x' ? r : r & 0x3 | 0x8).toString(16);
+    return (c === "x" ? r : r & 3 | 8).toString(16);
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = (uuidv4);
+
 
 /***/ })
 
@@ -80,8 +83,8 @@ const uuidv4 = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
-/* harmony import */ var _uuidv4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7911);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
+/* harmony import */ var _uuidv4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4513);
 
 
 const dlfile = (url, name) => {
@@ -89,13 +92,13 @@ const dlfile = (url, name) => {
     return;
   }
   name = name || (0,_uuidv4__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  if (typeof url === 'string') {
-    fetch(url).then(res => res.blob()).then(blob => {
+  if (typeof url === "string") {
+    fetch(url).then((res) => res.blob()).then((blob) => {
       const dataUrl = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = dataUrl;
       a.download = name;
-      a.style.display = 'none';
+      a.style.display = "none";
       document.body.appendChild(a);
       a.click();
       a.parentNode.removeChild(a);
@@ -104,10 +107,10 @@ const dlfile = (url, name) => {
   } else {
     const blob = new Blob([url]);
     const dataUrl = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = dataUrl;
     a.download = name;
-    a.style.display = 'none';
+    a.style.display = "none";
     document.body.appendChild(a);
     a.click();
     a.parentNode.removeChild(a);
@@ -115,6 +118,7 @@ const dlfile = (url, name) => {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (dlfile);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

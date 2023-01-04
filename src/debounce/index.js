@@ -11,19 +11,16 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const debounce = function () {
-  let func = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : () => {};
-  let delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 60;
+const debounce = (func = () => {
+}, delay = 60) => {
   let timer = null;
-  return function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  return function(...args) {
     clearTimeout(timer);
     timer = setTimeout(() => func.apply(this, args), delay);
   };
 };
 /* harmony default export */ __webpack_exports__["default"] = (debounce);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

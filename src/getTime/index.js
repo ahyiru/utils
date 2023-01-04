@@ -11,9 +11,8 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const addZero = n => n < 10 ? '0' + n : n;
-const getTime = function () {
-  let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
+const addZero = (n) => n < 10 ? "0" + n : n;
+const getTime = (day = new Date()) => {
   const date = new Date(day);
   const y = date.getFullYear();
   const w = date.getDay();
@@ -25,6 +24,7 @@ const getTime = function () {
   return [y, m, d, h, M, s, w];
 };
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

@@ -11,12 +11,11 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const hex2rgba = function () {
-  let hex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  if (hex[0] !== '#') {
+const hex2rgba = (hex = "") => {
+  if (hex[0] !== "#") {
     return hex;
   }
-  hex = hex.replace('#', '');
+  hex = hex.replace("#", "");
   const len = hex.length;
   if (len === 3) {
     hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
@@ -33,6 +32,7 @@ const hex2rgba = function () {
   return `rgba(${r},${g},${b},${a})`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (hex2rgba);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

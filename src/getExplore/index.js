@@ -12,11 +12,12 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+
 
 /***/ })
 
@@ -50,55 +51,68 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
 
-const exploreList = [{
-  name: 'IE11',
-  reg: /rv:([\d.]+)\) like gecko/
-}, {
-  name: 'IE',
-  reg: /msie ([\d.]+)/
-}, {
-  name: 'Edge',
-  reg: /edge\/([\d.]+)/
-}, {
-  name: 'Firefox',
-  reg: /firefox\/([\d.]+)/
-}, {
-  name: 'Opera',
-  reg: /(?:opera|opr).([\d.]+)/
-}, {
-  name: 'Chrome',
-  reg: /chrome\/([\d.]+)/
-}, {
-  name: 'Safari',
-  reg: /version\/([\d.]+).*safari/
-}, {
-  name: 'WeiXin',
-  reg: /micromessenger\/([\d.]+)/
-}, {
-  name: 'TIM',
-  reg: /tim\/([\d.]+)/
-}, {
-  name: 'QQ',
-  reg: /qq\/([\d.]+)/
-}, {
-  name: 'IOS Chrome',
-  reg: /crios\/([\d.]+)/
-}];
+const exploreList = [
+  {
+    name: "IE11",
+    reg: /rv:([\d.]+)\) like gecko/
+  },
+  {
+    name: "IE",
+    reg: /msie ([\d.]+)/
+  },
+  {
+    name: "Edge",
+    reg: /edge\/([\d.]+)/
+  },
+  {
+    name: "Firefox",
+    reg: /firefox\/([\d.]+)/
+  },
+  {
+    name: "Opera",
+    reg: /(?:opera|opr).([\d.]+)/
+  },
+  {
+    name: "Chrome",
+    reg: /chrome\/([\d.]+)/
+  },
+  {
+    name: "Safari",
+    reg: /version\/([\d.]+).*safari/
+  },
+  {
+    name: "WeiXin",
+    reg: /micromessenger\/([\d.]+)/
+  },
+  {
+    name: "TIM",
+    reg: /tim\/([\d.]+)/
+  },
+  {
+    name: "QQ",
+    reg: /qq\/([\d.]+)/
+  },
+  {
+    name: "IOS Chrome",
+    reg: /crios\/([\d.]+)/
+  }
+];
 const getExplore = () => {
-  var _exploreList$find;
+  var _a;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
   const ua = window.navigator.userAgent.toLowerCase();
-  const expItem = (_exploreList$find = exploreList.find(item => ua.match(item.reg))) != null ? _exploreList$find : {};
+  const expItem = (_a = exploreList.find((item) => ua.match(item.reg))) != null ? _a : {};
   return {
     type: expItem.name,
     version: ua.match(expItem.reg)[1]
   };
 };
 /* harmony default export */ __webpack_exports__["default"] = (getExplore);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

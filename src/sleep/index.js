@@ -34,16 +34,14 @@ return /******/ (function() { // webpackBootstrap
 /************************************************************************/
 var __webpack_exports__ = {};
 /* unused harmony export sleepSync */
-const sleep = function () {
-  let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 350;
-  return new Promise(resolve => setTimeout(resolve, ms));
-};
-const sleepSync = function () {
-  let ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;
+const sleep = (ms = 350) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleepSync = (ms = 100) => {
   const start = Date.now();
-  while (Date.now() - start <= ms) {}
+  while (Date.now() - start <= ms) {
+  }
 };
 /* harmony default export */ __webpack_exports__["default"] = (sleep);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

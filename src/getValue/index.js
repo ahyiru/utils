@@ -34,30 +34,28 @@ return /******/ (function() { // webpackBootstrap
 /************************************************************************/
 var __webpack_exports__ = {};
 /* unused harmony export keyArr */
-const getValue = function () {
-  let object = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  let keys = arguments.length > 1 ? arguments[1] : undefined;
+const getValue = (object = {}, keys) => {
   keys = keyArr(keys);
   const checkValue = (obj, key) => {
-    if (!(key != null && key[0])) {
+    if (!(key == null ? void 0 : key[0])) {
       return obj;
     }
-    if (typeof obj[key[0]] === 'object') {
+    if (typeof obj[key[0]] === "object") {
       return checkValue(obj[key[0]], key.slice(1));
     }
     if (key.length > 1) {
-      return undefined;
+      return void 0;
     }
     return obj[key[0]];
   };
   return checkValue(object, keys);
 };
-const keyArr = function () {
-  var _keys$replace;
-  let keys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  return (_keys$replace = keys.replace(/\[['"]?(.*?)['"]?\]/g, '.$1')) == null ? void 0 : _keys$replace.split('.');
+const keyArr = (keys = "") => {
+  var _a;
+  return (_a = keys.replace(/\[['"]?(.*?)['"]?\]/g, ".$1")) == null ? void 0 : _a.split(".");
 };
 /* harmony default export */ __webpack_exports__["default"] = (getValue);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

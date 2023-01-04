@@ -12,11 +12,12 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6302:
+/***/ 4961:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
 /* harmony default export */ __webpack_exports__["default"] = (hasProp);
+
 
 /***/ })
 
@@ -50,20 +51,20 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null 
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6302);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4961);
 
-const isCyclic = obj => {
+const isCyclic = (obj) => {
   const seenObjects = [];
-  const detect = obj => {
-    if (obj && typeof obj === 'object') {
-      if (seenObjects.indexOf(obj) !== -1) {
+  const detect = (obj2) => {
+    if (obj2 && typeof obj2 === "object") {
+      if (seenObjects.indexOf(obj2) !== -1) {
         return true;
       }
-      seenObjects.push(obj);
+      seenObjects.push(obj2);
       let hasCyc = false;
-      for (let key in obj) {
-        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(obj, key) && detect(obj[key])) {
-          obj[key] = 'cyclic';
+      for (let key in obj2) {
+        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(obj2, key) && detect(obj2[key])) {
+          obj2[key] = "cyclic";
           hasCyc = true;
         }
       }
@@ -75,6 +76,7 @@ const isCyclic = obj => {
   return result && obj;
 };
 /* harmony default export */ __webpack_exports__["default"] = (isCyclic);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

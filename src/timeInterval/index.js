@@ -12,26 +12,25 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3508:
+/***/ 177:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4505);
 
-const getMonthDays = function () {
-  let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
+const getMonthDays = (day = new Date()) => {
   const date = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(day);
   return new Date(date[0], date[1], 0).getDate();
 };
 /* harmony default export */ __webpack_exports__["default"] = (getMonthDays);
 
+
 /***/ }),
 
-/***/ 7842:
+/***/ 4505:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const addZero = n => n < 10 ? '0' + n : n;
-const getTime = function () {
-  let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
+const addZero = (n) => n < 10 ? "0" + n : n;
+const getTime = (day = new Date()) => {
   const date = new Date(day);
   const y = date.getFullYear();
   const w = date.getDay();
@@ -43,6 +42,7 @@ const getTime = function () {
   return [y, m, d, h, M, s, w];
 };
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
+
 
 /***/ })
 
@@ -95,15 +95,12 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /* unused harmony exports timeBase, minus */
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7842);
-/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3508);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4505);
+/* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(177);
 
 
-const timeBase = date => [12, (0,_getMonthDays__WEBPACK_IMPORTED_MODULE_0__["default"])(date), 24, 60, 60];
-const minus = function () {
-  let start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  let end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  let base = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+const timeBase = (date) => [12, (0,_getMonthDays__WEBPACK_IMPORTED_MODULE_0__["default"])(date), 24, 60, 60];
+const minus = (start = [], end = [], base = []) => {
   let carry = false;
   const gap = [];
   end.map((v, i) => {
@@ -119,8 +116,7 @@ const minus = function () {
   });
   return gap.reverse();
 };
-const timeInterval = function (start) {
-  let end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
+const timeInterval = (start, end = new Date()) => {
   if (new Date(start) - new Date(end) > 0) {
     start = [end, end = start][0];
   }
@@ -130,6 +126,7 @@ const timeInterval = function (start) {
   return minus(sDate, eDate, base);
 };
 /* harmony default export */ __webpack_exports__["default"] = (timeInterval);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

@@ -12,12 +12,11 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7842:
+/***/ 4505:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const addZero = n => n < 10 ? '0' + n : n;
-const getTime = function () {
-  let day = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
+const addZero = (n) => n < 10 ? "0" + n : n;
+const getTime = (day = new Date()) => {
   const date = new Date(day);
   const y = date.getFullYear();
   const w = date.getDay();
@@ -29,6 +28,7 @@ const getTime = function () {
   return [y, m, d, h, M, s, w];
 };
 /* harmony default export */ __webpack_exports__["default"] = (getTime);
+
 
 /***/ })
 
@@ -62,10 +62,9 @@ const getTime = function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7842);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4505);
 
-const formatPassTime = function (start) {
-  let end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
+const formatPassTime = (start, end = new Date()) => {
   start = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(start);
   end = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(end);
   const dfYear = end.y - start.y;
@@ -75,7 +74,7 @@ const formatPassTime = function (start) {
   const dfMinute = end.M - start.M;
   const prevMonthCount = new Date(end.y, end.m, 0).getDate();
   const getStr = (bTime, sTime, hex, bStr, sStr) => {
-    const str = '前';
+    const str = "\u524D";
     if (sTime < 0) {
       bTime -= 1;
       sTime += hex;
@@ -89,21 +88,21 @@ const formatPassTime = function (start) {
     return bTime + bStr + sTime + sStr + str;
   };
   if (dfYear > 0) {
-    return getStr(dfYear, dfMonth, 12, '年', '个月');
+    return getStr(dfYear, dfMonth, 12, "\u5E74", "\u4E2A\u6708");
   } else {
     if (dfMonth > 0) {
-      return getStr(dfMonth, dfDay, prevMonthCount, '个月', '天');
+      return getStr(dfMonth, dfDay, prevMonthCount, "\u4E2A\u6708", "\u5929");
     } else {
       if (dfDay > 0) {
-        return getStr(dfDay, dfHour, 24, '天', '小时');
+        return getStr(dfDay, dfHour, 24, "\u5929", "\u5C0F\u65F6");
       } else {
         if (dfHour > 0) {
-          return getStr(dfHour, dfMinute, 60, '小时', '分钟');
+          return getStr(dfHour, dfMinute, 60, "\u5C0F\u65F6", "\u5206\u949F");
         } else {
           if (dfMinute > 0) {
-            return dfMinute + '分钟前';
+            return dfMinute + "\u5206\u949F\u524D";
           } else {
-            return '刚刚';
+            return "\u521A\u521A";
           }
         }
       }
@@ -111,6 +110,7 @@ const formatPassTime = function (start) {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (formatPassTime);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;

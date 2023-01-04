@@ -11,20 +11,13 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const arr2obj = function () {
-  let arr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  let name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'name';
+const arr2obj = (arr = [], name = "name") => {
   const obj = {};
-  arr.map(_ref => {
-    let {
-      [name]: key,
-      value
-    } = _ref;
-    return obj[key] = value;
-  });
+  arr.map(({ [name]: key, value }) => obj[key] = value);
   return obj;
 };
 /* harmony default export */ __webpack_exports__["default"] = (arr2obj);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

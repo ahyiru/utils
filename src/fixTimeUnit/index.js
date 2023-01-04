@@ -11,9 +11,7 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const fixTimeUnit = function () {
-  let s = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-  let unit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['s', 'm', 'h', 'd'];
+const fixTimeUnit = (s = 0, unit = ["s", "m", "h", "d"]) => {
   s = ~~s;
   if (s < 60) {
     return `${s}${unit[0]}`;
@@ -31,6 +29,7 @@ const fixTimeUnit = function () {
   return `${(h / 24).toFixed(2)}${unit[3]}`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (fixTimeUnit);
+
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

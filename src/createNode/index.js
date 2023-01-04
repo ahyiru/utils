@@ -12,22 +12,23 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1309:
+/***/ 6809:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+
 
 /***/ }),
 
-/***/ 9041:
+/***/ 264:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
-const isEvent = key => key.startsWith('on');
-const isProperty = key => key !== 'children' && !isEvent(key);
-const isNew = (prev, next) => key => prev[key] !== next[key];
-const isGone = (prev, next) => key => !(key in next);
-const filterProps = props => {
+const isEvent = (key) => key.startsWith("on");
+const isProperty = (key) => key !== "children" && !isEvent(key);
+const isNew = (prev, next) => (key) => prev[key] !== next[key];
+const isGone = (prev, next) => (key) => !(key in next);
+const filterProps = (props) => {
   const propsList = Object.keys(props);
   return {
     eventProps: propsList.filter(isEvent),
@@ -35,26 +36,21 @@ const filterProps = props => {
   };
 };
 const updateNode = (dom, prevProps, nextProps) => {
-  const {
-    eventProps: prevEvent,
-    propertyProps: prevProperty
-  } = filterProps(prevProps);
-  const {
-    eventProps: nextEvent,
-    propertyProps: nextProperty
-  } = filterProps(nextProps);
-  prevEvent.filter(isGone(prevProps, nextProps)).map(key => {
+  const { eventProps: prevEvent, propertyProps: prevProperty } = filterProps(prevProps);
+  const { eventProps: nextEvent, propertyProps: nextProperty } = filterProps(nextProps);
+  prevEvent.filter(isGone(prevProps, nextProps)).map((key) => {
     const eventType = key.toLowerCase().slice(2);
     dom.removeEventListener(eventType, prevProps[key]);
   });
-  prevProperty.filter(isGone(prevProps, nextProps)).map(key => dom[key] = '');
-  nextProperty.filter(isNew(prevProps, nextProps)).map(key => dom[key] = nextProps[key]);
-  nextEvent.filter(isNew(prevProps, nextProps)).map(key => {
+  prevProperty.filter(isGone(prevProps, nextProps)).map((key) => dom[key] = "");
+  nextProperty.filter(isNew(prevProps, nextProps)).map((key) => dom[key] = nextProps[key]);
+  nextEvent.filter(isNew(prevProps, nextProps)).map((key) => {
     const eventType = key.toLowerCase().slice(2);
     dom.addEventListener(eventType, nextProps[key]);
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = (updateNode);
+
 
 /***/ })
 
@@ -88,19 +84,20 @@ const updateNode = (dom, prevProps, nextProps) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1309);
-/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9041);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
+/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(264);
 
 
-const createNode = fiber => {
+const createNode = (fiber) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-  const dom = fiber.type === 'TEXT_ELEMENT' ? document.createTextNode('') : document.createElement(fiber.type);
+  const dom = fiber.type === "TEXT_ELEMENT" ? document.createTextNode("") : document.createElement(fiber.type);
   (0,_updateNode__WEBPACK_IMPORTED_MODULE_1__["default"])(dom, {}, fiber.props);
   return dom;
 };
 /* harmony default export */ __webpack_exports__["default"] = (createNode);
+
 }();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
