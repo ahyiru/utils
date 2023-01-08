@@ -200,6 +200,7 @@ const css = `@keyframes huxy-message-animate-in {
   display: flex;
   align-items: center;
   background: #ffffff;
+  color: #333333;
   border-radius: 4px;
   min-width: 100px;
   max-width: 280px;
@@ -237,25 +238,25 @@ const css = `@keyframes huxy-message-animate-in {
   flex-shrink: 0;
 }
 .message-content.success i {
-  background: var(--green1);
+  background: #73d13d;
 }
 .message-content.success i:before {
   content: "\\2713";
 }
 .message-content.error i {
-  background: var(--red1);
+  background: #ff4d4f;
 }
 .message-content.error i:before {
   content: "\\00D7";
 }
 .message-content.warn i {
-  background: var(--orange1);
+  background: #ffa940;
 }
 .message-content.warn i:before {
   content: "\\267A";
 }
 .message-content.info i {
-  background: var(--blue1);
+  background: #40a9ff;
 }
 .message-content.info i:before {
   content: "\\2690";
