@@ -12,10 +12,10 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1304:
+/***/ 7413:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8584);
+/* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2466);
 
 const cancelablePromise = (promise, delay = 12e4, msg = "\u8BF7\u6C42\u8D85\u65F6\uFF01") => {
   if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__["default"])(promise)) {
@@ -50,7 +50,7 @@ const cancelablePromise = (promise, delay = 12e4, msg = "\u8BF7\u6C42\u8D85\u65F
 
 /***/ }),
 
-/***/ 3236:
+/***/ 4130:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -59,12 +59,12 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 /***/ }),
 
-/***/ 8584:
+/***/ 2466:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5737);
-/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5070);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4130);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4563);
+/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7488);
 
 
 
@@ -74,10 +74,10 @@ const isAsync = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(
 
 /***/ }),
 
-/***/ 5070:
+/***/ 7488:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4130);
 
 const isFunction = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "function";
 /* harmony default export */ __webpack_exports__["default"] = (isFunction);
@@ -85,10 +85,10 @@ const isFunction = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"
 
 /***/ }),
 
-/***/ 5737:
+/***/ 4563:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4130);
 
 const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "object";
 /* harmony default export */ __webpack_exports__["default"] = (isObject);
@@ -96,10 +96,10 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])
 
 /***/ }),
 
-/***/ 6249:
+/***/ 7761:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5737);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4563);
 
 const params2data = (params) => {
   if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(params)) {
@@ -118,10 +118,10 @@ const params2data = (params) => {
 
 /***/ }),
 
-/***/ 7888:
+/***/ 5579:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5737);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4563);
 
 const params2str = (params) => {
   if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(params)) {
@@ -169,9 +169,9 @@ const params2str = (params) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _params2str__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7888);
-/* harmony import */ var _params2data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6249);
-/* harmony import */ var _cancelablePromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1304);
+/* harmony import */ var _params2str__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5579);
+/* harmony import */ var _params2data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7761);
+/* harmony import */ var _cancelablePromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7413);
 
 
 
@@ -183,6 +183,7 @@ const transform = [
   },
   {
     type: "formData",
+    // headers:{'Content-Type':'multipart/form-data'},
     body: (data) => (0,_params2data__WEBPACK_IMPORTED_MODULE_0__["default"])(data)
   },
   {

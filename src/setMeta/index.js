@@ -12,11 +12,11 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 4945:
+/***/ 4176:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony exports defaultHeadMeta, mergeMetaData */
-/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8284);
+/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5184);
 
 const defaultHeadMeta = [
   {
@@ -46,6 +46,7 @@ const defaultHeadMeta = [
   {
     name: "viewport",
     content: "viewport-fit=cover"
+    // content:'width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no,shrink-to-fit=no',
   },
   {
     name: "robots",
@@ -108,7 +109,7 @@ const getMeta = (metaData) => {
 
 /***/ }),
 
-/***/ 6809:
+/***/ 4061:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
@@ -117,10 +118,10 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /***/ }),
 
-/***/ 8284:
+/***/ 5184:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4061);
 
 const str2Html = (str) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
@@ -184,8 +185,8 @@ const str2Html = (str) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6809);
-/* harmony import */ var _getMeta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4945);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4061);
+/* harmony import */ var _getMeta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
 
 
 const setMeta = (metaData) => {

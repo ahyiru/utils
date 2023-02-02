@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3031:
+/***/ 7711:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const debounce = (func = () => {
@@ -28,16 +28,16 @@ const debounce = (func = () => {
 
 /***/ }),
 
-/***/ 5941:
+/***/ 7652:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
-/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8284);
-/* harmony import */ var _getPosition__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5554);
-/* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(968);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8319);
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6128);
-/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8012);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4061);
+/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5184);
+/* harmony import */ var _getPosition__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4137);
+/* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(537);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1638);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1257);
+/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8319);
 
 
 
@@ -69,11 +69,11 @@ const getElementsSize = async (ele, delay = 15) => {
 
 /***/ }),
 
-/***/ 5554:
+/***/ 4137:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8319);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4061);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1638);
 
 
 const getPosition = (ele) => {
@@ -89,7 +89,7 @@ const getPosition = (ele) => {
 
 /***/ }),
 
-/***/ 3236:
+/***/ 4130:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -98,11 +98,11 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 /***/ }),
 
-/***/ 1952:
+/***/ 2141:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6128);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4061);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1257);
 
 
 const getViewportSize = (element = null) => {
@@ -129,7 +129,7 @@ const getViewportSize = (element = null) => {
 
 /***/ }),
 
-/***/ 4961:
+/***/ 4312:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
@@ -138,7 +138,7 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null 
 
 /***/ }),
 
-/***/ 6809:
+/***/ 4061:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
@@ -147,10 +147,10 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /***/ }),
 
-/***/ 6128:
+/***/ 1257:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3236);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4130);
 
 const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf("element") > -1;
 /* harmony default export */ __webpack_exports__["default"] = (isElement);
@@ -158,10 +158,10 @@ const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"]
 
 /***/ }),
 
-/***/ 8319:
+/***/ 1638:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4961);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4312);
 
 const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, "current");
 /* harmony default export */ __webpack_exports__["default"] = (isRef);
@@ -169,25 +169,31 @@ const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref,
 
 /***/ }),
 
-/***/ 968:
+/***/ 537:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6128);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1257);
 
 const setStyle = (ele, styles = {}, reset = false) => {
   if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__["default"])(ele)) {
     return;
   }
-  Object.keys(styles).map((key) => {
-    ele.style.setProperty(key, reset ? "" : styles[key]);
-  });
+  if (reset) {
+    let objStr = "";
+    Object.keys(styles).map((key) => {
+      objStr += `${key}: ${styles[key]};`;
+    });
+    ele.style = objStr;
+    return;
+  }
+  Object.keys(styles).map((key) => ele.style.setProperty(key, styles[key]));
 };
 /* harmony default export */ __webpack_exports__["default"] = (setStyle);
 
 
 /***/ }),
 
-/***/ 8012:
+/***/ 8319:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony export sleepSync */
@@ -202,10 +208,10 @@ const sleepSync = (ms = 100) => {
 
 /***/ }),
 
-/***/ 8284:
+/***/ 5184:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6809);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4061);
 
 const str2Html = (str) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
@@ -270,11 +276,11 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /* unused harmony export setPosition */
-/* harmony import */ var _debounce__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3031);
-/* harmony import */ var _getViewportSize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1952);
-/* harmony import */ var _getPosition__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5554);
-/* harmony import */ var _getElementsSize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5941);
-/* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(968);
+/* harmony import */ var _debounce__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7711);
+/* harmony import */ var _getViewportSize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2141);
+/* harmony import */ var _getPosition__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4137);
+/* harmony import */ var _getElementsSize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7652);
+/* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(537);
 
 
 
