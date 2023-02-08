@@ -624,6 +624,14 @@ output: [
 filterList(data, keyword, str2Dom /*高亮元素*/, (fields = 'name'), (idKey = 'id'), (childKey = 'children'), (exact = false));
 ```
 
+### findChildEle
+
+```javascript
+findChildEle(target, classname);
+```
+
+返回当前元素下类名为 `classname` 的所有元素，没找到则返回 `null` 。
+
 ### findMax
 
 ```javascript

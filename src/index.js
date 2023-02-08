@@ -47,6 +47,7 @@ export {default as eventBus} from './eventBus';
 export {default as fetcher} from './fetcher';
 export {default as filter} from './filter';
 export {default as filterList} from './filterList';
+export {default as findChildEle} from './findChildEle';
 export {default as findMax} from './findMax';
 export {default as firstUpper} from './firstUpper';
 export {default as fixFileSizeUnit} from './fixFileSizeUnit';

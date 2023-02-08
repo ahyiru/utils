@@ -121,7 +121,7 @@ var __webpack_exports__ = {};
 
 
 
-const getTextSize = (text, styles = {}, ele) => {
+const getTextSize = (text, styles, ele) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
@@ -129,7 +129,7 @@ const getTextSize = (text, styles = {}, ele) => {
   const span = document.createElement("span");
   span.setAttribute("style", `pointer-events: none; z-index: -1; opacity: 0;`);
   styles && (0,_setStyle__WEBPACK_IMPORTED_MODULE_2__["default"])(span, styles);
-  span.innerText = text;
+  span.innerText = (text != null ? text : "").replace(/[\r\n]/g, "");
   ele.appendChild(span);
   const rect = span.getBoundingClientRect();
   ele.removeChild(span);
