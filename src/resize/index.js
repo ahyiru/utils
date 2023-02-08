@@ -114,9 +114,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4061);
-/* harmony import */ var _debounce__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7711);
+/* harmony import */ var _debounce__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7711);
 /* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1638);
-/* harmony import */ var _findChildEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7308);
+/* harmony import */ var _findChildEle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7308);
 
 
 
@@ -142,11 +142,11 @@ const resize = (element, delay = 60) => {
     return;
   }
   element = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(element) ? element.current : element != null ? element : document.body;
-  let domObj = void 0;
+  let domObj = (0,_findChildEle__WEBPACK_IMPORTED_MODULE_2__["default"])(element, "resize-sensor");
   let listeners = [];
-  const resizeListener = (0,_debounce__WEBPACK_IMPORTED_MODULE_2__["default"])(() => listeners.map((listener) => listener(element)), delay);
+  const resizeListener = (0,_debounce__WEBPACK_IMPORTED_MODULE_3__["default"])(() => listeners.map((listener) => listener(element)), delay);
   const bind = (cb) => {
-    if (!domObj && !(0,_findChildEle__WEBPACK_IMPORTED_MODULE_3__["default"])(element, "resize-sensor")) {
+    if (!(0,_findChildEle__WEBPACK_IMPORTED_MODULE_2__["default"])(element, "resize-sensor")) {
       domObj = createObj(element, resizeListener);
     }
     if (listeners.indexOf(cb) === -1) {
