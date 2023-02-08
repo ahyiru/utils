@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 4061:
+/***/ 7032:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
@@ -21,24 +21,24 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /***/ }),
 
-/***/ 4867:
+/***/ 244:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const timestamp = () => {
   if (typeof performance !== "undefined" && typeof performance.now === "function") {
     return performance.now();
   }
-  return new Date().getTime();
+  return (/* @__PURE__ */ new Date()).getTime();
 };
 /* harmony default export */ __webpack_exports__["default"] = (timestamp);
 
 
 /***/ }),
 
-/***/ 6048:
+/***/ 8519:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4867);
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(244);
 
 const uuidv4 = () => {
   let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__["default"])();
@@ -83,8 +83,8 @@ const uuidv4 = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4061);
-/* harmony import */ var _uuidv4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6048);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7032);
+/* harmony import */ var _uuidv4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8519);
 
 
 const dlfile = (url, name) => {

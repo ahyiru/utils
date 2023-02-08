@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 const addZero = (n) => n < 10 ? "0" + n : n;
-const getTime = (day = new Date()) => {
+const getTime = (day = /* @__PURE__ */ new Date()) => {
   const date = new Date(day);
   const y = date.getFullYear();
   const w = date.getDay();

@@ -12,11 +12,11 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6043:
+/***/ 498:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const addZero = (n) => n < 10 ? "0" + n : n;
-const getTime = (day = new Date()) => {
+const getTime = (day = /* @__PURE__ */ new Date()) => {
   const date = new Date(day);
   const y = date.getFullYear();
   const w = date.getDay();
@@ -62,9 +62,9 @@ const getTime = (day = new Date()) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6043);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(498);
 
-const formatPassTime = (start, end = new Date()) => {
+const formatPassTime = (start, end = /* @__PURE__ */ new Date()) => {
   start = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(start);
   end = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(end);
   const dfYear = end.y - start.y;

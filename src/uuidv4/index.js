@@ -12,14 +12,14 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 4867:
+/***/ 244:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const timestamp = () => {
   if (typeof performance !== "undefined" && typeof performance.now === "function") {
     return performance.now();
   }
-  return new Date().getTime();
+  return (/* @__PURE__ */ new Date()).getTime();
 };
 /* harmony default export */ __webpack_exports__["default"] = (timestamp);
 
@@ -56,7 +56,7 @@ const timestamp = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4867);
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(244);
 
 const uuidv4 = () => {
   let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__["default"])();

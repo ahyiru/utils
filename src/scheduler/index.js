@@ -11,7 +11,7 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const getCurrentTime = () => typeof (performance == null ? void 0 : performance.now) === "function" ? performance.now() : new Date().getTime();
+const getCurrentTime = () => typeof (performance == null ? void 0 : performance.now) === "function" ? performance.now() : (/* @__PURE__ */ new Date()).getTime();
 const performTask = (callback) => {
   if (typeof setImmediate === "function") {
     return () => setImmediate(callback);

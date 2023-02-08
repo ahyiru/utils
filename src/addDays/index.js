@@ -11,7 +11,7 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const addDays = (n, d = new Date()) => {
+const addDays = (n, d = /* @__PURE__ */ new Date()) => {
   const newDate = new Date(d);
   newDate.setDate(newDate.getDate() + n);
   return newDate;

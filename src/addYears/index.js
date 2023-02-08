@@ -11,7 +11,7 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const addYears = (n, d = new Date()) => {
+const addYears = (n, d = /* @__PURE__ */ new Date()) => {
   const newDate = new Date(d);
   newDate.setFullYear(newDate.getFullYear() + n);
   return newDate;

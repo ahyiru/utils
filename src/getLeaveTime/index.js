@@ -14,7 +14,7 @@ var __webpack_exports__ = {};
 const MIN_VAL = 60 * 1e3;
 const HOUR_VAL = 60 * MIN_VAL;
 const DAY_VAL = 24 * HOUR_VAL;
-const getLeaveTime = (start, end = new Date()) => {
+const getLeaveTime = (start, end = /* @__PURE__ */ new Date()) => {
   let time = new Date(start) - end;
   const d = ~~(time / DAY_VAL);
   time -= DAY_VAL * d;
