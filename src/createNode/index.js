@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6089:
+/***/ 907:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
@@ -21,7 +21,7 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /***/ }),
 
-/***/ 2281:
+/***/ 4087:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isEvent = (key) => key.startsWith("on");
@@ -84,8 +84,8 @@ const updateNode = (dom, prevProps, nextProps) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6089);
-/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2281);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(907);
+/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4087);
 
 
 const createNode = (fiber) => {

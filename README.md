@@ -1209,6 +1209,70 @@ const a = {
 params2str(a); // '?name=t1&age=18&id=123'
 ```
 
+### paseXml
+
+```javascript
+const {xml2Obj, obj2Xml} = paseXml;
+
+xml2Obj(`<xml>
+  <ToUserName><![CDATA[toUser]]></ToUserName>
+  <FromUserName><![CDATA[fromUser]]></FromUserName>
+  <CreateTime>1348831860</CreateTime>
+  <MsgType><![CDATA[text]]></MsgType>
+  <Content><![CDATA[this is a test]]></Content>
+  <MsgId>1234567890123456</MsgId>
+  <MsgDataId>xxxx</MsgDataId>
+  <Idx>xxxx</Idx>
+</xml>`)
+
+result:
+{
+  "obj": {
+    "CreateTime": "1348831860",
+    "MsgId": "1234567890123456",
+    "MsgDataId": "xxxx",
+    "Idx": "xxxx",
+    "ToUserName": "toUser",
+    "FromUserName": "fromUser",
+    "MsgType": "text",
+    "Content": "this is a test"
+  },
+  "types": {
+    "CreateTime": "base",
+    "MsgId": "base",
+    "MsgDataId": "base",
+    "Idx": "base",
+    "ToUserName": "data",
+    "FromUserName": "data",
+    "MsgType": "data",
+    "Content": "data"
+  }
+}
+
+obj2Xml({
+  "CreateTime": "1348831860",
+  "MsgId": "1234567890123456",
+  "MsgDataId": "xxxx",
+  "Idx": "xxxx",
+  "ToUserName": "toUser",
+  "FromUserName": "fromUser",
+  "MsgType": "text",
+  "Content": "this is a test"
+}, {
+  "CreateTime": "base",
+  "MsgId": "base",
+  "MsgDataId": "base",
+  "Idx": "base",
+  "ToUserName": "data",
+  "FromUserName": "data",
+  "MsgType": "data",
+  "Content": "data"
+})
+
+result:
+<xml>\n    <CreateTime>1348831860</CreateTime>\n<MsgId>1234567890123456</MsgId>\n<MsgDataId>xxxx</MsgDataId>\n<Idx>xxxx</Idx>\n<ToUserName><![CDATA[toUser]]></ToUserName>\n<FromUserName><![CDATA[fromUser]]></FromUserName>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[this is a test]]></Content>\n\n  </xml>
+```
+
 ### pick
 
 ```javascript

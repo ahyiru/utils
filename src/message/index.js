@@ -12,10 +12,10 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 8501:
+/***/ 5902:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6089);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(907);
 
 const addStyle = (text, hash) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
@@ -55,7 +55,7 @@ const addStyle = (text, hash) => {
 
 /***/ }),
 
-/***/ 5565:
+/***/ 7271:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
@@ -64,7 +64,7 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 /***/ }),
 
-/***/ 6089:
+/***/ 907:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
@@ -73,10 +73,10 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /***/ }),
 
-/***/ 8320:
+/***/ 9010:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5565);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7271);
 
 const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf("element") > -1;
 /* harmony default export */ __webpack_exports__["default"] = (isElement);
@@ -84,10 +84,10 @@ const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"]
 
 /***/ }),
 
-/***/ 4610:
+/***/ 9675:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8320);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9010);
 
 const removeClass = (ele, name = "") => {
   if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__["default"])(ele)) {
@@ -158,11 +158,11 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(6089);
+var isBrowser = __webpack_require__(907);
 // EXTERNAL MODULE: ../../huxy/utils/removeClass.js
-var removeClass = __webpack_require__(4610);
+var removeClass = __webpack_require__(9675);
 // EXTERNAL MODULE: ../../huxy/utils/addStyle.js
-var addStyle = __webpack_require__(8501);
+var addStyle = __webpack_require__(5902);
 ;// CONCATENATED MODULE: ../../huxy/utils/styles/message.js
 const css = `@keyframes huxy-message-animate-in {
   0% {

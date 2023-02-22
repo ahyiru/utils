@@ -12,10 +12,10 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 8501:
+/***/ 5902:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6089);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(907);
 
 const addStyle = (text, hash) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
@@ -55,7 +55,7 @@ const addStyle = (text, hash) => {
 
 /***/ }),
 
-/***/ 9594:
+/***/ 5183:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
@@ -64,7 +64,7 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null 
 
 /***/ }),
 
-/***/ 6089:
+/***/ 907:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
@@ -73,10 +73,10 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /***/ }),
 
-/***/ 7034:
+/***/ 6708:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9594);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5183);
 
 const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, "current");
 /* harmony default export */ __webpack_exports__["default"] = (isRef);
@@ -84,11 +84,11 @@ const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref,
 
 /***/ }),
 
-/***/ 9405:
+/***/ 3176:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6089);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7034);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(907);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6708);
 
 
 const scrollTo = (top = 0, ele) => {
@@ -104,10 +104,10 @@ const scrollTo = (top = 0, ele) => {
 
 /***/ }),
 
-/***/ 6518:
+/***/ 8170:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6089);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(907);
 
 const scrollTop = () => {
   var _a, _b;
@@ -173,13 +173,13 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(6089);
+var isBrowser = __webpack_require__(907);
 // EXTERNAL MODULE: ../../huxy/utils/scrollTop.js
-var scrollTop = __webpack_require__(6518);
+var scrollTop = __webpack_require__(8170);
 // EXTERNAL MODULE: ../../huxy/utils/scrollTo.js
-var scrollTo = __webpack_require__(9405);
+var scrollTo = __webpack_require__(3176);
 // EXTERNAL MODULE: ../../huxy/utils/addStyle.js
-var addStyle = __webpack_require__(8501);
+var addStyle = __webpack_require__(5902);
 ;// CONCATENATED MODULE: ../../huxy/utils/styles/backTop.js
 const css = `.huxy-totop-bar {
   --size: 36px;

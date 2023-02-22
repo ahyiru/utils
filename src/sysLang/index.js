@@ -12,7 +12,7 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6089:
+/***/ 907:
 /***/ (function(__unused_webpack_module, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
@@ -51,7 +51,7 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6089);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(907);
 
 const sysLang = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && (window.navigator.language || window.navigator.userLanguage).toLowerCase().slice(0, 2);
 /* harmony default export */ __webpack_exports__["default"] = (sysLang);
