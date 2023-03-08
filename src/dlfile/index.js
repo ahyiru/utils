@@ -87,17 +87,23 @@ var __webpack_exports__ = {};
 /* harmony import */ var _uuidv4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2538);
 
 
-const dlfile = (url, name) => {
+const dlfile = async (url, name) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
   name = name || (0,_uuidv4__WEBPACK_IMPORTED_MODULE_1__["default"])();
   if (typeof url === "string") {
-    fetch(url).then((res) => res.blob()).then((blob) => {
+    url = decodeURIComponent(url);
+    const response = await fetch(url, {
+      mode: "no-cors"
+    });
+    const disposition = response.headers.get("Content-Disposition");
+    const filename = disposition ? decodeURIComponent(disposition.split(";")[1].split("=")[1]) : name;
+    response.blob().then((blob) => {
       const dataUrl = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = dataUrl;
-      a.download = name;
+      a.download = filename;
       a.style.display = "none";
       document.body.appendChild(a);
       a.click();
