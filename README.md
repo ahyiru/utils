@@ -964,7 +964,7 @@ const a = {b: undefined};
 hasProp(a, 'b'); // true
 ```
 
-### isArray/isValidArr/isValidObj/isAsync/isObject/isFunction/isError/isRegExp/isElement/isUrl/isDate
+### isArray/isValidArr/isValidObj/isAsync/isObject/isFunction/isError/isRegExp/isElement/isUrl/isDate/isBase64Image
 
 ```javascript
 isArray([]); // true
@@ -978,6 +978,7 @@ isRegExp(/\d+/); // true
 isElement(<span>1</span>); // true
 isUrl('http://abc.com'); // true
 isDate('2022', '10', '11'); // true
+isBase64Image('data:image/png;base64,test'); // true
 ```
 
 ### isBrowser/isIE/isTouch
@@ -996,11 +997,22 @@ isReactEle(value);
 isRef(value);
 ```
 
-### loadImage/loadBase64/imgtocanvas
+### isWechat
+
+判断是否为微信浏览器
+
+```javascript
+isWechat(); // false
+```
+
+### loadImage/loadBase64/loadBase64ByUrl/imgtocanvas
 
 ```javascript
 const img = await loadImage(url);
 const base64 = await loadBase64(img);
+
+const base64 = await loadBase64ByUrl(url);
+
 const canvas = imgtocanvas(img);
 ```
 

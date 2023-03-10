@@ -12,8 +12,8 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1777:
-/***/ (function(__unused_webpack_module, __webpack_exports__) {
+/***/ 5687:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const emitter = () => {
   const hub = {};
@@ -81,7 +81,7 @@ const emitter = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1777);
+/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5687);
 
 const events = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__["default"])();
 const eventBus = (name) => {

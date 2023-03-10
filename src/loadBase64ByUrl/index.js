@@ -12,11 +12,25 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3498:
+/***/ 779:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+const isUrl = (url) => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
+/* harmony default export */ __webpack_exports__["default"] = (isUrl);
+
+
+/***/ }),
+
+/***/ 865:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const loadBase64 = (file) => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.addEventListener("load", () => resolve(reader.result));
+  reader.addEventListener("error", (error) => reject(error));
+});
+/* harmony default export */ __webpack_exports__["default"] = (loadBase64);
 
 
 /***/ })
@@ -51,26 +65,20 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
+/* harmony import */ var _isUrl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(779);
+/* harmony import */ var _loadBase64__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(865);
 
-const addScript = (url) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
-    return;
+
+const loadBase64ByUrl = async (url) => {
+  if (!(0,_isUrl__WEBPACK_IMPORTED_MODULE_0__["default"])(url)) {
+    return url;
   }
-  return new Promise((resolve, reject) => {
-    const loaded = [...document.getElementsByTagName("script")].find((item) => item.src === url);
-    if (!loaded) {
-      const script = document.createElement("script");
-      script.onerror = (event) => reject(new Error(`Failed to load '${url}'`));
-      script.onload = resolve;
-      script.src = url;
-      (document.head || document.getElementsByTagName("head")[0]).appendChild(script);
-    } else {
-      resolve();
-    }
-  });
+  const response = await fetch(url);
+  const blob = await response.blob();
+  const result = await (0,_loadBase64__WEBPACK_IMPORTED_MODULE_1__["default"])(blob);
+  return result;
 };
-/* harmony default export */ __webpack_exports__["default"] = (addScript);
+/* harmony default export */ __webpack_exports__["default"] = (loadBase64ByUrl);
 
 }();
 __webpack_exports__ = __webpack_exports__["default"];

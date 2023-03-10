@@ -12,8 +12,8 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7748:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ 2005:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony export sleepSync */
 const sleep = (ms = 350) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -75,7 +75,7 @@ const sleepSync = (ms = 100) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7748);
+/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2005);
 
 const loop = async (fn, handle, delay = 2e3) => {
   while (!(handle == null ? void 0 : handle(fn == null ? void 0 : fn()))) {

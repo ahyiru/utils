@@ -11,18 +11,14 @@
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-const loadImage = (url) => new Promise((resolve, reject) => {
-  const img = new Image();
-  img.src = url;
-  img.crossOrigin = "Anonymous";
-  if (img.complete) {
-    resolve(img);
-  } else {
-    img.addEventListener("load", () => resolve(img));
-    img.addEventListener("error", (error) => reject(error));
+const isBase64Image = (str) => {
+  if (typeof str !== "string") {
+    return false;
   }
-});
-/* harmony default export */ __webpack_exports__["default"] = (loadImage);
+  const reg = /^data:image\/([a-zA-Z0-9]+);base64,.+/i;
+  return str.match(reg);
+};
+/* harmony default export */ __webpack_exports__["default"] = (isBase64Image);
 
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
