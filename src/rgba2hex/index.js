@@ -1,15 +1,3 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function() {
-return /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
 var __webpack_exports__ = {};
 const trans2hex = (r = 0, g = 0, b = 0, a = 1) => {
   r -= 0;
@@ -25,11 +13,10 @@ const trans2hex = (r = 0, g = 0, b = 0, a = 1) => {
   return `${hex}${a}`;
 };
 const rgba2hex = (r = 0, g = 0, b = 0, a = 1) => {
-  var _a;
   if (r.includes("rgb")) {
     const matched = r.match(/rgba?\((.+)\)/);
     if (matched) {
-      const rgba = (_a = matched[1]) == null ? void 0 : _a.split(",").map((v) => v.trim());
+      const rgba = matched[1]?.split(",").map((v) => v.trim());
       return trans2hex(...rgba);
     }
     return r;
@@ -39,7 +26,5 @@ const rgba2hex = (r = 0, g = 0, b = 0, a = 1) => {
 /* harmony default export */ __webpack_exports__["default"] = (rgba2hex);
 
 __webpack_exports__ = __webpack_exports__["default"];
-/******/ 	return __webpack_exports__;
-/******/ })()
-;
-});
+var __webpack_exports__default = __webpack_exports__["default"];
+export { __webpack_exports__default as default };

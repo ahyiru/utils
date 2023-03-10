@@ -1,15 +1,3 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function() {
-return /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
 var __webpack_exports__ = {};
 const baseTagReg = "<([^>]+)>([0-9a-zA-Z]*)<\\/\\1>";
 const dataTagReg = "<([^>]+)><!\\[CDATA\\[([\\s\\S]*)\\]\\]><\\/\\1>";
@@ -25,7 +13,7 @@ const xml2Obj = (data) => {
   });
   dataTag.map((item) => {
     const [, tag, text] = item;
-    obj[tag] = (text != null ? text : "").trim();
+    obj[tag] = (text ?? "").trim();
     types[tag] = "data";
   });
   return { obj, types };
@@ -44,7 +32,5 @@ const obj2Xml = (obj, types) => {
 /* harmony default export */ __webpack_exports__["default"] = ({ xml2Obj, obj2Xml });
 
 __webpack_exports__ = __webpack_exports__["default"];
-/******/ 	return __webpack_exports__;
-/******/ })()
-;
-});
+var __webpack_exports__default = __webpack_exports__["default"];
+export { __webpack_exports__default as default };

@@ -1,16 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function() {
-return /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
+/******/ var __webpack_modules__ = ({
 
 /***/ 4793:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
@@ -131,7 +119,7 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 /***/ 1915:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
+const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
 /* harmony default export */ __webpack_exports__["default"] = (hasProp);
 
 
@@ -162,7 +150,7 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])
 /***/ 5307:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const isReactEle = (value) => (value == null ? void 0 : value["$$typeof"]) && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"] === "react.element";
+const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"] === "react.element";
 /* harmony default export */ __webpack_exports__["default"] = (isReactEle);
 
 
@@ -171,38 +159,38 @@ const isReactEle = (value) => (value == null ? void 0 : value["$$typeof"]) && ty
 /***/ 9136:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const isVueEle = (value) => value == null ? void 0 : value.__v_isVNode;
+const isVueEle = (value) => value?.__v_isVNode;
 /* harmony default export */ __webpack_exports__["default"] = (isVueEle);
 
 
 /***/ })
 
-/******/ 	});
+/******/ });
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
+/******/ // The module cache
+/******/ var __webpack_module_cache__ = {};
+/******/ 
+/******/ // The require function
+/******/ function __webpack_require__(moduleId) {
+/******/ 	// Check if module is in cache
+/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 	if (cachedModule !== undefined) {
+/******/ 		return cachedModule.exports;
 /******/ 	}
-/******/ 	
+/******/ 	// Create a new module (and put it into the cache)
+/******/ 	var module = __webpack_module_cache__[moduleId] = {
+/******/ 		// no module.id needed
+/******/ 		// no module.loaded needed
+/******/ 		exports: {}
+/******/ 	};
+/******/ 
+/******/ 	// Execute the module function
+/******/ 	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 
+/******/ 	// Return the exports of the module
+/******/ 	return module.exports;
+/******/ }
+/******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -215,10 +203,9 @@ const cache = (len = 100) => {
   const snapshot = [];
   let currentIndex = -1;
   const record = (data) => {
-    var _a, _b;
     const length = snapshot.length;
     const tempData = (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])(data);
-    if (!(0,_equal__WEBPACK_IMPORTED_MODULE_1__["default"])(tempData, (_a = snapshot[length - 1]) == null ? void 0 : _a.data)) {
+    if (!(0,_equal__WEBPACK_IMPORTED_MODULE_1__["default"])(tempData, snapshot[length - 1]?.data)) {
       snapshot.push({ data: tempData });
       if (snapshot.length > len) {
         snapshot.shift();
@@ -233,27 +220,25 @@ const cache = (len = 100) => {
     return {
       index: currentIndex,
       length,
-      data: (_b = snapshot[currentIndex]) == null ? void 0 : _b.data
+      data: snapshot[currentIndex]?.data
     };
   };
   const cursor = (num = 0) => {
-    var _a;
     const length = snapshot.length;
     currentIndex += num;
     currentIndex = currentIndex < 0 ? 0 : currentIndex > length - 1 ? length - 1 : currentIndex;
     return {
       index: currentIndex,
       length,
-      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])((_a = snapshot[currentIndex]) == null ? void 0 : _a.data)
+      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])(snapshot[currentIndex]?.data)
     };
   };
   const jump = (index) => {
-    var _a;
     currentIndex = index;
     return {
       index: currentIndex,
       length: snapshot.length,
-      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])((_a = snapshot[currentIndex]) == null ? void 0 : _a.data)
+      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])(snapshot[currentIndex]?.data)
     };
   };
   const undo = () => cursor(-1);
@@ -277,7 +262,5 @@ const cache = (len = 100) => {
 
 }();
 __webpack_exports__ = __webpack_exports__["default"];
-/******/ 	return __webpack_exports__;
-/******/ })()
-;
-});
+var __webpack_exports__default = __webpack_exports__["default"];
+export { __webpack_exports__default as default };

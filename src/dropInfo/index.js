@@ -1,16 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function() {
-return /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
+/******/ var __webpack_modules__ = ({
 
 /***/ 8248:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
@@ -77,12 +65,11 @@ const getElementsSize = async (ele, delay = 15) => {
 
 
 const getPosition = (ele) => {
-  var _a;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return;
   }
-  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : ele != null ? ele : document.body;
-  return (_a = ele.getBoundingClientRect) == null ? void 0 : _a.call(ele);
+  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : ele ?? document.body;
+  return ele.getBoundingClientRect?.();
 };
 /* harmony default export */ __webpack_exports__["default"] = (getPosition);
 
@@ -106,7 +93,6 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 
 const getViewportSize = (element = null) => {
-  var _a, _b;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return {
       width: 0,
@@ -120,8 +106,8 @@ const getViewportSize = (element = null) => {
     };
   }
   return {
-    width: (_a = window.innerWidth) != null ? _a : document.documentElement.clientWidth,
-    height: (_b = window.innerHeight) != null ? _b : document.documentElement.clientHeight
+    width: window.innerWidth ?? document.documentElement.clientWidth,
+    height: window.innerHeight ?? document.documentElement.clientHeight
   };
 };
 /* harmony default export */ __webpack_exports__["default"] = (getViewportSize);
@@ -132,7 +118,7 @@ const getViewportSize = (element = null) => {
 /***/ 1915:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj != null ? obj : {}, prop);
+const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
 /* harmony default export */ __webpack_exports__["default"] = (hasProp);
 
 
@@ -227,50 +213,50 @@ const str2Html = (str) => {
 
 /***/ })
 
-/******/ 	});
+/******/ });
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
+/******/ // The module cache
+/******/ var __webpack_module_cache__ = {};
+/******/ 
+/******/ // The require function
+/******/ function __webpack_require__(moduleId) {
+/******/ 	// Check if module is in cache
+/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 	if (cachedModule !== undefined) {
+/******/ 		return cachedModule.exports;
 /******/ 	}
-/******/ 	
+/******/ 	// Create a new module (and put it into the cache)
+/******/ 	var module = __webpack_module_cache__[moduleId] = {
+/******/ 		// no module.id needed
+/******/ 		// no module.loaded needed
+/******/ 		exports: {}
+/******/ 	};
+/******/ 
+/******/ 	// Execute the module function
+/******/ 	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 
+/******/ 	// Return the exports of the module
+/******/ 	return module.exports;
+/******/ }
+/******/ 
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
+/******/ /* webpack/runtime/define property getters */
+/******/ !function() {
+/******/ 	// define getter functions for harmony exports
+/******/ 	__webpack_require__.d = function(exports, definition) {
+/******/ 		for(var key in definition) {
+/******/ 			if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 			}
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
-/******/ 	
+/******/ 		}
+/******/ 	};
+/******/ }();
+/******/ 
+/******/ /* webpack/runtime/hasOwnProperty shorthand */
+/******/ !function() {
+/******/ 	__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ }();
+/******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -289,9 +275,8 @@ var __webpack_exports__ = {};
 const reg = /(\s|^)(huxy-drop-arrow-lt|huxy-drop-arrow-rt|huxy-drop-arrow-lb|huxy-drop-arrow-rb|huxy-drop-arrow-tl|huxy-drop-arrow-tr|huxy-drop-arrow-bl|huxy-drop-arrow-br)(\s|$)/;
 const classReg = /huxy-drop-arrow-lt|huxy-drop-arrow-rt|huxy-drop-arrow-lb|huxy-drop-arrow-rb|huxy-drop-arrow-tl|huxy-drop-arrow-tr|huxy-drop-arrow-bl|huxy-drop-arrow-br/;
 const setDirectionCls = (showEle, direction) => {
-  var _a;
   direction = `huxy-drop-arrow-${direction}`;
-  const cls = (_a = showEle.getAttribute("class")) != null ? _a : "";
+  const cls = showEle.getAttribute("class") ?? "";
   if (reg.test(cls)) {
     showEle.setAttribute("class", cls.replace(classReg, direction));
   } else {
@@ -360,7 +345,6 @@ const dropInfo = (triggerEle, showEle, type = "horizontal") => {
 
 }();
 __webpack_exports__ = __webpack_exports__["default"];
-/******/ 	return __webpack_exports__;
-/******/ })()
-;
-});
+var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__setPosition = __webpack_exports__.false;
+export { __webpack_exports__default as default, __webpack_exports__setPosition as setPosition };

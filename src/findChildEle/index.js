@@ -1,20 +1,7 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function() {
-return /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
 var __webpack_exports__ = {};
 const findChildEle = (target, cname) => {
-  var _a;
   const childrenEle = [];
-  const children = (_a = target.children) != null ? _a : [];
+  const children = target.children ?? [];
   for (let i = 0, l = children.length; i < l; i++) {
     const childEle = children[i];
     if (childEle.className.indexOf(cname) > -1) {
@@ -32,7 +19,5 @@ const findChildEle = (target, cname) => {
 /* harmony default export */ __webpack_exports__["default"] = (findChildEle);
 
 __webpack_exports__ = __webpack_exports__["default"];
-/******/ 	return __webpack_exports__;
-/******/ })()
-;
-});
+var __webpack_exports__default = __webpack_exports__["default"];
+export { __webpack_exports__default as default };

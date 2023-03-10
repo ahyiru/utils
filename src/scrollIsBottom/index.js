@@ -1,16 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function() {
-return /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
+/******/ var __webpack_modules__ = ({
 
 /***/ 6837:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
@@ -29,7 +17,6 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 
 const getViewportSize = (element = null) => {
-  var _a, _b;
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     return {
       width: 0,
@@ -43,8 +30,8 @@ const getViewportSize = (element = null) => {
     };
   }
   return {
-    width: (_a = window.innerWidth) != null ? _a : document.documentElement.clientWidth,
-    height: (_b = window.innerHeight) != null ? _b : document.documentElement.clientHeight
+    width: window.innerWidth ?? document.documentElement.clientWidth,
+    height: window.innerHeight ?? document.documentElement.clientHeight
   };
 };
 /* harmony default export */ __webpack_exports__["default"] = (getViewportSize);
@@ -77,41 +64,38 @@ const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"]
 
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
 
-const scrollTop = () => {
-  var _a, _b;
-  return (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && ((_b = (_a = window.pageYOffset) != null ? _a : document.documentElement.scrollTop) != null ? _b : document.body.scrollTop);
-};
+const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
 /* harmony default export */ __webpack_exports__["default"] = (scrollTop);
 
 
 /***/ })
 
-/******/ 	});
+/******/ });
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
+/******/ // The module cache
+/******/ var __webpack_module_cache__ = {};
+/******/ 
+/******/ // The require function
+/******/ function __webpack_require__(moduleId) {
+/******/ 	// Check if module is in cache
+/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 	if (cachedModule !== undefined) {
+/******/ 		return cachedModule.exports;
 /******/ 	}
-/******/ 	
+/******/ 	// Create a new module (and put it into the cache)
+/******/ 	var module = __webpack_module_cache__[moduleId] = {
+/******/ 		// no module.id needed
+/******/ 		// no module.loaded needed
+/******/ 		exports: {}
+/******/ 	};
+/******/ 
+/******/ 	// Execute the module function
+/******/ 	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 
+/******/ 	// Return the exports of the module
+/******/ 	return module.exports;
+/******/ }
+/******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -127,7 +111,5 @@ const scrollIsBottom = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default
 
 }();
 __webpack_exports__ = __webpack_exports__["default"];
-/******/ 	return __webpack_exports__;
-/******/ })()
-;
-});
+var __webpack_exports__default = __webpack_exports__["default"];
+export { __webpack_exports__default as default };
