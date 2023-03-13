@@ -1,20 +1,5 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 3400:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isBase64Image = (str) => {
-  if (typeof str !== "string") {
-    return false;
-  }
-  const reg = /^data:image\/([a-zA-Z0-9]+);base64,.+/i;
-  return str.match(reg);
-};
-/* harmony default export */ __webpack_exports__["default"] = (isBase64Image);
-
-
-/***/ }),
-
 /***/ 3498:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
@@ -98,8 +83,6 @@ var __webpack_exports__ = {};
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
 /* harmony import */ var _uuidv4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1411);
 /* harmony import */ var _isUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(779);
-/* harmony import */ var _isBase64Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3400);
-
 
 
 
@@ -109,8 +92,8 @@ const dlfile = async (url, ext, name) => {
   }
   name = name || (0,_uuidv4__WEBPACK_IMPORTED_MODULE_1__["default"])();
   let filename = ext ? `${name}.${ext}` : name;
-  if ((0,_isUrl__WEBPACK_IMPORTED_MODULE_2__["default"])(url)) {
-    url = decodeURIComponent(url);
+  if (typeof url === "string") {
+    url = (0,_isUrl__WEBPACK_IMPORTED_MODULE_2__["default"])(url) ? decodeURIComponent(url) : url;
     const response = await fetch(url, {
       mode: "no-cors"
     });
@@ -129,18 +112,16 @@ const dlfile = async (url, ext, name) => {
       window.URL.revokeObjectURL(dataUrl);
     });
   } else {
-    if (!(0,_isBase64Image__WEBPACK_IMPORTED_MODULE_3__["default"])(url)) {
-      const blob = new Blob([url]);
-      url = window.URL.createObjectURL(blob);
-    }
+    const blob = new Blob([url]);
+    const dataUrl = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
-    a.href = url;
+    a.href = dataUrl;
     a.download = filename;
     a.style.display = "none";
     document.body.appendChild(a);
     a.click();
     a.parentNode.removeChild(a);
-    window.URL.revokeObjectURL(url);
+    window.URL.revokeObjectURL(dataUrl);
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (dlfile);

@@ -545,6 +545,12 @@ dash2camel('add-file-name'); // addFileName
 dash2camel('add_file_name', '_'); // addFileName
 ```
 
+### dataURLtoFile
+
+```javascript
+dataURLtoFile('data:image/png;base64,xxx...', test.png);
+```
+
 ### debounce
 
 ```javascript

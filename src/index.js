@@ -34,6 +34,7 @@ export {default as createTextElement} from './createTextElement';
 export {default as curry} from './curry';
 export {default as cyclic} from './cyclic';
 export {default as dash2camel} from './dash2camel';
+export {default as dataURLtoFile} from './dataURLtoFile';
 export {default as debounce} from './debounce';
 export {default as deleteNodes} from './deleteNodes';
 export {default as deviceType} from './deviceType';

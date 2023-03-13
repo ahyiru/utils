@@ -34,7 +34,7 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
 
 /***/ }),
 
-/***/ 4760:
+/***/ 1740:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony exports timeBase, minus */
@@ -121,7 +121,7 @@ const timeInterval = (start, end = /* @__PURE__ */ new Date()) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _timeInterval__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4760);
+/* harmony import */ var _timeInterval__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1740);
 
 const timeUnit = ["\u5E74", "\u6708", "\u65E5", "\u65F6", "\u5206", "\u79D2"];
 const timeGap = (start, end = /* @__PURE__ */ new Date()) => {
