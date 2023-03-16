@@ -61,7 +61,7 @@ const loadBase64ByUrl = async (url) => {
   if (!(0,_isUrl__WEBPACK_IMPORTED_MODULE_0__["default"])(url)) {
     return url;
   }
-  const response = await fetch(url);
+  const response = await fetch(decodeURIComponent(url));
   const blob = await response.blob();
   const result = await (0,_loadBase64__WEBPACK_IMPORTED_MODULE_1__["default"])(blob);
   return result;
