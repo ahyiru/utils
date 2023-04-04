@@ -190,13 +190,12 @@ const css = `@keyframes huxy-message-animate-in {
   background: #ffffff;
   color: #333333;
   border-radius: 4px;
-  min-width: 100px;
-  max-width: 280px;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   margin-top: 24px;
-  padding: 8px 12px;
+  padding: 10px 16px;
   opacity: 0;
   transform: translate3d(0, -100%, 0);
   animation: huxy-message-animate-out 0.25s forwards;
