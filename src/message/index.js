@@ -268,7 +268,7 @@ const createItem = (content, status) => {
   const mes = document.createElement("div");
   mes.setAttribute("class", `message-content open ${status}`);
   const text = document.createElement("span");
-  text.innerText = content;
+  text.innerText = content?.message ?? content;
   const icon = document.createElement("i");
   mes.appendChild(icon);
   mes.appendChild(text);
