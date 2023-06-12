@@ -29,18 +29,16 @@ const traverItem = (fn) => (arr, childKey = "children") => {
   if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(arr)) {
     return arr;
   }
-  const traver = (data, parent = []) => {
-    data.map((item, k) => {
-      const hasChild = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(item[childKey]);
-      item = fn(item, parent, k, hasChild) || item;
-      if (hasChild) {
-        const { [childKey]: children, ...rest } = item;
-        traver(children, [...parent, { ...rest, "@@index": k }]);
-      }
-    });
-  };
-  traver(arr);
-  return arr;
+  const traver = (data, parent = []) => data.map((item, k) => {
+    const hasChild = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(item[childKey]);
+    item = fn(item, parent, k, hasChild) || item;
+    if (hasChild) {
+      const { [childKey]: children, ...rest } = item;
+      item[childKey] = traver(children, [...parent, { ...rest, "@@index": k }]);
+    }
+    return item;
+  });
+  return traver(arr);
 };
 /* harmony default export */ __webpack_exports__["default"] = (traverItem);
 

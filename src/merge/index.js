@@ -64,9 +64,9 @@ const mergeArr = (base, extend, key = "id") => {
     } else {
       const oldItem = sameItems[idKey];
       if ((0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(oldItem) && (0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(item)) {
-        sameItems[idKey] = (0,_mergeObj__WEBPACK_IMPORTED_MODULE_2__["default"])(oldItem, item);
+        sameItems[idKey] = (0,_mergeObj__WEBPACK_IMPORTED_MODULE_2__["default"])(oldItem, item, key);
       } else if ((0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(oldItem) && (0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(item)) {
-        sameItems[idKey] = mergeArr(oldItem, item);
+        sameItems[idKey] = mergeArr(oldItem, item, key);
       } else {
         sameItems[idKey] = item;
       }
@@ -90,7 +90,7 @@ const mergeArr = (base, extend, key = "id") => {
 
 
 
-const mergeObj = (base, extend) => {
+const mergeObj = (base, extend, key = "id") => {
   if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(base)) {
     return extend;
   }
@@ -100,9 +100,9 @@ const mergeObj = (base, extend) => {
   for (let k in extend) {
     if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_1__["default"])(extend, k)) {
       if ((0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(base[k]) && (0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(extend[k])) {
-        base[k] = mergeObj(base[k], extend[k]);
+        base[k] = mergeObj(base[k], extend[k], key);
       } else if ((0,_isArray__WEBPACK_IMPORTED_MODULE_2__["default"])(base[k]) && (0,_isArray__WEBPACK_IMPORTED_MODULE_2__["default"])(extend[k])) {
-        base[k] = (0,_mergeArr__WEBPACK_IMPORTED_MODULE_3__["default"])(base[k], extend[k]);
+        base[k] = (0,_mergeArr__WEBPACK_IMPORTED_MODULE_3__["default"])(base[k], extend[k], key);
       } else {
         base[k] = extend[k];
       }
