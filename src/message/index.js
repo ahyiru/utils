@@ -89,6 +89,38 @@ const removeClass = (ele, name = "") => {
 /* harmony default export */ __webpack_exports__["default"] = (removeClass);
 
 
+/***/ }),
+
+/***/ 8098:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const timestamp = () => {
+  if (typeof performance !== "undefined" && typeof performance.now === "function") {
+    return performance.now();
+  }
+  return (/* @__PURE__ */ new Date()).getTime();
+};
+/* harmony default export */ __webpack_exports__["default"] = (timestamp);
+
+
+/***/ }),
+
+/***/ 1411:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8098);
+
+const uuidv4 = () => {
+  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (timeKey + Math.random() * 16) % 16 | 0;
+    timeKey = Math.floor(timeKey / 16);
+    return (c === "x" ? r : r & 3 | 8).toString(16);
+  });
+};
+/* harmony default export */ __webpack_exports__["default"] = (uuidv4);
+
+
 /***/ })
 
 /******/ });
@@ -151,6 +183,8 @@ var isBrowser = __webpack_require__(3498);
 var removeClass = __webpack_require__(7578);
 // EXTERNAL MODULE: ../../huxy/utils/addStyle.js
 var addStyle = __webpack_require__(2240);
+// EXTERNAL MODULE: ../../huxy/utils/uuidv4.js
+var uuidv4 = __webpack_require__(1411);
 ;// CONCATENATED MODULE: ../../huxy/utils/styles/message.js
 const css = `@keyframes huxy-message-animate-in {
   0% {
@@ -255,6 +289,7 @@ const css = `@keyframes huxy-message-animate-in {
 
 
 
+
 const getContainer = () => document.getElementsByClassName("huxy-message")[0];
 const createContainer = () => {
   const div = document.createElement("div");
@@ -264,9 +299,10 @@ const createContainer = () => {
   document.body.appendChild(div);
   return child;
 };
-const createItem = (content, status) => {
+const createItem = (content, status, uuid) => {
   const mes = document.createElement("div");
   mes.setAttribute("class", `message-content open ${status}`);
+  mes.setAttribute("data-id", uuid);
   const text = document.createElement("span");
   text.innerText = content?.message ?? content;
   const icon = document.createElement("i");
@@ -283,22 +319,42 @@ const startMes = (content, delay = 3250, onClose, status) => {
   if (!container) {
     container = createContainer();
   }
-  const mesItem = createItem(content, status);
+  const uuid = (0,uuidv4["default"])();
+  const mesItem = createItem(content, status, uuid);
   container.appendChild(mesItem);
-  setTimeout(() => {
-    container.removeChild(mesItem);
-    onClose?.();
-  }, delay);
-  setTimeout(() => {
-    (0,removeClass["default"])(mesItem, "open");
-  }, delay - 250);
+  if (delay) {
+    setTimeout(() => {
+      container.removeChild(mesItem);
+      onClose?.();
+    }, delay);
+    setTimeout(() => {
+      (0,removeClass["default"])(mesItem, "open");
+    }, delay - 250);
+  }
+  return uuid;
+};
+const destroyMes = (key) => {
+  const container = getContainer();
+  if (container) {
+    if (key) {
+      const mesItem = container.querySelector(`[data-id="${key}"]`);
+      if (mesItem) {
+        container.removeChild(mesItem);
+      }
+    } else {
+      while (container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
+    }
+  }
 };
 const message_message = {
   success: (content, delay, onClose) => startMes(content, delay, onClose, "success"),
   warn: (content, delay, onClose) => startMes(content, delay, onClose, "warn"),
   warning: (content, delay, onClose) => startMes(content, delay, onClose, "warn"),
   error: (content, delay, onClose) => startMes(content, delay, onClose, "error"),
-  info: (content, delay, onClose) => startMes(content, delay, onClose, "info")
+  info: (content, delay, onClose) => startMes(content, delay, onClose, "info"),
+  destroy: destroyMes
 };
 /* harmony default export */ var utils_message = (message_message);
 
