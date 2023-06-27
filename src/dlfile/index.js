@@ -112,9 +112,7 @@ const dlfile = async (url, ext, name) => {
   const isUrlStr = (0,_isUrl__WEBPACK_IMPORTED_MODULE_2__["default"])(url);
   if (isUrlStr || (0,_isBase64Image__WEBPACK_IMPORTED_MODULE_3__["default"])(url)) {
     url = isUrlStr ? decodeURIComponent(url) : url;
-    const response = await fetch(url, {
-      mode: "no-cors"
-    });
+    const response = await fetch(url);
     const disposition = response.headers.get("Content-Disposition");
     const resFilename = disposition && decodeURIComponent(disposition.split(";")[1].split("=")[1]);
     response.blob().then((blob) => {
