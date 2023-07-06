@@ -235,22 +235,36 @@ const css = `@keyframes huxy-message-animate-in {
   animation: huxy-message-animate-out 0.25s forwards;
 }
 
+.message-content.left {
+  margin-left: 20px;
+}
+
+.message-content.right {
+  margin-right: 20px;
+}
+
 .message-content.open {
   animation: huxy-message-animate-in 0.25s forwards;
 }
 
+.message-content .title {
+  font-size: 1.8rem;
+}
+
+.message-content .message {
+  line-height: 1.75;
+}
+
 .message-content i {
-  /* font-size: 1.8rem; */
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  /* line-height: 1; */
   vertical-align: middle;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-right: 8px;
+  margin-right: 10px;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -300,10 +314,12 @@ const createContainer = () => {
   return child;
 };
 const createItem = (content, status, uuid) => {
+  const dir = content?.dir ?? "auto";
   const mes = document.createElement("div");
-  mes.setAttribute("class", `message-content open ${status}`);
+  mes.setAttribute("class", `message-content open ${status} ${dir}`);
   mes.setAttribute("data-id", uuid);
   const text = document.createElement("span");
+  text.setAttribute("class", "message");
   text.innerText = content?.message ?? content;
   const icon = document.createElement("i");
   mes.appendChild(icon);
