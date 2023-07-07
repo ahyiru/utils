@@ -162,6 +162,7 @@ export {default as timeGap} from './timeGap';
 export {default as timeInterval} from './timeInterval';
 export {default as timestamp} from './timestamp';
 export {default as toggleClass} from './toggleClass';
+export {default as touchEvent} from './touchEvent';
 export {default as traverItem} from './traverItem';
 export {default as traverList} from './traverList';
 export {default as unescapeHTML} from './unescapeHTML';

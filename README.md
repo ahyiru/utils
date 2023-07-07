@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ahyiru/utils/blob/develop/LICENSE)
 [![npm version](https://img.shields.io/npm/v/@huxy/utils.svg)](https://www.npmjs.com/package/@huxy/utils)
-[![npm](https://img.shields.io/npm/dt/@huxy/utils)](https://www.npmjs.com/package/@huxy/utils)
+[![Build Status](https://api.travis-ci.com/ahyiru/utils.svg?branch=master)](https://app.travis-ci.com/github/ahyiru/utils)
 [![](https://img.shields.io/badge/blog-ihuxy-blue.svg)](http://ihuxy.com/)
 
 ### a2o
@@ -1486,6 +1486,19 @@ getMonthDays(); // 31
 ```javascript
 timestamp(); // 48620100.70000002
 ```
+
+### touchEvent
+
+```javascript
+const destroy = touchEvent(startEvent, moveEvent, endEvent, ref);
+```
+
+- startEvent：touchstart 或 mousedown 执行的事件
+- moveEvent：touchmove 或 mousemove 执行的事件
+- endEvent：touchend 或 mouseup 执行的事件
+- ref：容器元素，默认 document
+
+返回 destroy 函数，执行 destroy() 即可销毁事件。
 
 ### traverItem
 
