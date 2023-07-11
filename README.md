@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ahyiru/utils/blob/develop/LICENSE)
 [![npm version](https://img.shields.io/npm/v/@huxy/utils.svg)](https://www.npmjs.com/package/@huxy/utils)
-[![Build Status](https://api.travis-ci.com/ahyiru/utils.svg?branch=master)](https://app.travis-ci.com/github/ahyiru/utils)
+[![npm](https://img.shields.io/npm/dt/@huxy/utils)](https://www.npmjs.com/package/@huxy/utils)
 [![](https://img.shields.io/badge/blog-ihuxy-blue.svg)](http://ihuxy.com/)
 
 ### a2o
