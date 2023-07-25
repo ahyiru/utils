@@ -178,7 +178,7 @@ const css = `.huxy-totop-bar {
   bottom: 20px;
   background-color: var(--bgColor);
   color: var(--color);
-  z-index: 99999;
+  z-index: 8888;
   cursor: pointer;
   overflow: hidden;
 }
