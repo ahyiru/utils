@@ -52,7 +52,7 @@ var __webpack_exports__ = {};
 !function() {
 /* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8855);
 
-const isValidObj = (value) => (0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(value) && Object.keys(value).length;
+const isValidObj = (value) => (0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(value) && !!Object.keys(value).length;
 /* harmony default export */ __webpack_exports__["default"] = (isValidObj);
 
 }();

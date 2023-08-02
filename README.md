@@ -23,9 +23,20 @@ const arr = [
   },
 ];
 
-a2o(arr);
+a2o(arr, 'key', 'value');
 
 // {1: 't1', 2: 't2', 3: 't3'}
+```
+
+### addAtNext/addAtPos/addNodes/editNodes/deleteNodes/moveNodes
+
+```javascript
+addAtNext(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
+addAtPos(tree, id, nodes, pos, (idKey = 'id'), (childKey = 'children'));
+addNodes(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
+editNodes(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
+deleteNodes(tree, id, (idKey = 'id'), (childKey = 'children'));
+moveNodes(tree, fromId, toId, pos, (idKey = 'id'), (childKey = 'children'));
 ```
 
 ### addScript/addStyle
@@ -39,7 +50,7 @@ const loadScript = async url => {
 const loadStyleByUrl = async url => {
   await addStyle(url);
 };
-addStyle(cssStr, 'css-hash');
+const addStyleByCode = addStyle(cssCode, 'css-hash');
 ```
 
 ### arr2Tree
@@ -951,17 +962,6 @@ removeClass(ele, 'class1');
 toggleClass(ele, 'class1');
 ```
 
-### addNodes/addAtNext/addAtPos/editNodes/deleteNodes/moveNodes
-
-```javascript
-addNodes(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
-addAtNext(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
-addAtPos(tree, id, nodes, pos, (idKey = 'id'), (childKey = 'children'));
-editNodes(tree, id, nodes, (idKey = 'id'), (childKey = 'children'));
-deleteNodes(tree, id, (idKey = 'id'), (childKey = 'children'));
-moveNodes(tree, fromId, toId, pos, (idKey = 'id'), (childKey = 'children'));
-```
-
 ### hasProp
 
 ```javascript
@@ -975,16 +975,16 @@ hasProp(a, 'b'); // true
 ```javascript
 isArray([]); // true
 isValidArr([1]); // true
-isValidObj({}); // false
-isAsync(new Promise()); // true
 isObject({}); // true
+isValidObj({}); // false
 isFunction(() => {}); // true
 isError(new Error()); // true
 isRegExp(/\d+/); // true
 isElement(<span>1</span>); // true
+isAsync(new Promise((res, rej) => {})); // true
 isUrl('http://abc.com'); // true
 isDate('2022', '10', '11'); // true
-isBase64Image('data:image/png;base64,test'); // true
+isBase64Image('data:image/png;base64,test'); // [data:image/png;base64,test, png]
 ```
 
 ### isBrowser/isIE/isTouch

@@ -59,11 +59,13 @@ const obj2str = (obj = {}) => {
     const item = obj[key];
     objStr = objStr ? `${objStr}, ` : objStr;
     if ((0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(item)) {
-      objStr += `${key}=${obj2str(item)}`;
+      objStr += `${key}: ${obj2str(item)}`;
     } else if (Array.isArray(item)) {
-      objStr += `${key}=${(0,_arr2str__WEBPACK_IMPORTED_MODULE_1__["default"])(item)}`;
+      objStr += `${key}: ${(0,_arr2str__WEBPACK_IMPORTED_MODULE_1__["default"])(item)}`;
+    } else if (typeof item === "string") {
+      objStr += `${key}: '${item}'`;
     } else {
-      objStr += `${key}=${item}`;
+      objStr += `${key}: ${item}`;
     }
   });
   return `{${objStr}}`;
