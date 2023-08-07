@@ -22,6 +22,7 @@
 /************************************************************************/
 var __webpack_exports__ = {};
 /* unused harmony export keyArr */
+const keyArr = (keys = "") => keys.replace(/\[['"]?(.*?)['"]?\]/g, ".$1")?.split(".");
 const getValue = (object = {}, keys) => {
   keys = keyArr(keys);
   const checkValue = (obj, key) => {
@@ -38,7 +39,6 @@ const getValue = (object = {}, keys) => {
   };
   return checkValue(object, keys);
 };
-const keyArr = (keys = "") => keys.replace(/\[['"]?(.*?)['"]?\]/g, ".$1")?.split(".");
 /* harmony default export */ __webpack_exports__["default"] = (getValue);
 
 __webpack_exports__ = __webpack_exports__["default"];

@@ -1,5 +1,5 @@
 var __webpack_exports__ = {};
-const padStart = (str = "", n = 0, pad = "0") => {
+const padStart = (str = "", n = 2, pad = "0") => {
   const len = str.length;
   if (len >= n) {
     return str;

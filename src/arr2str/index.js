@@ -15,6 +15,8 @@ const arr2str = (arr = []) => {
       arrStr += (0,_obj2str__WEBPACK_IMPORTED_MODULE_1__["default"])(item);
     } else if (Array.isArray(item)) {
       arrStr += arr2str(item);
+    } else if (typeof item === "string") {
+      arrStr += `'${item}'`;
     } else {
       arrStr += `${item}`;
     }

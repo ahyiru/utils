@@ -1,13 +1,15 @@
 var __webpack_exports__ = {};
 const compareVersion = (loaclVersion, serviceVersion, key = ".") => {
-  const str2arr = (str, key2) => str.split(key2);
-  const lvArr = str2arr(loaclVersion, key);
-  const svArr = str2arr(serviceVersion, key);
+  const lvArr = loaclVersion.split(key);
+  const svArr = serviceVersion.split(key);
   const arrLen = lvArr.length;
   let needUpdateLevel = 0;
   for (let i = 0; i < arrLen; i++) {
-    if (lvArr[i] < svArr[i]) {
+    if (Number(lvArr[i]) < Number(svArr[i])) {
       needUpdateLevel = arrLen - i;
+      break;
+    } else if (Number(lvArr[i]) > Number(svArr[i])) {
+      console.log(needUpdateLevel);
       break;
     }
   }

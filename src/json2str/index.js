@@ -15,6 +15,8 @@ const arr2str = (arr = []) => {
       arrStr += (0,_obj2str__WEBPACK_IMPORTED_MODULE_1__["default"])(item);
     } else if (Array.isArray(item)) {
       arrStr += arr2str(item);
+    } else if (typeof item === "string") {
+      arrStr += `'${item}'`;
     } else {
       arrStr += `${item}`;
     }
@@ -105,13 +107,24 @@ const obj2str = (obj = {}) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8855);
-/* harmony import */ var _arr2str__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9718);
-/* harmony import */ var _obj2str__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5077);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8855);
+/* harmony import */ var _arr2str__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9718);
+/* harmony import */ var _obj2str__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5077);
 
 
 
-const json2str = (obj) => (0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(obj) ? (0,_obj2str__WEBPACK_IMPORTED_MODULE_1__["default"])(obj) : Array.isArray(obj) ? (0,_arr2str__WEBPACK_IMPORTED_MODULE_2__["default"])(obj) : obj;
+const json2str = (obj) => {
+  if (typeof obj === "boolean" || obj == null) {
+    return `${obj}`;
+  }
+  if (Array.isArray(obj)) {
+    return (0,_arr2str__WEBPACK_IMPORTED_MODULE_0__["default"])(obj);
+  }
+  if ((0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(obj)) {
+    return (0,_obj2str__WEBPACK_IMPORTED_MODULE_2__["default"])(obj);
+  }
+  return obj;
+};
 /* harmony default export */ __webpack_exports__["default"] = (json2str);
 
 }();

@@ -244,7 +244,7 @@ const getMatched = (fn) => (arr, childKey = "children") => {
   };
   return traver(list);
 };
-const filterList = (data, keyword, str2Dom, fields = "name", idKey = "id", childKey = "children", exact = false) => getMatched((list, matchedItem) => (0,_unique__WEBPACK_IMPORTED_MODULE_2__["default"])([...(0,_filter__WEBPACK_IMPORTED_MODULE_3__["default"])(list, keyword, fields, exact, str2Dom), ...matchedItem], idKey))(data, childKey);
+const filterList = (data, keyword, fields = "name", exact = false, idKey = "id", childKey = "children", str2Dom) => getMatched((list, matchedItem) => (0,_unique__WEBPACK_IMPORTED_MODULE_2__["default"])([...(0,_filter__WEBPACK_IMPORTED_MODULE_3__["default"])(list, keyword, fields, exact, str2Dom), ...matchedItem], idKey))(data, childKey);
 /* harmony default export */ __webpack_exports__["default"] = (filterList);
 
 }();

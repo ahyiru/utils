@@ -1,18 +1,19 @@
 var __webpack_exports__ = {};
-const str2code = (str, utils = {}) => {
-  const sentence = str.replace(/\/\*[\s\S]*\*\//, "").split("\n").map((s) => {
-    const sent = s.replace(/(?<!:)\/\/[\s\S]*/, "").trim();
-    const hasSem = sent.slice(-1) === ";";
-    const func = hasSem ? sent.slice(0, -1) : sent;
-    return func.trim();
-  }).filter((sent) => /^[^\s/]+\([\s\S]*\)$/.test(sent));
-  if (sentence.length) {
-    const last = sentence.slice(-1)[0];
+const str2code = (str, common = {}, typeKey = "utils") => {
+  const sentence = [];
+  str.replace(/\/\*[\s\S]*\*\//, "").split("\n").map((s) => {
+    const sens = s.split(");").map((s2) => s2.replace(/(?<!:)\/\/[^\n]*/, "").trim()).filter(Boolean).map((s2) => `${s2})`);
+    sentence.push(...sens);
+  });
+  const functions = sentence.filter((sent) => /^[^\s/]+\([\s\S]*\)$/.test(sent));
+  if (functions.length) {
+    const last = functions.slice(-1)[0];
     if (last.indexOf("return ") !== 0) {
-      str = str.replace(last, `return ${last}`);
+      str = str.replace(last, `
+return ${last}`);
     }
   }
-  window.utils = utils;
+  window[typeKey] = common;
   const exec = Function(`${str}`);
   return exec();
 };

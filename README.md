@@ -446,15 +446,20 @@ clone(arr | object);
 ### compareVersion
 
 ```javascript
-compareVersion(a, b, , key = '.')
+compareVersion(a, b, key = '.');
+
 compareVersion('1.5.111', '1.7.0'); // 2
+compareVersion('1.105.1', '2.0.0'); // 3
+compareVersion('10.0.1', '10.0.22'); // 1
+compareVersion('3.2.1', '3.2.1'); // 0
+compareVersion('2_22_1', '2_9_11', '_'); // 0
 
 返回值：
 
 - 0：a >= b
-- 1：a < b，主版本号需更新
+- 1：a < b，阶段版本号需更新
 - 2：a < b，子版本号需更新
-- 3：a < b，阶段版本号需更新
+- 3：a < b，主版本号需更新
 
 ```
 
@@ -596,7 +601,7 @@ const {on, emit, off} = emitter();
 ### equal
 
 ```javascript
-equal(a, b); // true|false
+equal(a, b); // true | false
 ```
 
 ### filter
@@ -1506,6 +1511,15 @@ const destroy = touchEvent(startEvent, moveEvent, endEvent, ref);
 traverItem((item, parent, index, hasChild) => {
   console.log(item, parent, index, hasChild);
 })(arr, childKey);
+
+- fn：回调函数
+	- item：当前节点数据
+	- parent：父节点数据
+	- index：当前节点下标
+	- hasChild：是否有子节点
+
+- arr：树对象
+- childKey：子节点 `key` 值，默认 `children`
 ```
 
 ### traverList
