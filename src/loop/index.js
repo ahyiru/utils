@@ -10,8 +10,8 @@ const formatMs = (ms = 350, unit = "ms") => ({
   m: ms * 6e4,
   h: ms * 36e5,
   d: ms * 864e5
-});
-const sleep = (ms = 350, unit = "ms") => new Promise((resolve) => setTimeout(resolve, formatMs(ms)));
+})[unit] ?? ms;
+const sleep = (ms = 350, unit = "ms") => new Promise((resolve) => setTimeout(resolve, formatMs(ms, unit)));
 const sleepSync = (ms = 100) => {
   const start = Date.now();
   while (Date.now() - start <= ms) {
