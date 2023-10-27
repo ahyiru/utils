@@ -22,7 +22,14 @@
 /************************************************************************/
 var __webpack_exports__ = {};
 /* unused harmony export sleepSync */
-const sleep = (ms = 350) => new Promise((resolve) => setTimeout(resolve, ms));
+const formatMs = (ms = 350, unit = "ms") => ({
+  ms: ms * 1,
+  s: ms * 1e3,
+  m: ms * 6e4,
+  h: ms * 36e5,
+  d: ms * 864e5
+});
+const sleep = (ms = 350, unit = "ms") => new Promise((resolve) => setTimeout(resolve, formatMs(ms)));
 const sleepSync = (ms = 100) => {
   const start = Date.now();
   while (Date.now() - start <= ms) {
