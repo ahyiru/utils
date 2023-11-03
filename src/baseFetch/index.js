@@ -5,7 +5,7 @@
 
 /* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9874);
 
-const cancelablePromise = (promise, delay = 12e4, msg = "\u8BF7\u6C42\u8D85\u65F6\uFF01") => {
+const cancelablePromise = (promise, delay = 3e5, msg = "\u8BF7\u6C42\u8D85\u65F6\uFF01") => {
   if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__["default"])(promise)) {
     return {};
   }

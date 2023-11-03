@@ -1378,12 +1378,17 @@ clear();
 setStyle(ele, (styles = {}), (reset = false));
 ```
 
-### sleep/sleepSync
+### sleep
 
 ```javascript
-await sleep();
-await sleepSync();
+await sleep(ms = 350, unit = 'ms');
+
+await sleep(2,'m');
 ```
+
+- delay: 等待时间数值
+- unit: 单位。毫秒、秒、分、时、天。ms | s | m | h | d 。默认 ms
+
 
 ### sort
 
