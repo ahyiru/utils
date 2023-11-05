@@ -11,7 +11,7 @@ const debounce = (func = () => {
     timer = setTimeout(() => func.apply(this, args), delay);
   };
 };
-/* harmony default export */ __webpack_exports__["default"] = (debounce);
+/* harmony default export */ __webpack_exports__.Z = (debounce);
 
 
 /***/ }),
@@ -36,7 +36,7 @@ const findChildEle = (target, cname) => {
   }
   return childrenEle;
 };
-/* harmony default export */ __webpack_exports__["default"] = (findChildEle);
+/* harmony default export */ __webpack_exports__.Z = (findChildEle);
 
 
 /***/ }),
@@ -45,7 +45,7 @@ const findChildEle = (target, cname) => {
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
-/* harmony default export */ __webpack_exports__["default"] = (hasProp);
+/* harmony default export */ __webpack_exports__.Z = (hasProp);
 
 
 /***/ }),
@@ -54,7 +54,7 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, p
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+/* harmony default export */ __webpack_exports__.Z = (isBrowser);
 
 
 /***/ }),
@@ -64,8 +64,8 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1915);
 
-const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, "current");
-/* harmony default export */ __webpack_exports__["default"] = (isRef);
+const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ref, "current");
+/* harmony default export */ __webpack_exports__.Z = (isRef);
 
 
 /***/ })
@@ -125,15 +125,15 @@ const createObj = (element, resizeListener) => {
   return obj;
 };
 const resize = (element, delay = 60) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
     return;
   }
-  element = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(element) ? element.current : element ?? document.body;
-  let domObj = (0,_findChildEle__WEBPACK_IMPORTED_MODULE_2__["default"])(element, "resize-sensor");
+  element = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(element) ? element.current : element ?? document.body;
+  let domObj = (0,_findChildEle__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(element, "resize-sensor");
   let listeners = [];
-  const resizeListener = (0,_debounce__WEBPACK_IMPORTED_MODULE_3__["default"])(() => listeners.map((listener) => listener(element)), delay);
+  const resizeListener = (0,_debounce__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z)(() => listeners.map((listener) => listener(element)), delay);
   const bind = (cb) => {
-    if (!(0,_findChildEle__WEBPACK_IMPORTED_MODULE_2__["default"])(element, "resize-sensor")) {
+    if (!(0,_findChildEle__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(element, "resize-sensor")) {
       domObj = createObj(element, resizeListener);
     }
     if (listeners.indexOf(cb) === -1) {
@@ -166,9 +166,8 @@ const resize = (element, delay = 60) => {
     destroy
   };
 };
-/* harmony default export */ __webpack_exports__["default"] = (resize);
+/* harmony default export */ __webpack_exports__.Z = (resize);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

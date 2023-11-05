@@ -6,7 +6,7 @@
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
 
 const addStyle = (text, hash) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
     return;
   }
   if (hash) {
@@ -38,7 +38,7 @@ const addStyle = (text, hash) => {
     }
   });
 };
-/* harmony default export */ __webpack_exports__["default"] = (addStyle);
+/* harmony default export */ __webpack_exports__.Z = (addStyle);
 
 
 /***/ }),
@@ -47,7 +47,7 @@ const addStyle = (text, hash) => {
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
-/* harmony default export */ __webpack_exports__["default"] = (hasProp);
+/* harmony default export */ __webpack_exports__.Z = (hasProp);
 
 
 /***/ }),
@@ -56,7 +56,7 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, p
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+/* harmony default export */ __webpack_exports__.Z = (isBrowser);
 
 
 /***/ }),
@@ -66,8 +66,8 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1915);
 
-const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref, "current");
-/* harmony default export */ __webpack_exports__["default"] = (isRef);
+const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ref, "current");
+/* harmony default export */ __webpack_exports__.Z = (isRef);
 
 
 /***/ }),
@@ -80,13 +80,13 @@ const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(ref,
 
 
 const scrollTo = (top = 0, ele) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
     return;
   }
-  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__["default"])(ele) ? ele.current : ele ?? window;
+  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(ele) ? ele.current : ele ?? window;
   ele.scrollTo?.({ top, behavior: "smooth" });
 };
-/* harmony default export */ __webpack_exports__["default"] = (scrollTo);
+/* harmony default export */ __webpack_exports__.Z = (scrollTo);
 
 
 /***/ }),
@@ -96,8 +96,8 @@ const scrollTo = (top = 0, ele) => {
 
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
 
-const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
-/* harmony default export */ __webpack_exports__["default"] = (scrollTop);
+const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
+/* harmony default export */ __webpack_exports__.Z = (scrollTop);
 
 
 /***/ })
@@ -153,7 +153,7 @@ var __webpack_exports__ = {};
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ utils_backTop; }
+  Z: function() { return /* binding */ utils_backTop; }
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
@@ -247,7 +247,7 @@ const createTotopBar = (text) => {
   totopBar.appendChild(i);
   totopBar.appendChild(span);
   document.body.appendChild(totopBar);
-  totopBar.addEventListener("click", () => (0,scrollTo["default"])(), false);
+  totopBar.addEventListener("click", () => (0,scrollTo/* default */.Z)(), false);
   return totopBar;
 };
 const removeTotopBar = () => {
@@ -257,12 +257,12 @@ const removeTotopBar = () => {
   }
 };
 const backTop_backTop = (top = 0, text = "\u8FD4\u56DE\u9876\u90E8") => {
-  if (!(0,isBrowser["default"])()) {
+  if (!(0,isBrowser/* default */.Z)()) {
     return;
   }
-  (0,addStyle["default"])(backTop, "huxy-backtop-css");
+  (0,addStyle/* default */.Z)(backTop, "huxy-backtop-css");
   const scroll = () => {
-    const st = (0,scrollTop["default"])();
+    const st = (0,scrollTop/* default */.Z)();
     if (st > top) {
       createTotopBar(text);
     } else {
@@ -281,6 +281,5 @@ const backTop_backTop = (top = 0, text = "\u8FD4\u56DE\u9876\u90E8") => {
 /* harmony default export */ var utils_backTop = (backTop_backTop);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

@@ -15,7 +15,7 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
   const s = addZero(date.getSeconds());
   return [y, m, d, h, M, s, w];
 };
-/* harmony default export */ __webpack_exports__["default"] = (getTime);
+/* harmony default export */ __webpack_exports__.Z = (getTime);
 
 
 /***/ })
@@ -53,12 +53,11 @@ var __webpack_exports__ = {};
 /* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(675);
 
 const getMonthDays = (day = /* @__PURE__ */ new Date()) => {
-  const date = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(day);
+  const date = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(day);
   return new Date(date[0], date[1], 0).getDate();
 };
-/* harmony default export */ __webpack_exports__["default"] = (getMonthDays);
+/* harmony default export */ __webpack_exports__.Z = (getMonthDays);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

@@ -9,8 +9,7 @@ const compose = (...fns) => (...args) => {
   };
   return composed(...args);
 };
-/* harmony default export */ __webpack_exports__["default"] = (compose);
+/* harmony default export */ __webpack_exports__.Z = (compose);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

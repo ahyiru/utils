@@ -6,10 +6,10 @@
 /* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(675);
 
 const getMonthDays = (day = /* @__PURE__ */ new Date()) => {
-  const date = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(day);
+  const date = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(day);
   return new Date(date[0], date[1], 0).getDate();
 };
-/* harmony default export */ __webpack_exports__["default"] = (getMonthDays);
+/* harmony default export */ __webpack_exports__.Z = (getMonthDays);
 
 
 /***/ }),
@@ -29,7 +29,7 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
   const s = addZero(date.getSeconds());
   return [y, m, d, h, M, s, w];
 };
-/* harmony default export */ __webpack_exports__["default"] = (getTime);
+/* harmony default export */ __webpack_exports__.Z = (getTime);
 
 
 /***/ }),
@@ -42,7 +42,7 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
 /* harmony import */ var _getMonthDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4635);
 
 
-const timeBase = (date) => [12, (0,_getMonthDays__WEBPACK_IMPORTED_MODULE_0__["default"])(date), 24, 60, 60];
+const timeBase = (date) => [12, (0,_getMonthDays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(date), 24, 60, 60];
 const minus = (start = [], end = [], base = []) => {
   let carry = false;
   const gap = [];
@@ -64,11 +64,11 @@ const timeInterval = (start, end = /* @__PURE__ */ new Date()) => {
     start = [end, end = start][0];
   }
   const base = timeBase(end).reverse();
-  const sDate = (0,_getTime__WEBPACK_IMPORTED_MODULE_1__["default"])(start).slice(0, -1).reverse();
-  const eDate = (0,_getTime__WEBPACK_IMPORTED_MODULE_1__["default"])(end).slice(0, -1).reverse();
+  const sDate = (0,_getTime__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(start).slice(0, -1).reverse();
+  const eDate = (0,_getTime__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(end).slice(0, -1).reverse();
   return minus(sDate, eDate, base);
 };
-/* harmony default export */ __webpack_exports__["default"] = (timeInterval);
+/* harmony default export */ __webpack_exports__.ZP = (timeInterval);
 
 
 /***/ })
@@ -125,14 +125,13 @@ var __webpack_exports__ = {};
 
 const timeUnit = ["\u5E74", "\u6708", "\u65E5", "\u65F6", "\u5206", "\u79D2"];
 const timeGap = (start, end = /* @__PURE__ */ new Date()) => {
-  const gap = (0,_timeInterval__WEBPACK_IMPORTED_MODULE_0__["default"])(start, end);
+  const gap = (0,_timeInterval__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .ZP)(start, end);
   const index = gap.findIndex((v) => v > 0);
   const unitTime = gap.map((v, i) => `${v || 0}${timeUnit[i]}`);
   return unitTime.slice(index).join("");
 };
-/* harmony default export */ __webpack_exports__["default"] = (timeGap);
+/* harmony default export */ __webpack_exports__.Z = (timeGap);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

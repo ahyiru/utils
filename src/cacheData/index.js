@@ -14,21 +14,21 @@
 
 
 const clone = (obj) => {
-  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(obj) && !(0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(obj)) {
+  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(obj) && !(0,_isObject__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(obj)) {
     return obj;
   }
-  const newObj = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(obj) ? [] : {};
+  const newObj = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(obj) ? [] : {};
   for (const i in obj) {
-    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__["default"])(obj, i)) {
+    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(obj, i)) {
       const item = obj[i];
-      newObj[i] = (0,_isReactEle__WEBPACK_IMPORTED_MODULE_3__["default"])(item) || (0,_isVueEle__WEBPACK_IMPORTED_MODULE_4__["default"])(item) || typeof item !== "object" ? item : item !== obj ? clone(item) : "cyclic";
+      newObj[i] = (0,_isReactEle__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z)(item) || (0,_isVueEle__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z)(item) || typeof item !== "object" ? item : item !== obj ? clone(item) : "cyclic";
     } else {
       Object.setPrototypeOf(newObj, { [i]: obj[i] });
     }
   }
   return newObj;
 };
-/* harmony default export */ __webpack_exports__["default"] = (clone);
+/* harmony default export */ __webpack_exports__.Z = (clone);
 
 
 /***/ }),
@@ -48,7 +48,7 @@ const isCyclic = (obj) => {
       seenObjects.push(obj2);
       let hasCyc = false;
       for (let key in obj2) {
-        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(obj2, key) && detect(obj2[key])) {
+        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(obj2, key) && detect(obj2[key])) {
           obj2[key] = "cyclic";
           hasCyc = true;
         }
@@ -60,7 +60,7 @@ const isCyclic = (obj) => {
   const result = detect(obj);
   return result && obj;
 };
-/* harmony default export */ __webpack_exports__["default"] = (isCyclic);
+/* harmony default export */ __webpack_exports__.Z = (isCyclic);
 
 
 /***/ }),
@@ -75,8 +75,8 @@ const isCyclic = (obj) => {
 
 
 const equal = (a, b) => {
-  const typeA = (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(a);
-  const typeB = (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(b);
+  const typeA = (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(a);
+  const typeB = (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(b);
   if (typeA !== typeB) {
     return false;
   }
@@ -89,11 +89,11 @@ const equal = (a, b) => {
   if (Object.keys(a).length !== Object.keys(b).length) {
     return false;
   }
-  if ((0,_cyclic__WEBPACK_IMPORTED_MODULE_1__["default"])(a) && (0,_cyclic__WEBPACK_IMPORTED_MODULE_1__["default"])(b)) {
+  if ((0,_cyclic__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(a) && (0,_cyclic__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(b)) {
     return equal(a, b);
   }
   for (let k in b) {
-    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__["default"])(a, k) !== (0,_hasProp__WEBPACK_IMPORTED_MODULE_2__["default"])(b, k)) {
+    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(a, k) !== (0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(b, k)) {
       return false;
     }
     if (!equal(a[k], b[k])) {
@@ -102,7 +102,7 @@ const equal = (a, b) => {
   }
   return true;
 };
-/* harmony default export */ __webpack_exports__["default"] = (equal);
+/* harmony default export */ __webpack_exports__.Z = (equal);
 
 
 /***/ }),
@@ -111,7 +111,7 @@ const equal = (a, b) => {
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__["default"] = (getType);
+/* harmony default export */ __webpack_exports__.Z = (getType);
 
 
 /***/ }),
@@ -120,7 +120,7 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
-/* harmony default export */ __webpack_exports__["default"] = (hasProp);
+/* harmony default export */ __webpack_exports__.Z = (hasProp);
 
 
 /***/ }),
@@ -130,8 +130,8 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, p
 
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
 
-const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "array";
-/* harmony default export */ __webpack_exports__["default"] = (isArray);
+const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "array";
+/* harmony default export */ __webpack_exports__.Z = (isArray);
 
 
 /***/ }),
@@ -141,8 +141,8 @@ const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(
 
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
 
-const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "object";
-/* harmony default export */ __webpack_exports__["default"] = (isObject);
+const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "object";
+/* harmony default export */ __webpack_exports__.Z = (isObject);
 
 
 /***/ }),
@@ -151,7 +151,7 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"] === "react.element";
-/* harmony default export */ __webpack_exports__["default"] = (isReactEle);
+/* harmony default export */ __webpack_exports__.Z = (isReactEle);
 
 
 /***/ }),
@@ -160,7 +160,7 @@ const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] ==
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isVueEle = (value) => value?.__v_isVNode;
-/* harmony default export */ __webpack_exports__["default"] = (isVueEle);
+/* harmony default export */ __webpack_exports__.Z = (isVueEle);
 
 
 /***/ })
@@ -204,8 +204,8 @@ const cache = (len = 100) => {
   let currentIndex = -1;
   const record = (data) => {
     const length = snapshot.length;
-    const tempData = (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])(data);
-    if (!(0,_equal__WEBPACK_IMPORTED_MODULE_1__["default"])(tempData, snapshot[length - 1]?.data)) {
+    const tempData = (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(data);
+    if (!(0,_equal__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(tempData, snapshot[length - 1]?.data)) {
       snapshot.push({ data: tempData });
       if (snapshot.length > len) {
         snapshot.shift();
@@ -230,7 +230,7 @@ const cache = (len = 100) => {
     return {
       index: currentIndex,
       length,
-      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])(snapshot[currentIndex]?.data)
+      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(snapshot[currentIndex]?.data)
     };
   };
   const jump = (index) => {
@@ -238,12 +238,12 @@ const cache = (len = 100) => {
     return {
       index: currentIndex,
       length: snapshot.length,
-      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])(snapshot[currentIndex]?.data)
+      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(snapshot[currentIndex]?.data)
     };
   };
   const undo = () => cursor(-1);
   const redo = () => cursor(1);
-  const getList = () => (0,_clone__WEBPACK_IMPORTED_MODULE_0__["default"])(snapshot);
+  const getList = () => (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(snapshot);
   const clean = () => {
     snapshot.length = 0;
     currentIndex = -1;
@@ -258,9 +258,8 @@ const cache = (len = 100) => {
     clean
   };
 };
-/* harmony default export */ __webpack_exports__["default"] = (cache);
+/* harmony default export */ __webpack_exports__.Z = (cache);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

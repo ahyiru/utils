@@ -11,7 +11,7 @@ const padStart = (str = "", n = 2, pad = "0") => {
   const fill = Array(n - len + 1).join(pad);
   return `${fill}${str}`;
 };
-/* harmony default export */ __webpack_exports__["default"] = (padStart);
+/* harmony default export */ __webpack_exports__.Z = (padStart);
 
 
 /***/ })
@@ -48,10 +48,9 @@ var __webpack_exports__ = {};
 !function() {
 /* harmony import */ var _padStart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1433);
 
-const randColor = () => "#" + (0,_padStart__WEBPACK_IMPORTED_MODULE_0__["default"])((~~(Math.random() * (1 << 24))).toString(16), 6);
-/* harmony default export */ __webpack_exports__["default"] = (randColor);
+const randColor = () => "#" + (0,_padStart__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)((~~(Math.random() * (1 << 24))).toString(16), 6);
+/* harmony default export */ __webpack_exports__.Z = (randColor);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

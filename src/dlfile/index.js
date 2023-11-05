@@ -10,7 +10,7 @@ const isBase64Image = (str) => {
   const reg = /^data:image\/([a-zA-Z0-9]+);base64,.+/i;
   return str.match(reg);
 };
-/* harmony default export */ __webpack_exports__["default"] = (isBase64Image);
+/* harmony default export */ __webpack_exports__.Z = (isBase64Image);
 
 
 /***/ }),
@@ -19,7 +19,7 @@ const isBase64Image = (str) => {
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+/* harmony default export */ __webpack_exports__.Z = (isBrowser);
 
 
 /***/ }),
@@ -28,7 +28,7 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isUrl = (url) => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
-/* harmony default export */ __webpack_exports__["default"] = (isUrl);
+/* harmony default export */ __webpack_exports__.Z = (isUrl);
 
 
 /***/ }),
@@ -42,7 +42,7 @@ const timestamp = () => {
   }
   return (/* @__PURE__ */ new Date()).getTime();
 };
-/* harmony default export */ __webpack_exports__["default"] = (timestamp);
+/* harmony default export */ __webpack_exports__.Z = (timestamp);
 
 
 /***/ }),
@@ -53,14 +53,14 @@ const timestamp = () => {
 /* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8098);
 
 const uuidv4 = () => {
-  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)();
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (timeKey + Math.random() * 16) % 16 | 0;
     timeKey = Math.floor(timeKey / 16);
     return (c === "x" ? r : r & 3 | 8).toString(16);
   });
 };
-/* harmony default export */ __webpack_exports__["default"] = (uuidv4);
+/* harmony default export */ __webpack_exports__.Z = (uuidv4);
 
 
 /***/ })
@@ -104,13 +104,13 @@ var __webpack_exports__ = {};
 
 
 const dlfile = async (url, ext, name) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
     return;
   }
-  name = name || (0,_uuidv4__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  name = name || (0,_uuidv4__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)();
   const filename = ext ? `${name}.${ext}` : name;
-  const isUrlStr = (0,_isUrl__WEBPACK_IMPORTED_MODULE_2__["default"])(url);
-  if (isUrlStr || (0,_isBase64Image__WEBPACK_IMPORTED_MODULE_3__["default"])(url)) {
+  const isUrlStr = (0,_isUrl__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(url);
+  if (isUrlStr || (0,_isBase64Image__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z)(url)) {
     url = isUrlStr ? decodeURIComponent(url) : url;
     const response = await fetch(url);
     const disposition = response.headers.get("Content-Disposition");
@@ -139,9 +139,8 @@ const dlfile = async (url, ext, name) => {
     window.URL.revokeObjectURL(dataUrl);
   }
 };
-/* harmony default export */ __webpack_exports__["default"] = (dlfile);
+/* harmony default export */ __webpack_exports__.Z = (dlfile);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

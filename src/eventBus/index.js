@@ -34,7 +34,7 @@ const emitter = () => {
   };
   return { on, emit, off };
 };
-/* harmony default export */ __webpack_exports__["default"] = (emitter);
+/* harmony default export */ __webpack_exports__.Z = (emitter);
 
 
 /***/ })
@@ -71,7 +71,7 @@ var __webpack_exports__ = {};
 !function() {
 /* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5687);
 
-const events = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__["default"])();
+const events = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)();
 const eventBus = (name) => {
   const { on, emit, off } = events;
   return {
@@ -80,9 +80,8 @@ const eventBus = (name) => {
     off: (cb) => off(name, cb)
   };
 };
-/* harmony default export */ __webpack_exports__["default"] = (eventBus);
+/* harmony default export */ __webpack_exports__.Z = (eventBus);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

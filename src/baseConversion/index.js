@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const base2Ten = (num = 0, base = 2) => parseInt(String(num), base);
-/* harmony default export */ __webpack_exports__["default"] = (base2Ten);
+/* harmony default export */ __webpack_exports__.Z = (base2Ten);
 
 
 /***/ }),
@@ -13,7 +13,7 @@ const base2Ten = (num = 0, base = 2) => parseInt(String(num), base);
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const ten2Base = (num = 0, base = 2) => Number(num).toString(base);
-/* harmony default export */ __webpack_exports__["default"] = (ten2Base);
+/* harmony default export */ __webpack_exports__.Z = (ten2Base);
 
 
 /***/ })
@@ -52,10 +52,9 @@ var __webpack_exports__ = {};
 /* harmony import */ var _base2Ten__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9042);
 
 
-const baseConversion = (num = 0, base = 2, to = 16) => (0,_ten2Base__WEBPACK_IMPORTED_MODULE_0__["default"])((0,_base2Ten__WEBPACK_IMPORTED_MODULE_1__["default"])(num, base), to);
-/* harmony default export */ __webpack_exports__["default"] = (baseConversion);
+const baseConversion = (num = 0, base = 2, to = 16) => (0,_ten2Base__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)((0,_base2Ten__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(num, base), to);
+/* harmony default export */ __webpack_exports__.Z = (baseConversion);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

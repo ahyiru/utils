@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__["default"] = (getType);
+/* harmony default export */ __webpack_exports__.Z = (getType);
 
 
 /***/ }),
@@ -14,8 +14,8 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
 
-const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "array";
-/* harmony default export */ __webpack_exports__["default"] = (isArray);
+const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "array";
+/* harmony default export */ __webpack_exports__.Z = (isArray);
 
 
 /***/ }),
@@ -26,11 +26,11 @@ const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(
 /* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3685);
 
 const traverItem = (fn) => (arr, childKey = "children") => {
-  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(arr)) {
+  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(arr)) {
     return arr;
   }
   const traver = (data, parent = []) => data.map((item, k) => {
-    const hasChild = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__["default"])(item[childKey]);
+    const hasChild = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(item[childKey]);
     item = fn(item, parent, k, hasChild) || item;
     if (hasChild) {
       const { [childKey]: children, ...rest } = item;
@@ -40,7 +40,7 @@ const traverItem = (fn) => (arr, childKey = "children") => {
   });
   return traver(arr);
 };
-/* harmony default export */ __webpack_exports__["default"] = (traverItem);
+/* harmony default export */ __webpack_exports__.Z = (traverItem);
 
 
 /***/ })
@@ -77,12 +77,11 @@ var __webpack_exports__ = {};
 !function() {
 /* harmony import */ var _traverItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5320);
 
-const updateId = (tree, idKey = "fuckId", childKey = "children") => (0,_traverItem__WEBPACK_IMPORTED_MODULE_0__["default"])((item, parent, index) => {
+const updateId = (tree, idKey = "fuckId", childKey = "children") => (0,_traverItem__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)((item, parent, index) => {
   item[idKey] = [...parent.map((v) => v["@@index"]), index].join("-");
 })(tree, childKey);
-/* harmony default export */ __webpack_exports__["default"] = (updateId);
+/* harmony default export */ __webpack_exports__.Z = (updateId);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

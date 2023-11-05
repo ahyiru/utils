@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__["default"] = (getType);
+/* harmony default export */ __webpack_exports__.Z = (getType);
 
 
 /***/ }),
@@ -14,8 +14,8 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
 
-const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf("element") > -1;
-/* harmony default export */ __webpack_exports__["default"] = (isElement);
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value).indexOf("element") > -1;
+/* harmony default export */ __webpack_exports__.Z = (isElement);
 
 
 /***/ })
@@ -53,7 +53,7 @@ var __webpack_exports__ = {};
 /* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4782);
 
 const addClass = (ele, name = "") => {
-  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__["default"])(ele)) {
+  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ele)) {
     return;
   }
   const nameArr = name.split(" ").filter(Boolean);
@@ -61,9 +61,8 @@ const addClass = (ele, name = "") => {
   const names = [.../* @__PURE__ */ new Set([...nameArr, ...targetName])];
   ele.className = names.join(" ");
 };
-/* harmony default export */ __webpack_exports__["default"] = (addClass);
+/* harmony default export */ __webpack_exports__.Z = (addClass);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

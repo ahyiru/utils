@@ -10,7 +10,7 @@ const randNum = (a = 0, b = 0, int = true) => {
   }
   return Math.random() * (a - b) + b;
 };
-/* harmony default export */ __webpack_exports__["default"] = (randNum);
+/* harmony default export */ __webpack_exports__.Z = (randNum);
 
 
 /***/ })
@@ -53,15 +53,14 @@ const randPercent = (n, total = 100) => {
     if (i === n - 1) {
       pers[i] = total;
     } else {
-      pers[i] = (0,_randNum__WEBPACK_IMPORTED_MODULE_0__["default"])(1, total - 1);
+      pers[i] = (0,_randNum__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(1, total - 1);
       total -= pers[i];
     }
   });
   return pers;
 };
-/* harmony default export */ __webpack_exports__["default"] = (randPercent);
+/* harmony default export */ __webpack_exports__.Z = (randPercent);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

@@ -11,8 +11,7 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
   const s = addZero(date.getSeconds());
   return [y, m, d, h, M, s, w];
 };
-/* harmony default export */ __webpack_exports__["default"] = (getTime);
+/* harmony default export */ __webpack_exports__.Z = (getTime);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

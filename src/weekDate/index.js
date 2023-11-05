@@ -8,7 +8,7 @@ const addDays = (n, d = /* @__PURE__ */ new Date()) => {
   newDate.setDate(newDate.getDate() + n);
   return newDate;
 };
-/* harmony default export */ __webpack_exports__["default"] = (addDays);
+/* harmony default export */ __webpack_exports__.Z = (addDays);
 
 
 /***/ })
@@ -48,11 +48,10 @@ var __webpack_exports__ = {};
 const weekDate = (d = /* @__PURE__ */ new Date()) => {
   const newDate = new Date(d);
   const day = newDate.getDay();
-  return [(0,_addDays__WEBPACK_IMPORTED_MODULE_0__["default"])(1 - day), (0,_addDays__WEBPACK_IMPORTED_MODULE_0__["default"])(7 - day)];
+  return [(0,_addDays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(1 - day), (0,_addDays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(7 - day)];
 };
-/* harmony default export */ __webpack_exports__["default"] = (weekDate);
+/* harmony default export */ __webpack_exports__.Z = (weekDate);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

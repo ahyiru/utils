@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__["default"] = (getType);
+/* harmony default export */ __webpack_exports__.Z = (getType);
 
 
 /***/ }),
@@ -17,13 +17,13 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 
 const getViewportSize = (element = null) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
     return {
       width: 0,
       height: 0
     };
   }
-  if ((0,_isElement__WEBPACK_IMPORTED_MODULE_1__["default"])(element)) {
+  if ((0,_isElement__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(element)) {
     return {
       width: element.clientWidth,
       height: element.clientHeight
@@ -34,7 +34,7 @@ const getViewportSize = (element = null) => {
     height: window.innerHeight ?? document.documentElement.clientHeight
   };
 };
-/* harmony default export */ __webpack_exports__["default"] = (getViewportSize);
+/* harmony default export */ __webpack_exports__.Z = (getViewportSize);
 
 
 /***/ }),
@@ -43,7 +43,7 @@ const getViewportSize = (element = null) => {
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+/* harmony default export */ __webpack_exports__.Z = (isBrowser);
 
 
 /***/ }),
@@ -53,8 +53,8 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
 
-const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value).indexOf("element") > -1;
-/* harmony default export */ __webpack_exports__["default"] = (isElement);
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value).indexOf("element") > -1;
+/* harmony default export */ __webpack_exports__.Z = (isElement);
 
 
 /***/ }),
@@ -64,8 +64,8 @@ const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"]
 
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
 
-const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
-/* harmony default export */ __webpack_exports__["default"] = (scrollTop);
+const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
+/* harmony default export */ __webpack_exports__.Z = (scrollTop);
 
 
 /***/ })
@@ -106,10 +106,9 @@ var __webpack_exports__ = {};
 
 
 
-const scrollIsBottom = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && document.documentElement.scrollHeight - (0,_scrollTop__WEBPACK_IMPORTED_MODULE_1__["default"])() === (0,_getViewportSize__WEBPACK_IMPORTED_MODULE_2__["default"])().height;
-/* harmony default export */ __webpack_exports__["default"] = (scrollIsBottom);
+const scrollIsBottom = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)() && document.documentElement.scrollHeight - (0,_scrollTop__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)() === (0,_getViewportSize__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)().height;
+/* harmony default export */ __webpack_exports__.Z = (scrollIsBottom);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

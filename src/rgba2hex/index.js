@@ -23,8 +23,7 @@ const rgba2hex = (r = 0, g = 0, b = 0, a = 1) => {
   }
   return trans2hex(r, g, b, a);
 };
-/* harmony default export */ __webpack_exports__["default"] = (rgba2hex);
+/* harmony default export */ __webpack_exports__.Z = (rgba2hex);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

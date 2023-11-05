@@ -17,7 +17,7 @@ const sleepSync = (ms = 100) => {
   while (Date.now() - start <= ms) {
   }
 };
-/* harmony default export */ __webpack_exports__["default"] = (sleep);
+/* harmony default export */ __webpack_exports__.Z = (sleep);
 
 
 /***/ })
@@ -74,12 +74,11 @@ var __webpack_exports__ = {};
 
 const loop = async (fn, handle, delay = 2e3) => {
   while (!handle?.(fn?.())) {
-    await (0,_sleep__WEBPACK_IMPORTED_MODULE_0__["default"])(delay);
+    await (0,_sleep__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(delay);
   }
 };
-/* harmony default export */ __webpack_exports__["default"] = (loop);
+/* harmony default export */ __webpack_exports__.Z = (loop);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

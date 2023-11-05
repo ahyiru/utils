@@ -4,8 +4,7 @@ const mergeClass = (def, input) => {
   const inputArr = input?.split(" ") ?? [];
   return [.../* @__PURE__ */ new Set([...defArr, ...inputArr])].filter(Boolean).join(" ");
 };
-/* harmony default export */ __webpack_exports__["default"] = (mergeClass);
+/* harmony default export */ __webpack_exports__.Z = (mergeClass);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

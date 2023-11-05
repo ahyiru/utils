@@ -18,12 +18,12 @@ const transform = [
   {
     type: "formData",
     // headers:{'Content-Type':'multipart/form-data'},
-    body: (data) => (0,_params2data__WEBPACK_IMPORTED_MODULE_0__["default"])(data)
+    body: (data) => (0,_params2data__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(data)
   },
   {
     type: "form",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: (data) => (0,_params2str__WEBPACK_IMPORTED_MODULE_1__["default"])(data).slice(1)
+    body: (data) => (0,_params2str__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(data).slice(1)
   }
 ];
 const transData = (types, dataType) => {
@@ -67,9 +67,9 @@ const baseFetch = (handler, timeout) => (method) => (url, opt = {}) => {
     restOpt.body = item.body(result);
   }
   if (query) {
-    url = `${url}${(0,_params2str__WEBPACK_IMPORTED_MODULE_1__["default"])(query)}`;
+    url = `${url}${(0,_params2str__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(query)}`;
   }
-  const { promiseFn } = (0,_cancelablePromise__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  const { promiseFn } = (0,_cancelablePromise__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(
     fetch(url, {
       method,
       mode: "cors",
@@ -90,7 +90,7 @@ const baseFetch = (handler, timeout) => (method) => (url, opt = {}) => {
     return handler(result2);
   });
 };
-/* harmony default export */ __webpack_exports__["default"] = (baseFetch);
+/* harmony default export */ __webpack_exports__.Z = (baseFetch);
 
 
 /***/ }),
@@ -101,7 +101,7 @@ const baseFetch = (handler, timeout) => (method) => (url, opt = {}) => {
 /* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9874);
 
 const cancelablePromise = (promise, delay = 3e5, msg = "\u8BF7\u6C42\u8D85\u65F6\uFF01") => {
-  if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__["default"])(promise)) {
+  if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(promise)) {
     return {};
   }
   let cancelFn = null;
@@ -128,7 +128,7 @@ const cancelablePromise = (promise, delay = 3e5, msg = "\u8BF7\u6C42\u8D85\u65F6
     cancelFn
   };
 };
-/* harmony default export */ __webpack_exports__["default"] = (cancelablePromise);
+/* harmony default export */ __webpack_exports__.Z = (cancelablePromise);
 
 
 /***/ }),
@@ -137,7 +137,7 @@ const cancelablePromise = (promise, delay = 3e5, msg = "\u8BF7\u6C42\u8D85\u65F6
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__["default"] = (getType);
+/* harmony default export */ __webpack_exports__.Z = (getType);
 
 
 /***/ }),
@@ -151,8 +151,8 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 
 
-const isAsync = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "promise" || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__["default"])(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__["default"])(value.then);
-/* harmony default export */ __webpack_exports__["default"] = (isAsync);
+const isAsync = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "promise" || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(value.then);
+/* harmony default export */ __webpack_exports__.Z = (isAsync);
 
 
 /***/ }),
@@ -162,8 +162,8 @@ const isAsync = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(
 
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
 
-const isFunction = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "function";
-/* harmony default export */ __webpack_exports__["default"] = (isFunction);
+const isFunction = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "function";
+/* harmony default export */ __webpack_exports__.Z = (isFunction);
 
 
 /***/ }),
@@ -173,8 +173,8 @@ const isFunction = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"
 
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
 
-const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "object";
-/* harmony default export */ __webpack_exports__["default"] = (isObject);
+const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "object";
+/* harmony default export */ __webpack_exports__.Z = (isObject);
 
 
 /***/ }),
@@ -185,7 +185,7 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8855);
 
 const params2data = (params) => {
-  if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(params)) {
+  if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(params)) {
     return {};
   }
   const form = new FormData();
@@ -196,7 +196,7 @@ const params2data = (params) => {
   });
   return form;
 };
-/* harmony default export */ __webpack_exports__["default"] = (params2data);
+/* harmony default export */ __webpack_exports__.Z = (params2data);
 
 
 /***/ }),
@@ -207,7 +207,7 @@ const params2data = (params) => {
 /* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8855);
 
 const params2str = (params) => {
-  if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__["default"])(params)) {
+  if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(params)) {
     return "";
   }
   const arr = [];
@@ -217,7 +217,7 @@ const params2str = (params) => {
   });
   return arr.join("");
 };
-/* harmony default export */ __webpack_exports__["default"] = (params2str);
+/* harmony default export */ __webpack_exports__.Z = (params2str);
 
 
 /***/ })
@@ -256,10 +256,9 @@ var __webpack_exports__ = {};
 
 const TIMEOUT = 120 * 1e3;
 const resHandler = (response) => response.json().then((result) => result);
-const fetcher = (handler = resHandler, timeout = TIMEOUT) => (method = "get") => (0,_baseFetch__WEBPACK_IMPORTED_MODULE_0__["default"])(handler)((method || "get").toUpperCase());
-/* harmony default export */ __webpack_exports__["default"] = (fetcher);
+const fetcher = (handler = resHandler, timeout = TIMEOUT) => (method = "get") => (0,_baseFetch__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(handler)((method || "get").toUpperCase());
+/* harmony default export */ __webpack_exports__.Z = (fetcher);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

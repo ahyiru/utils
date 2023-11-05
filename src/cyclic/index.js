@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
-/* harmony default export */ __webpack_exports__["default"] = (hasProp);
+/* harmony default export */ __webpack_exports__.Z = (hasProp);
 
 
 /***/ })
@@ -51,7 +51,7 @@ const isCyclic = (obj) => {
       seenObjects.push(obj2);
       let hasCyc = false;
       for (let key in obj2) {
-        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__["default"])(obj2, key) && detect(obj2[key])) {
+        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(obj2, key) && detect(obj2[key])) {
           obj2[key] = "cyclic";
           hasCyc = true;
         }
@@ -63,9 +63,8 @@ const isCyclic = (obj) => {
   const result = detect(obj);
   return result && obj;
 };
-/* harmony default export */ __webpack_exports__["default"] = (isCyclic);
+/* harmony default export */ __webpack_exports__.Z = (isCyclic);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

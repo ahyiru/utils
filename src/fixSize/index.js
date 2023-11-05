@@ -4,8 +4,7 @@ const fixSize = (img, ratio = 1) => {
   const percent = imgRatio > 1 ? "100%" : `${(imgRatio * 100).toFixed(4)}%`;
   return img.width = percent;
 };
-/* harmony default export */ __webpack_exports__["default"] = (fixSize);
+/* harmony default export */ __webpack_exports__.Z = (fixSize);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

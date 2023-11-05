@@ -15,7 +15,7 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
   const s = addZero(date.getSeconds());
   return [y, m, d, h, M, s, w];
 };
-/* harmony default export */ __webpack_exports__["default"] = (getTime);
+/* harmony default export */ __webpack_exports__.Z = (getTime);
 
 
 /***/ })
@@ -53,8 +53,8 @@ var __webpack_exports__ = {};
 /* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(675);
 
 const formatPassTime = (start, end = /* @__PURE__ */ new Date()) => {
-  start = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(start);
-  end = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__["default"])(end);
+  start = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(start);
+  end = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(end);
   const dfYear = end.y - start.y;
   const dfMonth = end.m - start.m;
   const dfDay = end.d - start.d;
@@ -97,9 +97,8 @@ const formatPassTime = (start, end = /* @__PURE__ */ new Date()) => {
     }
   }
 };
-/* harmony default export */ __webpack_exports__["default"] = (formatPassTime);
+/* harmony default export */ __webpack_exports__.Z = (formatPassTime);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

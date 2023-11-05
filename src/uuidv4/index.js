@@ -9,7 +9,7 @@ const timestamp = () => {
   }
   return (/* @__PURE__ */ new Date()).getTime();
 };
-/* harmony default export */ __webpack_exports__["default"] = (timestamp);
+/* harmony default export */ __webpack_exports__.Z = (timestamp);
 
 
 /***/ })
@@ -47,16 +47,15 @@ var __webpack_exports__ = {};
 /* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8098);
 
 const uuidv4 = () => {
-  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)();
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (timeKey + Math.random() * 16) % 16 | 0;
     timeKey = Math.floor(timeKey / 16);
     return (c === "x" ? r : r & 3 | 8).toString(16);
   });
 };
-/* harmony default export */ __webpack_exports__["default"] = (uuidv4);
+/* harmony default export */ __webpack_exports__.Z = (uuidv4);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

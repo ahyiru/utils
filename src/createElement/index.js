@@ -7,7 +7,7 @@ const createTextElement = (text) => ({
   type: "TEXT_ELEMENT",
   props: { nodeValue: text }
 });
-/* harmony default export */ __webpack_exports__["default"] = (createTextElement);
+/* harmony default export */ __webpack_exports__.Z = (createTextElement);
 
 
 /***/ })
@@ -48,12 +48,11 @@ const createElement = (type, props, ...children) => ({
   type,
   props: {
     ...props,
-    children: children.map((child) => typeof child === "object" ? child : (0,_createTextElement__WEBPACK_IMPORTED_MODULE_0__["default"])(child))
+    children: children.map((child) => typeof child === "object" ? child : (0,_createTextElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(child))
   }
 });
-/* harmony default export */ __webpack_exports__["default"] = (createElement);
+/* harmony default export */ __webpack_exports__.Z = (createElement);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

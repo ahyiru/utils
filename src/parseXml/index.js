@@ -29,8 +29,7 @@ const obj2Xml = (obj, types) => {
     ${content}
   </xml>`;
 };
-/* harmony default export */ __webpack_exports__["default"] = ({ xml2Obj, obj2Xml });
+/* harmony default export */ __webpack_exports__.Z = ({ xml2Obj, obj2Xml });
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

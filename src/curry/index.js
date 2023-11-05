@@ -4,8 +4,7 @@ const curry = (fn = () => {
   const curried = (...args) => args.length >= arity ? fn(...args) : (...restArgs) => curried(...args, ...restArgs);
   return curried;
 };
-/* harmony default export */ __webpack_exports__["default"] = (curry);
+/* harmony default export */ __webpack_exports__.Z = (curry);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+/* harmony default export */ __webpack_exports__.Z = (isBrowser);
 
 
 /***/ }),
@@ -14,8 +14,8 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
 
-const isTouch = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])() && (window.ontouchstart || navigator.maxTouchPoints);
-/* harmony default export */ __webpack_exports__["default"] = (isTouch);
+const isTouch = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)() && (window.ontouchstart || navigator.maxTouchPoints);
+/* harmony default export */ __webpack_exports__.Z = (isTouch);
 
 
 /***/ })
@@ -52,7 +52,7 @@ var __webpack_exports__ = {};
 !function() {
 /* harmony import */ var _isTouch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3849);
 
-const eventTargets = () => (0,_isTouch__WEBPACK_IMPORTED_MODULE_0__["default"])() ? {
+const eventTargets = () => (0,_isTouch__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)() ? {
   startKey: "touchstart",
   moveKey: "touchmove",
   endKey: "touchend"
@@ -89,9 +89,8 @@ const touchEvent = (startEvent, moveEvent, endEvent, ref = document) => {
   initStart(startKey, startFn, ref);
   return () => destroyStart(startKey, startFn, ref);
 };
-/* harmony default export */ __webpack_exports__["default"] = (touchEvent);
+/* harmony default export */ __webpack_exports__.Z = (touchEvent);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

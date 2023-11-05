@@ -5,8 +5,7 @@ const loadBase64 = (file) => new Promise((resolve, reject) => {
   reader.addEventListener("load", () => resolve(reader.result));
   reader.addEventListener("error", (error) => reject(error));
 });
-/* harmony default export */ __webpack_exports__["default"] = (loadBase64);
+/* harmony default export */ __webpack_exports__.Z = (loadBase64);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

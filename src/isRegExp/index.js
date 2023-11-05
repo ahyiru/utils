@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__["default"] = (getType);
+/* harmony default export */ __webpack_exports__.Z = (getType);
 
 
 /***/ })
@@ -41,10 +41,9 @@ var __webpack_exports__ = {};
 !function() {
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
 
-const isRegExp = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === "regexp";
-/* harmony default export */ __webpack_exports__["default"] = (isRegExp);
+const isRegExp = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "regexp";
+/* harmony default export */ __webpack_exports__.Z = (isRegExp);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

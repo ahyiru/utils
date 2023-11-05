@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+/* harmony default export */ __webpack_exports__.Z = (isBrowser);
 
 
 /***/ })
@@ -60,7 +60,7 @@ var __webpack_exports__ = {};
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ utils_watchScreen; }
+  Z: function() { return /* binding */ utils_watchScreen; }
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
@@ -76,7 +76,7 @@ const fullscreenchange = prefix.map((v) => `${v}fullscreenchange`);
 
 
 const watchScreen = (callback) => {
-  if (!(0,isBrowser["default"])()) {
+  if (!(0,isBrowser/* default */.Z)()) {
     return;
   }
   fullscreenchange.map((fsc) => document.addEventListener(fsc, callback, false));
@@ -86,6 +86,5 @@ const watchScreen = (callback) => {
 /* harmony default export */ var utils_watchScreen = (watchScreen);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

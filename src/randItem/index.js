@@ -10,7 +10,7 @@ const randNum = (a = 0, b = 0, int = true) => {
   }
   return Math.random() * (a - b) + b;
 };
-/* harmony default export */ __webpack_exports__["default"] = (randNum);
+/* harmony default export */ __webpack_exports__.Z = (randNum);
 
 
 /***/ })
@@ -47,10 +47,9 @@ var __webpack_exports__ = {};
 !function() {
 /* harmony import */ var _randNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(440);
 
-const randItem = (list = []) => list[(0,_randNum__WEBPACK_IMPORTED_MODULE_0__["default"])(list.length - 1)];
-/* harmony default export */ __webpack_exports__["default"] = (randItem);
+const randItem = (list = []) => list[(0,_randNum__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(list.length - 1)];
+/* harmony default export */ __webpack_exports__.Z = (randItem);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

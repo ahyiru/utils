@@ -17,8 +17,7 @@ return ${last}`);
   const exec = Function(`${str}`);
   return exec();
 };
-/* harmony default export */ __webpack_exports__["default"] = (str2code);
+/* harmony default export */ __webpack_exports__.Z = (str2code);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

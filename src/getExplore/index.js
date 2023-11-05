@@ -4,7 +4,7 @@
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__["default"] = (isBrowser);
+/* harmony default export */ __webpack_exports__.Z = (isBrowser);
 
 
 /***/ })
@@ -88,7 +88,7 @@ const exploreList = [
   }
 ];
 const getExplore = () => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
     return;
   }
   const ua = window.navigator.userAgent.toLowerCase();
@@ -98,9 +98,8 @@ const getExplore = () => {
     version: ua.match(expItem.reg)[1]
   };
 };
-/* harmony default export */ __webpack_exports__["default"] = (getExplore);
+/* harmony default export */ __webpack_exports__.Z = (getExplore);
 
 }();
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };

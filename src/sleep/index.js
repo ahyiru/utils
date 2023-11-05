@@ -21,7 +21,9 @@
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-/* unused harmony export sleepSync */
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   g: function() { return /* binding */ sleepSync; }
+/* harmony export */ });
 const formatMs = (ms = 350, unit = "ms") => ({
   ms: ms * 1,
   s: ms * 1e3,
@@ -35,9 +37,8 @@ const sleepSync = (ms = 100) => {
   while (Date.now() - start <= ms) {
   }
 };
-/* harmony default export */ __webpack_exports__["default"] = (sleep);
+/* harmony default export */ __webpack_exports__.Z = (sleep);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
-var __webpack_exports__sleepSync = __webpack_exports__.false;
+var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__sleepSync = __webpack_exports__.g;
 export { __webpack_exports__default as default, __webpack_exports__sleepSync as sleepSync };

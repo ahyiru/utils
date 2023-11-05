@@ -16,8 +16,7 @@ const fixTimeUnit = (s = 0, unit = ["s", "m", "h", "d"]) => {
   }
   return `${(h / 24).toFixed(2)}${unit[3]}`;
 };
-/* harmony default export */ __webpack_exports__["default"] = (fixTimeUnit);
+/* harmony default export */ __webpack_exports__.Z = (fixTimeUnit);
 
-__webpack_exports__ = __webpack_exports__["default"];
-var __webpack_exports__default = __webpack_exports__["default"];
+var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };
