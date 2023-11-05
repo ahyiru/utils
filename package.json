@@ -1,6 +1,6 @@
 {
   "name": "@huxy/utils",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "title": "utils",
   "feature": "0.0.1",
   "hooks": "0.0.1",
@@ -17,7 +17,6 @@
   "main": "./lib/index.js",
   "exports": {
     ".": "./lib/index.js",
-    "./unpkg.js": "./lib/index.unpkg.js",
     "./src/*": "./src/*/index.js",
     "./package.json": "./package.json"
   },
