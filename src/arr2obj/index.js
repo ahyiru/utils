@@ -4,7 +4,7 @@ const arr2obj = (arr = [], name = "name") => {
   arr.map(({ [name]: key, value }) => obj[key] = value);
   return obj;
 };
-/* harmony default export */ __webpack_exports__.Z = (arr2obj);
+/* harmony default export */ __webpack_exports__.A = (arr2obj);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

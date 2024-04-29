@@ -68,7 +68,7 @@ const scheduler = (intervalMs = 5) => {
   };
   return createTask;
 };
-/* harmony default export */ __webpack_exports__.Z = (scheduler);
+/* harmony default export */ __webpack_exports__.A = (scheduler);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

@@ -1,19 +1,19 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 9042:
+/***/ 7116:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const base2Ten = (num = 0, base = 2) => parseInt(String(num), base);
-/* harmony default export */ __webpack_exports__.Z = (base2Ten);
+/* harmony default export */ __webpack_exports__.A = (base2Ten);
 
 
 /***/ }),
 
-/***/ 8444:
+/***/ 34:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const ten2Base = (num = 0, base = 2) => Number(num).toString(base);
-/* harmony default export */ __webpack_exports__.Z = (ten2Base);
+/* harmony default export */ __webpack_exports__.A = (ten2Base);
 
 
 /***/ })
@@ -48,13 +48,13 @@ const ten2Base = (num = 0, base = 2) => Number(num).toString(base);
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _ten2Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8444);
-/* harmony import */ var _base2Ten__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9042);
+/* harmony import */ var _ten2Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34);
+/* harmony import */ var _base2Ten__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7116);
 
 
-const baseConversion = (num = 0, base = 2, to = 16) => (0,_ten2Base__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)((0,_base2Ten__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(num, base), to);
-/* harmony default export */ __webpack_exports__.Z = (baseConversion);
+const baseConversion = (num = 0, base = 2, to = 16) => (0,_ten2Base__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)((0,_base2Ten__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(num, base), to);
+/* harmony default export */ __webpack_exports__.A = (baseConversion);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

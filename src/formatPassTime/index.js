@@ -1,6 +1,6 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 675:
+/***/ 5223:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const addZero = (n) => n < 10 ? "0" + n : n;
@@ -15,7 +15,7 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
   const s = addZero(date.getSeconds());
   return [y, m, d, h, M, s, w];
 };
-/* harmony default export */ __webpack_exports__.Z = (getTime);
+/* harmony default export */ __webpack_exports__.A = (getTime);
 
 
 /***/ })
@@ -50,11 +50,11 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(675);
+/* harmony import */ var _getTime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5223);
 
 const formatPassTime = (start, end = /* @__PURE__ */ new Date()) => {
-  start = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(start);
-  end = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(end);
+  start = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(start);
+  end = (0,_getTime__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(end);
   const dfYear = end.y - start.y;
   const dfMonth = end.m - start.m;
   const dfDay = end.d - start.d;
@@ -97,8 +97,8 @@ const formatPassTime = (start, end = /* @__PURE__ */ new Date()) => {
     }
   }
 };
-/* harmony default export */ __webpack_exports__.Z = (formatPassTime);
+/* harmony default export */ __webpack_exports__.A = (formatPassTime);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

@@ -10,7 +10,7 @@ const classifyArr = (arr = [], key = "name") => {
   });
   return obj;
 };
-/* harmony default export */ __webpack_exports__.Z = (classifyArr);
+/* harmony default export */ __webpack_exports__.A = (classifyArr);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

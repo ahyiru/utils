@@ -1,12 +1,12 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 2738:
+/***/ 7589:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4782);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
 
 const addClass = (ele, name = "") => {
-  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ele)) {
+  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele)) {
     return;
   }
   const nameArr = name.split(" ").filter(Boolean);
@@ -14,49 +14,49 @@ const addClass = (ele, name = "") => {
   const names = [.../* @__PURE__ */ new Set([...nameArr, ...targetName])];
   ele.className = names.join(" ");
 };
-/* harmony default export */ __webpack_exports__.Z = (addClass);
+/* harmony default export */ __webpack_exports__.A = (addClass);
 
 
 /***/ }),
 
-/***/ 6837:
+/***/ 8842:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.Z = (getType);
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ }),
 
-/***/ 8000:
+/***/ 4796:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4782);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
 
-const hasClass = (ele, name = "") => (0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ele) && ele.className.match(new RegExp("(\\s|^)" + name + "(\\s|$)"));
-/* harmony default export */ __webpack_exports__.Z = (hasClass);
+const hasClass = (ele, name = "") => (0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele) && ele.className.match(new RegExp("(\\s|^)" + name + "(\\s|$)"));
+/* harmony default export */ __webpack_exports__.A = (hasClass);
 
 
 /***/ }),
 
-/***/ 4782:
+/***/ 9622:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
 
-const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value).indexOf("element") > -1;
-/* harmony default export */ __webpack_exports__.Z = (isElement);
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
+/* harmony default export */ __webpack_exports__.A = (isElement);
 
 
 /***/ }),
 
-/***/ 7578:
+/***/ 8286:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4782);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
 
 const removeClass = (ele, name = "") => {
-  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ele)) {
+  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele)) {
     return;
   }
   const nameArr = name.split(" ").filter(Boolean);
@@ -64,7 +64,7 @@ const removeClass = (ele, name = "") => {
   const names = targetName.filter((v) => !nameArr.includes(v));
   ele.className = names.join(" ");
 };
-/* harmony default export */ __webpack_exports__.Z = (removeClass);
+/* harmony default export */ __webpack_exports__.A = (removeClass);
 
 
 /***/ })
@@ -99,26 +99,26 @@ const removeClass = (ele, name = "") => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4782);
-/* harmony import */ var _hasClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8000);
-/* harmony import */ var _addClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2738);
-/* harmony import */ var _removeClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7578);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
+/* harmony import */ var _hasClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4796);
+/* harmony import */ var _addClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7589);
+/* harmony import */ var _removeClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8286);
 
 
 
 
 const toggleClass = (ele, name) => {
-  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ele)) {
+  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele)) {
     return;
   }
-  if ((0,_hasClass__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(ele, name)) {
-    (0,_removeClass__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(ele, name);
+  if ((0,_hasClass__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(ele, name)) {
+    (0,_removeClass__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(ele, name);
   } else {
-    (0,_addClass__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z)(ele, name);
+    (0,_addClass__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(ele, name);
   }
 };
-/* harmony default export */ __webpack_exports__.Z = (toggleClass);
+/* harmony default export */ __webpack_exports__.A = (toggleClass);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

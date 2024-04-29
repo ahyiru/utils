@@ -1,20 +1,20 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 3890:
+/***/ 5529:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4782);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9622);
 
 
 const getOffset = (element = null) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
     return {
       left: 0,
       top: 0
     };
   }
-  if ((0,_isElement__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(element)) {
+  if ((0,_isElement__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(element)) {
     return {
       left: element.scrollLeft,
       top: element.scrollTop
@@ -25,66 +25,66 @@ const getOffset = (element = null) => {
     top: window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop
   };
 };
-/* harmony default export */ __webpack_exports__.Z = (getOffset);
+/* harmony default export */ __webpack_exports__.A = (getOffset);
 
 
 /***/ }),
 
-/***/ 7098:
+/***/ 5180:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isTouch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3849);
-/* harmony import */ var _getOffset__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3890);
+/* harmony import */ var _isTouch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(333);
+/* harmony import */ var _getOffset__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5529);
 
 
 const getTouchPosition = (evt) => {
-  const { left, top } = (0,_getOffset__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)();
+  const { left, top } = (0,_getOffset__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
   return {
-    touchX: (0,_isTouch__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)() ? evt?.touches?.[0]?.pageX : evt?.pageX || evt?.clientX + left,
-    touchY: (0,_isTouch__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)() ? evt?.touches?.[0]?.pageY : evt?.pageY || evt?.clientY + top
+    touchX: (0,_isTouch__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)() ? evt?.touches?.[0]?.pageX : evt?.pageX || evt?.clientX + left,
+    touchY: (0,_isTouch__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)() ? evt?.touches?.[0]?.pageY : evt?.pageY || evt?.clientY + top
   };
 };
-/* harmony default export */ __webpack_exports__.Z = (getTouchPosition);
+/* harmony default export */ __webpack_exports__.A = (getTouchPosition);
 
 
 /***/ }),
 
-/***/ 6837:
+/***/ 8842:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.Z = (getType);
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ }),
 
-/***/ 3498:
+/***/ 5890:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.Z = (isBrowser);
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ }),
 
-/***/ 4782:
+/***/ 9622:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
 
-const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value).indexOf("element") > -1;
-/* harmony default export */ __webpack_exports__.Z = (isElement);
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
+/* harmony default export */ __webpack_exports__.A = (isElement);
 
 
 /***/ }),
 
-/***/ 3849:
+/***/ 333:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
 
-const isTouch = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)() && (window.ontouchstart || navigator.maxTouchPoints);
-/* harmony default export */ __webpack_exports__.Z = (isTouch);
+const isTouch = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && (window.ontouchstart || navigator.maxTouchPoints);
+/* harmony default export */ __webpack_exports__.A = (isTouch);
 
 
 /***/ })
@@ -119,18 +119,18 @@ const isTouch = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _getTouchPosition__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7098);
+/* harmony import */ var _getTouchPosition__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5180);
 
 const getRelative = (evt, ref) => {
-  const { touchX, touchY } = (0,_getTouchPosition__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(evt);
+  const { touchX, touchY } = (0,_getTouchPosition__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(evt);
   const { x, y } = ref?.getBoundingClientRect?.() ?? {};
   return {
     x: touchX - (x ?? 0),
     y: touchY - (y ?? 0)
   };
 };
-/* harmony default export */ __webpack_exports__.Z = (getRelative);
+/* harmony default export */ __webpack_exports__.A = (getRelative);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

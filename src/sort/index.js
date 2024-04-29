@@ -18,7 +18,7 @@ const sort = (arr, key = null, desc = false) => {
     return desc ? -1 : 1;
   });
 };
-/* harmony default export */ __webpack_exports__.Z = (sort);
+/* harmony default export */ __webpack_exports__.A = (sort);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

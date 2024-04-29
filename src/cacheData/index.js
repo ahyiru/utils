@@ -1,42 +1,42 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 4793:
+/***/ 1243:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3685);
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8855);
-/* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5307);
-/* harmony import */ var _isVueEle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9136);
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1915);
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6383);
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1407);
+/* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9385);
+/* harmony import */ var _isVueEle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2908);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4815);
 
 
 
 
 
 const clone = (obj) => {
-  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(obj) && !(0,_isObject__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(obj)) {
+  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(obj) && !(0,_isObject__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(obj)) {
     return obj;
   }
-  const newObj = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(obj) ? [] : {};
+  const newObj = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(obj) ? [] : {};
   for (const i in obj) {
-    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(obj, i)) {
+    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(obj, i)) {
       const item = obj[i];
-      newObj[i] = (0,_isReactEle__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z)(item) || (0,_isVueEle__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z)(item) || typeof item !== "object" ? item : item !== obj ? clone(item) : "cyclic";
+      newObj[i] = (0,_isReactEle__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(item) || (0,_isVueEle__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(item) || typeof item !== "object" ? item : item !== obj ? clone(item) : "cyclic";
     } else {
       Object.setPrototypeOf(newObj, { [i]: obj[i] });
     }
   }
   return newObj;
 };
-/* harmony default export */ __webpack_exports__.Z = (clone);
+/* harmony default export */ __webpack_exports__.A = (clone);
 
 
 /***/ }),
 
-/***/ 1071:
+/***/ 5551:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1915);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4815);
 
 const isCyclic = (obj) => {
   const seenObjects = [];
@@ -48,7 +48,7 @@ const isCyclic = (obj) => {
       seenObjects.push(obj2);
       let hasCyc = false;
       for (let key in obj2) {
-        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(obj2, key) && detect(obj2[key])) {
+        if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(obj2, key) && detect(obj2[key])) {
           obj2[key] = "cyclic";
           hasCyc = true;
         }
@@ -60,23 +60,23 @@ const isCyclic = (obj) => {
   const result = detect(obj);
   return result && obj;
 };
-/* harmony default export */ __webpack_exports__.Z = (isCyclic);
+/* harmony default export */ __webpack_exports__.A = (isCyclic);
 
 
 /***/ }),
 
-/***/ 6023:
+/***/ 4470:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
-/* harmony import */ var _cyclic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1071);
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1915);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
+/* harmony import */ var _cyclic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5551);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4815);
 
 
 
 const equal = (a, b) => {
-  const typeA = (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(a);
-  const typeB = (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(b);
+  const typeA = (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(a);
+  const typeB = (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(b);
   if (typeA !== typeB) {
     return false;
   }
@@ -89,11 +89,11 @@ const equal = (a, b) => {
   if (Object.keys(a).length !== Object.keys(b).length) {
     return false;
   }
-  if ((0,_cyclic__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(a) && (0,_cyclic__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(b)) {
+  if ((0,_cyclic__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(a) && (0,_cyclic__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(b)) {
     return equal(a, b);
   }
   for (let k in b) {
-    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(a, k) !== (0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(b, k)) {
+    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(a, k) !== (0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(b, k)) {
       return false;
     }
     if (!equal(a[k], b[k])) {
@@ -102,65 +102,65 @@ const equal = (a, b) => {
   }
   return true;
 };
-/* harmony default export */ __webpack_exports__.Z = (equal);
+/* harmony default export */ __webpack_exports__.A = (equal);
 
 
 /***/ }),
 
-/***/ 6837:
+/***/ 8842:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.Z = (getType);
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ }),
 
-/***/ 1915:
+/***/ 4815:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
-/* harmony default export */ __webpack_exports__.Z = (hasProp);
+/* harmony default export */ __webpack_exports__.A = (hasProp);
 
 
 /***/ }),
 
-/***/ 3685:
+/***/ 6383:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
 
-const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "array";
-/* harmony default export */ __webpack_exports__.Z = (isArray);
+const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "array";
+/* harmony default export */ __webpack_exports__.A = (isArray);
 
 
 /***/ }),
 
-/***/ 8855:
+/***/ 1407:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
 
-const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "object";
-/* harmony default export */ __webpack_exports__.Z = (isObject);
+const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "object";
+/* harmony default export */ __webpack_exports__.A = (isObject);
 
 
 /***/ }),
 
-/***/ 5307:
+/***/ 9385:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"] === "react.element";
-/* harmony default export */ __webpack_exports__.Z = (isReactEle);
+/* harmony default export */ __webpack_exports__.A = (isReactEle);
 
 
 /***/ }),
 
-/***/ 9136:
+/***/ 2908:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isVueEle = (value) => value?.__v_isVNode;
-/* harmony default export */ __webpack_exports__.Z = (isVueEle);
+/* harmony default export */ __webpack_exports__.A = (isVueEle);
 
 
 /***/ })
@@ -195,8 +195,8 @@ const isVueEle = (value) => value?.__v_isVNode;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _equal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6023);
-/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4793);
+/* harmony import */ var _equal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4470);
+/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1243);
 
 
 const cache = (len = 100) => {
@@ -204,8 +204,8 @@ const cache = (len = 100) => {
   let currentIndex = -1;
   const record = (data) => {
     const length = snapshot.length;
-    const tempData = (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(data);
-    if (!(0,_equal__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(tempData, snapshot[length - 1]?.data)) {
+    const tempData = (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(data);
+    if (!(0,_equal__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(tempData, snapshot[length - 1]?.data)) {
       snapshot.push({ data: tempData });
       if (snapshot.length > len) {
         snapshot.shift();
@@ -230,7 +230,7 @@ const cache = (len = 100) => {
     return {
       index: currentIndex,
       length,
-      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(snapshot[currentIndex]?.data)
+      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(snapshot[currentIndex]?.data)
     };
   };
   const jump = (index) => {
@@ -238,12 +238,12 @@ const cache = (len = 100) => {
     return {
       index: currentIndex,
       length: snapshot.length,
-      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(snapshot[currentIndex]?.data)
+      data: (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(snapshot[currentIndex]?.data)
     };
   };
   const undo = () => cursor(-1);
   const redo = () => cursor(1);
-  const getList = () => (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(snapshot);
+  const getList = () => (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(snapshot);
   const clean = () => {
     snapshot.length = 0;
     currentIndex = -1;
@@ -258,8 +258,8 @@ const cache = (len = 100) => {
     clean
   };
 };
-/* harmony default export */ __webpack_exports__.Z = (cache);
+/* harmony default export */ __webpack_exports__.A = (cache);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

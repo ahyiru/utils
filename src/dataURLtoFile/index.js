@@ -10,7 +10,7 @@ const dataURLtoFile = (dataurl, filename) => {
   }
   return new File([u8arr], filename ?? +/* @__PURE__ */ new Date(), { type: mime });
 };
-/* harmony default export */ __webpack_exports__.Z = (dataURLtoFile);
+/* harmony default export */ __webpack_exports__.A = (dataURLtoFile);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

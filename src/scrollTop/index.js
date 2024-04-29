@@ -1,10 +1,10 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 3498:
+/***/ 5890:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.Z = (isBrowser);
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ })
@@ -39,11 +39,11 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
 
-const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
-/* harmony default export */ __webpack_exports__.Z = (scrollTop);
+const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
+/* harmony default export */ __webpack_exports__.A = (scrollTop);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

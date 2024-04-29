@@ -1,6 +1,6 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 9733:
+/***/ 2538:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const addDays = (n, d = /* @__PURE__ */ new Date()) => {
@@ -8,7 +8,7 @@ const addDays = (n, d = /* @__PURE__ */ new Date()) => {
   newDate.setDate(newDate.getDate() + n);
   return newDate;
 };
-/* harmony default export */ __webpack_exports__.Z = (addDays);
+/* harmony default export */ __webpack_exports__.A = (addDays);
 
 
 /***/ })
@@ -43,15 +43,15 @@ const addDays = (n, d = /* @__PURE__ */ new Date()) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _addDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9733);
+/* harmony import */ var _addDays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2538);
 
 const weekDate = (d = /* @__PURE__ */ new Date()) => {
   const newDate = new Date(d);
   const day = newDate.getDay();
-  return [(0,_addDays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(1 - day), (0,_addDays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(7 - day)];
+  return [(0,_addDays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(1 - day), (0,_addDays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(7 - day)];
 };
-/* harmony default export */ __webpack_exports__.Z = (weekDate);
+/* harmony default export */ __webpack_exports__.A = (weekDate);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

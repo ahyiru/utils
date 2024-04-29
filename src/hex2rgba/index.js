@@ -19,7 +19,7 @@ const hex2rgba = (hex = "") => {
   const a = parseInt(hex.slice(6, 8), 16) / 255 || 1;
   return `rgba(${r},${g},${b},${a})`;
 };
-/* harmony default export */ __webpack_exports__.Z = (hex2rgba);
+/* harmony default export */ __webpack_exports__.A = (hex2rgba);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

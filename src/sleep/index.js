@@ -22,7 +22,7 @@
 /************************************************************************/
 var __webpack_exports__ = {};
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   g: function() { return /* binding */ sleepSync; }
+/* harmony export */   P: function() { return /* binding */ sleepSync; }
 /* harmony export */ });
 const formatMs = (ms = 350, unit = "ms") => ({
   ms: ms * 1,
@@ -37,8 +37,8 @@ const sleepSync = (ms = 100) => {
   while (Date.now() - start <= ms) {
   }
 };
-/* harmony default export */ __webpack_exports__.Z = (sleep);
+/* harmony default export */ __webpack_exports__.A = (sleep);
 
-var __webpack_exports__default = __webpack_exports__.Z;
-var __webpack_exports__sleepSync = __webpack_exports__.g;
+var __webpack_exports__default = __webpack_exports__.A;
+var __webpack_exports__sleepSync = __webpack_exports__.P;
 export { __webpack_exports__default as default, __webpack_exports__sleepSync as sleepSync };

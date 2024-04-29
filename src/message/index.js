@@ -1,12 +1,12 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 2240:
+/***/ 9332:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
 
 const addStyle = (text, hash) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
     return;
   }
   if (hash) {
@@ -38,47 +38,47 @@ const addStyle = (text, hash) => {
     }
   });
 };
-/* harmony default export */ __webpack_exports__.Z = (addStyle);
+/* harmony default export */ __webpack_exports__.A = (addStyle);
 
 
 /***/ }),
 
-/***/ 6837:
+/***/ 8842:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.Z = (getType);
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ }),
 
-/***/ 3498:
+/***/ 5890:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.Z = (isBrowser);
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ }),
 
-/***/ 4782:
+/***/ 9622:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
 
-const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value).indexOf("element") > -1;
-/* harmony default export */ __webpack_exports__.Z = (isElement);
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
+/* harmony default export */ __webpack_exports__.A = (isElement);
 
 
 /***/ }),
 
-/***/ 7578:
+/***/ 8286:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4782);
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
 
 const removeClass = (ele, name = "") => {
-  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ele)) {
+  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele)) {
     return;
   }
   const nameArr = name.split(" ").filter(Boolean);
@@ -86,12 +86,12 @@ const removeClass = (ele, name = "") => {
   const names = targetName.filter((v) => !nameArr.includes(v));
   ele.className = names.join(" ");
 };
-/* harmony default export */ __webpack_exports__.Z = (removeClass);
+/* harmony default export */ __webpack_exports__.A = (removeClass);
 
 
 /***/ }),
 
-/***/ 8098:
+/***/ 3886:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const timestamp = () => {
@@ -100,25 +100,25 @@ const timestamp = () => {
   }
   return (/* @__PURE__ */ new Date()).getTime();
 };
-/* harmony default export */ __webpack_exports__.Z = (timestamp);
+/* harmony default export */ __webpack_exports__.A = (timestamp);
 
 
 /***/ }),
 
-/***/ 1411:
+/***/ 41:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8098);
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3886);
 
 const uuidv4 = () => {
-  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)();
+  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (timeKey + Math.random() * 16) % 16 | 0;
     timeKey = Math.floor(timeKey / 16);
     return (c === "x" ? r : r & 3 | 8).toString(16);
   });
 };
-/* harmony default export */ __webpack_exports__.Z = (uuidv4);
+/* harmony default export */ __webpack_exports__.A = (uuidv4);
 
 
 /***/ })
@@ -174,17 +174,17 @@ var __webpack_exports__ = {};
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ utils_message; }
+  A: function() { return /* binding */ utils_message; }
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(3498);
+var isBrowser = __webpack_require__(5890);
 // EXTERNAL MODULE: ../../huxy/utils/removeClass.js
-var removeClass = __webpack_require__(7578);
+var removeClass = __webpack_require__(8286);
 // EXTERNAL MODULE: ../../huxy/utils/addStyle.js
-var addStyle = __webpack_require__(2240);
+var addStyle = __webpack_require__(9332);
 // EXTERNAL MODULE: ../../huxy/utils/uuidv4.js
-var uuidv4 = __webpack_require__(1411);
+var uuidv4 = __webpack_require__(41);
 ;// CONCATENATED MODULE: ../../huxy/utils/styles/message.js
 const css = `@keyframes huxy-message-animate-in {
   0% {
@@ -327,15 +327,15 @@ const createItem = (content, status, uuid) => {
   return mes;
 };
 const startMes = (content, delay = 3250, onClose, status) => {
-  if (!(0,isBrowser/* default */.Z)()) {
+  if (!(0,isBrowser/* default */.A)()) {
     return;
   }
-  (0,addStyle/* default */.Z)(message, "huxy-message-css");
+  (0,addStyle/* default */.A)(message, "huxy-message-css");
   let container = getContainer();
   if (!container) {
     container = createContainer();
   }
-  const uuid = (0,uuidv4/* default */.Z)();
+  const uuid = (0,uuidv4/* default */.A)();
   const mesItem = createItem(content, status, uuid);
   container.appendChild(mesItem);
   if (delay) {
@@ -344,7 +344,7 @@ const startMes = (content, delay = 3250, onClose, status) => {
       onClose?.();
     }, delay);
     setTimeout(() => {
-      (0,removeClass/* default */.Z)(mesItem, "open");
+      (0,removeClass/* default */.A)(mesItem, "open");
     }, delay - 250);
   }
   return uuid;
@@ -375,5 +375,5 @@ const message_message = {
 /* harmony default export */ var utils_message = (message_message);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

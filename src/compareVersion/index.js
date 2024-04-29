@@ -15,7 +15,7 @@ const compareVersion = (loaclVersion, serviceVersion, key = ".") => {
   }
   return needUpdateLevel;
 };
-/* harmony default export */ __webpack_exports__.Z = (compareVersion);
+/* harmony default export */ __webpack_exports__.A = (compareVersion);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

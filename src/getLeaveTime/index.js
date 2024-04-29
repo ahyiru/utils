@@ -13,7 +13,7 @@ const getLeaveTime = (start, end = /* @__PURE__ */ new Date()) => {
   const s = ~~(time / 1e3);
   return `${d}\u5929${h}\u5C0F\u65F6${M}\u5206${s}\u79D2`;
 };
-/* harmony default export */ __webpack_exports__.Z = (getLeaveTime);
+/* harmony default export */ __webpack_exports__.A = (getLeaveTime);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

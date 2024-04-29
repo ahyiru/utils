@@ -8,7 +8,7 @@ const validObj = (obj = {}) => {
   });
   return newObj;
 };
-/* harmony default export */ __webpack_exports__.Z = (validObj);
+/* harmony default export */ __webpack_exports__.A = (validObj);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

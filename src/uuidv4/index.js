@@ -1,6 +1,6 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 8098:
+/***/ 3886:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const timestamp = () => {
@@ -9,7 +9,7 @@ const timestamp = () => {
   }
   return (/* @__PURE__ */ new Date()).getTime();
 };
-/* harmony default export */ __webpack_exports__.Z = (timestamp);
+/* harmony default export */ __webpack_exports__.A = (timestamp);
 
 
 /***/ })
@@ -44,18 +44,18 @@ const timestamp = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8098);
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3886);
 
 const uuidv4 = () => {
-  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)();
+  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (timeKey + Math.random() * 16) % 16 | 0;
     timeKey = Math.floor(timeKey / 16);
     return (c === "x" ? r : r & 3 | 8).toString(16);
   });
 };
-/* harmony default export */ __webpack_exports__.Z = (uuidv4);
+/* harmony default export */ __webpack_exports__.A = (uuidv4);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

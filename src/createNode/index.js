@@ -1,15 +1,15 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 3498:
+/***/ 5890:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.Z = (isBrowser);
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ }),
 
-/***/ 1119:
+/***/ 653:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isEvent = (key) => key.startsWith("on");
@@ -37,7 +37,7 @@ const updateNode = (dom, prevProps, nextProps) => {
     dom.addEventListener(eventType, nextProps[key]);
   });
 };
-/* harmony default export */ __webpack_exports__.Z = (updateNode);
+/* harmony default export */ __webpack_exports__.A = (updateNode);
 
 
 /***/ })
@@ -72,20 +72,20 @@ const updateNode = (dom, prevProps, nextProps) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
-/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1119);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
+/* harmony import */ var _updateNode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(653);
 
 
 const createNode = (fiber) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
     return;
   }
   const dom = fiber.type === "TEXT_ELEMENT" ? document.createTextNode("") : document.createElement(fiber.type);
-  (0,_updateNode__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(dom, {}, fiber.props);
+  (0,_updateNode__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(dom, {}, fiber.props);
   return dom;
 };
-/* harmony default export */ __webpack_exports__.Z = (createNode);
+/* harmony default export */ __webpack_exports__.A = (createNode);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

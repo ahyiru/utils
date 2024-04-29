@@ -1,12 +1,12 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 3333:
+/***/ 5683:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3685);
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6383);
 
 const arr2Tree = (fn) => (arr, idKey = "id", childKey = "children", treeRoot = -1) => {
-  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(arr)) {
+  if (!(0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(arr)) {
     return arr;
   }
   const tmpData = {};
@@ -40,27 +40,27 @@ const arr2Tree = (fn) => (arr, idKey = "id", childKey = "children", treeRoot = -
   });
   return tmpData[treeRoot];
 };
-/* harmony default export */ __webpack_exports__.Z = (arr2Tree);
+/* harmony default export */ __webpack_exports__.A = (arr2Tree);
 
 
 /***/ }),
 
-/***/ 6837:
+/***/ 8842:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.Z = (getType);
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ }),
 
-/***/ 3685:
+/***/ 6383:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6837);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
 
-const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(value) === "array";
-/* harmony default export */ __webpack_exports__.Z = (isArray);
+const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "array";
+/* harmony default export */ __webpack_exports__.A = (isArray);
 
 
 /***/ })
@@ -95,9 +95,9 @@ const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _arr2Tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3333);
+/* harmony import */ var _arr2Tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5683);
 
-const arr2TreeByPath = (data, idKey = "path", childKey = "children", treeRoot = null) => (0,_arr2Tree__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)((item) => {
+const arr2TreeByPath = (data, idKey = "path", childKey = "children", treeRoot = null) => (0,_arr2Tree__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)((item) => {
   const id = item[idKey];
   const hasSub = id.match(/.*\/[^:/]+\/:[^/]+/);
   if (hasSub) {
@@ -106,8 +106,8 @@ const arr2TreeByPath = (data, idKey = "path", childKey = "children", treeRoot = 
     return id.match(/(.*)\/+/)?.[1] ?? treeRoot;
   }
 })(data, idKey, childKey, treeRoot);
-/* harmony default export */ __webpack_exports__.Z = (arr2TreeByPath);
+/* harmony default export */ __webpack_exports__.A = (arr2TreeByPath);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

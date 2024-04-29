@@ -11,7 +11,7 @@ const fixFileSizeUnit = (size, base = 1024) => {
   const gb = mb / base;
   return `${gb.toFixed(3) - 0} G`;
 };
-/* harmony default export */ __webpack_exports__.Z = (fixFileSizeUnit);
+/* harmony default export */ __webpack_exports__.A = (fixFileSizeUnit);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

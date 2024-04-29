@@ -7,7 +7,7 @@ const padStart = (str = "", n = 2, pad = "0") => {
   const fill = Array(n - len + 1).join(pad);
   return `${fill}${str}`;
 };
-/* harmony default export */ __webpack_exports__.Z = (padStart);
+/* harmony default export */ __webpack_exports__.A = (padStart);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

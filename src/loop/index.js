@@ -1,6 +1,6 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 2005:
+/***/ 9941:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony export sleepSync */
@@ -17,7 +17,7 @@ const sleepSync = (ms = 100) => {
   while (Date.now() - start <= ms) {
   }
 };
-/* harmony default export */ __webpack_exports__.Z = (sleep);
+/* harmony default export */ __webpack_exports__.A = (sleep);
 
 
 /***/ })
@@ -70,15 +70,15 @@ const sleepSync = (ms = 100) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2005);
+/* harmony import */ var _sleep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9941);
 
 const loop = async (fn, handle, delay = 2e3) => {
   while (!handle?.(fn?.())) {
-    await (0,_sleep__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(delay);
+    await (0,_sleep__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(delay);
   }
 };
-/* harmony default export */ __webpack_exports__.Z = (loop);
+/* harmony default export */ __webpack_exports__.A = (loop);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

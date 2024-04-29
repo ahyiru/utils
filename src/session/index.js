@@ -22,7 +22,7 @@ const session = {
     sessionStorage.clear();
   }
 };
-/* harmony default export */ __webpack_exports__.Z = (session);
+/* harmony default export */ __webpack_exports__.A = (session);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

@@ -1,13 +1,13 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 4483:
+/***/ 8359:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const createTextElement = (text) => ({
   type: "TEXT_ELEMENT",
   props: { nodeValue: text }
 });
-/* harmony default export */ __webpack_exports__.Z = (createTextElement);
+/* harmony default export */ __webpack_exports__.A = (createTextElement);
 
 
 /***/ })
@@ -42,17 +42,17 @@ const createTextElement = (text) => ({
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _createTextElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4483);
+/* harmony import */ var _createTextElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8359);
 
 const createElement = (type, props, ...children) => ({
   type,
   props: {
     ...props,
-    children: children.map((child) => typeof child === "object" ? child : (0,_createTextElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(child))
+    children: children.map((child) => typeof child === "object" ? child : (0,_createTextElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(child))
   }
 });
-/* harmony default export */ __webpack_exports__.Z = (createElement);
+/* harmony default export */ __webpack_exports__.A = (createElement);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

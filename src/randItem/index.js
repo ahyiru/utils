@@ -1,6 +1,6 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 440:
+/***/ 1295:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const randNum = (a = 0, b = 0, int = true) => {
@@ -10,7 +10,7 @@ const randNum = (a = 0, b = 0, int = true) => {
   }
   return Math.random() * (a - b) + b;
 };
-/* harmony default export */ __webpack_exports__.Z = (randNum);
+/* harmony default export */ __webpack_exports__.A = (randNum);
 
 
 /***/ })
@@ -45,11 +45,11 @@ const randNum = (a = 0, b = 0, int = true) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _randNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(440);
+/* harmony import */ var _randNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1295);
 
-const randItem = (list = []) => list[(0,_randNum__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(list.length - 1)];
-/* harmony default export */ __webpack_exports__.Z = (randItem);
+const randItem = (list = []) => list[(0,_randNum__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(list.length - 1)];
+/* harmony default export */ __webpack_exports__.A = (randItem);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

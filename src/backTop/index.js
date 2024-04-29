@@ -1,12 +1,12 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 2240:
+/***/ 9332:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
 
 const addStyle = (text, hash) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
     return;
   }
   if (hash) {
@@ -38,66 +38,66 @@ const addStyle = (text, hash) => {
     }
   });
 };
-/* harmony default export */ __webpack_exports__.Z = (addStyle);
+/* harmony default export */ __webpack_exports__.A = (addStyle);
 
 
 /***/ }),
 
-/***/ 1915:
+/***/ 4815:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
-/* harmony default export */ __webpack_exports__.Z = (hasProp);
+/* harmony default export */ __webpack_exports__.A = (hasProp);
 
 
 /***/ }),
 
-/***/ 3498:
+/***/ 5890:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.Z = (isBrowser);
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ }),
 
-/***/ 1919:
+/***/ 8427:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1915);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4815);
 
-const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(ref, "current");
-/* harmony default export */ __webpack_exports__.Z = (isRef);
+const isRef = (ref) => (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ref, "current");
+/* harmony default export */ __webpack_exports__.A = (isRef);
 
 
 /***/ }),
 
-/***/ 3869:
+/***/ 7888:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1919);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8427);
 
 
 const scrollTo = (top = 0, ele) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
     return;
   }
-  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(ele) ? ele.current : ele ?? window;
+  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(ele) ? ele.current : ele ?? window;
   ele.scrollTo?.({ top, behavior: "smooth" });
 };
-/* harmony default export */ __webpack_exports__.Z = (scrollTo);
+/* harmony default export */ __webpack_exports__.A = (scrollTo);
 
 
 /***/ }),
 
-/***/ 9662:
+/***/ 4242:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
 
-const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
-/* harmony default export */ __webpack_exports__.Z = (scrollTop);
+const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
+/* harmony default export */ __webpack_exports__.A = (scrollTop);
 
 
 /***/ })
@@ -153,17 +153,17 @@ var __webpack_exports__ = {};
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ utils_backTop; }
+  A: function() { return /* binding */ utils_backTop; }
 });
 
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
-var isBrowser = __webpack_require__(3498);
+var isBrowser = __webpack_require__(5890);
 // EXTERNAL MODULE: ../../huxy/utils/scrollTop.js
-var scrollTop = __webpack_require__(9662);
+var scrollTop = __webpack_require__(4242);
 // EXTERNAL MODULE: ../../huxy/utils/scrollTo.js
-var scrollTo = __webpack_require__(3869);
+var scrollTo = __webpack_require__(7888);
 // EXTERNAL MODULE: ../../huxy/utils/addStyle.js
-var addStyle = __webpack_require__(2240);
+var addStyle = __webpack_require__(9332);
 ;// CONCATENATED MODULE: ../../huxy/utils/styles/backTop.js
 const css = `.huxy-totop-bar {
   --size: 36px;
@@ -247,7 +247,7 @@ const createTotopBar = (text) => {
   totopBar.appendChild(i);
   totopBar.appendChild(span);
   document.body.appendChild(totopBar);
-  totopBar.addEventListener("click", () => (0,scrollTo/* default */.Z)(), false);
+  totopBar.addEventListener("click", () => (0,scrollTo/* default */.A)(), false);
   return totopBar;
 };
 const removeTotopBar = () => {
@@ -257,12 +257,12 @@ const removeTotopBar = () => {
   }
 };
 const backTop_backTop = (top = 0, text = "\u8FD4\u56DE\u9876\u90E8") => {
-  if (!(0,isBrowser/* default */.Z)()) {
+  if (!(0,isBrowser/* default */.A)()) {
     return;
   }
-  (0,addStyle/* default */.Z)(backTop, "huxy-backtop-css");
+  (0,addStyle/* default */.A)(backTop, "huxy-backtop-css");
   const scroll = () => {
-    const st = (0,scrollTop/* default */.Z)();
+    const st = (0,scrollTop/* default */.A)();
     if (st > top) {
       createTotopBar(text);
     } else {
@@ -281,5 +281,5 @@ const backTop_backTop = (top = 0, text = "\u8FD4\u56DE\u9876\u90E8") => {
 /* harmony default export */ var utils_backTop = (backTop_backTop);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

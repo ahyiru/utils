@@ -7,7 +7,7 @@ const debounce = (func = () => {
     timer = setTimeout(() => func.apply(this, args), delay);
   };
 };
-/* harmony default export */ __webpack_exports__.Z = (debounce);
+/* harmony default export */ __webpack_exports__.A = (debounce);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

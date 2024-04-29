@@ -1,6 +1,6 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 5687:
+/***/ 3436:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const emitter = () => {
@@ -34,7 +34,7 @@ const emitter = () => {
   };
   return { on, emit, off };
 };
-/* harmony default export */ __webpack_exports__.Z = (emitter);
+/* harmony default export */ __webpack_exports__.A = (emitter);
 
 
 /***/ })
@@ -69,9 +69,9 @@ const emitter = () => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5687);
+/* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3436);
 
-const events = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)();
+const events = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
 const eventBus = (name) => {
   const { on, emit, off } = events;
   return {
@@ -80,8 +80,8 @@ const eventBus = (name) => {
     off: (cb) => off(name, cb)
   };
 };
-/* harmony default export */ __webpack_exports__.Z = (eventBus);
+/* harmony default export */ __webpack_exports__.A = (eventBus);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

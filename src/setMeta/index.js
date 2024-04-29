@@ -1,10 +1,10 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 1318:
+/***/ 8099:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony exports defaultHeadMeta, mergeMetaData */
-/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9089);
+/* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8210);
 
 const defaultHeadMeta = [
   {
@@ -90,29 +90,29 @@ const getMeta = (metaData) => {
     const props = Object.keys(item).map((key) => `${key}=${item[key]}`).join(" ");
     return `<meta ${props} />`;
   });
-  return (0,_str2Html__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(metaStr.join(""));
+  return (0,_str2Html__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(metaStr.join(""));
 };
-/* harmony default export */ __webpack_exports__.ZP = (getMeta);
+/* harmony default export */ __webpack_exports__.Ay = (getMeta);
 
 
 /***/ }),
 
-/***/ 3498:
+/***/ 5890:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.Z = (isBrowser);
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ }),
 
-/***/ 9089:
+/***/ 8210:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3498);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
 
 const str2Html = (str) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)()) {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
     return;
   }
   const templ = document.createElement("div");
@@ -120,7 +120,7 @@ const str2Html = (str) => {
   const ele = templ.children[0];
   return ele;
 };
-/* harmony default export */ __webpack_exports__.Z = (str2Html);
+/* harmony default export */ __webpack_exports__.A = (str2Html);
 
 
 /***/ })
@@ -173,16 +173,16 @@ const str2Html = (str) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3498);
-/* harmony import */ var _getMeta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1318);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5890);
+/* harmony import */ var _getMeta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8099);
 
 
 const setMeta = (metaData) => {
-  const metas = (0,_getMeta__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .ZP)(metaData);
-  (0,_isBrowser__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)() && document.head.appendChild(...metas);
+  const metas = (0,_getMeta__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)(metaData);
+  (0,_isBrowser__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)() && document.head.appendChild(...metas);
 };
-/* harmony default export */ __webpack_exports__.Z = (setMeta);
+/* harmony default export */ __webpack_exports__.A = (setMeta);
 
 }();
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

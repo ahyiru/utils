@@ -10,7 +10,7 @@ const loadImage = (url) => new Promise((resolve, reject) => {
     img.addEventListener("error", (error) => reject(error));
   }
 });
-/* harmony default export */ __webpack_exports__.Z = (loadImage);
+/* harmony default export */ __webpack_exports__.A = (loadImage);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

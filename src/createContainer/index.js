@@ -12,7 +12,7 @@ const createContainer = (store) => (name, initState) => {
     clean: () => clean(name)
   };
 };
-/* harmony default export */ __webpack_exports__.Z = (createContainer);
+/* harmony default export */ __webpack_exports__.A = (createContainer);
 
-var __webpack_exports__default = __webpack_exports__.Z;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };
