@@ -1000,10 +1000,9 @@ isIE();
 isTouch();
 ```
 
-### isReactComp/isReactEle/isRef
+### isReactEle/isRef
 
 ```javascript
-isReactComp(value);
 isReactEle(value);
 isRef(value);
 ```

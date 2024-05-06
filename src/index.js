@@ -92,7 +92,6 @@ export {default as isError} from './isError';
 export {default as isFunction} from './isFunction';
 export {default as isIE} from './isIE';
 export {default as isObject} from './isObject';
-export {default as isReactComp} from './isReactComp';
 export {default as isReactEle} from './isReactEle';
 export {default as isRef} from './isRef';
 export {default as isRegExp} from './isRegExp';
