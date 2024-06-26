@@ -44,13 +44,10 @@ const padStart = (str = "", n = 2, pad = "0") => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _padStart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(91);
 
 const randColor = () => "#" + (0,_padStart__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)((~~(Math.random() * (1 << 24))).toString(16), 6);
 /* harmony default export */ __webpack_exports__.A = (randColor);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

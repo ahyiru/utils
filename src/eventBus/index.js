@@ -67,8 +67,6 @@ const emitter = () => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3436);
 
 const events = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
@@ -82,6 +80,5 @@ const eventBus = (name) => {
 };
 /* harmony default export */ __webpack_exports__.A = (eventBus);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

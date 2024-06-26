@@ -59,8 +59,6 @@ const isValidArr = (value) => (0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["defau
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isValidArr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9393);
 
 const filter = (list, keyword, fields = [], exact = false, str2Dom = null) => {
@@ -93,6 +91,5 @@ const filter = (list, keyword, fields = [], exact = false, str2Dom = null) => {
 };
 /* harmony default export */ __webpack_exports__.A = (filter);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

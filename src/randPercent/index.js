@@ -43,8 +43,6 @@ const randNum = (a = 0, b = 0, int = true) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _randNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1295);
 
 const randPercent = (n, total = 100) => {
@@ -61,6 +59,5 @@ const randPercent = (n, total = 100) => {
 };
 /* harmony default export */ __webpack_exports__.A = (randPercent);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

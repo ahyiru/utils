@@ -179,8 +179,6 @@ const str2Html = (str) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
 /* harmony import */ var _str2Html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8210);
 /* harmony import */ var _getPosition__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2217);
@@ -216,6 +214,5 @@ const getElementsSize = async (ele, delay = 15) => {
 };
 /* harmony default export */ __webpack_exports__.A = (getElementsSize);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

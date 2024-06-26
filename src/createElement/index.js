@@ -40,8 +40,6 @@ const createTextElement = (text) => ({
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _createTextElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8359);
 
 const createElement = (type, props, ...children) => ({
@@ -53,6 +51,5 @@ const createElement = (type, props, ...children) => ({
 });
 /* harmony default export */ __webpack_exports__.A = (createElement);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

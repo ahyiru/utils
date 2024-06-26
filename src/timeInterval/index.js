@@ -80,8 +80,6 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Rd: function() { return /* binding */ minus; },
 /* harmony export */   jF: function() { return /* binding */ timeBase; }
@@ -118,7 +116,6 @@ const timeInterval = (start, end = /* @__PURE__ */ new Date()) => {
 };
 /* harmony default export */ __webpack_exports__.Ay = (timeInterval);
 
-}();
 var __webpack_exports__default = __webpack_exports__.Ay;
 var __webpack_exports__minus = __webpack_exports__.Rd;
 var __webpack_exports__timeBase = __webpack_exports__.jF;

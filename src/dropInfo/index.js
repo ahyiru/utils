@@ -266,8 +266,6 @@ const str2Html = (str) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   K: function() { return /* binding */ setPosition; }
 /* harmony export */ });
@@ -352,7 +350,6 @@ const dropInfo = (triggerEle, showEle, type = "horizontal") => {
 };
 /* harmony default export */ __webpack_exports__.A = (dropInfo);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 var __webpack_exports__setPosition = __webpack_exports__.K;
 export { __webpack_exports__default as default, __webpack_exports__setPosition as setPosition };

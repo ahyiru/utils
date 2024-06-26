@@ -55,8 +55,6 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -85,6 +83,5 @@ const watchScreen = (callback) => {
 };
 /* harmony default export */ var utils_watchScreen = (watchScreen);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

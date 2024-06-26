@@ -79,13 +79,10 @@ const selectedHandle = (fn) => (arr, id, idKey = "id", childKey = "children") =>
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _selectedHandle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9271);
 
 const deleteNodes = (tree, id, idKey = "id", childKey = "children") => (0,_selectedHandle__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)((data, index) => data.splice(index, 1))(tree, id, idKey, childKey);
 /* harmony default export */ __webpack_exports__.A = (deleteNodes);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

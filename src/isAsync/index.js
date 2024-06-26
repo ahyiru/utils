@@ -59,8 +59,6 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
 /* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1407);
 /* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56);
@@ -70,6 +68,5 @@ var __webpack_exports__ = {};
 const isAsync = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "promise" || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(value.then);
 /* harmony default export */ __webpack_exports__.A = (isAsync);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

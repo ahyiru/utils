@@ -114,7 +114,7 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default
 /***/ 9385:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && ["react.transitional.element", "react.element"].includes(value["$$typeof"]["description"]);
+const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"]?.indexOf("react.") === 0;
 /* harmony default export */ __webpack_exports__.A = (isReactEle);
 
 
@@ -213,8 +213,6 @@ const unique = (arr, key = "id") => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   z: function() { return /* binding */ getMatched; }
 /* harmony export */ });
@@ -249,7 +247,6 @@ const getMatched = (fn) => (arr, childKey = "children") => {
 const filterList = (data, keyword, fields = "name", exact = false, idKey = "id", childKey = "children", str2Dom) => getMatched((list, matchedItem) => (0,_unique__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)([...(0,_filter__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(list, keyword, fields, exact, str2Dom), ...matchedItem], idKey))(data, childKey);
 /* harmony default export */ __webpack_exports__.A = (filterList);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 var __webpack_exports__getMatched = __webpack_exports__.z;
 export { __webpack_exports__default as default, __webpack_exports__getMatched as getMatched };

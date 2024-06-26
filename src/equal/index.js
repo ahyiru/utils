@@ -78,8 +78,6 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, p
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
 /* harmony import */ var _cyclic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5551);
 /* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4815);
@@ -116,6 +114,5 @@ const equal = (a, b) => {
 };
 /* harmony default export */ __webpack_exports__.A = (equal);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

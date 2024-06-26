@@ -115,7 +115,7 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default
 /***/ 9385:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && ["react.transitional.element", "react.element"].includes(value["$$typeof"]["description"]);
+const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"]?.indexOf("react.") === 0;
 /* harmony default export */ __webpack_exports__.A = (isReactEle);
 
 
@@ -193,8 +193,6 @@ const mergeOwnProp = (base, extend) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1407);
 /* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1243);
 /* harmony import */ var _emitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3436);
@@ -203,8 +201,8 @@ var __webpack_exports__ = {};
 
 
 
-const createStore = () => {
-  const { on, emit, off } = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
+const createStore = (bus = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) => {
+  const { on, emit, off } = bus;
   const store = {};
   const getState = (name) => (0,_clone__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(store[name]);
   const setState = (state, init = false) => {
@@ -240,6 +238,5 @@ const createStore = () => {
 };
 /* harmony default export */ __webpack_exports__.A = (createStore);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

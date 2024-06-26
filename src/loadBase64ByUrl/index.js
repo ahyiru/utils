@@ -51,8 +51,6 @@ const loadBase64 = (file) => new Promise((resolve, reject) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isUrl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4659);
 /* harmony import */ var _loadBase64__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4287);
 
@@ -68,6 +66,5 @@ const loadBase64ByUrl = async (url) => {
 };
 /* harmony default export */ __webpack_exports__.A = (loadBase64ByUrl);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

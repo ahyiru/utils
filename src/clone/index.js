@@ -43,7 +43,7 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default
 /***/ 9385:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && ["react.transitional.element", "react.element"].includes(value["$$typeof"]["description"]);
+const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"]?.indexOf("react.") === 0;
 /* harmony default export */ __webpack_exports__.A = (isReactEle);
 
 
@@ -86,8 +86,6 @@ const isVueEle = (value) => value?.__v_isVNode;
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6383);
 /* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1407);
 /* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9385);
@@ -115,6 +113,5 @@ const clone = (obj) => {
 };
 /* harmony default export */ __webpack_exports__.A = (clone);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

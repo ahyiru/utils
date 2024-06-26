@@ -250,8 +250,6 @@ const params2str = (params) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _baseFetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8409);
 
 const TIMEOUT = 120 * 1e3;
@@ -259,6 +257,5 @@ const resHandler = (response) => response.json().then((result) => result);
 const fetcher = (handler = resHandler, timeout = TIMEOUT) => (method = "get") => (0,_baseFetch__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(handler)((method || "get").toUpperCase());
 /* harmony default export */ __webpack_exports__.A = (fetcher);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

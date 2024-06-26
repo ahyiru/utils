@@ -46,8 +46,6 @@ const ten2Base = (num = 0, base = 2) => Number(num).toString(base);
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _ten2Base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34);
 /* harmony import */ var _base2Ten__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7116);
 
@@ -55,6 +53,5 @@ var __webpack_exports__ = {};
 const baseConversion = (num = 0, base = 2, to = 16) => (0,_ten2Base__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)((0,_base2Ten__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(num, base), to);
 /* harmony default export */ __webpack_exports__.A = (baseConversion);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

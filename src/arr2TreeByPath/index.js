@@ -93,8 +93,6 @@ const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _arr2Tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5683);
 
 const arr2TreeByPath = (data, idKey = "path", childKey = "children", treeRoot = null) => (0,_arr2Tree__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)((item) => {
@@ -108,6 +106,5 @@ const arr2TreeByPath = (data, idKey = "path", childKey = "children", treeRoot = 
 })(data, idKey, childKey, treeRoot);
 /* harmony default export */ __webpack_exports__.A = (arr2TreeByPath);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

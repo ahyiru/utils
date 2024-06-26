@@ -101,8 +101,6 @@ const setStyle = (ele, styles = {}, reset = false) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
 /* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9433);
 /* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8427);
@@ -125,6 +123,5 @@ const getTextSize = (text, styles, ele) => {
 };
 /* harmony default export */ __webpack_exports__.A = (getTextSize);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

@@ -105,8 +105,6 @@ const obj2str = (obj = {}) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1407);
 /* harmony import */ var _arr2str__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5512);
 /* harmony import */ var _obj2str__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1150);
@@ -127,6 +125,5 @@ const json2str = (obj) => {
 };
 /* harmony default export */ __webpack_exports__.A = (json2str);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

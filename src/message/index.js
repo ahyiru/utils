@@ -169,8 +169,6 @@ const uuidv4 = () => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -374,6 +372,5 @@ const message_message = {
 };
 /* harmony default export */ var utils_message = (message_message);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

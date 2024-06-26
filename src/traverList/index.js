@@ -48,8 +48,6 @@ const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6383);
 
 const traverList = (fn) => (arr, childKey = "children") => {
@@ -68,6 +66,5 @@ const traverList = (fn) => (arr, childKey = "children") => {
 };
 /* harmony default export */ __webpack_exports__.A = (traverList);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

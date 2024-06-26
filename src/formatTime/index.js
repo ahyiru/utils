@@ -66,8 +66,6 @@ const getTime = (day = /* @__PURE__ */ new Date()) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   t: function() { return /* binding */ formatDelimiter; }
 /* harmony export */ });
@@ -83,7 +81,6 @@ const formatTime = (date = /* @__PURE__ */ new Date(), delimiter = ["-", "-", " 
 };
 /* harmony default export */ __webpack_exports__.A = (formatTime);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 var __webpack_exports__formatDelimiter = __webpack_exports__.t;
 export { __webpack_exports__default as default, __webpack_exports__formatDelimiter as formatDelimiter };

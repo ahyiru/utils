@@ -148,8 +148,6 @@ const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -280,6 +278,5 @@ const backTop_backTop = (top = 0, text = "\u8FD4\u56DE\u9876\u90E8") => {
 };
 /* harmony default export */ var utils_backTop = (backTop_backTop);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

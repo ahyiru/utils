@@ -34,9 +34,11 @@ const clone = (obj) => {
 /***/ }),
 
 /***/ 5373:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-const createContainer = (store) => (name, initState) => {
+/* harmony import */ var _createStore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5943);
+
+const createContainer = (store = (0,_createStore__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) => (name, initState) => {
   const { getState, setState, subscribe, unsubscribe, clean } = store;
   if (initState !== void 0) {
     setState({ [name]: initState }, true);
@@ -65,8 +67,8 @@ const createContainer = (store) => (name, initState) => {
 
 
 
-const createStore = () => {
-  const { on, emit, off } = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
+const createStore = (bus = (0,_emitter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) => {
+  const { on, emit, off } = bus;
   const store = {};
   const getState = (name) => (0,_clone__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(store[name]);
   const setState = (state, init = false) => {
@@ -187,7 +189,7 @@ const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default
 /***/ 9385:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && ["react.transitional.element", "react.element"].includes(value["$$typeof"]["description"]);
+const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"]?.indexOf("react.") === 0;
 /* harmony default export */ __webpack_exports__.A = (isReactEle);
 
 
@@ -265,8 +267,6 @@ const mergeOwnProp = (base, extend) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _createStore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5943);
 /* harmony import */ var _createContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5373);
 
@@ -275,6 +275,5 @@ const container = (0,_createStore__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 const store = (0,_createContainer__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(container);
 /* harmony default export */ __webpack_exports__.A = (store);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

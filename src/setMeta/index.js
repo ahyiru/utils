@@ -171,8 +171,6 @@ const str2Html = (str) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5890);
 /* harmony import */ var _getMeta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8099);
 
@@ -183,6 +181,5 @@ const setMeta = (metaData) => {
 };
 /* harmony default export */ __webpack_exports__.A = (setMeta);
 
-}();
 var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };
