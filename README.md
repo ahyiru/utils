@@ -275,7 +275,6 @@ output: [
 
 ```javascript
 backTop(scrollHeight);
-
 ```
 
 - scrollHeight：出现 ‘返回顶部’ 按钮时的滚动距离，默认 0 。
@@ -291,9 +290,8 @@ rgba2hex(111, 111, 111, 0.8);
 ### rmUnit
 
 ```javascript
-rmUnit('100px');  // Number: 100
-rmUnit('60s', 's');  // Number: 60
-
+rmUnit('100px'); // Number: 100
+rmUnit('60s', 's'); // Number: 60
 ```
 
 - unit：默认 `px`
@@ -692,7 +690,6 @@ fixSize(img, ratio = 1);
 ```javascript
 fixFileSizeUnit(10000); // 9.766 KB
 fixFileSizeUnit(2000000); // 1.907 M
-
 ```
 
 ### fixTimeUnit
@@ -700,7 +697,6 @@ fixFileSizeUnit(2000000); // 1.907 M
 ```javascript
 fixTimeUnit(1000); // 16m40s
 fixTimeUnit(20000); // 5h33m20s
-
 ```
 
 ### flatten
@@ -1202,7 +1198,7 @@ runOne(); // 不执行
 ### padStart
 
 ```javascript
-padStart('123', 6); // 000123 
+padStart('123', 6); // 000123
 
 padStart('abc', 5, '#'); // ##abc
 ```
@@ -1380,14 +1376,13 @@ setStyle(ele, (styles = {}), (reset = false));
 ### sleep
 
 ```javascript
-await sleep(ms = 350, unit = 'ms');
+await sleep((ms = 350), (unit = 'ms'));
 
-await sleep(2,'m');
+await sleep(2, 'm');
 ```
 
 - delay: 等待时间数值
 - unit: 单位。毫秒、秒、分、时、天。ms | s | m | h | d 。默认 ms
-
 
 ### sort
 
