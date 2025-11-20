@@ -1,14 +1,5 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 8842:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.A = (getType);
-
-
-/***/ }),
-
 /***/ 1407:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -16,6 +7,15 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "object";
 /* harmony default export */ __webpack_exports__.A = (isObject);
+
+
+/***/ }),
+
+/***/ 8842:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ })

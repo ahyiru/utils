@@ -175,3 +175,4 @@ export {default as watchScreen} from './watchScreen';
 export {default as watermark} from './watermark';
 export {default as weekDate} from './weekDate';
 export {default as wrapPromise} from './wrapPromise';
+export {default as request} from './request';

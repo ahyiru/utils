@@ -1,14 +1,5 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 5890:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.A = (isBrowser);
-
-
-/***/ }),
-
 /***/ 333:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -16,6 +7,15 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 const isTouch = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && (window.ontouchstart || navigator.maxTouchPoints);
 /* harmony default export */ __webpack_exports__.A = (isTouch);
+
+
+/***/ }),
+
+/***/ 5890:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ })

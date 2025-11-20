@@ -1,19 +1,19 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 7116:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const base2Ten = (num = 0, base = 2) => parseInt(String(num), base);
-/* harmony default export */ __webpack_exports__.A = (base2Ten);
-
-
-/***/ }),
-
 /***/ 34:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const ten2Base = (num = 0, base = 2) => Number(num).toString(base);
 /* harmony default export */ __webpack_exports__.A = (ten2Base);
+
+
+/***/ }),
+
+/***/ 7116:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const base2Ten = (num = 0, base = 2) => parseInt(String(num), base);
+/* harmony default export */ __webpack_exports__.A = (base2Ten);
 
 
 /***/ })

@@ -1,14 +1,5 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 4659:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isUrl = (url) => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
-/* harmony default export */ __webpack_exports__.A = (isUrl);
-
-
-/***/ }),
-
 /***/ 4287:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
@@ -19,6 +10,15 @@ const loadBase64 = (file) => new Promise((resolve, reject) => {
   reader.addEventListener("error", (error) => reject(error));
 });
 /* harmony default export */ __webpack_exports__.A = (loadBase64);
+
+
+/***/ }),
+
+/***/ 4659:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isUrl = (url) => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
+/* harmony default export */ __webpack_exports__.A = (isUrl);
 
 
 /***/ })

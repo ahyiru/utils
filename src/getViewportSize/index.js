@@ -1,19 +1,19 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 8842:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.A = (getType);
-
-
-/***/ }),
-
 /***/ 5890:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
 const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 /* harmony default export */ __webpack_exports__.A = (isBrowser);
+
+
+/***/ }),
+
+/***/ 8842:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ }),

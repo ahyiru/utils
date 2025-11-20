@@ -45,15 +45,6 @@ const arr2Tree = (fn) => (arr, idKey = "id", childKey = "children", treeRoot = -
 
 /***/ }),
 
-/***/ 8842:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.A = (getType);
-
-
-/***/ }),
-
 /***/ 6383:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -61,6 +52,15 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "array";
 /* harmony default export */ __webpack_exports__.A = (isArray);
+
+
+/***/ }),
+
+/***/ 8842:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ })

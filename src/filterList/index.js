@@ -5,9 +5,9 @@
 
 /* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6383);
 /* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1407);
-/* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9385);
-/* harmony import */ var _isVueEle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2908);
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4815);
+/* harmony import */ var _isReactEle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9385);
+/* harmony import */ var _isVueEle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2908);
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4815);
 
 
 
@@ -19,9 +19,9 @@ const clone = (obj) => {
   }
   const newObj = (0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(obj) ? [] : {};
   for (const i in obj) {
-    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(obj, i)) {
+    if ((0,_hasProp__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(obj, i)) {
       const item = obj[i];
-      newObj[i] = (0,_isReactEle__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(item) || (0,_isVueEle__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(item) || typeof item !== "object" ? item : item !== obj ? clone(item) : "cyclic";
+      newObj[i] = (0,_isReactEle__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(item) || (0,_isVueEle__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(item) || typeof item !== "object" ? item : item !== obj ? clone(item) : "cyclic";
     } else {
       Object.setPrototypeOf(newObj, { [i]: obj[i] });
     }
@@ -29,6 +29,35 @@ const clone = (obj) => {
   return newObj;
 };
 /* harmony default export */ __webpack_exports__.A = (clone);
+
+
+/***/ }),
+
+/***/ 1407:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
+
+const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "object";
+/* harmony default export */ __webpack_exports__.A = (isObject);
+
+
+/***/ }),
+
+/***/ 2908:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isVueEle = (value) => value?.__v_isVNode;
+/* harmony default export */ __webpack_exports__.A = (isVueEle);
+
+
+/***/ }),
+
+/***/ 4815:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
+/* harmony default export */ __webpack_exports__.A = (hasProp);
 
 
 /***/ }),
@@ -71,24 +100,6 @@ const filter = (list, keyword, fields = [], exact = false, str2Dom = null) => {
 
 /***/ }),
 
-/***/ 8842:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.A = (getType);
-
-
-/***/ }),
-
-/***/ 4815:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
-/* harmony default export */ __webpack_exports__.A = (hasProp);
-
-
-/***/ }),
-
 /***/ 6383:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -96,46 +107,6 @@ const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, p
 
 const isArray = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "array";
 /* harmony default export */ __webpack_exports__.A = (isArray);
-
-
-/***/ }),
-
-/***/ 1407:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
-
-const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "object";
-/* harmony default export */ __webpack_exports__.A = (isObject);
-
-
-/***/ }),
-
-/***/ 9385:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"]?.indexOf("react.") === 0;
-/* harmony default export */ __webpack_exports__.A = (isReactEle);
-
-
-/***/ }),
-
-/***/ 9393:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6383);
-
-const isValidArr = (value) => (0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) && !!value.length;
-/* harmony default export */ __webpack_exports__.A = (isValidArr);
-
-
-/***/ }),
-
-/***/ 2908:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isVueEle = (value) => value?.__v_isVNode;
-/* harmony default export */ __webpack_exports__.A = (isVueEle);
 
 
 /***/ }),
@@ -163,6 +134,35 @@ const unique = (arr, key = "id") => {
   return newArr;
 };
 /* harmony default export */ __webpack_exports__.A = (unique);
+
+
+/***/ }),
+
+/***/ 8842:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+/* harmony default export */ __webpack_exports__.A = (getType);
+
+
+/***/ }),
+
+/***/ 9385:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isReactEle = (value) => value?.["$$typeof"] && typeof value["$$typeof"] === "symbol" && value["$$typeof"]["description"]?.indexOf("react.") === 0;
+/* harmony default export */ __webpack_exports__.A = (isReactEle);
+
+
+/***/ }),
+
+/***/ 9393:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6383);
+
+const isValidArr = (value) => (0,_isArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) && !!value.length;
+/* harmony default export */ __webpack_exports__.A = (isValidArr);
 
 
 /***/ })
@@ -216,10 +216,10 @@ var __webpack_exports__ = {};
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   z: function() { return /* binding */ getMatched; }
 /* harmony export */ });
-/* harmony import */ var _isValidArr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9393);
-/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6050);
+/* harmony import */ var _isValidArr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9393);
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6050);
 /* harmony import */ var _unique__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7395);
-/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1243);
+/* harmony import */ var _clone__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1243);
 
 
 
@@ -228,11 +228,11 @@ const getMatched = (fn) => (arr, childKey = "children") => {
   if (!Array.isArray(arr)) {
     return arr;
   }
-  const list = (0,_clone__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(arr);
+  const list = (0,_clone__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(arr);
   const traver = (data) => {
     const matchedData = [];
     data.map((v) => {
-      if ((0,_isValidArr__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(v[childKey])) {
+      if ((0,_isValidArr__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(v[childKey])) {
         const matchChildren = traver(v[childKey]) || [];
         v[childKey] = matchChildren;
         if (matchChildren.length > 0) {
@@ -244,7 +244,7 @@ const getMatched = (fn) => (arr, childKey = "children") => {
   };
   return traver(list);
 };
-const filterList = (data, keyword, fields = "name", exact = false, idKey = "id", childKey = "children", str2Dom) => getMatched((list, matchedItem) => (0,_unique__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)([...(0,_filter__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(list, keyword, fields, exact, str2Dom), ...matchedItem], idKey))(data, childKey);
+const filterList = (data, keyword, fields = "name", exact = false, idKey = "id", childKey = "children", str2Dom) => getMatched((list, matchedItem) => (0,_unique__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)([...(0,_filter__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(list, keyword, fields, exact, str2Dom), ...matchedItem], idKey))(data, childKey);
 /* harmony default export */ __webpack_exports__.A = (filterList);
 
 var __webpack_exports__default = __webpack_exports__.A;

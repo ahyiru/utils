@@ -1,5 +1,74 @@
 /******/ var __webpack_modules__ = ({
 
+/***/ 41:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3886);
+
+const uuidv4 = () => {
+  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (timeKey + Math.random() * 16) % 16 | 0;
+    timeKey = Math.floor(timeKey / 16);
+    return (c === "x" ? r : r & 3 | 8).toString(16);
+  });
+};
+/* harmony default export */ __webpack_exports__.A = (uuidv4);
+
+
+/***/ }),
+
+/***/ 3886:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const timestamp = () => {
+  if (typeof performance !== "undefined" && typeof performance.now === "function") {
+    return performance.now();
+  }
+  return (/* @__PURE__ */ new Date()).getTime();
+};
+/* harmony default export */ __webpack_exports__.A = (timestamp);
+
+
+/***/ }),
+
+/***/ 5890:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
+
+
+/***/ }),
+
+/***/ 8286:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
+
+const removeClass = (ele, name = "") => {
+  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele)) {
+    return;
+  }
+  const nameArr = name.split(" ").filter(Boolean);
+  const targetName = ele.className.split(" ");
+  const names = targetName.filter((v) => !nameArr.includes(v));
+  ele.className = names.join(" ");
+};
+/* harmony default export */ __webpack_exports__.A = (removeClass);
+
+
+/***/ }),
+
+/***/ 8842:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+/* harmony default export */ __webpack_exports__.A = (getType);
+
+
+/***/ }),
+
 /***/ 9332:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -43,24 +112,6 @@ const addStyle = (text, hash) => {
 
 /***/ }),
 
-/***/ 8842:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.A = (getType);
-
-
-/***/ }),
-
-/***/ 5890:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.A = (isBrowser);
-
-
-/***/ }),
-
 /***/ 9622:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -68,57 +119,6 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
 /* harmony default export */ __webpack_exports__.A = (isElement);
-
-
-/***/ }),
-
-/***/ 8286:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
-
-const removeClass = (ele, name = "") => {
-  if (!(0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele)) {
-    return;
-  }
-  const nameArr = name.split(" ").filter(Boolean);
-  const targetName = ele.className.split(" ");
-  const names = targetName.filter((v) => !nameArr.includes(v));
-  ele.className = names.join(" ");
-};
-/* harmony default export */ __webpack_exports__.A = (removeClass);
-
-
-/***/ }),
-
-/***/ 3886:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const timestamp = () => {
-  if (typeof performance !== "undefined" && typeof performance.now === "function") {
-    return performance.now();
-  }
-  return (/* @__PURE__ */ new Date()).getTime();
-};
-/* harmony default export */ __webpack_exports__.A = (timestamp);
-
-
-/***/ }),
-
-/***/ 41:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3886);
-
-const uuidv4 = () => {
-  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-    const r = (timeKey + Math.random() * 16) % 16 | 0;
-    timeKey = Math.floor(timeKey / 16);
-    return (c === "x" ? r : r & 3 | 8).toString(16);
-  });
-};
-/* harmony default export */ __webpack_exports__.A = (uuidv4);
 
 
 /***/ })
@@ -170,11 +170,6 @@ const uuidv4 = () => {
 /************************************************************************/
 var __webpack_exports__ = {};
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  A: function() { return /* binding */ utils_message; }
-});
-
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
 var isBrowser = __webpack_require__(5890);
 // EXTERNAL MODULE: ../../huxy/utils/removeClass.js
@@ -183,7 +178,7 @@ var removeClass = __webpack_require__(8286);
 var addStyle = __webpack_require__(9332);
 // EXTERNAL MODULE: ../../huxy/utils/uuidv4.js
 var uuidv4 = __webpack_require__(41);
-;// CONCATENATED MODULE: ../../huxy/utils/styles/message.js
+;// ../../huxy/utils/styles/message.js
 const css = `@keyframes huxy-message-animate-in {
   0% {
     opacity: 0;
@@ -296,7 +291,7 @@ const css = `@keyframes huxy-message-animate-in {
 }`;
 /* harmony default export */ var message = (css);
 
-;// CONCATENATED MODULE: ../../huxy/utils/message.js
+;// ../../huxy/utils/message.js
 
 
 
@@ -372,5 +367,4 @@ const message_message = {
 };
 /* harmony default export */ var utils_message = (message_message);
 
-var __webpack_exports__default = __webpack_exports__.A;
-export { __webpack_exports__default as default };
+export { utils_message as default };

@@ -1,5 +1,67 @@
 /******/ var __webpack_modules__ = ({
 
+/***/ 4242:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
+
+const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
+/* harmony default export */ __webpack_exports__.A = (scrollTop);
+
+
+/***/ }),
+
+/***/ 4815:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
+/* harmony default export */ __webpack_exports__.A = (hasProp);
+
+
+/***/ }),
+
+/***/ 5890:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
+
+
+/***/ }),
+
+/***/ 7888:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8427);
+
+
+const scrollTo = (top = 0, ele) => {
+  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
+    return;
+  }
+  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(ele) ? ele.current : ele ?? window;
+  ele.scrollTo?.({ top, behavior: "smooth" });
+};
+/* harmony default export */ __webpack_exports__.A = (scrollTo);
+
+
+/***/ }),
+
+/***/ 8427:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4815);
+
+const isRef = (ref) => {
+  const refObj = typeof ref === "function" ? ref() : ref;
+  return (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(refObj, "current");
+};
+/* harmony default export */ __webpack_exports__.A = (isRef);
+
+
+/***/ }),
+
 /***/ 9332:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -39,68 +101,6 @@ const addStyle = (text, hash) => {
   });
 };
 /* harmony default export */ __webpack_exports__.A = (addStyle);
-
-
-/***/ }),
-
-/***/ 4815:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const hasProp = (obj, prop) => Object.prototype.hasOwnProperty.call(obj ?? {}, prop);
-/* harmony default export */ __webpack_exports__.A = (hasProp);
-
-
-/***/ }),
-
-/***/ 5890:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.A = (isBrowser);
-
-
-/***/ }),
-
-/***/ 8427:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _hasProp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4815);
-
-const isRef = (ref) => {
-  const refObj = typeof ref === "function" ? ref() : ref;
-  return (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(refObj, "current");
-};
-/* harmony default export */ __webpack_exports__.A = (isRef);
-
-
-/***/ }),
-
-/***/ 7888:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8427);
-
-
-const scrollTo = (top = 0, ele) => {
-  if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
-    return;
-  }
-  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(ele) ? ele.current : ele ?? window;
-  ele.scrollTo?.({ top, behavior: "smooth" });
-};
-/* harmony default export */ __webpack_exports__.A = (scrollTo);
-
-
-/***/ }),
-
-/***/ 4242:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
-
-const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && (window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop);
-/* harmony default export */ __webpack_exports__.A = (scrollTop);
 
 
 /***/ })
@@ -152,11 +152,6 @@ const scrollTop = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 /************************************************************************/
 var __webpack_exports__ = {};
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  A: function() { return /* binding */ utils_backTop; }
-});
-
 // EXTERNAL MODULE: ../../huxy/utils/isBrowser.js
 var isBrowser = __webpack_require__(5890);
 // EXTERNAL MODULE: ../../huxy/utils/scrollTop.js
@@ -165,7 +160,7 @@ var scrollTop = __webpack_require__(4242);
 var scrollTo = __webpack_require__(7888);
 // EXTERNAL MODULE: ../../huxy/utils/addStyle.js
 var addStyle = __webpack_require__(9332);
-;// CONCATENATED MODULE: ../../huxy/utils/styles/backTop.js
+;// ../../huxy/utils/styles/backTop.js
 const css = `.huxy-totop-bar {
   --size: 36px;
   --color: #fff;
@@ -228,7 +223,7 @@ const css = `.huxy-totop-bar {
 }`;
 /* harmony default export */ var backTop = (css);
 
-;// CONCATENATED MODULE: ../../huxy/utils/backTop.js
+;// ../../huxy/utils/backTop.js
 
 
 
@@ -281,5 +276,4 @@ const backTop_backTop = (top = 0, text = "\u8FD4\u56DE\u9876\u90E8") => {
 };
 /* harmony default export */ var utils_backTop = (backTop_backTop);
 
-var __webpack_exports__default = __webpack_exports__.A;
-export { __webpack_exports__default as default };
+export { utils_backTop as default };

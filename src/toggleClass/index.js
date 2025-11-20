@@ -1,5 +1,16 @@
 /******/ var __webpack_modules__ = ({
 
+/***/ 4796:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
+
+const hasClass = (ele, name = "") => (0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele) && ele.className.match(new RegExp("(\\s|^)" + name + "(\\s|$)"));
+/* harmony default export */ __webpack_exports__.A = (hasClass);
+
+
+/***/ }),
+
 /***/ 7589:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -19,37 +30,6 @@ const addClass = (ele, name = "") => {
 
 /***/ }),
 
-/***/ 8842:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.A = (getType);
-
-
-/***/ }),
-
-/***/ 4796:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
-
-const hasClass = (ele, name = "") => (0,_isElement__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(ele) && ele.className.match(new RegExp("(\\s|^)" + name + "(\\s|$)"));
-/* harmony default export */ __webpack_exports__.A = (hasClass);
-
-
-/***/ }),
-
-/***/ 9622:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
-
-const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
-/* harmony default export */ __webpack_exports__.A = (isElement);
-
-
-/***/ }),
-
 /***/ 8286:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -65,6 +45,26 @@ const removeClass = (ele, name = "") => {
   ele.className = names.join(" ");
 };
 /* harmony default export */ __webpack_exports__.A = (removeClass);
+
+
+/***/ }),
+
+/***/ 8842:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+/* harmony default export */ __webpack_exports__.A = (getType);
+
+
+/***/ }),
+
+/***/ 9622:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
+
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
+/* harmony default export */ __webpack_exports__.A = (isElement);
 
 
 /***/ })
@@ -99,8 +99,8 @@ const removeClass = (ele, name = "") => {
 var __webpack_exports__ = {};
 /* harmony import */ var _isElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9622);
 /* harmony import */ var _hasClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4796);
-/* harmony import */ var _addClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7589);
-/* harmony import */ var _removeClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8286);
+/* harmony import */ var _addClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7589);
+/* harmony import */ var _removeClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8286);
 
 
 
@@ -110,9 +110,9 @@ const toggleClass = (ele, name) => {
     return;
   }
   if ((0,_hasClass__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(ele, name)) {
-    (0,_removeClass__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(ele, name);
+    (0,_removeClass__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(ele, name);
   } else {
-    (0,_addClass__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(ele, name);
+    (0,_addClass__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(ele, name);
   }
 };
 /* harmony default export */ __webpack_exports__.A = (toggleClass);

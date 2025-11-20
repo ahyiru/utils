@@ -1,5 +1,35 @@
 /******/ var __webpack_modules__ = ({
 
+/***/ 333:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
+
+const isTouch = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && (window.ontouchstart || navigator.maxTouchPoints);
+/* harmony default export */ __webpack_exports__.A = (isTouch);
+
+
+/***/ }),
+
+/***/ 5180:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _isTouch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(333);
+/* harmony import */ var _getOffset__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5529);
+
+
+const getTouchPosition = (evt) => {
+  const { left, top } = (0,_getOffset__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)();
+  return {
+    touchX: (0,_isTouch__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() ? evt?.touches?.[0]?.pageX : evt?.pageX || evt?.clientX + left,
+    touchY: (0,_isTouch__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() ? evt?.touches?.[0]?.pageY : evt?.pageY || evt?.clientY + top
+  };
+};
+/* harmony default export */ __webpack_exports__.A = (getTouchPosition);
+
+
+/***/ }),
+
 /***/ 5529:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -30,21 +60,11 @@ const getOffset = (element = null) => {
 
 /***/ }),
 
-/***/ 5180:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ 5890:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-/* harmony import */ var _isTouch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(333);
-/* harmony import */ var _getOffset__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5529);
-
-
-const getTouchPosition = (evt) => {
-  const { left, top } = (0,_getOffset__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
-  return {
-    touchX: (0,_isTouch__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)() ? evt?.touches?.[0]?.pageX : evt?.pageX || evt?.clientX + left,
-    touchY: (0,_isTouch__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)() ? evt?.touches?.[0]?.pageY : evt?.pageY || evt?.clientY + top
-  };
-};
-/* harmony default export */ __webpack_exports__.A = (getTouchPosition);
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ }),
@@ -58,15 +78,6 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 /***/ }),
 
-/***/ 5890:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.A = (isBrowser);
-
-
-/***/ }),
-
 /***/ 9622:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -74,17 +85,6 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
 /* harmony default export */ __webpack_exports__.A = (isElement);
-
-
-/***/ }),
-
-/***/ 333:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
-
-const isTouch = () => (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && (window.ontouchstart || navigator.maxTouchPoints);
-/* harmony default export */ __webpack_exports__.A = (isTouch);
 
 
 /***/ })

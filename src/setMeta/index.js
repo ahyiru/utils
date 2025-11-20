@@ -1,5 +1,14 @@
 /******/ var __webpack_modules__ = ({
 
+/***/ 5890:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
+
+
+/***/ }),
+
 /***/ 8099:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -97,15 +106,6 @@ const getMeta = (metaData) => {
 
 /***/ }),
 
-/***/ 5890:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.A = (isBrowser);
-
-
-/***/ }),
-
 /***/ 8210:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -171,13 +171,13 @@ const str2Html = (str) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5890);
-/* harmony import */ var _getMeta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8099);
+/* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
+/* harmony import */ var _getMeta__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8099);
 
 
 const setMeta = (metaData) => {
-  const metas = (0,_getMeta__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)(metaData);
-  (0,_isBrowser__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)() && document.head.appendChild(...metas);
+  const metas = (0,_getMeta__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Ay)(metaData);
+  (0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)() && document.head.appendChild(...metas);
 };
 /* harmony default export */ __webpack_exports__.A = (setMeta);
 

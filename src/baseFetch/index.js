@@ -1,11 +1,44 @@
 /******/ var __webpack_modules__ = ({
 
+/***/ 56:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
+
+const isFunction = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "function";
+/* harmony default export */ __webpack_exports__.A = (isFunction);
+
+
+/***/ }),
+
+/***/ 846:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1407);
+
+const params2data = (params) => {
+  if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(params)) {
+    return {};
+  }
+  const form = new FormData();
+  Object.keys(params).map((key) => {
+    if (params[key] != null) {
+      form.append(key, params[key]);
+    }
+  });
+  return form;
+};
+/* harmony default export */ __webpack_exports__.A = (params2data);
+
+
+/***/ }),
+
 /***/ 969:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 /* harmony import */ var _isAsync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2998);
 
-const cancelablePromise = (promise, delay = 3e5, msg = "\u8BF7\u6C42\u8D85\u65F6\uFF01") => {
+const cancelablePromise = (promise, delay = 12e4, msg = "\u8BF7\u6C42\u8D85\u65F6\uFF01") => {
   if (!(0,_isAsync__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(promise)) {
     return {};
   }
@@ -38,11 +71,13 @@ const cancelablePromise = (promise, delay = 3e5, msg = "\u8BF7\u6C42\u8D85\u65F6
 
 /***/ }),
 
-/***/ 8842:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+/***/ 1407:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.A = (getType);
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
+
+const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "object";
+/* harmony default export */ __webpack_exports__.A = (isObject);
 
 
 /***/ }),
@@ -58,50 +93,6 @@ const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).to
 
 const isAsync = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "promise" || (0,_isObject__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(value) && (0,_isFunction__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(value.then);
 /* harmony default export */ __webpack_exports__.A = (isAsync);
-
-
-/***/ }),
-
-/***/ 56:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
-
-const isFunction = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "function";
-/* harmony default export */ __webpack_exports__.A = (isFunction);
-
-
-/***/ }),
-
-/***/ 1407:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
-
-const isObject = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value) === "object";
-/* harmony default export */ __webpack_exports__.A = (isObject);
-
-
-/***/ }),
-
-/***/ 846:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _isObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1407);
-
-const params2data = (params) => {
-  if (!(0,_isObject__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(params)) {
-    return {};
-  }
-  const form = new FormData();
-  Object.keys(params).map((key) => {
-    if (params[key] != null) {
-      form.append(key, params[key]);
-    }
-  });
-  return form;
-};
-/* harmony default export */ __webpack_exports__.A = (params2data);
 
 
 /***/ }),
@@ -123,6 +114,15 @@ const params2str = (params) => {
   return arr.join("");
 };
 /* harmony default export */ __webpack_exports__.A = (params2str);
+
+
+/***/ }),
+
+/***/ 8842:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ })
@@ -155,8 +155,8 @@ const params2str = (params) => {
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-/* harmony import */ var _params2str__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8167);
-/* harmony import */ var _params2data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(846);
+/* harmony import */ var _params2str__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8167);
+/* harmony import */ var _params2data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(846);
 /* harmony import */ var _cancelablePromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(969);
 
 
@@ -170,12 +170,12 @@ const transform = [
   {
     type: "formData",
     // headers:{'Content-Type':'multipart/form-data'},
-    body: (data) => (0,_params2data__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(data)
+    body: (data) => (0,_params2data__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(data)
   },
   {
     type: "form",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: (data) => (0,_params2str__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(data).slice(1)
+    body: (data) => (0,_params2str__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(data).slice(1)
   }
 ];
 const transData = (types, dataType) => {
@@ -219,7 +219,7 @@ const baseFetch = (handler, timeout) => (method) => (url, opt = {}) => {
     restOpt.body = item.body(result);
   }
   if (query) {
-    url = `${url}${(0,_params2str__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(query)}`;
+    url = `${url}${(0,_params2str__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(query)}`;
   }
   const { promiseFn } = (0,_cancelablePromise__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(
     fetch(url, {

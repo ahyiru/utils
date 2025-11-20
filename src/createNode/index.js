@@ -1,14 +1,5 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 5890:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.A = (isBrowser);
-
-
-/***/ }),
-
 /***/ 653:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
@@ -38,6 +29,15 @@ const updateNode = (dom, prevProps, nextProps) => {
   });
 };
 /* harmony default export */ __webpack_exports__.A = (updateNode);
+
+
+/***/ }),
+
+/***/ 5890:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ })

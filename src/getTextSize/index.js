@@ -1,14 +1,5 @@
 /******/ var __webpack_modules__ = ({
 
-/***/ 8842:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-/* harmony default export */ __webpack_exports__.A = (getType);
-
-
-/***/ }),
-
 /***/ 4815:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
@@ -27,17 +18,6 @@ const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 
 /***/ }),
 
-/***/ 9622:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
-
-const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
-/* harmony default export */ __webpack_exports__.A = (isElement);
-
-
-/***/ }),
-
 /***/ 8427:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
@@ -48,6 +28,15 @@ const isRef = (ref) => {
   return (0,_hasProp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(refObj, "current");
 };
 /* harmony default export */ __webpack_exports__.A = (isRef);
+
+
+/***/ }),
+
+/***/ 8842:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const getType = (value) => Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+/* harmony default export */ __webpack_exports__.A = (getType);
 
 
 /***/ }),
@@ -72,6 +61,17 @@ const setStyle = (ele, styles = {}, reset = false) => {
   Object.keys(styles).map((key) => ele.style.setProperty(key, styles[key]));
 };
 /* harmony default export */ __webpack_exports__.A = (setStyle);
+
+
+/***/ }),
+
+/***/ 9622:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
+
+const isElement = (value) => (0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(value).indexOf("element") > -1;
+/* harmony default export */ __webpack_exports__.A = (isElement);
 
 
 /***/ })
@@ -105,8 +105,8 @@ const setStyle = (ele, styles = {}, reset = false) => {
 /************************************************************************/
 var __webpack_exports__ = {};
 /* harmony import */ var _isBrowser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5890);
-/* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9433);
-/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8427);
+/* harmony import */ var _setStyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9433);
+/* harmony import */ var _isRef__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8427);
 
 
 
@@ -114,10 +114,10 @@ const getTextSize = (text, styles, ele) => {
   if (!(0,_isBrowser__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)()) {
     return;
   }
-  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(ele) ? ele.current : ele ?? document.body;
+  ele = (0,_isRef__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(ele) ? ele.current : ele ?? document.body;
   const span = document.createElement("span");
   span.setAttribute("style", `pointer-events: none; z-index: -1; opacity: 0;`);
-  styles && (0,_setStyle__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(span, styles);
+  styles && (0,_setStyle__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(span, styles);
   span.innerText = (text ?? "").replace(/[\r\n]/g, "");
   ele.appendChild(span);
   const rect = span.getBoundingClientRect();

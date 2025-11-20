@@ -1,5 +1,23 @@
 /******/ var __webpack_modules__ = ({
 
+/***/ 41:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3886);
+
+const uuidv4 = () => {
+  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (timeKey + Math.random() * 16) % 16 | 0;
+    timeKey = Math.floor(timeKey / 16);
+    return (c === "x" ? r : r & 3 | 8).toString(16);
+  });
+};
+/* harmony default export */ __webpack_exports__.A = (uuidv4);
+
+
+/***/ }),
+
 /***/ 2018:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
@@ -11,24 +29,6 @@ const isBase64Image = (str) => {
   return str.match(reg);
 };
 /* harmony default export */ __webpack_exports__.A = (isBase64Image);
-
-
-/***/ }),
-
-/***/ 5890:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-/* harmony default export */ __webpack_exports__.A = (isBrowser);
-
-
-/***/ }),
-
-/***/ 4659:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
-
-const isUrl = (url) => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
-/* harmony default export */ __webpack_exports__.A = (isUrl);
 
 
 /***/ }),
@@ -47,20 +47,20 @@ const timestamp = () => {
 
 /***/ }),
 
-/***/ 41:
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+/***/ 4659:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
 
-/* harmony import */ var _timestamp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3886);
+const isUrl = (url) => /^https?:\/\/[^\s/?.#]+\.[^\s]+/.test(url);
+/* harmony default export */ __webpack_exports__.A = (isUrl);
 
-const uuidv4 = () => {
-  let timeKey = (0,_timestamp__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)();
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-    const r = (timeKey + Math.random() * 16) % 16 | 0;
-    timeKey = Math.floor(timeKey / 16);
-    return (c === "x" ? r : r & 3 | 8).toString(16);
-  });
-};
-/* harmony default export */ __webpack_exports__.A = (uuidv4);
+
+/***/ }),
+
+/***/ 5890:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__) {
+
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
+/* harmony default export */ __webpack_exports__.A = (isBrowser);
 
 
 /***/ })
