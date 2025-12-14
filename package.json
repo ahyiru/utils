@@ -1,6 +1,6 @@
 {
   "name": "@huxy/utils",
-  "version": "2.1.15",
+  "version": "2.1.16",
   "title": "utils",
   "feature": "0.0.1",
   "hooks": "0.0.1",
@@ -14,7 +14,7 @@
     "library"
   ],
   "sideEffects": false,
-  "main": "./lib/index.js",
+  "module": "./lib/index.js",
   "exports": {
     ".": "./lib/index.js",
     "./src/*": "./src/*/index.js",
@@ -26,5 +26,5 @@
   },
   "license": "MIT",
   "dependencies": {},
-  "author": "yiru"
+  "author": "Yiru <ah.yiru@gmail.com>"
 }
